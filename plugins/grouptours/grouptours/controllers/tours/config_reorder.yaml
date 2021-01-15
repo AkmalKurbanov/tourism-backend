@@ -1,0 +1,4 @@
+title: Tours
+modelClass: Grouptours\Grouptours\Models\Tours
+toolbar:
+    buttons: reorder_toolbar

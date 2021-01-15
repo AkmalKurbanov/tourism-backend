@@ -1,0 +1,41 @@
+1610710267a:1:{s:21:"site/modal_window.htm";a:5:{s:8:"fileName";s:21:"site/modal_window.htm";s:7:"content";s:752:"  <div class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+  <div class="modal fade in" id="modal_search" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div id="search_form">
+          <form role="search" method="get" id="searchform" action="https://kyrgyzstan-tourism.com/">
+            <input type="text" value="" name="s" id="s" />
+            <button type="submit" id="search_button"><i class="fa fa-search"></i></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>";s:5:"mtime";i:1610618465;s:6:"markup";s:750:"<div class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+  <div class="modal fade in" id="modal_search" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div id="search_form">
+          <form role="search" method="get" id="searchform" action="https://kyrgyzstan-tourism.com/">
+            <input type="text" value="" name="s" id="s" />
+            <button type="submit" id="search_button"><i class="fa fa-search"></i></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>";s:4:"code";N;}}

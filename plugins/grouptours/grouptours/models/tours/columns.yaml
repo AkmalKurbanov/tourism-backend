@@ -1,0 +1,30 @@
+columns:
+    title:
+        label: 'Заголовок тура'
+        type: text
+        searchable: true
+    annotation:
+        label: 'Краткое описание тура'
+        type: text
+        searchable: true
+    prise:
+        label: 'Стоимость тура'
+        type: number
+    duration:
+        label: 'Продолжительность тура'
+        type: number
+    img_group_tour:
+        label: Изображение
+        type: text
+    slug:
+        label: slug
+        type: text
+    created_at:
+        label: created_at
+        type: datetime
+    updated_at:
+        label: updated_at
+        type: datetime
+    deleted_at:
+        label: deleted_at
+        type: datetime

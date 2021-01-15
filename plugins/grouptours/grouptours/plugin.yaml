@@ -1,0 +1,11 @@
+plugin:
+    name: 'grouptours.grouptours::lang.plugin.name'
+    description: 'grouptours.grouptours::lang.plugin.description'
+    author: Akmal
+    icon: oc-icon-group
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: 'Групповые туры'
+        url: grouptours/grouptours/tours
+        icon: icon-group

@@ -1,0 +1,10 @@
+name: HeroSlider
+form: $/heroslider/heroslider/models/heroslider/fields.yaml
+modelClass: HeroSlider\HeroSlider\Models\HeroSlider
+defaultRedirect: heroslider/heroslider/heroslider
+create:
+    redirect: 'heroslider/heroslider/heroslider/update/:id'
+    redirectClose: heroslider/heroslider/heroslider
+update:
+    redirect: heroslider/heroslider/heroslider
+    redirectClose: heroslider/heroslider/heroslider

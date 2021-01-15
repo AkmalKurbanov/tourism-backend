@@ -1,0 +1,9 @@
+1610710267a:1:{s:38:"site/head_styles_index_page/style1.htm";a:5:{s:8:"fileName";s:38:"site/head_styles_index_page/style1.htm";s:7:"content";s:67:"  <style>
+    img.lazy {
+      min-height: 1px
+    }
+  </style>";s:5:"mtime";i:1610572385;s:6:"markup";s:65:"<style>
+    img.lazy {
+      min-height: 1px
+    }
+  </style>";s:4:"code";N;}}

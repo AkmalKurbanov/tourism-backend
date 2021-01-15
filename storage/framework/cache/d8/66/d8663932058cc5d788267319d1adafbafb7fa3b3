@@ -1,0 +1,159 @@
+1610709397a:1:{s:11:"default.htm";a:6:{s:8:"fileName";s:11:"default.htm";s:7:"content";s:2944:"description = "Default layout"
+==
+<!DOCTYPE html>
+<html>
+
+<head>
+  {% partial 'site/head_styles_index_page/style1' %}
+  <link href="{{ 'assets/javascript/plugins/w3-total-cache/pub/js/lazyload.min.js'|theme }}" rel="stylesheet">
+
+  {% partial 'site/head_styles_index_page/style2' %}
+  {% partial 'site/head_scripts_index_page/script1' %}
+  {% partial 'site/head_scripts_index_page/script2' %}
+
+  {% partial 'site/head_styles_index_page/style3' %}
+
+  <link href="{{ 'assets/css/6d2d0.css'|theme }}" rel="stylesheet">
+  <link rel='stylesheet' id='font-style-css'
+    href='https://fonts.googleapis.com/css?family=Lato%3A400%2C700%2C900&#038;subset=latin-ext&#038;ver=5.3.2'
+    type='text/css' media='all' />
+  <link rel='stylesheet' id='font-style-2-css'
+    href='https://fonts.googleapis.com/css?family=Noto+Serif%3A400%2C700&#038;ver=5.3.2' type='text/css' media='all' />
+  <link href="{{ 'assets/css/113f9.css'|theme }}" rel="stylesheet">
+  {% partial 'site/head_styles_index_page/style4' %}
+   
+  {% partial 'site/head_scripts_index_page/script3' %}
+  {% partial 'site/head_scripts_index_page/script4' %}
+  {% partial 'site/head_styles_index_page/style5' %}
+
+  <meta charset="utf-8">
+  <title>October CMS - {{ this.page.title }}</title>
+  <meta name="description" content="{{ this.page.meta_description }}">
+  <meta name="title" content="{{ this.page.meta_title }}">
+  <meta name="author" content="OctoberCMS">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="OctoberCMS">
+  <link rel="icon" type="image/png" href="{{ 'assets/images/october.png'|theme }}">
+
+  {% partial 'site/head_styles_index_page/style6' %}
+  {% partial 'site/head_scripts_index_page/script5' %}
+  {% styles %}
+</head>
+
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe height="0" width="0" style="display:none;visibility:hidden"
+      data-src="https://www.googletagmanager.com/ns.html?id=GTM-5LMH84W" class="lazyload"
+      src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  {% partial 'site/modal_window' %}
+
+  <!-- Header -->
+  <header id="header">
+    {% partial 'site/header' %}
+  </header>
+
+  <!-- Content -->
+  <section id="layout-content">
+    {% page %}
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer">
+    {% partial 'site/footer' %}
+  </footer>
+
+  <!-- Scripts -->
+  <!-- <script src="{{ 'assets/vendor/jquery.js'|theme }}"></script>
+    <script src="{{ 'assets/vendor/bootstrap.js'|theme }}"></script>
+    <script src="{{ 'assets/javascript/app.js'|theme }}"></script> -->
+  {% partial 'site/head_scripts_index_page/script6' %}
+  {% partial 'site/head_styles_index_page/style7' %}
+  {% partial 'site/head_scripts_index_page/script7' %}
+
+  {% framework extras %}
+  {% scripts %}
+
+</body>
+
+</html>";s:5:"mtime";i:1610653888;s:6:"markup";s:2908:"<!DOCTYPE html>
+<html>
+
+<head>
+  {% partial 'site/head_styles_index_page/style1' %}
+  <link href="{{ 'assets/javascript/plugins/w3-total-cache/pub/js/lazyload.min.js'|theme }}" rel="stylesheet">
+
+  {% partial 'site/head_styles_index_page/style2' %}
+  {% partial 'site/head_scripts_index_page/script1' %}
+  {% partial 'site/head_scripts_index_page/script2' %}
+
+  {% partial 'site/head_styles_index_page/style3' %}
+
+  <link href="{{ 'assets/css/6d2d0.css'|theme }}" rel="stylesheet">
+  <link rel='stylesheet' id='font-style-css'
+    href='https://fonts.googleapis.com/css?family=Lato%3A400%2C700%2C900&#038;subset=latin-ext&#038;ver=5.3.2'
+    type='text/css' media='all' />
+  <link rel='stylesheet' id='font-style-2-css'
+    href='https://fonts.googleapis.com/css?family=Noto+Serif%3A400%2C700&#038;ver=5.3.2' type='text/css' media='all' />
+  <link href="{{ 'assets/css/113f9.css'|theme }}" rel="stylesheet">
+  {% partial 'site/head_styles_index_page/style4' %}
+   
+  {% partial 'site/head_scripts_index_page/script3' %}
+  {% partial 'site/head_scripts_index_page/script4' %}
+  {% partial 'site/head_styles_index_page/style5' %}
+
+  <meta charset="utf-8">
+  <title>October CMS - {{ this.page.title }}</title>
+  <meta name="description" content="{{ this.page.meta_description }}">
+  <meta name="title" content="{{ this.page.meta_title }}">
+  <meta name="author" content="OctoberCMS">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="OctoberCMS">
+  <link rel="icon" type="image/png" href="{{ 'assets/images/october.png'|theme }}">
+
+  {% partial 'site/head_styles_index_page/style6' %}
+  {% partial 'site/head_scripts_index_page/script5' %}
+  {% styles %}
+</head>
+
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe height="0" width="0" style="display:none;visibility:hidden"
+      data-src="https://www.googletagmanager.com/ns.html?id=GTM-5LMH84W" class="lazyload"
+      src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  {% partial 'site/modal_window' %}
+
+  <!-- Header -->
+  <header id="header">
+    {% partial 'site/header' %}
+  </header>
+
+  <!-- Content -->
+  <section id="layout-content">
+    {% page %}
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer">
+    {% partial 'site/footer' %}
+  </footer>
+
+  <!-- Scripts -->
+  <!-- <script src="{{ 'assets/vendor/jquery.js'|theme }}"></script>
+    <script src="{{ 'assets/vendor/bootstrap.js'|theme }}"></script>
+    <script src="{{ 'assets/javascript/app.js'|theme }}"></script> -->
+  {% partial 'site/head_scripts_index_page/script6' %}
+  {% partial 'site/head_styles_index_page/style7' %}
+  {% partial 'site/head_scripts_index_page/script7' %}
+
+  {% framework extras %}
+  {% scripts %}
+
+</body>
+
+</html>";s:4:"code";N;s:11:"description";s:14:"Default layout";}}

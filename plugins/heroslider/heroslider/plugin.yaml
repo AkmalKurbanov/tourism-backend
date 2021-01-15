@@ -1,0 +1,11 @@
+plugin:
+    name: 'heroslider.heroslider::lang.plugin.name'
+    description: 'heroslider.heroslider::lang.plugin.description'
+    author: Akmal
+    icon: oc-icon-sliders
+    homepage: ''
+navigation:
+    HeroSlider:
+        label: 'Главный слайдер'
+        url: heroslider/heroslider/heroslider
+        icon: icon-sliders

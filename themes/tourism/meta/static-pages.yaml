@@ -1,0 +1,24 @@
+static-pages:
+    index: {  }
+    tours:
+        tours-bike: {  }
+        tours-culture-tours: {  }
+        tours-experience-tours: {  }
+        tours-horseback-tours: {  }
+        tours-multi-active-tours: {  }
+        tours-road-tours: {  }
+        tours-photo-tours: {  }
+        tours-trekking: {  }
+        tours-winter-tours: {  }
+    group-tours: {  }
+    blog: {  }
+    kyrgyzstan:
+        kyrgyzstan-about-kyrgyzstan: {  }
+        kyrgyzstan-projects: {  }
+        kyrgyzstan-getting-around: {  }
+        kyrgyzstan-permits: {  }
+        kyrgyzstan-inspiration-visiting-kyrgyzstan: {  }
+        kyrgyzstan-photo-gallery: {  }
+    about:
+        about-about-us: {  }
+        about-contact-us: {  }

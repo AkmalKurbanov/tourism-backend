@@ -1,0 +1,18 @@
+fields:
+    title:
+        label: 'Заголовок слайда'
+        span: auto
+        type: text
+    slider_item_img:
+        label: 'Изображение слайда'
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    sub_title:
+        label: 'Подзаголовок слайда'
+        span: auto
+        type: text

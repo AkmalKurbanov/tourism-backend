@@ -1,0 +1,258 @@
+items:
+    -
+        title: home
+        nesting: 0
+        type: static-page
+        code: ''
+        reference: index
+        replace: 0
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: tours
+        nesting: 1
+        type: static-page
+        code: ''
+        reference: tours
+        replace: 0
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+        items:
+            -
+                title: bike
+                nesting: 0
+                type: static-page
+                code: ''
+                reference: tours-bike
+                replace: 0
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: 'Culture tours'
+                nesting: 0
+                type: static-page
+                code: ''
+                reference: tours-culture-tours
+                replace: 0
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: 'Experience tours'
+                nesting: 0
+                type: static-page
+                code: ''
+                reference: tours-experience-tours
+                replace: 0
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: 'Horseback tours'
+                nesting: 0
+                type: static-page
+                code: ''
+                reference: tours-horseback-tours
+                replace: 0
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: 'Multi-active tours'
+                nesting: 0
+                type: static-page
+                code: ''
+                reference: tours-multi-active-tours
+                replace: 0
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: 'Off road tours'
+                nesting: 0
+                type: static-page
+                code: ''
+                reference: tours-road-tours
+                replace: 0
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: 'Photo tours'
+                nesting: 0
+                type: static-page
+                code: ''
+                reference: tours-photo-tours
+                replace: 0
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: Trekking
+                nesting: 0
+                type: static-page
+                code: ''
+                reference: tours-trekking
+                replace: 0
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: 'Winter tours'
+                nesting: 0
+                type: static-page
+                code: ''
+                reference: tours-winter-tours
+                replace: 0
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+    -
+        title: 'Group tours'
+        nesting: 0
+        type: static-page
+        code: ''
+        reference: group-tours
+        replace: 0
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Blog
+        nesting: 0
+        type: static-page
+        code: ''
+        reference: blog
+        replace: 0
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Kyrgyzstan
+        nesting: 1
+        type: static-page
+        code: ''
+        reference: kyrgyzstan
+        replace: 0
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+        items:
+            -
+                title: 'About Kyrgyzstan'
+                nesting: 0
+                type: static-page
+                code: ''
+                reference: kyrgyzstan-about-kyrgyzstan
+                replace: 0
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: Projects
+                nesting: 0
+                type: static-page
+                code: ''
+                reference: kyrgyzstan-projects
+                replace: 0
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: 'Getting around'
+                nesting: 0
+                type: static-page
+                code: ''
+                reference: kyrgyzstan-getting-around
+                replace: 0
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: Permits
+                nesting: 0
+                type: static-page
+                code: ''
+                reference: kyrgyzstan-permits
+                replace: 0
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: 'Inspiration for visiting Kyrgyzstan'
+                nesting: 0
+                type: static-page
+                code: ''
+                reference: kyrgyzstan-inspiration-visiting-kyrgyzstan
+                replace: 0
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: 'Photo gallery'
+                nesting: 0
+                type: static-page
+                code: ''
+                reference: kyrgyzstan-photo-gallery
+                replace: 0
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: About
+                nesting: 1
+                type: static-page
+                code: ''
+                reference: about
+                replace: 0
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+                items:
+                    -
+                        title: 'About us'
+                        nesting: 0
+                        type: static-page
+                        code: ''
+                        reference: about-about-us
+                        replace: 0
+                        viewBag:
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
+                    -
+                        title: 'Contact us'
+                        nesting: 0
+                        type: static-page
+                        code: ''
+                        reference: about-contact-us
+                        replace: 0
+                        viewBag:
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
+name: menu
