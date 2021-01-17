@@ -198,12 +198,12 @@ class __TwigTemplate_d0e3e91f087574b6925a1b19c2b890140ea9d30579d0ec20b3145382a05
         echo "  </header>
 
   <!-- Content -->
-  <section id=\"layout-content\">
+
     ";
         // line 58
         echo $this->env->getExtension('Cms\Twig\Extension')->pageFunction();
         // line 59
-        echo "  </section>
+        echo "
 
   <!-- Footer -->
   <footer id=\"footer\">
@@ -341,9 +341,9 @@ class __TwigTemplate_d0e3e91f087574b6925a1b19c2b890140ea9d30579d0ec20b3145382a05
   </header>
 
   <!-- Content -->
-  <section id=\"layout-content\">
+
     {% page %}
-  </section>
+
 
   <!-- Footer -->
   <footer id=\"footer\">

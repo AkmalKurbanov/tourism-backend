@@ -1,0 +1,10 @@
+name: Types
+form: $/tours/tours/models/type/fields.yaml
+modelClass: Tours\Tours\Models\Type
+defaultRedirect: tours/tours/types
+create:
+    redirect: 'tours/tours/types/update/:id'
+    redirectClose: tours/tours/types
+update:
+    redirect: tours/tours/types
+    redirectClose: tours/tours/types

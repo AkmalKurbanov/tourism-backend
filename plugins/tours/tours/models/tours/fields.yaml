@@ -1,0 +1,39 @@
+fields:
+    title:
+        label: 'Заголовок тура'
+        span: auto
+        type: text
+    slug:
+        label: Slug
+        span: auto
+        preset:
+            field: title
+            type: slug
+        type: text
+    annotation:
+        label: 'Краткое описание тура'
+        span: auto
+        type: text
+    price:
+        label: 'Стоимость тура'
+        span: auto
+        type: number
+    duration:
+        label: Продолжительность
+        span: auto
+        type: number
+    poster:
+        label: Изображение
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    types:
+        label: 'Виды туров'
+        nameFrom: type_title
+        descriptionFrom: description
+        span: auto
+        type: relation

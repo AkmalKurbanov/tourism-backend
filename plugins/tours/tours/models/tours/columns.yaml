@@ -1,0 +1,25 @@
+columns:
+    title:
+        label: 'Заголовок тура'
+        type: text
+    annotation:
+        label: 'Краткое описание'
+        type: text
+    price:
+        label: 'Стоимость тура'
+        type: number
+    duration:
+        label: 'Длительность тура'
+        type: number
+    slug:
+        label: slug
+        type: text
+    types:
+        label: 'Вид тура'
+        type: text
+        searchable: true
+        select: type_title
+        relation: types
+    published:
+        label: Опубликовать
+        type: switch

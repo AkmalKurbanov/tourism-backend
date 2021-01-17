@@ -1,0 +1,8 @@
+types:
+    label: Виды туров
+    view: 
+      list: $/tours/tours/models/type/columns.yaml
+      toolbarButtons: add|remove
+    manage:
+      form: $/tours/tours/models/type/fields.yaml
+      showCheckboxex: true  

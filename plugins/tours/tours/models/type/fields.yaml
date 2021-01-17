@@ -1,0 +1,12 @@
+fields:
+    type_title:
+        label: Тип
+        span: auto
+        type: text
+    slug:
+        label: Slug
+        span: auto
+        preset:
+            field: type_title
+            type: slug
+        type: text

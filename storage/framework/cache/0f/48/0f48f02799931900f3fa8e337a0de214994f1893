@@ -1,11 +1,9 @@
-1610710740a:1:{s:9:"menu.yaml";a:7:{s:8:"fileName";s:9:"menu.yaml";s:7:"content";s:7543:"items:
+1610890154a:1:{s:9:"menu.yaml";a:7:{s:8:"fileName";s:9:"menu.yaml";s:7:"content";s:8687:"items:
     -
         title: home
-        nesting: 0
-        type: static-page
+        type: url
+        url: /
         code: ''
-        reference: index
-        replace: 0
         viewBag:
             isHidden: '0'
             cssClass: ''
@@ -14,8 +12,10 @@
         title: tours
         nesting: 1
         type: static-page
+        url: null
         code: ''
         reference: tours
+        cmsPage: null
         replace: 0
         viewBag:
             isHidden: '0'
@@ -26,8 +26,10 @@
                 title: bike
                 nesting: 0
                 type: static-page
+                url: null
                 code: ''
                 reference: tours-bike
+                cmsPage: null
                 replace: 0
                 viewBag:
                     isHidden: '0'
@@ -37,8 +39,10 @@
                 title: 'Culture tours'
                 nesting: 0
                 type: static-page
+                url: null
                 code: ''
                 reference: tours-culture-tours
+                cmsPage: null
                 replace: 0
                 viewBag:
                     isHidden: '0'
@@ -48,8 +52,10 @@
                 title: 'Experience tours'
                 nesting: 0
                 type: static-page
+                url: null
                 code: ''
                 reference: tours-experience-tours
+                cmsPage: null
                 replace: 0
                 viewBag:
                     isHidden: '0'
@@ -59,8 +65,10 @@
                 title: 'Horseback tours'
                 nesting: 0
                 type: static-page
+                url: null
                 code: ''
                 reference: tours-horseback-tours
+                cmsPage: null
                 replace: 0
                 viewBag:
                     isHidden: '0'
@@ -70,8 +78,10 @@
                 title: 'Multi-active tours'
                 nesting: 0
                 type: static-page
+                url: null
                 code: ''
                 reference: tours-multi-active-tours
+                cmsPage: null
                 replace: 0
                 viewBag:
                     isHidden: '0'
@@ -81,8 +91,10 @@
                 title: 'Off road tours'
                 nesting: 0
                 type: static-page
+                url: null
                 code: ''
                 reference: tours-road-tours
+                cmsPage: null
                 replace: 0
                 viewBag:
                     isHidden: '0'
@@ -92,8 +104,10 @@
                 title: 'Photo tours'
                 nesting: 0
                 type: static-page
+                url: null
                 code: ''
                 reference: tours-photo-tours
+                cmsPage: null
                 replace: 0
                 viewBag:
                     isHidden: '0'
@@ -103,8 +117,10 @@
                 title: Trekking
                 nesting: 0
                 type: static-page
+                url: null
                 code: ''
                 reference: tours-trekking
+                cmsPage: null
                 replace: 0
                 viewBag:
                     isHidden: '0'
@@ -114,8 +130,10 @@
                 title: 'Winter tours'
                 nesting: 0
                 type: static-page
+                url: null
                 code: ''
                 reference: tours-winter-tours
+                cmsPage: null
                 replace: 0
                 viewBag:
                     isHidden: '0'
@@ -125,8 +143,10 @@
         title: 'Group tours'
         nesting: 0
         type: static-page
+        url: null
         code: ''
         reference: group-tours
+        cmsPage: null
         replace: 0
         viewBag:
             isHidden: '0'
@@ -136,8 +156,10 @@
         title: Blog
         nesting: 0
         type: static-page
+        url: null
         code: ''
         reference: blog
+        cmsPage: null
         replace: 0
         viewBag:
             isHidden: '0'
@@ -147,8 +169,10 @@
         title: Kyrgyzstan
         nesting: 1
         type: static-page
+        url: null
         code: ''
         reference: kyrgyzstan
+        cmsPage: null
         replace: 0
         viewBag:
             isHidden: '0'
@@ -159,8 +183,10 @@
                 title: 'About Kyrgyzstan'
                 nesting: 0
                 type: static-page
+                url: null
                 code: ''
                 reference: kyrgyzstan-about-kyrgyzstan
+                cmsPage: null
                 replace: 0
                 viewBag:
                     isHidden: '0'
@@ -170,8 +196,10 @@
                 title: Projects
                 nesting: 0
                 type: static-page
+                url: null
                 code: ''
                 reference: kyrgyzstan-projects
+                cmsPage: null
                 replace: 0
                 viewBag:
                     isHidden: '0'
@@ -181,8 +209,10 @@
                 title: 'Getting around'
                 nesting: 0
                 type: static-page
+                url: null
                 code: ''
                 reference: kyrgyzstan-getting-around
+                cmsPage: null
                 replace: 0
                 viewBag:
                     isHidden: '0'
@@ -192,8 +222,10 @@
                 title: Permits
                 nesting: 0
                 type: static-page
+                url: null
                 code: ''
                 reference: kyrgyzstan-permits
+                cmsPage: null
                 replace: 0
                 viewBag:
                     isHidden: '0'
@@ -203,8 +235,10 @@
                 title: 'Inspiration for visiting Kyrgyzstan'
                 nesting: 0
                 type: static-page
+                url: null
                 code: ''
                 reference: kyrgyzstan-inspiration-visiting-kyrgyzstan
+                cmsPage: null
                 replace: 0
                 viewBag:
                     isHidden: '0'
@@ -214,8 +248,10 @@
                 title: 'Photo gallery'
                 nesting: 0
                 type: static-page
+                url: null
                 code: ''
                 reference: kyrgyzstan-photo-gallery
+                cmsPage: null
                 replace: 0
                 viewBag:
                     isHidden: '0'
@@ -225,8 +261,10 @@
                 title: About
                 nesting: 1
                 type: static-page
+                url: null
                 code: ''
                 reference: about
+                cmsPage: null
                 replace: 0
                 viewBag:
                     isHidden: '0'
@@ -237,8 +275,10 @@
                         title: 'About us'
                         nesting: 0
                         type: static-page
+                        url: null
                         code: ''
                         reference: about-about-us
+                        cmsPage: null
                         replace: 0
                         viewBag:
                             isHidden: '0'
@@ -248,12 +288,14 @@
                         title: 'Contact us'
                         nesting: 0
                         type: static-page
+                        url: null
                         code: ''
                         reference: about-contact-us
+                        cmsPage: null
                         replace: 0
                         viewBag:
                             isHidden: '0'
                             cssClass: ''
                             isExternal: '0'
 name: menu
-";s:5:"mtime";i:1610709345;s:6:"markup";N;s:4:"code";N;s:4:"name";N;s:5:"items";a:0:{}}}
+";s:5:"mtime";i:1610728886;s:6:"markup";N;s:4:"code";N;s:4:"name";N;s:5:"items";a:0:{}}}

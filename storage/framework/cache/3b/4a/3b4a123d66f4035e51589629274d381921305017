@@ -1,6 +1,6 @@
-1610700536a:1:{s:8:"home.htm";a:11:{s:8:"fileName";s:8:"home.htm";s:7:"content";s:42030:"title = "Demonstration"
+1610890153a:1:{s:8:"home.htm";a:12:{s:8:"fileName";s:8:"home.htm";s:7:"content";s:38518:"title = "Home"
 url = "/"
-layout = "default"
+layout = "static-layout"
 is_hidden = 0
 
 [builderList HeroSLider]
@@ -14,8 +14,19 @@ detailsKeyColumn = "slug"
 detailsUrlParameter = "slug"
 pageNumber = "{{ :page }}"
 
-[builderList Tours]
-modelClass = "Grouptours\Grouptours\Models\Tours"
+[builderList TourType]
+modelClass = "Tours\Tours\Models\Tours"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "slug"
+noRecordsMessage = "No records found"
+detailsPage = "tours"
+detailsKeyColumn = "slug"
+detailsUrlParameter = "slug"
+pageNumber = "{{ :page }}"
+
+[builderList PopularTours]
+modelClass = "Tours\Tours\Models\Tours"
 scope = "-"
 scopeValue = "{{ :scope }}"
 displayColumn = "slug"
@@ -141,27 +152,28 @@ pageNumber = "{{ :page }}"
             <div class="resCarousel-inner">
 
 
-              {% set records = Tours.records %}
-              {% set displayColumn = Tours.displayColumn %}
-              {% set noRecordsMessage = Tours.noRecordsMessage %}
-              {% set detailsPage = Tours.detailsPage %}
-              {% set detailsKeyColumn = Tours.detailsKeyColumn %}
-              {% set detailsUrlParameter = Tours.detailsUrlParameter %}
+
+              {% set records = PopularTours.records %}
+              {% set displayColumn = PopularTours.displayColumn %}
+              {% set noRecordsMessage = PopularTours.noRecordsMessage %}
+              {% set detailsPage = PopularTours.detailsPage %}
+              {% set detailsKeyColumn = PopularTours.detailsKeyColumn %}
+              {% set detailsUrlParameter = PopularTours.detailsUrlParameter %}
+
               {% for record in records %}
-        
               <div class="item item_tour with_border  ">
                 <a href="{{ detailsPage|page({ (detailsUrlParameter): attribute(record, detailsKeyColumn) }) }}">
-                
+
                   <span class="img_wrapper">
-                    <span class="img lazy" style="" data-bg="url({{ record.poster.path}})"></span>
+                    <span class="img lazy" style="" data-bg="url({{ record.poster.path }})"></span>
 
                     <span class="price-round group_price">
-                      <span class="inner">${{record.prise}} US</span>
+                      <span class="inner">${{record.price}} US</span>
                     </span>
 
                   </span>
                   <div class="desc">
-                    <h3>{{record.title}}"</h3>
+                    <h3>{{record.title}}</h3>
                     <p class="excerpt">{{record.annotation}} </p>
                   </div>
                   <p class="duration"><i class="fa fa-clock-o"></i> {{record.duration}} days</p>
@@ -202,129 +214,42 @@ pageNumber = "{{ :page }}"
     </div>
   </div>
   <div class="row">
+    
+    {% set records = TourType.records %}
+    {% set displayColumn = TourType.displayColumn %}
+    {% set noRecordsMessage = TourType.noRecordsMessage %}
+    {% set detailsPage = TourType.detailsPage %}
+    {% set detailsKeyColumn = TourType.detailsKeyColumn %}
+    {% set detailsUrlParameter = TourType.detailsUrlParameter %}
+
+
+    {% for record in records %}
+
+
     <div class="col-sm-4">
       <div class="item item_tour with_border auto_height tour_type">
-        <a href="https://kyrgyzstan-tourism.com/tours/type/horseback-tours-in-kyrgyzstan/">
+        <a href="{{ detailsPage|page({ (detailsUrlParameter): attribute(record, detailsKeyColumn) }) }}">
           <span class="img_wrapper">
             <span class="img lazy" style=""
-              data-bg="url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Slider_HBR-2.jpg)"></span>
+              data-bg="url({{record.poster.path}})"></span>
           </span>
           <div class="desc">
-            <h3>Horseback tours</h3>
+            <h3>{{record.title}}</h3>
           </div>
         </a>
       </div>
     </div>
-    <div class="col-sm-4">
-      <div class="item item_tour with_border auto_height tour_type">
-        <a href="https://kyrgyzstan-tourism.com/tours/type/trekking-kyrgyzstan/">
-          <span class="img_wrapper">
-            <span class="img lazy" style=""
-              data-bg="url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Slider_trek-1.jpg)"></span>
-          </span>
-          <div class="desc">
-            <h3>Trekking</h3>
-          </div>
-        </a>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="item item_tour with_border auto_height tour_type">
-        <a href="https://kyrgyzstan-tourism.com/tours/type/jeep-tours-in-kyrgyzstan/">
-          <span class="img_wrapper">
-            <span class="img lazy" style=""
-              data-bg="url(https://kyrgyzstan-tourism.com/wp-content/uploads/2020/03/Song-Kol_October.jpg)"></span>
-          </span>
-          <div class="desc">
-            <h3>Off road tours</h3>
-          </div>
-        </a>
-      </div>
-    </div>
+
+
+    {% else %}
+    <li class="no-data">{{ noRecordsMessage }}</li>
+    {% endfor %}
+
+
+
+
+
   </div>
-  <div class="row">
-    <div class="col-sm-4">
-      <div class="item item_tour with_border auto_height tour_type">
-        <a href="https://kyrgyzstan-tourism.com/tours/type/multi-active-tours/">
-          <span class="img_wrapper">
-            <span class="img lazy" style=""
-              data-bg="url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Slide_Sunset.jpg)"></span>
-          </span>
-          <div class="desc">
-            <h3>Multi-active tours</h3>
-          </div>
-        </a>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="item item_tour with_border auto_height tour_type">
-        <a href="https://kyrgyzstan-tourism.com/tours/type/winter-tours/">
-          <span class="img_wrapper">
-            <span class="img lazy" style=""
-              data-bg="url(https://kyrgyzstan-tourism.com/wp-content/uploads/2020/02/Winter-Slide.jpg)"></span>
-          </span>
-          <div class="desc">
-            <h3>Winter tours</h3>
-          </div>
-        </a>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="item item_tour with_border auto_height tour_type">
-        <a href="https://kyrgyzstan-tourism.com/tours/type/bike-tours/">
-          <span class="img_wrapper">
-            <span class="img lazy" style=""
-              data-bg="url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/04/HeaderBike-1.jpg)"></span>
-          </span>
-          <div class="desc">
-            <h3>Bike tours</h3>
-          </div>
-        </a>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-4">
-      <div class="item item_tour with_border auto_height tour_type">
-        <a href="https://kyrgyzstan-tourism.com/tours/type/culture-tours/">
-          <span class="img_wrapper">
-            <span class="img lazy" style=""
-              data-bg="url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/TashRabat_Sights.jpg)"></span>
-          </span>
-          <div class="desc">
-            <h3>Culture tours</h3>
-          </div>
-        </a>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="item item_tour with_border auto_height tour_type">
-        <a href="https://kyrgyzstan-tourism.com/tours/type/photo-tours/">
-          <span class="img_wrapper">
-            <span class="img lazy" style=""
-              data-bg="url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Slider_Photo.jpg)"></span>
-          </span>
-          <div class="desc">
-            <h3>Photo tours</h3>
-          </div>
-        </a>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="item item_tour with_border auto_height tour_type">
-        <a href="https://kyrgyzstan-tourism.com/tours/type/experience-tours/">
-          <span class="img_wrapper">
-            <span class="img lazy" style=""
-              data-bg="url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/01/EagleHunter-1-of-1-e1553922435125.jpg)"></span>
-          </span>
-          <div class="desc">
-            <h3>Experience tours</h3>
-          </div>
-        </a>
-      </div>
-    </div>
-  </div>
-  <div class="row"> </div>
 </div>
 
 <div class="lazy" id="most_popular_tours" style=""
@@ -1025,7 +950,7 @@ pageNumber = "{{ :page }}"
       </div>
     </div>
   </div>
-</div>";s:5:"mtime";i:1610663045;s:6:"markup";s:41375:"<script>
+</div>";s:5:"mtime";i:1610884871;s:6:"markup";s:37589:"<script>
   $(window).load(function () {
     $("#wpcf7-f198-o2 input[type=submit]").first().attr("onclick",
       "ga('send','event','НижняяФорма','send')");
@@ -1141,27 +1066,28 @@ pageNumber = "{{ :page }}"
             <div class="resCarousel-inner">
 
 
-              {% set records = Tours.records %}
-              {% set displayColumn = Tours.displayColumn %}
-              {% set noRecordsMessage = Tours.noRecordsMessage %}
-              {% set detailsPage = Tours.detailsPage %}
-              {% set detailsKeyColumn = Tours.detailsKeyColumn %}
-              {% set detailsUrlParameter = Tours.detailsUrlParameter %}
+
+              {% set records = PopularTours.records %}
+              {% set displayColumn = PopularTours.displayColumn %}
+              {% set noRecordsMessage = PopularTours.noRecordsMessage %}
+              {% set detailsPage = PopularTours.detailsPage %}
+              {% set detailsKeyColumn = PopularTours.detailsKeyColumn %}
+              {% set detailsUrlParameter = PopularTours.detailsUrlParameter %}
+
               {% for record in records %}
-        
               <div class="item item_tour with_border  ">
                 <a href="{{ detailsPage|page({ (detailsUrlParameter): attribute(record, detailsKeyColumn) }) }}">
-                
+
                   <span class="img_wrapper">
-                    <span class="img lazy" style="" data-bg="url({{ record.poster.path}})"></span>
+                    <span class="img lazy" style="" data-bg="url({{ record.poster.path }})"></span>
 
                     <span class="price-round group_price">
-                      <span class="inner">${{record.prise}} US</span>
+                      <span class="inner">${{record.price}} US</span>
                     </span>
 
                   </span>
                   <div class="desc">
-                    <h3>{{record.title}}"</h3>
+                    <h3>{{record.title}}</h3>
                     <p class="excerpt">{{record.annotation}} </p>
                   </div>
                   <p class="duration"><i class="fa fa-clock-o"></i> {{record.duration}} days</p>
@@ -1202,129 +1128,42 @@ pageNumber = "{{ :page }}"
     </div>
   </div>
   <div class="row">
+    
+    {% set records = TourType.records %}
+    {% set displayColumn = TourType.displayColumn %}
+    {% set noRecordsMessage = TourType.noRecordsMessage %}
+    {% set detailsPage = TourType.detailsPage %}
+    {% set detailsKeyColumn = TourType.detailsKeyColumn %}
+    {% set detailsUrlParameter = TourType.detailsUrlParameter %}
+
+
+    {% for record in records %}
+
+
     <div class="col-sm-4">
       <div class="item item_tour with_border auto_height tour_type">
-        <a href="https://kyrgyzstan-tourism.com/tours/type/horseback-tours-in-kyrgyzstan/">
+        <a href="{{ detailsPage|page({ (detailsUrlParameter): attribute(record, detailsKeyColumn) }) }}">
           <span class="img_wrapper">
             <span class="img lazy" style=""
-              data-bg="url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Slider_HBR-2.jpg)"></span>
+              data-bg="url({{record.poster.path}})"></span>
           </span>
           <div class="desc">
-            <h3>Horseback tours</h3>
+            <h3>{{record.title}}</h3>
           </div>
         </a>
       </div>
     </div>
-    <div class="col-sm-4">
-      <div class="item item_tour with_border auto_height tour_type">
-        <a href="https://kyrgyzstan-tourism.com/tours/type/trekking-kyrgyzstan/">
-          <span class="img_wrapper">
-            <span class="img lazy" style=""
-              data-bg="url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Slider_trek-1.jpg)"></span>
-          </span>
-          <div class="desc">
-            <h3>Trekking</h3>
-          </div>
-        </a>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="item item_tour with_border auto_height tour_type">
-        <a href="https://kyrgyzstan-tourism.com/tours/type/jeep-tours-in-kyrgyzstan/">
-          <span class="img_wrapper">
-            <span class="img lazy" style=""
-              data-bg="url(https://kyrgyzstan-tourism.com/wp-content/uploads/2020/03/Song-Kol_October.jpg)"></span>
-          </span>
-          <div class="desc">
-            <h3>Off road tours</h3>
-          </div>
-        </a>
-      </div>
-    </div>
+
+
+    {% else %}
+    <li class="no-data">{{ noRecordsMessage }}</li>
+    {% endfor %}
+
+
+
+
+
   </div>
-  <div class="row">
-    <div class="col-sm-4">
-      <div class="item item_tour with_border auto_height tour_type">
-        <a href="https://kyrgyzstan-tourism.com/tours/type/multi-active-tours/">
-          <span class="img_wrapper">
-            <span class="img lazy" style=""
-              data-bg="url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Slide_Sunset.jpg)"></span>
-          </span>
-          <div class="desc">
-            <h3>Multi-active tours</h3>
-          </div>
-        </a>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="item item_tour with_border auto_height tour_type">
-        <a href="https://kyrgyzstan-tourism.com/tours/type/winter-tours/">
-          <span class="img_wrapper">
-            <span class="img lazy" style=""
-              data-bg="url(https://kyrgyzstan-tourism.com/wp-content/uploads/2020/02/Winter-Slide.jpg)"></span>
-          </span>
-          <div class="desc">
-            <h3>Winter tours</h3>
-          </div>
-        </a>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="item item_tour with_border auto_height tour_type">
-        <a href="https://kyrgyzstan-tourism.com/tours/type/bike-tours/">
-          <span class="img_wrapper">
-            <span class="img lazy" style=""
-              data-bg="url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/04/HeaderBike-1.jpg)"></span>
-          </span>
-          <div class="desc">
-            <h3>Bike tours</h3>
-          </div>
-        </a>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-4">
-      <div class="item item_tour with_border auto_height tour_type">
-        <a href="https://kyrgyzstan-tourism.com/tours/type/culture-tours/">
-          <span class="img_wrapper">
-            <span class="img lazy" style=""
-              data-bg="url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/TashRabat_Sights.jpg)"></span>
-          </span>
-          <div class="desc">
-            <h3>Culture tours</h3>
-          </div>
-        </a>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="item item_tour with_border auto_height tour_type">
-        <a href="https://kyrgyzstan-tourism.com/tours/type/photo-tours/">
-          <span class="img_wrapper">
-            <span class="img lazy" style=""
-              data-bg="url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Slider_Photo.jpg)"></span>
-          </span>
-          <div class="desc">
-            <h3>Photo tours</h3>
-          </div>
-        </a>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="item item_tour with_border auto_height tour_type">
-        <a href="https://kyrgyzstan-tourism.com/tours/type/experience-tours/">
-          <span class="img_wrapper">
-            <span class="img lazy" style=""
-              data-bg="url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/01/EagleHunter-1-of-1-e1553922435125.jpg)"></span>
-          </span>
-          <div class="desc">
-            <h3>Experience tours</h3>
-          </div>
-        </a>
-      </div>
-    </div>
-  </div>
-  <div class="row"> </div>
 </div>
 
 <div class="lazy" id="most_popular_tours" style=""
@@ -2025,4 +1864,4 @@ pageNumber = "{{ :page }}"
       </div>
     </div>
   </div>
-</div>";s:4:"code";N;s:5:"title";s:13:"Demonstration";s:3:"url";s:1:"/";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:22:"builderList HeroSLider";a:9:{s:10:"modelClass";s:39:"HeroSlider\HeroSlider\Models\HeroSlider";s:5:"scope";s:1:"-";s:10:"scopeValue";s:12:"{{ :scope }}";s:13:"displayColumn";s:4:"slug";s:16:"noRecordsMessage";s:16:"No records found";s:11:"detailsPage";s:1:"-";s:16:"detailsKeyColumn";s:4:"slug";s:19:"detailsUrlParameter";s:4:"slug";s:10:"pageNumber";s:11:"{{ :page }}";}s:17:"builderList Tours";a:9:{s:10:"modelClass";s:34:"Grouptours\Grouptours\Models\Tours";s:5:"scope";s:1:"-";s:10:"scopeValue";s:12:"{{ :scope }}";s:13:"displayColumn";s:4:"slug";s:16:"noRecordsMessage";s:16:"No records found";s:11:"detailsPage";s:5:"tours";s:16:"detailsKeyColumn";s:4:"slug";s:19:"detailsUrlParameter";s:4:"slug";s:10:"pageNumber";s:11:"{{ :page }}";}}}
+</div>";s:4:"code";N;s:5:"title";s:4:"Home";s:3:"url";s:1:"/";s:6:"layout";s:13:"static-layout";s:9:"is_hidden";s:1:"0";s:22:"builderList HeroSLider";a:9:{s:10:"modelClass";s:39:"HeroSlider\HeroSlider\Models\HeroSlider";s:5:"scope";s:1:"-";s:10:"scopeValue";s:12:"{{ :scope }}";s:13:"displayColumn";s:4:"slug";s:16:"noRecordsMessage";s:16:"No records found";s:11:"detailsPage";s:1:"-";s:16:"detailsKeyColumn";s:4:"slug";s:19:"detailsUrlParameter";s:4:"slug";s:10:"pageNumber";s:11:"{{ :page }}";}s:20:"builderList TourType";a:9:{s:10:"modelClass";s:24:"Tours\Tours\Models\Tours";s:5:"scope";s:1:"-";s:10:"scopeValue";s:12:"{{ :scope }}";s:13:"displayColumn";s:4:"slug";s:16:"noRecordsMessage";s:16:"No records found";s:11:"detailsPage";s:5:"tours";s:16:"detailsKeyColumn";s:4:"slug";s:19:"detailsUrlParameter";s:4:"slug";s:10:"pageNumber";s:11:"{{ :page }}";}s:24:"builderList PopularTours";a:9:{s:10:"modelClass";s:24:"Tours\Tours\Models\Tours";s:5:"scope";s:1:"-";s:10:"scopeValue";s:12:"{{ :scope }}";s:13:"displayColumn";s:4:"slug";s:16:"noRecordsMessage";s:16:"No records found";s:11:"detailsPage";s:5:"tours";s:16:"detailsKeyColumn";s:4:"slug";s:19:"detailsUrlParameter";s:4:"slug";s:10:"pageNumber";s:11:"{{ :page }}";}}}

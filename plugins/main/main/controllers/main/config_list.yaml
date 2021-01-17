@@ -1,0 +1,12 @@
+list: $/main/main/models/main/columns.yaml
+modelClass: Main\Main\Models\Main
+title: Main
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'main/main/main/update/:id'

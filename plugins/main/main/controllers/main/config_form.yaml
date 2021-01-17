@@ -1,0 +1,10 @@
+name: Main
+form: $/main/main/models/main/fields.yaml
+modelClass: Main\Main\Models\Main
+defaultRedirect: main/main/main
+create:
+    redirect: 'main/main/main/update/:id'
+    redirectClose: main/main/main
+update:
+    redirect: main/main/main
+    redirectClose: main/main/main

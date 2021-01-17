@@ -1,0 +1,16 @@
+scopes:
+  types:
+    label: Виды туров
+    modelClass: Tours\Tours\Models\type
+    conditions: id in (select tours_id from tours_tours_tours_types where type_id in (:filtered))
+    nameFrom: type_title
+
+  created_at:
+    label: 'Диапазон дат'
+    type: daterange
+    condition: created_at >= 'after' AND created_at <= ':beore'
+  
+  published: 
+    label: Show published
+    type: checkbox
+    condition: published = true

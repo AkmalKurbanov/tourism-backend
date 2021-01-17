@@ -1,0 +1,34 @@
+fields:
+    phone_top:
+        label: Телефон
+        span: auto
+        type: text
+    email:
+        label: Почта
+        span: auto
+        type: text
+    phone_bottom1:
+        label: Телефон2
+        span: auto
+        type: text
+    copyright:
+        label: Копирайт
+        span: auto
+        type: text
+    phone_bottom2:
+        label: Телефон3
+        span: auto
+        type: text
+    additional_info:
+        label: 'Дополнительная информация'
+        span: auto
+        type: text
+    logo:
+        label: Логотип
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
