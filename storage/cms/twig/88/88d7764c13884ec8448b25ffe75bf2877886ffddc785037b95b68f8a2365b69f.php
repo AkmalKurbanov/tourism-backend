@@ -29,14 +29,14 @@ class __TwigTemplate_f7f3d08e74deb0f0953cc2af8de91ba287ddd936a2d76f03b796a623685
         $this->blocks = [
         ];
         $this->sandbox = $this->env->getExtension('\Twig\Extension\SandboxExtension');
-        $tags = array("set" => 18, "for" => 26);
-        $filters = array("escape" => 28, "page" => 127);
+        $tags = array("partial" => 27);
+        $filters = array();
         $functions = array();
 
         try {
             $this->sandbox->checkSecurity(
-                ['set', 'for'],
-                ['escape', 'page'],
+                ['partial'],
+                [],
                 []
             );
         } catch (SecurityError $e) {
@@ -67,6 +67,12 @@ class __TwigTemplate_f7f3d08e74deb0f0953cc2af8de91ba287ddd936a2d76f03b796a623685
       \"ga('send','event','Верхняяформа','send')\");
   });
 </script>
+
+
+
+
+
+
 <div id=\"front_slider\" class=\"carousel slide\" data-ride=\"carousel\">
 
 
@@ -75,119 +81,54 @@ class __TwigTemplate_f7f3d08e74deb0f0953cc2af8de91ba287ddd936a2d76f03b796a623685
     <li data-target=\"#front_slider\" data-slide-to=\"8\" class=\"\"></li>
   </ol>
 
+
+  
   <div class=\"carousel-inner\">
-    ";
-        // line 18
-        $context["records"] = twig_get_attribute($this->env, $this->source, ($context["HeroSLider"] ?? null), "records", [], "any", false, false, true, 18);
-        // line 19
-        echo "    ";
-        $context["displayColumn"] = twig_get_attribute($this->env, $this->source, ($context["HeroSLider"] ?? null), "displayColumn", [], "any", false, false, true, 19);
-        // line 20
-        echo "    ";
-        $context["noRecordsMessage"] = twig_get_attribute($this->env, $this->source, ($context["HeroSLider"] ?? null), "noRecordsMessage", [], "any", false, false, true, 20);
-        // line 21
-        echo "    ";
-        $context["detailsPage"] = twig_get_attribute($this->env, $this->source, ($context["HeroSLider"] ?? null), "detailsPage", [], "any", false, false, true, 21);
-        // line 22
-        echo "    ";
-        $context["detailsKeyColumn"] = twig_get_attribute($this->env, $this->source, ($context["HeroSLider"] ?? null), "detailsKeyColumn", [], "any", false, false, true, 22);
-        // line 23
-        echo "    ";
-        $context["detailsUrlParameter"] = twig_get_attribute($this->env, $this->source, ($context["HeroSLider"] ?? null), "detailsUrlParameter", [], "any", false, false, true, 23);
-        // line 24
-        echo "
 
     ";
-        // line 26
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(($context["records"] ?? null));
-        $context['_iterated'] = false;
-        foreach ($context['_seq'] as $context["_key"] => $context["record"]) {
-            // line 27
-            echo "
-    <div class=\"item lazy\" style=\"\" data-bg=\"url(";
-            // line 28
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["record"], "slider_item_img", [], "any", false, false, true, 28), "path", [], "any", false, false, true, 28), 28, $this->source), "html", null, true);
-            echo ")\">
-      <div class=\"carousel-caption\">
-        <div class=\"container\">
-          <div class=\"row\">
-            <div class=\"col-md-8 col-md-offset-2\">
-              <h2>";
-            // line 33
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "title", [], "any", false, false, true, 33), 33, $this->source), "html", null, true);
-            echo "</h2>
-              <h3>";
-            // line 34
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "sub_title", [], "any", false, false, true, 34), 34, $this->source), "html", null, true);
-            echo "</h3>
-              <div class=\"button_wrapper\">
-                <a href=\"https://kyrgyzstan-tourism.com/kyrgyzstan/\" class=\"cstm_button\"><i class=\"fa fa-eye\"></i>
-                  view tours </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    ";
-            $context['_iterated'] = true;
-        }
-        if (!$context['_iterated']) {
-            // line 46
-            echo "    <li class=\"no-data\">";
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(($context["noRecordsMessage"] ?? null), 46, $this->source), "html", null, true);
-            echo "</li>
-    ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['record'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 48
-        echo "
-
-
-    <script>
-      \$('#front_slider .item.lazy').first().addClass('active');
-    </script>
-
+        // line 27
+        $context['__cms_partial_params'] = [];
+        echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/main_slider"        , $context['__cms_partial_params']        , true        );
+        unset($context['__cms_partial_params']);
+        // line 28
+        echo "    
   </div>
-
+  
   <a class=\"left carousel-control hidden-xs\" href=\"#front_slider\" data-slide=\"prev\">
     <span class=\"glyphicon glyphicon-chevron-left\"></span>
   </a>
   <a class=\"right carousel-control hidden-xs\" href=\"#front_slider\" data-slide=\"next\">
     <span class=\"glyphicon glyphicon-chevron-right\"></span>
   </a>
-
+  
 </div>
 <div id=\"about\">
   <div class=\"container\">
     <div class=\"row\">
-
+      
       <div class=\"col-sm-12\">
-
+        
+        
+        
+        
+        
         <div class=\"hm-about\">
-          <p><img style=\"float: left; margin-right: 35px; margin-top: 30px;\" alt=\"logo\"
-              data-src=\"https://kyrgyzstan-tourism.com/wp-content/themes/native/img/logo.png\"
-              class=\"img-responsive logo lazyload\"
-              src=\"data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==\"
-              data-pagespeed-url-hash=\"31059146\"
-              onload=\"pagespeed.CriticalImages.checkImageForCriticality(this);\" /><noscript><img
-                class=\"img-responsive logo lazy\" style=\"float: left; margin-right: 35px; margin-top: 30px;\"
-                src=\"data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201%201'%3E%3C/svg%3E\"
-                data-src=\"https://kyrgyzstan-tourism.com/wp-content/themes/native/img/logo.png\" alt=\"logo\"
-                data-pagespeed-url-hash=\"2295055879\" /></noscript></p>
-          <div class=\"text\">
-            <h1 style=\"text-align: left;\">Kyrgyzstan &#8211; Land of adventure!</h1>
-            <p>“Get unmatched travel tour information from the people who know the land first-hand. We
-              honor our heritage and traditions by making our tour products inspirational and through
-              our hospitality. We dream of a world that helps people and the environment reach their
-              fullest potential.” &#8220;Kyrgyzstan Tourism&#8221;.</p>
+          
+          
+          ";
+        // line 52
+        $context['__cms_partial_params'] = [];
+        echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/introduction_block"        , $context['__cms_partial_params']        , true        );
+        unset($context['__cms_partial_params']);
+        // line 53
+        echo "
+         
           </div>
           <p>&nbsp;</p>
         </div>
+
+
+
       </div>
 
     </div>
@@ -198,6 +139,12 @@ class __TwigTemplate_f7f3d08e74deb0f0953cc2af8de91ba287ddd936a2d76f03b796a623685
   <div class=\"container\">
     <div class=\"row\">
       <div class=\"col-sm-12\">
+
+
+
+
+
+
 
         <h2 class=\"with_line\"><a href=\"https://kyrgyzstan-tourism.com/group-tours/\">GROUP TOURS 2021</a>
         </h2>
@@ -215,84 +162,21 @@ class __TwigTemplate_f7f3d08e74deb0f0953cc2af8de91ba287ddd936a2d76f03b796a623685
 
 
 
+
+
+
               ";
-        // line 118
-        $context["records"] = twig_get_attribute($this->env, $this->source, ($context["PopularTours"] ?? null), "records", [], "any", false, false, true, 118);
-        // line 119
-        echo "              ";
-        $context["displayColumn"] = twig_get_attribute($this->env, $this->source, ($context["PopularTours"] ?? null), "displayColumn", [], "any", false, false, true, 119);
-        // line 120
-        echo "              ";
-        $context["noRecordsMessage"] = twig_get_attribute($this->env, $this->source, ($context["PopularTours"] ?? null), "noRecordsMessage", [], "any", false, false, true, 120);
-        // line 121
-        echo "              ";
-        $context["detailsPage"] = twig_get_attribute($this->env, $this->source, ($context["PopularTours"] ?? null), "detailsPage", [], "any", false, false, true, 121);
-        // line 122
-        echo "              ";
-        $context["detailsKeyColumn"] = twig_get_attribute($this->env, $this->source, ($context["PopularTours"] ?? null), "detailsKeyColumn", [], "any", false, false, true, 122);
-        // line 123
-        echo "              ";
-        $context["detailsUrlParameter"] = twig_get_attribute($this->env, $this->source, ($context["PopularTours"] ?? null), "detailsUrlParameter", [], "any", false, false, true, 123);
-        // line 124
+        // line 97
+        $context['__cms_partial_params'] = [];
+        echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/group_tours"        , $context['__cms_partial_params']        , true        );
+        unset($context['__cms_partial_params']);
+        // line 98
         echo "
-              ";
-        // line 125
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(($context["records"] ?? null));
-        $context['_iterated'] = false;
-        foreach ($context['_seq'] as $context["_key"] => $context["record"]) {
-            // line 126
-            echo "              <div class=\"item item_tour with_border  \">
-                <a href=\"";
-            // line 127
-            echo $this->extensions['Cms\Twig\Extension']->pageFilter($this->sandbox->ensureToStringAllowed(($context["detailsPage"] ?? null), 127, $this->source), [($context["detailsUrlParameter"] ?? null) => twig_get_attribute($this->env, $this->source, $context["record"], ($context["detailsKeyColumn"] ?? null), [], "any", false, false, true, 127)]);
-            echo "\">
 
-                  <span class=\"img_wrapper\">
-                    <span class=\"img lazy\" style=\"\" data-bg=\"url(";
-            // line 130
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["record"], "poster", [], "any", false, false, true, 130), "path", [], "any", false, false, true, 130), 130, $this->source), "html", null, true);
-            echo ")\"></span>
 
-                    <span class=\"price-round group_price\">
-                      <span class=\"inner\">\$";
-            // line 133
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "price", [], "any", false, false, true, 133), 133, $this->source), "html", null, true);
-            echo " US</span>
-                    </span>
 
-                  </span>
-                  <div class=\"desc\">
-                    <h3>";
-            // line 138
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "title", [], "any", false, false, true, 138), 138, $this->source), "html", null, true);
-            echo "</h3>
-                    <p class=\"excerpt\">";
-            // line 139
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "annotation", [], "any", false, false, true, 139), 139, $this->source), "html", null, true);
-            echo " </p>
-                  </div>
-                  <p class=\"duration\"><i class=\"fa fa-clock-o\"></i> ";
-            // line 141
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "duration", [], "any", false, false, true, 141), 141, $this->source), "html", null, true);
-            echo " days</p>
-                </a>
-              </div>
-              ";
-            $context['_iterated'] = true;
-        }
-        if (!$context['_iterated']) {
-            // line 145
-            echo "              <li class=\"no-data\">";
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(($context["noRecordsMessage"] ?? null), 145, $this->source), "html", null, true);
-            echo "</li>
-              ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['record'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 147
-        echo "
+
+
 
 
 
@@ -324,76 +208,19 @@ class __TwigTemplate_f7f3d08e74deb0f0953cc2af8de91ba287ddd936a2d76f03b796a623685
     </div>
   </div>
   <div class=\"row\">
-    
+
+
+
     ";
-        // line 180
-        $context["records"] = twig_get_attribute($this->env, $this->source, ($context["TourType"] ?? null), "records", [], "any", false, false, true, 180);
-        // line 181
-        echo "    ";
-        $context["displayColumn"] = twig_get_attribute($this->env, $this->source, ($context["TourType"] ?? null), "displayColumn", [], "any", false, false, true, 181);
-        // line 182
-        echo "    ";
-        $context["noRecordsMessage"] = twig_get_attribute($this->env, $this->source, ($context["TourType"] ?? null), "noRecordsMessage", [], "any", false, false, true, 182);
-        // line 183
-        echo "    ";
-        $context["detailsPage"] = twig_get_attribute($this->env, $this->source, ($context["TourType"] ?? null), "detailsPage", [], "any", false, false, true, 183);
-        // line 184
-        echo "    ";
-        $context["detailsKeyColumn"] = twig_get_attribute($this->env, $this->source, ($context["TourType"] ?? null), "detailsKeyColumn", [], "any", false, false, true, 184);
-        // line 185
-        echo "    ";
-        $context["detailsUrlParameter"] = twig_get_attribute($this->env, $this->source, ($context["TourType"] ?? null), "detailsUrlParameter", [], "any", false, false, true, 185);
-        // line 186
+        // line 138
+        $context['__cms_partial_params'] = [];
+        echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/tours/type_tours"        , $context['__cms_partial_params']        , true        );
+        unset($context['__cms_partial_params']);
+        // line 139
         echo "
 
-    ";
-        // line 188
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(($context["records"] ?? null));
-        $context['_iterated'] = false;
-        foreach ($context['_seq'] as $context["_key"] => $context["record"]) {
-            // line 189
-            echo "
-
-    <div class=\"col-sm-4\">
-      <div class=\"item item_tour with_border auto_height tour_type\">
-        <a href=\"";
-            // line 193
-            echo $this->extensions['Cms\Twig\Extension']->pageFilter($this->sandbox->ensureToStringAllowed(($context["detailsPage"] ?? null), 193, $this->source), [($context["detailsUrlParameter"] ?? null) => twig_get_attribute($this->env, $this->source, $context["record"], ($context["detailsKeyColumn"] ?? null), [], "any", false, false, true, 193)]);
-            echo "\">
-          <span class=\"img_wrapper\">
-            <span class=\"img lazy\" style=\"\"
-              data-bg=\"url(";
-            // line 196
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["record"], "poster", [], "any", false, false, true, 196), "path", [], "any", false, false, true, 196), 196, $this->source), "html", null, true);
-            echo ")\"></span>
-          </span>
-          <div class=\"desc\">
-            <h3>";
-            // line 199
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "title", [], "any", false, false, true, 199), 199, $this->source), "html", null, true);
-            echo "</h3>
-          </div>
-        </a>
-      </div>
-    </div>
 
 
-    ";
-            $context['_iterated'] = true;
-        }
-        if (!$context['_iterated']) {
-            // line 207
-            echo "    <li class=\"no-data\">";
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(($context["noRecordsMessage"] ?? null), 207, $this->source), "html", null, true);
-            echo "</li>
-    ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['record'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 209
-        echo "
 
 
 
@@ -422,326 +249,21 @@ class __TwigTemplate_f7f3d08e74deb0f0953cc2af8de91ba287ddd936a2d76f03b796a623685
 
 
 
-              <div class=\"item item_tour   \">
-                <a href=\"https://kyrgyzstan-tourism.com/tours/2-days-horse-trek/\">
-                  <span class=\"img_wrapper\">
-                    <span class=\"img lazy\" style=\"\"
-                      data-bg=\"url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/n1-660x360.jpg)\"></span>
-
-                    <span class=\"price-round\">
-                      <span class=\"inner\">from <br />\$100</span>
-                    </span>
+              ";
+        // line 171
+        $context['__cms_partial_params'] = [];
+        echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/tours/popular_tours"        , $context['__cms_partial_params']        , true        );
+        unset($context['__cms_partial_params']);
+        // line 172
+        echo "
 
 
-                  </span>
-                  <div class=\"desc\">
-                    <h3>Lake Kol-Ukok -nomad’s life</h3>
-                    <p class=\"excerpt\">Horseback tour</p>
-                  </div>
-                  <p class=\"duration\"><i class=\"fa fa-clock-o\"></i> 2 days</p>
-                </a>
-              </div>
 
-              <div class=\"item item_tour   \">
-                <a href=\"https://kyrgyzstan-tourism.com/tours/silk-road-tour-kyrgyzstan-uzbekistan/\">
-                  <span class=\"img_wrapper\">
-                    <span class=\"img lazy\" style=\"\"
-                      data-bg=\"url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Bukhara-1-of-1-660x360.jpg)\"></span>
 
-                  </span>
-                  <div class=\"desc\">
-                    <h3>Silk-Road Tour: Kyrgyzstan &#038; Uzbekistan</h3>
-                    <p class=\"excerpt\">Kyrgyzstan & Uzbekistan</p>
-                  </div>
-                  <p class=\"duration\"><i class=\"fa fa-clock-o\"></i> 15 days</p>
-                </a>
-              </div>
 
-              <div class=\"item item_tour   \">
-                <a href=\"https://kyrgyzstan-tourism.com/tours/horse-riding-kyrgyzstan/\">
-                  <span class=\"img_wrapper\">
-                    <span class=\"img lazy\" style=\"\"
-                      data-bg=\"url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Kirgizië-1447-660x360.jpg)\"></span>
 
-                  </span>
-                  <div class=\"desc\">
-                    <h3>Nomadic Horse Trek for beginners.</h3>
-                    <p class=\"excerpt\">Horseback tour</p>
-                  </div>
-                  <p class=\"duration\"><i class=\"fa fa-clock-o\"></i> 9 days</p>
-                </a>
-              </div>
 
-              <div class=\"item item_tour   \">
-                <a href=\"https://kyrgyzstan-tourism.com/tours/lake-hopping-issyk-kul-and-song-kul/\">
-                  <span class=\"img_wrapper\">
-                    <span class=\"img lazy\" style=\"\"
-                      data-bg=\"url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/SunsetSKyurt-1-of-1-660x360.jpg)\"></span>
 
-                  </span>
-                  <div class=\"desc\">
-                    <h3>Lake hopping: Issyk-Kul and Song-Kul</h3>
-                    <p class=\"excerpt\">Milti-active tour</p>
-                  </div>
-                  <p class=\"duration\"><i class=\"fa fa-clock-o\"></i> 7 days</p>
-                </a>
-              </div>
-
-              <div class=\"item item_tour   \">
-                <a
-                  href=\"https://kyrgyzstan-tourism.com/tours/travelling-from-kichik-alay-to-pamir-alay-through-jiptik-pass/\">
-                  <span class=\"img_wrapper\">
-                    <span class=\"img lazy\" style=\"\"
-                      data-bg=\"url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/HikerLeninPeak-1-of-1-660x360.jpg)\"></span>
-
-                  </span>
-                  <div class=\"desc\">
-                    <h3>Travelling from Kichik-Alay to Pamir-Alay.</h3>
-                    <p class=\"excerpt\">Alay mountains, Lenin peak panorama</p>
-                  </div>
-                  <p class=\"duration\"><i class=\"fa fa-clock-o\"></i> 7 days</p>
-                </a>
-              </div>
-
-              <div class=\"item item_tour   \">
-                <a href=\"https://kyrgyzstan-tourism.com/tours/lakes-issyk-kul-song-kul/\">
-                  <span class=\"img_wrapper\">
-                    <span class=\"img lazy\" style=\"\"
-                      data-bg=\"url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/SongkolExplore-660x360.jpg)\"></span>
-
-                  </span>
-                  <div class=\"desc\">
-                    <h3>Discover the Lakes Issyk-Kol, Song-Kol and Kel-Suu.</h3>
-                    <p class=\"excerpt\">Milti-active tour</p>
-                  </div>
-                  <p class=\"duration\"><i class=\"fa fa-clock-o\"></i> 11 days</p>
-                </a>
-              </div>
-
-              <div class=\"item item_tour   \">
-                <a href=\"https://kyrgyzstan-tourism.com/tours/pamir-high-way/\">
-                  <span class=\"img_wrapper\">
-                    <span class=\"img lazy\" style=\"\"
-                      data-bg=\"url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Pamir-mount-1-of-1-660x360.jpg)\"></span>
-
-                  </span>
-                  <div class=\"desc\">
-                    <h3>Pamir Highway</h3>
-                    <p class=\"excerpt\">Pamir</p>
-                  </div>
-                  <p class=\"duration\"><i class=\"fa fa-clock-o\"></i> 10 days</p>
-                </a>
-              </div>
-
-              <div class=\"item item_tour   \">
-                <a href=\"https://kyrgyzstan-tourism.com/tours/off-road-adventure/\">
-                  <span class=\"img_wrapper\">
-                    <span class=\"img lazy\" style=\"\"
-                      data-bg=\"url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/OffRoad_tour-600x360.jpg)\"></span>
-
-                  </span>
-                  <div class=\"desc\">
-                    <h3>Off road adventure in Kyrgyzstan</h3>
-                    <p class=\"excerpt\">Off road adventure</p>
-                  </div>
-                  <p class=\"duration\"><i class=\"fa fa-clock-o\"></i> 9 days</p>
-                </a>
-              </div>
-
-              <div class=\"item item_tour   \">
-                <a href=\"https://kyrgyzstan-tourism.com/tours/family-traveling-in-kyrgyzstan/\">
-                  <span class=\"img_wrapper\">
-                    <span class=\"img lazy\" style=\"\"
-                      data-bg=\"url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Off-road-coffee-660x360.jpg)\"></span>
-
-                  </span>
-                  <div class=\"desc\">
-                    <h3>Family traveling in Kyrgyzstan.</h3>
-                    <p class=\"excerpt\">Family tours</p>
-                  </div>
-                  <p class=\"duration\"><i class=\"fa fa-clock-o\"></i> 9 days</p>
-                </a>
-              </div>
-
-              <div class=\"item item_tour   \">
-                <a href=\"https://kyrgyzstan-tourism.com/tours/kyrgyz-cuisine-tour/\">
-                  <span class=\"img_wrapper\">
-                    <span class=\"img lazy\" style=\"\"
-                      data-bg=\"url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Food_in-yurta-600x360.jpg)\"></span>
-
-                  </span>
-                  <div class=\"desc\">
-                    <h3>Kyrgyz Cuisine Tour</h3>
-                    <p class=\"excerpt\">Family tours</p>
-                  </div>
-                  <p class=\"duration\"><i class=\"fa fa-clock-o\"></i> 7 days </p>
-                </a>
-              </div>
-
-              <div class=\"item item_tour   \">
-                <a href=\"https://kyrgyzstan-tourism.com/tours/mountain-bike-tour-pro/\">
-                  <span class=\"img_wrapper\">
-                    <span class=\"img lazy\" style=\"\"
-                      data-bg=\"url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/04/Bike-tour-660x360.jpg)\"></span>
-
-                  </span>
-                  <div class=\"desc\">
-                    <h3>Mountain Bike Tour Pro</h3>
-                    <p class=\"excerpt\">Bike</p>
-                  </div>
-                  <p class=\"duration\"><i class=\"fa fa-clock-o\"></i> 13 days</p>
-                </a>
-              </div>
-
-              <div class=\"item item_tour   \">
-                <a href=\"https://kyrgyzstan-tourism.com/tours/jailoo-hopping-to-the-lake-song-kul-for-9-days/\">
-                  <span class=\"img_wrapper\">
-                    <span class=\"img lazy\" style=\"\"
-                      data-bg=\"url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/SongKolyurt_dark-1-of-1-660x360.jpg)\"></span>
-
-                  </span>
-                  <div class=\"desc\">
-                    <h3>Jailoo Hopping to the Lake Song-Kul for 9 days</h3>
-                    <p class=\"excerpt\">Trekking</p>
-                  </div>
-                  <p class=\"duration\"><i class=\"fa fa-clock-o\"></i> 9 days</p>
-                </a>
-              </div>
-
-              <div class=\"item item_tour   \">
-                <a href=\"https://kyrgyzstan-tourism.com/tours/pamir-travel/\">
-                  <span class=\"img_wrapper\">
-                    <span class=\"img lazy\" style=\"\"
-                      data-bg=\"url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/06/Pamir-Yak-Saffari-660x360.jpg)\"></span>
-
-                  </span>
-                  <div class=\"desc\">
-                    <h3>Pamir trek. Yak Safari</h3>
-                    <p class=\"excerpt\">Milti-active tour</p>
-                  </div>
-                  <p class=\"duration\"><i class=\"fa fa-clock-o\"></i> 15 days</p>
-                </a>
-              </div>
-
-              <div class=\"item item_tour   \">
-                <a href=\"https://kyrgyzstan-tourism.com/tours/silk-road-kazakhstan-kyrgyzstan-lakes/\">
-                  <span class=\"img_wrapper\">
-                    <span class=\"img lazy\" style=\"\"
-                      data-bg=\"url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/YssikKol-1-of-1-660x360.jpg)\"></span>
-
-                  </span>
-                  <div class=\"desc\">
-                    <h3>Silk Road Tour: Kazakhstan and Kyrgyzstan</h3>
-                    <p class=\"excerpt\">Kyrgyzstan and Kazakhstan</p>
-                  </div>
-                  <p class=\"duration\"><i class=\"fa fa-clock-o\"></i> 9 days</p>
-                </a>
-              </div>
-
-              <div class=\"item item_tour   \">
-                <a href=\"https://kyrgyzstan-tourism.com/tours/shar-waterfall-at-bashy/\">
-                  <span class=\"img_wrapper\">
-                    <span class=\"img lazy\" style=\"\"
-                      data-bg=\"url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/08/Shar-waterfull-1-of-1-3-660x360.jpg)\"></span>
-
-                  </span>
-                  <div class=\"desc\">
-                    <h3>The tallest waterfall in Central Asia &#8220;Shar&#8221;.</h3>
-                    <p class=\"excerpt\">Milti-active tour</p>
-                  </div>
-                  <p class=\"duration\"><i class=\"fa fa-clock-o\"></i> 4 days</p>
-                </a>
-              </div>
-
-              <div class=\"item item_tour   \">
-                <a href=\"https://kyrgyzstan-tourism.com/tours/backcountry-ski-tour-in-northern-kyrgyzstan/\">
-                  <span class=\"img_wrapper\">
-                    <span class=\"img lazy\" style=\"\"
-                      data-bg=\"url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/10/turnaluu-1-of-1-copy-660x360.jpg)\"></span>
-
-                  </span>
-                  <div class=\"desc\">
-                    <h3>Backcountry ski tour in northern Kyrgyzstan</h3>
-                    <p class=\"excerpt\">Backcountry ski tour</p>
-                  </div>
-                  <p class=\"duration\"><i class=\"fa fa-clock-o\"></i> 10 days</p>
-                </a>
-              </div>
-
-              <div class=\"item item_tour   \">
-                <a href=\"https://kyrgyzstan-tourism.com/tours/discovery-bishkek-osh/\">
-                  <span class=\"img_wrapper\">
-                    <span class=\"img lazy\" style=\"\"
-                      data-bg=\"url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Slider_Burana-660x360.jpg)\"></span>
-
-                  </span>
-                  <div class=\"desc\">
-                    <h3>Discovery Kyrgyzstan. Bishkek &#038; Osh.</h3>
-                    <p class=\"excerpt\"></p>
-                  </div>
-                  <p class=\"duration\"><i class=\"fa fa-clock-o\"></i> 12 days</p>
-                </a>
-              </div>
-
-              <div class=\"item item_tour   \">
-                <a href=\"https://kyrgyzstan-tourism.com/tours/trekking-to-the-lake-kel-suu/\">
-                  <span class=\"img_wrapper\">
-                    <span class=\"img lazy\" style=\"\"
-                      data-bg=\"url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/10/Kel-Suu-660x360.jpg)\"></span>
-
-                  </span>
-                  <div class=\"desc\">
-                    <h3>Trekking to the Lake Kel-Suu</h3>
-                    <p class=\"excerpt\">Trekking</p>
-                  </div>
-                  <p class=\"duration\"><i class=\"fa fa-clock-o\"></i> 5</p>
-                </a>
-              </div>
-
-              <div class=\"item item_tour   \">
-                <a href=\"https://kyrgyzstan-tourism.com/tours/winter-adventures-in-kyrgyzstan/\">
-                  <span class=\"img_wrapper\">
-                    <span class=\"img lazy\" style=\"\"
-                      data-bg=\"url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/10/winter-kyrgyzstan-660x360.jpg)\"></span>
-
-                  </span>
-                  <div class=\"desc\">
-                    <h3>Winter adventures in Kyrgyzstan</h3>
-                    <p class=\"excerpt\">Family tours</p>
-                  </div>
-                  <p class=\"duration\"><i class=\"fa fa-clock-o\"></i> 12 days</p>
-                </a>
-              </div>
-
-              <div class=\"item item_tour   \">
-                <a href=\"https://kyrgyzstan-tourism.com/tours/handicraft-tour/\">
-                  <span class=\"img_wrapper\">
-                    <span class=\"img lazy\" style=\"\"
-                      data-bg=\"url(https://kyrgyzstan-tourism.com/wp-content/uploads/2020/01/Handicraft-tour-660x360.jpg)\"></span>
-
-                  </span>
-                  <div class=\"desc\">
-                    <h3>Handicraft tour</h3>
-                    <p class=\"excerpt\">Milti-active tour</p>
-                  </div>
-                  <p class=\"duration\"><i class=\"fa fa-clock-o\"></i> 9 days</p>
-                </a>
-              </div>
-
-              <div class=\"item item_tour   \">
-                <a href=\"https://kyrgyzstan-tourism.com/tours/childrens-quiz-tour/\">
-                  <span class=\"img_wrapper\">
-                    <span class=\"img lazy\" style=\"\"
-                      data-bg=\"url(https://kyrgyzstan-tourism.com/wp-content/uploads/2020/01/Children-tour-660x348.jpg)\"></span>
-
-                  </span>
-                  <div class=\"desc\">
-                    <h3>Children&#8217;s Quiz Tour</h3>
-                    <p class=\"excerpt\"></p>
-                  </div>
-                  <p class=\"duration\"><i class=\"fa fa-clock-o\"></i> 7 days</p>
-                </a>
-              </div>
 
 
 
@@ -782,105 +304,18 @@ class __TwigTemplate_f7f3d08e74deb0f0953cc2af8de91ba287ddd936a2d76f03b796a623685
             <div class=\"resCarousel-inner\">
 
 
-              <div class=\"item item_tour with_border  \">
-                <a href=\"https://kyrgyzstan-tourism.com/tours/jailoo-hiking-lake-song-kul/\">
-                  <span class=\"img_wrapper\">
-                    <span class=\"img lazy\" style=\"\"
-                      data-bg=\"url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/YurtCamp-1-of-1-660x360.jpg)\"></span>
-
-                    <span class=\"price-round\">
-                      <span class=\"inner\">from <br />\$100</span>
-                    </span>
+              ";
+        // line 221
+        $context['__cms_partial_params'] = [];
+        echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/tours/discount_tours"        , $context['__cms_partial_params']        , true        );
+        unset($context['__cms_partial_params']);
+        // line 222
+        echo "
 
 
-                  </span>
-                  <div class=\"desc\">
-                    <h3>Jailoo hiking “Lake Song-Kul”</h3>
-                    <p class=\"excerpt\">Horseback tour</p>
-                  </div>
-                  <p class=\"duration\"><i class=\"fa fa-clock-o\"></i> 3 days</p>
-                </a>
-              </div>
-
-              <div class=\"item item_tour with_border  \">
-                <a href=\"https://kyrgyzstan-tourism.com/tours/day-horseback-tour-around-bishkek/\">
-                  <span class=\"img_wrapper\">
-                    <span class=\"img lazy\" style=\"\"
-                      data-bg=\"url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/header-horse-tours-660x360.jpg)\"></span>
-
-                    <span class=\"price-round\">
-                      <span class=\"inner\">from <br />\$60</span>
-                    </span>
 
 
-                  </span>
-                  <div class=\"desc\">
-                    <h3>One day horseback riding tour around Bishkek.</h3>
-                    <p class=\"excerpt\">Day horseback tour</p>
-                  </div>
-                  <p class=\"duration\"><i class=\"fa fa-clock-o\"></i> 1 day</p>
-                </a>
-              </div>
 
-              <div class=\"item item_tour with_border  \">
-                <a href=\"https://kyrgyzstan-tourism.com/tours/express-trip-to-the-lake-song-kol/\">
-                  <span class=\"img_wrapper\">
-                    <span class=\"img lazy\" style=\"\"
-                      data-bg=\"url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Express-Trip-Songkol-660x360.jpg)\"></span>
-
-                    <span class=\"price-round\">
-                      <span class=\"inner\">from <br />\$200</span>
-                    </span>
-
-
-                  </span>
-                  <div class=\"desc\">
-                    <h3>Express trip to the Lake Song-Kul.</h3>
-                    <p class=\"excerpt\"></p>
-                  </div>
-                  <p class=\"duration\"><i class=\"fa fa-clock-o\"></i> 2 days</p>
-                </a>
-              </div>
-
-              <div class=\"item item_tour with_border  \">
-                <a href=\"https://kyrgyzstan-tourism.com/tours/trekking-from-chui-valley-to-issyk-kul/\">
-                  <span class=\"img_wrapper\">
-                    <span class=\"img lazy\" style=\"\"
-                      data-bg=\"url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/KolKongur-660x360.jpg)\"></span>
-
-                    <span class=\"price-round\">
-                      <span class=\"inner\">from <br />\$230</span>
-                    </span>
-
-
-                  </span>
-                  <div class=\"desc\">
-                    <h3>Trekking from Chui Valley to Issyk-Kul</h3>
-                    <p class=\"excerpt\">Horseback or trekking tour</p>
-                  </div>
-                  <p class=\"duration\"><i class=\"fa fa-clock-o\"></i> 3 days</p>
-                </a>
-              </div>
-
-              <div class=\"item item_tour with_border  \">
-                <a href=\"https://kyrgyzstan-tourism.com/tours/2-days-horse-trek/\">
-                  <span class=\"img_wrapper\">
-                    <span class=\"img lazy\" style=\"\"
-                      data-bg=\"url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/n1-660x360.jpg)\"></span>
-
-                    <span class=\"price-round\">
-                      <span class=\"inner\">from <br />\$100</span>
-                    </span>
-
-
-                  </span>
-                  <div class=\"desc\">
-                    <h3>Lake Kol-Ukok -nomad’s life</h3>
-                    <p class=\"excerpt\">Horseback tour</p>
-                  </div>
-                  <p class=\"duration\"><i class=\"fa fa-clock-o\"></i> 2 days</p>
-                </a>
-              </div>
 
 
             </div>
@@ -1114,7 +549,7 @@ class __TwigTemplate_f7f3d08e74deb0f0953cc2af8de91ba287ddd936a2d76f03b796a623685
 
     public function getDebugInfo()
     {
-        return array (  396 => 209,  387 => 207,  374 => 199,  368 => 196,  362 => 193,  356 => 189,  351 => 188,  347 => 186,  344 => 185,  341 => 184,  338 => 183,  335 => 182,  332 => 181,  330 => 180,  295 => 147,  286 => 145,  277 => 141,  272 => 139,  268 => 138,  260 => 133,  254 => 130,  248 => 127,  245 => 126,  240 => 125,  237 => 124,  234 => 123,  231 => 122,  228 => 121,  225 => 120,  222 => 119,  220 => 118,  148 => 48,  139 => 46,  122 => 34,  118 => 33,  110 => 28,  107 => 27,  102 => 26,  98 => 24,  95 => 23,  92 => 22,  89 => 21,  86 => 20,  83 => 19,  81 => 18,  62 => 1,);
+        return array (  313 => 222,  309 => 221,  258 => 172,  254 => 171,  220 => 139,  216 => 138,  174 => 98,  170 => 97,  124 => 53,  120 => 52,  94 => 28,  90 => 27,  62 => 1,);
     }
 
     public function getSourceContext()
@@ -1127,6 +562,12 @@ class __TwigTemplate_f7f3d08e74deb0f0953cc2af8de91ba287ddd936a2d76f03b796a623685
       \"ga('send','event','Верхняяформа','send')\");
   });
 </script>
+
+
+
+
+
+
 <div id=\"front_slider\" class=\"carousel slide\" data-ride=\"carousel\">
 
 
@@ -1135,80 +576,44 @@ class __TwigTemplate_f7f3d08e74deb0f0953cc2af8de91ba287ddd936a2d76f03b796a623685
     <li data-target=\"#front_slider\" data-slide-to=\"8\" class=\"\"></li>
   </ol>
 
+
+  
   <div class=\"carousel-inner\">
-    {% set records = HeroSLider.records %}
-    {% set displayColumn = HeroSLider.displayColumn %}
-    {% set noRecordsMessage = HeroSLider.noRecordsMessage %}
-    {% set detailsPage = HeroSLider.detailsPage %}
-    {% set detailsKeyColumn = HeroSLider.detailsKeyColumn %}
-    {% set detailsUrlParameter = HeroSLider.detailsUrlParameter %}
 
-
-    {% for record in records %}
-
-    <div class=\"item lazy\" style=\"\" data-bg=\"url({{ record.slider_item_img.path }})\">
-      <div class=\"carousel-caption\">
-        <div class=\"container\">
-          <div class=\"row\">
-            <div class=\"col-md-8 col-md-offset-2\">
-              <h2>{{record.title}}</h2>
-              <h3>{{record.sub_title}}</h3>
-              <div class=\"button_wrapper\">
-                <a href=\"https://kyrgyzstan-tourism.com/kyrgyzstan/\" class=\"cstm_button\"><i class=\"fa fa-eye\"></i>
-                  view tours </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    {% else %}
-    <li class=\"no-data\">{{ noRecordsMessage }}</li>
-    {% endfor %}
-
-
-
-    <script>
-      \$('#front_slider .item.lazy').first().addClass('active');
-    </script>
-
+    {% partial 'site/main_slider' %}
+    
   </div>
-
+  
   <a class=\"left carousel-control hidden-xs\" href=\"#front_slider\" data-slide=\"prev\">
     <span class=\"glyphicon glyphicon-chevron-left\"></span>
   </a>
   <a class=\"right carousel-control hidden-xs\" href=\"#front_slider\" data-slide=\"next\">
     <span class=\"glyphicon glyphicon-chevron-right\"></span>
   </a>
-
+  
 </div>
 <div id=\"about\">
   <div class=\"container\">
     <div class=\"row\">
-
+      
       <div class=\"col-sm-12\">
-
+        
+        
+        
+        
+        
         <div class=\"hm-about\">
-          <p><img style=\"float: left; margin-right: 35px; margin-top: 30px;\" alt=\"logo\"
-              data-src=\"https://kyrgyzstan-tourism.com/wp-content/themes/native/img/logo.png\"
-              class=\"img-responsive logo lazyload\"
-              src=\"data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==\"
-              data-pagespeed-url-hash=\"31059146\"
-              onload=\"pagespeed.CriticalImages.checkImageForCriticality(this);\" /><noscript><img
-                class=\"img-responsive logo lazy\" style=\"float: left; margin-right: 35px; margin-top: 30px;\"
-                src=\"data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201%201'%3E%3C/svg%3E\"
-                data-src=\"https://kyrgyzstan-tourism.com/wp-content/themes/native/img/logo.png\" alt=\"logo\"
-                data-pagespeed-url-hash=\"2295055879\" /></noscript></p>
-          <div class=\"text\">
-            <h1 style=\"text-align: left;\">Kyrgyzstan &#8211; Land of adventure!</h1>
-            <p>“Get unmatched travel tour information from the people who know the land first-hand. We
-              honor our heritage and traditions by making our tour products inspirational and through
-              our hospitality. We dream of a world that helps people and the environment reach their
-              fullest potential.” &#8220;Kyrgyzstan Tourism&#8221;.</p>
+          
+          
+          {% partial 'site/introduction_block' %}
+
+         
           </div>
           <p>&nbsp;</p>
         </div>
+
+
+
       </div>
 
     </div>
@@ -1219,6 +624,12 @@ class __TwigTemplate_f7f3d08e74deb0f0953cc2af8de91ba287ddd936a2d76f03b796a623685
   <div class=\"container\">
     <div class=\"row\">
       <div class=\"col-sm-12\">
+
+
+
+
+
+
 
         <h2 class=\"with_line\"><a href=\"https://kyrgyzstan-tourism.com/group-tours/\">GROUP TOURS 2021</a>
         </h2>
@@ -1236,35 +647,15 @@ class __TwigTemplate_f7f3d08e74deb0f0953cc2af8de91ba287ddd936a2d76f03b796a623685
 
 
 
-              {% set records = PopularTours.records %}
-              {% set displayColumn = PopularTours.displayColumn %}
-              {% set noRecordsMessage = PopularTours.noRecordsMessage %}
-              {% set detailsPage = PopularTours.detailsPage %}
-              {% set detailsKeyColumn = PopularTours.detailsKeyColumn %}
-              {% set detailsUrlParameter = PopularTours.detailsUrlParameter %}
 
-              {% for record in records %}
-              <div class=\"item item_tour with_border  \">
-                <a href=\"{{ detailsPage|page({ (detailsUrlParameter): attribute(record, detailsKeyColumn) }) }}\">
 
-                  <span class=\"img_wrapper\">
-                    <span class=\"img lazy\" style=\"\" data-bg=\"url({{ record.poster.path }})\"></span>
 
-                    <span class=\"price-round group_price\">
-                      <span class=\"inner\">\${{record.price}} US</span>
-                    </span>
+              {% partial 'site/group_tours' %}
 
-                  </span>
-                  <div class=\"desc\">
-                    <h3>{{record.title}}</h3>
-                    <p class=\"excerpt\">{{record.annotation}} </p>
-                  </div>
-                  <p class=\"duration\"><i class=\"fa fa-clock-o\"></i> {{record.duration}} days</p>
-                </a>
-              </div>
-              {% else %}
-              <li class=\"no-data\">{{ noRecordsMessage }}</li>
-              {% endfor %}
+
+
+
+
 
 
 
@@ -1297,36 +688,13 @@ class __TwigTemplate_f7f3d08e74deb0f0953cc2af8de91ba287ddd936a2d76f03b796a623685
     </div>
   </div>
   <div class=\"row\">
-    
-    {% set records = TourType.records %}
-    {% set displayColumn = TourType.displayColumn %}
-    {% set noRecordsMessage = TourType.noRecordsMessage %}
-    {% set detailsPage = TourType.detailsPage %}
-    {% set detailsKeyColumn = TourType.detailsKeyColumn %}
-    {% set detailsUrlParameter = TourType.detailsUrlParameter %}
 
 
-    {% for record in records %}
+
+    {% partial 'site/tours/type_tours' %}
 
 
-    <div class=\"col-sm-4\">
-      <div class=\"item item_tour with_border auto_height tour_type\">
-        <a href=\"{{ detailsPage|page({ (detailsUrlParameter): attribute(record, detailsKeyColumn) }) }}\">
-          <span class=\"img_wrapper\">
-            <span class=\"img lazy\" style=\"\"
-              data-bg=\"url({{record.poster.path}})\"></span>
-          </span>
-          <div class=\"desc\">
-            <h3>{{record.title}}</h3>
-          </div>
-        </a>
-      </div>
-    </div>
 
-
-    {% else %}
-    <li class=\"no-data\">{{ noRecordsMessage }}</li>
-    {% endfor %}
 
 
 
@@ -1356,326 +724,16 @@ class __TwigTemplate_f7f3d08e74deb0f0953cc2af8de91ba287ddd936a2d76f03b796a623685
 
 
 
-              <div class=\"item item_tour   \">
-                <a href=\"https://kyrgyzstan-tourism.com/tours/2-days-horse-trek/\">
-                  <span class=\"img_wrapper\">
-                    <span class=\"img lazy\" style=\"\"
-                      data-bg=\"url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/n1-660x360.jpg)\"></span>
-
-                    <span class=\"price-round\">
-                      <span class=\"inner\">from <br />\$100</span>
-                    </span>
+              {% partial 'site/tours/popular_tours' %}
 
 
-                  </span>
-                  <div class=\"desc\">
-                    <h3>Lake Kol-Ukok -nomad’s life</h3>
-                    <p class=\"excerpt\">Horseback tour</p>
-                  </div>
-                  <p class=\"duration\"><i class=\"fa fa-clock-o\"></i> 2 days</p>
-                </a>
-              </div>
 
-              <div class=\"item item_tour   \">
-                <a href=\"https://kyrgyzstan-tourism.com/tours/silk-road-tour-kyrgyzstan-uzbekistan/\">
-                  <span class=\"img_wrapper\">
-                    <span class=\"img lazy\" style=\"\"
-                      data-bg=\"url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Bukhara-1-of-1-660x360.jpg)\"></span>
 
-                  </span>
-                  <div class=\"desc\">
-                    <h3>Silk-Road Tour: Kyrgyzstan &#038; Uzbekistan</h3>
-                    <p class=\"excerpt\">Kyrgyzstan & Uzbekistan</p>
-                  </div>
-                  <p class=\"duration\"><i class=\"fa fa-clock-o\"></i> 15 days</p>
-                </a>
-              </div>
 
-              <div class=\"item item_tour   \">
-                <a href=\"https://kyrgyzstan-tourism.com/tours/horse-riding-kyrgyzstan/\">
-                  <span class=\"img_wrapper\">
-                    <span class=\"img lazy\" style=\"\"
-                      data-bg=\"url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Kirgizië-1447-660x360.jpg)\"></span>
 
-                  </span>
-                  <div class=\"desc\">
-                    <h3>Nomadic Horse Trek for beginners.</h3>
-                    <p class=\"excerpt\">Horseback tour</p>
-                  </div>
-                  <p class=\"duration\"><i class=\"fa fa-clock-o\"></i> 9 days</p>
-                </a>
-              </div>
 
-              <div class=\"item item_tour   \">
-                <a href=\"https://kyrgyzstan-tourism.com/tours/lake-hopping-issyk-kul-and-song-kul/\">
-                  <span class=\"img_wrapper\">
-                    <span class=\"img lazy\" style=\"\"
-                      data-bg=\"url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/SunsetSKyurt-1-of-1-660x360.jpg)\"></span>
 
-                  </span>
-                  <div class=\"desc\">
-                    <h3>Lake hopping: Issyk-Kul and Song-Kul</h3>
-                    <p class=\"excerpt\">Milti-active tour</p>
-                  </div>
-                  <p class=\"duration\"><i class=\"fa fa-clock-o\"></i> 7 days</p>
-                </a>
-              </div>
 
-              <div class=\"item item_tour   \">
-                <a
-                  href=\"https://kyrgyzstan-tourism.com/tours/travelling-from-kichik-alay-to-pamir-alay-through-jiptik-pass/\">
-                  <span class=\"img_wrapper\">
-                    <span class=\"img lazy\" style=\"\"
-                      data-bg=\"url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/HikerLeninPeak-1-of-1-660x360.jpg)\"></span>
-
-                  </span>
-                  <div class=\"desc\">
-                    <h3>Travelling from Kichik-Alay to Pamir-Alay.</h3>
-                    <p class=\"excerpt\">Alay mountains, Lenin peak panorama</p>
-                  </div>
-                  <p class=\"duration\"><i class=\"fa fa-clock-o\"></i> 7 days</p>
-                </a>
-              </div>
-
-              <div class=\"item item_tour   \">
-                <a href=\"https://kyrgyzstan-tourism.com/tours/lakes-issyk-kul-song-kul/\">
-                  <span class=\"img_wrapper\">
-                    <span class=\"img lazy\" style=\"\"
-                      data-bg=\"url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/SongkolExplore-660x360.jpg)\"></span>
-
-                  </span>
-                  <div class=\"desc\">
-                    <h3>Discover the Lakes Issyk-Kol, Song-Kol and Kel-Suu.</h3>
-                    <p class=\"excerpt\">Milti-active tour</p>
-                  </div>
-                  <p class=\"duration\"><i class=\"fa fa-clock-o\"></i> 11 days</p>
-                </a>
-              </div>
-
-              <div class=\"item item_tour   \">
-                <a href=\"https://kyrgyzstan-tourism.com/tours/pamir-high-way/\">
-                  <span class=\"img_wrapper\">
-                    <span class=\"img lazy\" style=\"\"
-                      data-bg=\"url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Pamir-mount-1-of-1-660x360.jpg)\"></span>
-
-                  </span>
-                  <div class=\"desc\">
-                    <h3>Pamir Highway</h3>
-                    <p class=\"excerpt\">Pamir</p>
-                  </div>
-                  <p class=\"duration\"><i class=\"fa fa-clock-o\"></i> 10 days</p>
-                </a>
-              </div>
-
-              <div class=\"item item_tour   \">
-                <a href=\"https://kyrgyzstan-tourism.com/tours/off-road-adventure/\">
-                  <span class=\"img_wrapper\">
-                    <span class=\"img lazy\" style=\"\"
-                      data-bg=\"url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/OffRoad_tour-600x360.jpg)\"></span>
-
-                  </span>
-                  <div class=\"desc\">
-                    <h3>Off road adventure in Kyrgyzstan</h3>
-                    <p class=\"excerpt\">Off road adventure</p>
-                  </div>
-                  <p class=\"duration\"><i class=\"fa fa-clock-o\"></i> 9 days</p>
-                </a>
-              </div>
-
-              <div class=\"item item_tour   \">
-                <a href=\"https://kyrgyzstan-tourism.com/tours/family-traveling-in-kyrgyzstan/\">
-                  <span class=\"img_wrapper\">
-                    <span class=\"img lazy\" style=\"\"
-                      data-bg=\"url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Off-road-coffee-660x360.jpg)\"></span>
-
-                  </span>
-                  <div class=\"desc\">
-                    <h3>Family traveling in Kyrgyzstan.</h3>
-                    <p class=\"excerpt\">Family tours</p>
-                  </div>
-                  <p class=\"duration\"><i class=\"fa fa-clock-o\"></i> 9 days</p>
-                </a>
-              </div>
-
-              <div class=\"item item_tour   \">
-                <a href=\"https://kyrgyzstan-tourism.com/tours/kyrgyz-cuisine-tour/\">
-                  <span class=\"img_wrapper\">
-                    <span class=\"img lazy\" style=\"\"
-                      data-bg=\"url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Food_in-yurta-600x360.jpg)\"></span>
-
-                  </span>
-                  <div class=\"desc\">
-                    <h3>Kyrgyz Cuisine Tour</h3>
-                    <p class=\"excerpt\">Family tours</p>
-                  </div>
-                  <p class=\"duration\"><i class=\"fa fa-clock-o\"></i> 7 days </p>
-                </a>
-              </div>
-
-              <div class=\"item item_tour   \">
-                <a href=\"https://kyrgyzstan-tourism.com/tours/mountain-bike-tour-pro/\">
-                  <span class=\"img_wrapper\">
-                    <span class=\"img lazy\" style=\"\"
-                      data-bg=\"url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/04/Bike-tour-660x360.jpg)\"></span>
-
-                  </span>
-                  <div class=\"desc\">
-                    <h3>Mountain Bike Tour Pro</h3>
-                    <p class=\"excerpt\">Bike</p>
-                  </div>
-                  <p class=\"duration\"><i class=\"fa fa-clock-o\"></i> 13 days</p>
-                </a>
-              </div>
-
-              <div class=\"item item_tour   \">
-                <a href=\"https://kyrgyzstan-tourism.com/tours/jailoo-hopping-to-the-lake-song-kul-for-9-days/\">
-                  <span class=\"img_wrapper\">
-                    <span class=\"img lazy\" style=\"\"
-                      data-bg=\"url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/SongKolyurt_dark-1-of-1-660x360.jpg)\"></span>
-
-                  </span>
-                  <div class=\"desc\">
-                    <h3>Jailoo Hopping to the Lake Song-Kul for 9 days</h3>
-                    <p class=\"excerpt\">Trekking</p>
-                  </div>
-                  <p class=\"duration\"><i class=\"fa fa-clock-o\"></i> 9 days</p>
-                </a>
-              </div>
-
-              <div class=\"item item_tour   \">
-                <a href=\"https://kyrgyzstan-tourism.com/tours/pamir-travel/\">
-                  <span class=\"img_wrapper\">
-                    <span class=\"img lazy\" style=\"\"
-                      data-bg=\"url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/06/Pamir-Yak-Saffari-660x360.jpg)\"></span>
-
-                  </span>
-                  <div class=\"desc\">
-                    <h3>Pamir trek. Yak Safari</h3>
-                    <p class=\"excerpt\">Milti-active tour</p>
-                  </div>
-                  <p class=\"duration\"><i class=\"fa fa-clock-o\"></i> 15 days</p>
-                </a>
-              </div>
-
-              <div class=\"item item_tour   \">
-                <a href=\"https://kyrgyzstan-tourism.com/tours/silk-road-kazakhstan-kyrgyzstan-lakes/\">
-                  <span class=\"img_wrapper\">
-                    <span class=\"img lazy\" style=\"\"
-                      data-bg=\"url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/YssikKol-1-of-1-660x360.jpg)\"></span>
-
-                  </span>
-                  <div class=\"desc\">
-                    <h3>Silk Road Tour: Kazakhstan and Kyrgyzstan</h3>
-                    <p class=\"excerpt\">Kyrgyzstan and Kazakhstan</p>
-                  </div>
-                  <p class=\"duration\"><i class=\"fa fa-clock-o\"></i> 9 days</p>
-                </a>
-              </div>
-
-              <div class=\"item item_tour   \">
-                <a href=\"https://kyrgyzstan-tourism.com/tours/shar-waterfall-at-bashy/\">
-                  <span class=\"img_wrapper\">
-                    <span class=\"img lazy\" style=\"\"
-                      data-bg=\"url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/08/Shar-waterfull-1-of-1-3-660x360.jpg)\"></span>
-
-                  </span>
-                  <div class=\"desc\">
-                    <h3>The tallest waterfall in Central Asia &#8220;Shar&#8221;.</h3>
-                    <p class=\"excerpt\">Milti-active tour</p>
-                  </div>
-                  <p class=\"duration\"><i class=\"fa fa-clock-o\"></i> 4 days</p>
-                </a>
-              </div>
-
-              <div class=\"item item_tour   \">
-                <a href=\"https://kyrgyzstan-tourism.com/tours/backcountry-ski-tour-in-northern-kyrgyzstan/\">
-                  <span class=\"img_wrapper\">
-                    <span class=\"img lazy\" style=\"\"
-                      data-bg=\"url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/10/turnaluu-1-of-1-copy-660x360.jpg)\"></span>
-
-                  </span>
-                  <div class=\"desc\">
-                    <h3>Backcountry ski tour in northern Kyrgyzstan</h3>
-                    <p class=\"excerpt\">Backcountry ski tour</p>
-                  </div>
-                  <p class=\"duration\"><i class=\"fa fa-clock-o\"></i> 10 days</p>
-                </a>
-              </div>
-
-              <div class=\"item item_tour   \">
-                <a href=\"https://kyrgyzstan-tourism.com/tours/discovery-bishkek-osh/\">
-                  <span class=\"img_wrapper\">
-                    <span class=\"img lazy\" style=\"\"
-                      data-bg=\"url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Slider_Burana-660x360.jpg)\"></span>
-
-                  </span>
-                  <div class=\"desc\">
-                    <h3>Discovery Kyrgyzstan. Bishkek &#038; Osh.</h3>
-                    <p class=\"excerpt\"></p>
-                  </div>
-                  <p class=\"duration\"><i class=\"fa fa-clock-o\"></i> 12 days</p>
-                </a>
-              </div>
-
-              <div class=\"item item_tour   \">
-                <a href=\"https://kyrgyzstan-tourism.com/tours/trekking-to-the-lake-kel-suu/\">
-                  <span class=\"img_wrapper\">
-                    <span class=\"img lazy\" style=\"\"
-                      data-bg=\"url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/10/Kel-Suu-660x360.jpg)\"></span>
-
-                  </span>
-                  <div class=\"desc\">
-                    <h3>Trekking to the Lake Kel-Suu</h3>
-                    <p class=\"excerpt\">Trekking</p>
-                  </div>
-                  <p class=\"duration\"><i class=\"fa fa-clock-o\"></i> 5</p>
-                </a>
-              </div>
-
-              <div class=\"item item_tour   \">
-                <a href=\"https://kyrgyzstan-tourism.com/tours/winter-adventures-in-kyrgyzstan/\">
-                  <span class=\"img_wrapper\">
-                    <span class=\"img lazy\" style=\"\"
-                      data-bg=\"url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/10/winter-kyrgyzstan-660x360.jpg)\"></span>
-
-                  </span>
-                  <div class=\"desc\">
-                    <h3>Winter adventures in Kyrgyzstan</h3>
-                    <p class=\"excerpt\">Family tours</p>
-                  </div>
-                  <p class=\"duration\"><i class=\"fa fa-clock-o\"></i> 12 days</p>
-                </a>
-              </div>
-
-              <div class=\"item item_tour   \">
-                <a href=\"https://kyrgyzstan-tourism.com/tours/handicraft-tour/\">
-                  <span class=\"img_wrapper\">
-                    <span class=\"img lazy\" style=\"\"
-                      data-bg=\"url(https://kyrgyzstan-tourism.com/wp-content/uploads/2020/01/Handicraft-tour-660x360.jpg)\"></span>
-
-                  </span>
-                  <div class=\"desc\">
-                    <h3>Handicraft tour</h3>
-                    <p class=\"excerpt\">Milti-active tour</p>
-                  </div>
-                  <p class=\"duration\"><i class=\"fa fa-clock-o\"></i> 9 days</p>
-                </a>
-              </div>
-
-              <div class=\"item item_tour   \">
-                <a href=\"https://kyrgyzstan-tourism.com/tours/childrens-quiz-tour/\">
-                  <span class=\"img_wrapper\">
-                    <span class=\"img lazy\" style=\"\"
-                      data-bg=\"url(https://kyrgyzstan-tourism.com/wp-content/uploads/2020/01/Children-tour-660x348.jpg)\"></span>
-
-                  </span>
-                  <div class=\"desc\">
-                    <h3>Children&#8217;s Quiz Tour</h3>
-                    <p class=\"excerpt\"></p>
-                  </div>
-                  <p class=\"duration\"><i class=\"fa fa-clock-o\"></i> 7 days</p>
-                </a>
-              </div>
 
 
 
@@ -1716,105 +774,13 @@ class __TwigTemplate_f7f3d08e74deb0f0953cc2af8de91ba287ddd936a2d76f03b796a623685
             <div class=\"resCarousel-inner\">
 
 
-              <div class=\"item item_tour with_border  \">
-                <a href=\"https://kyrgyzstan-tourism.com/tours/jailoo-hiking-lake-song-kul/\">
-                  <span class=\"img_wrapper\">
-                    <span class=\"img lazy\" style=\"\"
-                      data-bg=\"url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/YurtCamp-1-of-1-660x360.jpg)\"></span>
-
-                    <span class=\"price-round\">
-                      <span class=\"inner\">from <br />\$100</span>
-                    </span>
+              {% partial 'site/tours/discount_tours' %}
 
 
-                  </span>
-                  <div class=\"desc\">
-                    <h3>Jailoo hiking “Lake Song-Kul”</h3>
-                    <p class=\"excerpt\">Horseback tour</p>
-                  </div>
-                  <p class=\"duration\"><i class=\"fa fa-clock-o\"></i> 3 days</p>
-                </a>
-              </div>
-
-              <div class=\"item item_tour with_border  \">
-                <a href=\"https://kyrgyzstan-tourism.com/tours/day-horseback-tour-around-bishkek/\">
-                  <span class=\"img_wrapper\">
-                    <span class=\"img lazy\" style=\"\"
-                      data-bg=\"url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/header-horse-tours-660x360.jpg)\"></span>
-
-                    <span class=\"price-round\">
-                      <span class=\"inner\">from <br />\$60</span>
-                    </span>
 
 
-                  </span>
-                  <div class=\"desc\">
-                    <h3>One day horseback riding tour around Bishkek.</h3>
-                    <p class=\"excerpt\">Day horseback tour</p>
-                  </div>
-                  <p class=\"duration\"><i class=\"fa fa-clock-o\"></i> 1 day</p>
-                </a>
-              </div>
-
-              <div class=\"item item_tour with_border  \">
-                <a href=\"https://kyrgyzstan-tourism.com/tours/express-trip-to-the-lake-song-kol/\">
-                  <span class=\"img_wrapper\">
-                    <span class=\"img lazy\" style=\"\"
-                      data-bg=\"url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Express-Trip-Songkol-660x360.jpg)\"></span>
-
-                    <span class=\"price-round\">
-                      <span class=\"inner\">from <br />\$200</span>
-                    </span>
 
 
-                  </span>
-                  <div class=\"desc\">
-                    <h3>Express trip to the Lake Song-Kul.</h3>
-                    <p class=\"excerpt\"></p>
-                  </div>
-                  <p class=\"duration\"><i class=\"fa fa-clock-o\"></i> 2 days</p>
-                </a>
-              </div>
-
-              <div class=\"item item_tour with_border  \">
-                <a href=\"https://kyrgyzstan-tourism.com/tours/trekking-from-chui-valley-to-issyk-kul/\">
-                  <span class=\"img_wrapper\">
-                    <span class=\"img lazy\" style=\"\"
-                      data-bg=\"url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/KolKongur-660x360.jpg)\"></span>
-
-                    <span class=\"price-round\">
-                      <span class=\"inner\">from <br />\$230</span>
-                    </span>
-
-
-                  </span>
-                  <div class=\"desc\">
-                    <h3>Trekking from Chui Valley to Issyk-Kul</h3>
-                    <p class=\"excerpt\">Horseback or trekking tour</p>
-                  </div>
-                  <p class=\"duration\"><i class=\"fa fa-clock-o\"></i> 3 days</p>
-                </a>
-              </div>
-
-              <div class=\"item item_tour with_border  \">
-                <a href=\"https://kyrgyzstan-tourism.com/tours/2-days-horse-trek/\">
-                  <span class=\"img_wrapper\">
-                    <span class=\"img lazy\" style=\"\"
-                      data-bg=\"url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/n1-660x360.jpg)\"></span>
-
-                    <span class=\"price-round\">
-                      <span class=\"inner\">from <br />\$100</span>
-                    </span>
-
-
-                  </span>
-                  <div class=\"desc\">
-                    <h3>Lake Kol-Ukok -nomad’s life</h3>
-                    <p class=\"excerpt\">Horseback tour</p>
-                  </div>
-                  <p class=\"duration\"><i class=\"fa fa-clock-o\"></i> 2 days</p>
-                </a>
-              </div>
 
 
             </div>

@@ -1,0 +1,33 @@
+1610988773a:1:{s:25:"site/tours/type_tours.htm";a:5:{s:8:"fileName";s:25:"site/tours/type_tours.htm";s:7:"content";s:567:" {% for record in TypeTours.items %}
+
+ <div class="col-sm-4">
+   <div class="item item_tour with_border auto_height tour_type">
+     <a
+       href="{{TypeTours.property('recordPage') ? TypeTours.property('recordPage')|page({(TypeTours.paramName('recordPageSlug')):(record.slug)})}}">
+       <span class="img_wrapper">
+         <span class="img lazy" style="" data-bg="url({{ record.preview_image.getPath }})"></span>
+       </span>
+       <div class="desc">
+         <h3>{{ record.name }}</h3>
+       </div>
+     </a>
+   </div>
+ </div>
+
+ {% endfor %}";s:5:"mtime";i:1610977119;s:6:"markup";s:566:"{% for record in TypeTours.items %}
+
+ <div class="col-sm-4">
+   <div class="item item_tour with_border auto_height tour_type">
+     <a
+       href="{{TypeTours.property('recordPage') ? TypeTours.property('recordPage')|page({(TypeTours.paramName('recordPageSlug')):(record.slug)})}}">
+       <span class="img_wrapper">
+         <span class="img lazy" style="" data-bg="url({{ record.preview_image.getPath }})"></span>
+       </span>
+       <div class="desc">
+         <h3>{{ record.name }}</h3>
+       </div>
+     </a>
+   </div>
+ </div>
+
+ {% endfor %}";s:4:"code";N;}}

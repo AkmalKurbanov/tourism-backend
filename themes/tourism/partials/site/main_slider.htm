@@ -1,0 +1,29 @@
+{% for record in TypeTours.items %}
+<div class="item lazy" style="background-image: url(&quot;{{ record.preview_image.getPath }}&quot;);"
+  data-bg="url({{ record.preview_image.getPath }})" data-was-processed="true">
+  <div class="carousel-caption">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <h2>{{ record.name }}</h2>
+          <h3>{{ record.description }}</h3>
+          <div class="button_wrapper">
+            <a href="{{GroupTours.property('recordPage') ? GroupTours.property('recordPage')|page({(GroupTours.paramName('recordPageSlug')):(record.slug)})}}"
+              class="cstm_button"><i class="fa fa-eye"></i>
+              view tours</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+
+
+<script>
+  $('#front_slider .item.lazy').first().addClass('active');
+</script>
+
+
+
+

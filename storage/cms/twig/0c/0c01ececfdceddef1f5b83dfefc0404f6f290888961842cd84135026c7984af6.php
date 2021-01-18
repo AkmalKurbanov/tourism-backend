@@ -29,14 +29,14 @@ class __TwigTemplate_addce623bdcfa39daf4a56c0e69abdc7b5ad0786fa8fcb55e3f6ff7c5ec
         $this->blocks = [
         ];
         $this->sandbox = $this->env->getExtension('\Twig\Extension\SandboxExtension');
-        $tags = array("partial" => 252);
-        $filters = array();
+        $tags = array();
+        $filters = array("escape" => 26);
         $functions = array();
 
         try {
             $this->sandbox->checkSecurity(
-                ['partial'],
                 [],
+                ['escape'],
                 []
             );
         } catch (SecurityError $e) {
@@ -65,22 +65,33 @@ class __TwigTemplate_addce623bdcfa39daf4a56c0e69abdc7b5ad0786fa8fcb55e3f6ff7c5ec
 
         <div class=\"col-sm-6\">
           <div class=\"phone\">
-            <phone><a href=\"tel:+996 706 363738\">+996 706 363738</a></phone>
+          
+
+  <phone><a href=\"tel:+996 706 363738\">+996 706 363738</a></phone>
+
+            
+
           </div>
         </div>
 
         <div class=\"col-sm-6 text-right social_top\">
+        
+        
+
+
+ 
+
           <div class=\"social\">
-            <a href=\"https://www.facebook.com/kgTourism/\" target=\"_blank\"><i class=\"fa fa-facebook\"></i></a>
-            <a href=\"https://www.instagram.com/kyrgyzstan_tourism/\" target=\"_blank\"><i class=\"fa fa-instagram\"></i></a>
-            <a href=\"https://www.youtube.com/channel/UCUpfM9AjbXgLe_IGKSDtqRA\" target=\"_blank\"><i
-                class=\"fa fa-youtube\"></i></a>
-            <a href=\"https://twitter.com/NativeKyrgyzst1\" target=\"_blank\"><i
-                class=\"fa fa-Example of twitter-square fa-twitter-square\"></i></a>
-            <a href=\"https://www.tripadvisor.ru/Attraction_Review-g293948-d17433303-Reviews-Kyrgyz_Tourism-Bishkek.html\"
-              target=\"_blank\"><i class=\"fa fa-Example of tripadvisor fa-tripadvisor\"></i></a>
-            <a href=\"https://www.pinterest.com/myrza79/\" target=\"_blank\"><i class=\"fa fa-pinterest\"></i></a>
-          </div>
+     
+    
+      <a href=\"";
+        // line 26
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["record"] ?? null), "social_link", [], "any", false, false, true, 26), 26, $this->source), "html", null, true);
+        echo "\" target=\"_blank\"><i class=\"\"></i></a>
+    
+         
+                                    
+                                        </div>
 
           <button class=\"blank search_button\" id=\"show_search\" data-toggle=\"modal\" data-target=\"#modal_search\"><i
               class=\"fa fa-search\"></i></button>
@@ -284,15 +295,11 @@ class __TwigTemplate_addce623bdcfa39daf4a56c0e69abdc7b5ad0786fa8fcb55e3f6ff7c5ec
               pagespeed.CriticalImages.Run('/mod_pagespeed_beacon', 'http://kyrgyzstan-tourism.com/',
                 'NqBu-of7bl', true, false, '-lJygSkbD9k');
               //]]>
-            </script><img alt=\"logo\"
-              data-src=\"https://kyrgyzstan-tourism.com/wp-content/themes/native/img/logo_white.png\"
-              class=\"img-responsive lazyload\"
-              src=\"data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==\"
-              data-pagespeed-url-hash=\"31059146\"
-              onload=\"pagespeed.CriticalImages.checkImageForCriticality(this);\"><noscript><img
-                src=\"data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201%201'%3E%3C/svg%3E\"
-                data-src=\"https://kyrgyzstan-tourism.com/wp-content/themes/native/img/logo_white.png\" alt=\"logo\"
-                class=\"img-responsive lazy\" data-pagespeed-url-hash=\"2295055879\"></noscript>
+            </script>
+            
+
+            
+            
           </a>
         </div>
 
@@ -310,15 +317,8 @@ class __TwigTemplate_addce623bdcfa39daf4a56c0e69abdc7b5ad0786fa8fcb55e3f6ff7c5ec
             </div>
 
 
-";
-        // line 252
-        $context['__cms_partial_params'] = [];
-        $context['__cms_partial_params']['items'] = twig_get_attribute($this->env, $this->source, ($context["Menu"] ?? null), "menuItems", [], "any", false, false, true, 252)        ;
-        $context['__cms_partial_params']['class'] = "nav navbar-nav"        ;
-        echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("menu-items"        , $context['__cms_partial_params']        , true        );
-        unset($context['__cms_partial_params']);
-        // line 253
-        echo "            <!-- Collect the nav links, forms, and other content for toggling -->
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
             <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">
               <ul class=\"nav navbar-nav navbar-right\">
                 <li><a href=\"https://kyrgyzstan-tourism.com/\">Home</a></li>
@@ -410,7 +410,7 @@ class __TwigTemplate_addce623bdcfa39daf4a56c0e69abdc7b5ad0786fa8fcb55e3f6ff7c5ec
 
     public function getDebugInfo()
     {
-        return array (  321 => 253,  315 => 252,  62 => 1,);
+        return array (  89 => 26,  62 => 1,);
     }
 
     public function getSourceContext()
@@ -421,22 +421,30 @@ class __TwigTemplate_addce623bdcfa39daf4a56c0e69abdc7b5ad0786fa8fcb55e3f6ff7c5ec
 
         <div class=\"col-sm-6\">
           <div class=\"phone\">
-            <phone><a href=\"tel:+996 706 363738\">+996 706 363738</a></phone>
+          
+
+  <phone><a href=\"tel:+996 706 363738\">+996 706 363738</a></phone>
+
+            
+
           </div>
         </div>
 
         <div class=\"col-sm-6 text-right social_top\">
+        
+        
+
+
+ 
+
           <div class=\"social\">
-            <a href=\"https://www.facebook.com/kgTourism/\" target=\"_blank\"><i class=\"fa fa-facebook\"></i></a>
-            <a href=\"https://www.instagram.com/kyrgyzstan_tourism/\" target=\"_blank\"><i class=\"fa fa-instagram\"></i></a>
-            <a href=\"https://www.youtube.com/channel/UCUpfM9AjbXgLe_IGKSDtqRA\" target=\"_blank\"><i
-                class=\"fa fa-youtube\"></i></a>
-            <a href=\"https://twitter.com/NativeKyrgyzst1\" target=\"_blank\"><i
-                class=\"fa fa-Example of twitter-square fa-twitter-square\"></i></a>
-            <a href=\"https://www.tripadvisor.ru/Attraction_Review-g293948-d17433303-Reviews-Kyrgyz_Tourism-Bishkek.html\"
-              target=\"_blank\"><i class=\"fa fa-Example of tripadvisor fa-tripadvisor\"></i></a>
-            <a href=\"https://www.pinterest.com/myrza79/\" target=\"_blank\"><i class=\"fa fa-pinterest\"></i></a>
-          </div>
+     
+    
+      <a href=\"{{record.social_link}}\" target=\"_blank\"><i class=\"\"></i></a>
+    
+         
+                                    
+                                        </div>
 
           <button class=\"blank search_button\" id=\"show_search\" data-toggle=\"modal\" data-target=\"#modal_search\"><i
               class=\"fa fa-search\"></i></button>
@@ -640,15 +648,11 @@ class __TwigTemplate_addce623bdcfa39daf4a56c0e69abdc7b5ad0786fa8fcb55e3f6ff7c5ec
               pagespeed.CriticalImages.Run('/mod_pagespeed_beacon', 'http://kyrgyzstan-tourism.com/',
                 'NqBu-of7bl', true, false, '-lJygSkbD9k');
               //]]>
-            </script><img alt=\"logo\"
-              data-src=\"https://kyrgyzstan-tourism.com/wp-content/themes/native/img/logo_white.png\"
-              class=\"img-responsive lazyload\"
-              src=\"data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==\"
-              data-pagespeed-url-hash=\"31059146\"
-              onload=\"pagespeed.CriticalImages.checkImageForCriticality(this);\"><noscript><img
-                src=\"data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201%201'%3E%3C/svg%3E\"
-                data-src=\"https://kyrgyzstan-tourism.com/wp-content/themes/native/img/logo_white.png\" alt=\"logo\"
-                class=\"img-responsive lazy\" data-pagespeed-url-hash=\"2295055879\"></noscript>
+            </script>
+            
+
+            
+            
           </a>
         </div>
 
@@ -666,7 +670,7 @@ class __TwigTemplate_addce623bdcfa39daf4a56c0e69abdc7b5ad0786fa8fcb55e3f6ff7c5ec
             </div>
 
 
-{% partial 'menu-items' items = Menu.menuItems  class=\"nav navbar-nav\"%}
+
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">
               <ul class=\"nav navbar-nav navbar-right\">

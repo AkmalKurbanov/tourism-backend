@@ -1,0 +1,29 @@
+[viewBag]
+
+[builderList Introduction]
+modelClass = "Akmal\Introduction\Models\IntroductionText"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "title"
+noRecordsMessage = "No records found"
+detailsPage = "-"
+pageNumber = "{{ :page }}"
+==
+{% set records = Introduction.records %}
+{% set displayColumn = Introduction.displayColumn %}
+{% set noRecordsMessage = Introduction.noRecordsMessage %}
+{% set detailsPage = Introduction.detailsPage %}
+{% set detailsKeyColumn = Introduction.detailsKeyColumn %}
+{% set detailsUrlParameter = Introduction.detailsUrlParameter %}
+
+
+    {% for record in records %}
+
+<p><img style="float: left; margin-right: 35px; margin-top: 30px;" src="{{record.logo.path}}" alt=""></p>
+ <div class="text">
+   <h1 style="text-align: left;">{{record.title}}</h1>
+   <p>{{record.introduction_text}}</p>
+   
+    {% else %}
+        <li class="no-data">{{ noRecordsMessage }}</li>
+    {% endfor %}

@@ -1,0 +1,10 @@
+name: Introduction
+form: $/akmal/introduction/models/introductiontext/fields.yaml
+modelClass: Akmal\Introduction\Models\IntroductionText
+defaultRedirect: akmal/introduction/introduction
+create:
+    redirect: 'akmal/introduction/introduction/update/:id'
+    redirectClose: akmal/introduction/introduction
+update:
+    redirect: akmal/introduction/introduction
+    redirectClose: akmal/introduction/introduction

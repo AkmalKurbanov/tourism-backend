@@ -1,0 +1,44 @@
+[records GroupTours]
+activeOnly = 0
+areaSlug = "tury"
+categorySlug = "gruppovye-tury"
+useMainCategory = 1
+useMultiCategories = 1
+tagSlug = "{{ :tag }}"
+recordPage = "group-tours"
+recordPageSlug = "{{ :slug }}"
+limit = 10
+pageSlug = "{{ :page }}"
+orderBy = "name"
+orderByDirection = "ASC"
+
+[viewBag]
+==
+{% for record in GroupTours.items %}
+
+<div class="item item_tour with_border  ">
+  <a
+    href="{{GroupTours.property('recordPage') ? GroupTours.property('recordPage')|page({(GroupTours.paramName('recordPageSlug')):(record.slug)})}}">
+
+    <span class="img_wrapper">
+
+      <span class="img lazy" style="background-image: url({{ record.preview_image.getPath }});"
+        data-bg="url({{ record.preview_image.getPath }}" data-was-processed="true"></span>
+
+      <span class="price-round group_price">
+        <span class="inner">${{ record.getAttributeValueBySlug('stoimost_tura') }} US</span>
+      </span>
+
+    </span>
+    <div class="desc">
+      <h3>{{ record.name }}</h3>
+      <p class="excerpt">{{ record.description }} </p>
+    </div>
+    <p class="duration">
+      <i class="fa fa-clock-o"></i>
+      {{ record.getAttributeValueBySlug('prodolzhitelnost_tura') }}
+      days</p>
+  </a>
+</div>
+
+{% endfor %}

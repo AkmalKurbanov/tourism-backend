@@ -1,33 +1,24 @@
-1610890153a:1:{s:9:"tours.htm";a:11:{s:8:"fileName";s:9:"tours.htm";s:7:"content";s:65545:"title = "Tours"
+1610988897a:1:{s:9:"tours.htm";a:10:{s:8:"fileName";s:9:"tours.htm";s:7:"content";s:61265:"title = "Tours"
 url = "/tours/:slug"
 layout = "static-layout"
 is_hidden = 0
 
-[builderDetails Tours]
-modelClass = "Tours\Tours\Models\Tours"
-identifierValue = "{{ :slug }}"
-modelKeyColumn = "slug"
-displayColumn = "title"
-notFoundMessage = "Record not found"
-
-[builderList GroupTours]
-modelClass = "Tours\Tours\Models\Tours"
-scope = "-"
-scopeValue = "{{ :scope }}"
-displayColumn = "slug"
-noRecordsMessage = "No records found"
-detailsPage = "tours"
-detailsKeyColumn = "slug"
-detailsUrlParameter = "slug"
-pageNumber = "{{ :page }}"
+[records GroupTours]
+activeOnly = 0
+favouriteOnly = 0
+areaSlug = 0
+categorySlug = "gruppovye-tury"
+useMainCategory = 0
+useMultiCategories = 1
+tagSlug = "{{ :tag }}"
+recordPage = "tours"
+recordPageSlug = "{{ :slug }}"
+limit = 10
+pageSlug = "{{ :page }}"
+orderBy = "name"
+orderByDirection = "ASC"
 ==
-{% set record = Tours.record %}
-{% set displayColumn = Tours.displayColumn %}
-{% set notFoundMessage = Tours.notFoundMessage %}
-
-{% if record %}
-
-<div class="lazy" id="top" style="" data-bg="url({{ record.poster.path }})">
+<div class="lazy" id="top" style="" data-bg="url({{ TourDetail.recordDetail.preview_image.getPath }})">
 
 
 
@@ -41,8 +32,7 @@ pageNumber = "{{ :page }}"
                 <a href="https://kyrgyzstan-tourism.com/">Home</a> /
                 <span>
                   <a href="https://kyrgyzstan-tourism.com/group-tours/">Group Tours 2021</a> /<span
-                    class="breadcrumb_last" aria-current="page">Explore South and North
-                    Kyrgyzstan</span>
+                    class="breadcrumb_last" aria-current="page">{{ TourDetail.recordDetail.name }}</span>
                 </span>
               </span>
             </span></p>
@@ -56,7 +46,7 @@ pageNumber = "{{ :page }}"
     <div class="container">
       <div class="row">
         <div class="col-sm-12 text-center">
-          <h1 id="single_tour_title">{{record.title}}</h1>
+          <h1 id="single_tour_title">{{ TourDetail.recordDetail.name }}</h1>
         </div>
       </div>
     </div>
@@ -1021,37 +1011,33 @@ pageNumber = "{{ :page }}"
         <div class="row">
 
 
-          {% for record in records %}
 
-
-
-
+          {% for record in GroupTours.items %}
           <div class="col-sm-4">
             <div class="item item_tour with_border auto_height ">
-              <a href="{{ detailsPage|page({ (detailsUrlParameter): attribute(record, detailsKeyColumn) }) }}">
+              <a
+                href="{{GroupTours.property('recordPage') ? GroupTours.property('recordPage')|page({(GroupTours.paramName('recordPageSlug')):(record.slug)})}}">
                 <span class="img_wrapper">
-                  <span class="img lazy" style="" data-bg="url({{record.poster.path}})"></span>
-
+                  <span class="img lazy" style="" data-bg="url({{ record.preview_image.getPath }})"></span>
                   <span class="price-round group_price">
-                    <span class="inner">${{record.price}}US</span>
+                    <span class="inner">$890 US</span>
                   </span>
-
                 </span>
                 <div class="desc">
-                  <h3>{{record.title}}</h3>
-                  <p class="excerpt">{{record.annotation}}</p>
+                  <h3>{{ record.name }}</h3>
+                  <p class="excerpt">{{ record.getAttributeValueBySlug('stoimost_tura') }}</p>
                 </div>
-                <p class="duration"><i class="fa fa-clock-o"></i> {{record.duration}} days</p>
+                <p class="duration"><i class="fa fa-clock-o"></i>
+                  {{ record.getAttributeValueBySlug('prodolzhitelnost_tura') }}
+                  days</p>
               </a>
             </div>
-
           </div>
-
-
-
-          {% else %}
-          <li class="no-data">{{ noRecordsMessage }}</li>
           {% endfor %}
+
+
+
+
 
 
 
@@ -1073,39 +1059,16 @@ pageNumber = "{{ :page }}"
         <div class="tags tags_light">
           <h3>Group tours</h3>
           <div class="line_helper" style="background: #e9e9e9"></div>
+
           <ul class="list-unstyled sdb_ul">
-          
-      
-          
 
-
-
-           
-
-            {% set records = GroupTours.records %}
-            {% set displayColumn = GroupTours.displayColumn %}
-            {% set noRecordsMessage = GroupTours.noRecordsMessage %}
-            {% set detailsPage = GroupTours.detailsPage %}
-            {% set detailsKeyColumn = GroupTours.detailsKeyColumn %}
-            {% set detailsUrlParameter = GroupTours.detailsUrlParameter %}
-
-
-
-            {% for record in records %}
-
-            {{record.type_title}}
-            
+            {% for record in GroupTours.items %}
             <li><a
-                href="{{ detailsPage|page({ (detailsUrlParameter): attribute(record, detailsKeyColumn) }) }}"></a>
+                href="{{GroupTours.property('recordPage') ? GroupTours.property('recordPage')|page({(GroupTours.paramName('recordPageSlug')):(record.slug)})}}">{{record.name}}</a>
             </li>
-            {% else %}
-            <li class="no-data">{{ noRecordsMessage }}</li>
             {% endfor %}
 
-
           </ul>
-
-
         </div>
 
 
@@ -1176,58 +1139,6 @@ pageNumber = "{{ :page }}"
         </div>
 
 
-        <div class="sdb_most_popular visible-xs">
-
-          <h3>Most popular tours</h3>
-
-          <div class="item item_tour with_border auto_height ">
-            <a href="https://kyrgyzstan-tourism.com/tours/trekking-to-the-lake-kel-suu/">
-              <span class="img_wrapper">
-                <span class="img lazy" style=""
-                  data-bg="url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/10/Kel-Suu-660x360.jpg)"></span>
-
-              </span>
-              <div class="desc">
-                <h3>Trekking to the Lake Kel-Suu</h3>
-                <p class="excerpt">Trekking</p>
-              </div>
-              <p class="duration"><i class="fa fa-clock-o"></i> 5</p>
-            </a>
-          </div>
-
-          <div class="item item_tour with_border auto_height ">
-            <a
-              href="https://kyrgyzstan-tourism.com/tours/travelling-from-kichik-alay-to-pamir-alay-through-jiptik-pass/">
-              <span class="img_wrapper">
-                <span class="img lazy" style=""
-                  data-bg="url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/HikerLeninPeak-1-of-1-660x360.jpg)"></span>
-
-              </span>
-              <div class="desc">
-                <h3>Travelling from Kichik-Alay to Pamir-Alay.</h3>
-                <p class="excerpt">Alay mountains, Lenin peak panorama</p>
-              </div>
-              <p class="duration"><i class="fa fa-clock-o"></i> 7 days</p>
-            </a>
-          </div>
-
-          <div class="item item_tour with_border auto_height ">
-            <a href="https://kyrgyzstan-tourism.com/tours/lake-hopping-issyk-kul-and-song-kul/">
-              <span class="img_wrapper">
-                <span class="img lazy" style=""
-                  data-bg="url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/SunsetSKyurt-1-of-1-660x360.jpg)"></span>
-
-              </span>
-              <div class="desc">
-                <h3>Lake hopping: Issyk-Kul and Song-Kul</h3>
-                <p class="excerpt">Milti-active tour</p>
-              </div>
-              <p class="duration"><i class="fa fa-clock-o"></i> 7 days</p>
-            </a>
-          </div>
-
-
-        </div>
 
         <div class="form_wrapper sdb_form">
 
@@ -1276,51 +1187,28 @@ pageNumber = "{{ :page }}"
 
           <h3>Most popular tours</h3>
 
-          <div class="item item_tour with_border auto_height ">
-            <a href="https://kyrgyzstan-tourism.com/tours/trekking-to-the-lake-kel-suu/">
-              <span class="img_wrapper">
-                <span class="img lazy" style=""
-                  data-bg="url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/10/Kel-Suu-660x360.jpg)"></span>
 
-              </span>
-              <div class="desc">
-                <h3>Trekking to the Lake Kel-Suu</h3>
-                <p class="excerpt">Trekking</p>
-              </div>
-              <p class="duration"><i class="fa fa-clock-o"></i> 5</p>
-            </a>
-          </div>
+
+          {% for record in GroupTours.items %}
 
           <div class="item item_tour with_border auto_height ">
             <a
-              href="https://kyrgyzstan-tourism.com/tours/travelling-from-kichik-alay-to-pamir-alay-through-jiptik-pass/">
+              href="{{GroupTours.property('recordPage') ? GroupTours.property('recordPage')|page({(GroupTours.paramName('recordPageSlug')):(record.slug)})}}">
               <span class="img_wrapper">
-                <span class="img lazy" style=""
-                  data-bg="url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/HikerLeninPeak-1-of-1-660x360.jpg)"></span>
+                <span class="img lazy" style="" data-bg="url({{ record.preview_image.getPath }})"></span>
 
               </span>
               <div class="desc">
-                <h3>Travelling from Kichik-Alay to Pamir-Alay.</h3>
-                <p class="excerpt">Alay mountains, Lenin peak panorama</p>
+                <h3>{{ record.name }}</h3>
+                <p class="excerpt">{{ record.description }}</p>
               </div>
-              <p class="duration"><i class="fa fa-clock-o"></i> 7 days</p>
+              <p class="duration"><i class="fa fa-clock-o"></i>
+                {{ record.getAttributeValueBySlug('prodolzhitelnost_tura') }}
+                days</p>
             </a>
           </div>
 
-          <div class="item item_tour with_border auto_height ">
-            <a href="https://kyrgyzstan-tourism.com/tours/lake-hopping-issyk-kul-and-song-kul/">
-              <span class="img_wrapper">
-                <span class="img lazy" style=""
-                  data-bg="url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/SunsetSKyurt-1-of-1-660x360.jpg)"></span>
-
-              </span>
-              <div class="desc">
-                <h3>Lake hopping: Issyk-Kul and Song-Kul</h3>
-                <p class="excerpt">Milti-active tour</p>
-              </div>
-              <p class="duration"><i class="fa fa-clock-o"></i> 7 days</p>
-            </a>
-          </div>
+          {% endfor %}
 
 
         </div>
@@ -1332,26 +1220,7 @@ pageNumber = "{{ :page }}"
 
     </div>
   </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-{% else %}
-{{ notFoundMessage }}
-{% endif %}";s:5:"mtime";i:1610884832;s:6:"markup";s:64991:"{% set record = Tours.record %}
-{% set displayColumn = Tours.displayColumn %}
-{% set notFoundMessage = Tours.notFoundMessage %}
-
-{% if record %}
-
-<div class="lazy" id="top" style="" data-bg="url({{ record.poster.path }})">
+</div>";s:5:"mtime";i:1610980678;s:6:"markup";s:60870:"<div class="lazy" id="top" style="" data-bg="url({{ TourDetail.recordDetail.preview_image.getPath }})">
 
 
 
@@ -1365,8 +1234,7 @@ pageNumber = "{{ :page }}"
                 <a href="https://kyrgyzstan-tourism.com/">Home</a> /
                 <span>
                   <a href="https://kyrgyzstan-tourism.com/group-tours/">Group Tours 2021</a> /<span
-                    class="breadcrumb_last" aria-current="page">Explore South and North
-                    Kyrgyzstan</span>
+                    class="breadcrumb_last" aria-current="page">{{ TourDetail.recordDetail.name }}</span>
                 </span>
               </span>
             </span></p>
@@ -1380,7 +1248,7 @@ pageNumber = "{{ :page }}"
     <div class="container">
       <div class="row">
         <div class="col-sm-12 text-center">
-          <h1 id="single_tour_title">{{record.title}}</h1>
+          <h1 id="single_tour_title">{{ TourDetail.recordDetail.name }}</h1>
         </div>
       </div>
     </div>
@@ -2345,37 +2213,33 @@ pageNumber = "{{ :page }}"
         <div class="row">
 
 
-          {% for record in records %}
 
-
-
-
+          {% for record in GroupTours.items %}
           <div class="col-sm-4">
             <div class="item item_tour with_border auto_height ">
-              <a href="{{ detailsPage|page({ (detailsUrlParameter): attribute(record, detailsKeyColumn) }) }}">
+              <a
+                href="{{GroupTours.property('recordPage') ? GroupTours.property('recordPage')|page({(GroupTours.paramName('recordPageSlug')):(record.slug)})}}">
                 <span class="img_wrapper">
-                  <span class="img lazy" style="" data-bg="url({{record.poster.path}})"></span>
-
+                  <span class="img lazy" style="" data-bg="url({{ record.preview_image.getPath }})"></span>
                   <span class="price-round group_price">
-                    <span class="inner">${{record.price}}US</span>
+                    <span class="inner">$890 US</span>
                   </span>
-
                 </span>
                 <div class="desc">
-                  <h3>{{record.title}}</h3>
-                  <p class="excerpt">{{record.annotation}}</p>
+                  <h3>{{ record.name }}</h3>
+                  <p class="excerpt">{{ record.getAttributeValueBySlug('stoimost_tura') }}</p>
                 </div>
-                <p class="duration"><i class="fa fa-clock-o"></i> {{record.duration}} days</p>
+                <p class="duration"><i class="fa fa-clock-o"></i>
+                  {{ record.getAttributeValueBySlug('prodolzhitelnost_tura') }}
+                  days</p>
               </a>
             </div>
-
           </div>
-
-
-
-          {% else %}
-          <li class="no-data">{{ noRecordsMessage }}</li>
           {% endfor %}
+
+
+
+
 
 
 
@@ -2397,39 +2261,16 @@ pageNumber = "{{ :page }}"
         <div class="tags tags_light">
           <h3>Group tours</h3>
           <div class="line_helper" style="background: #e9e9e9"></div>
+
           <ul class="list-unstyled sdb_ul">
-          
-      
-          
 
-
-
-           
-
-            {% set records = GroupTours.records %}
-            {% set displayColumn = GroupTours.displayColumn %}
-            {% set noRecordsMessage = GroupTours.noRecordsMessage %}
-            {% set detailsPage = GroupTours.detailsPage %}
-            {% set detailsKeyColumn = GroupTours.detailsKeyColumn %}
-            {% set detailsUrlParameter = GroupTours.detailsUrlParameter %}
-
-
-
-            {% for record in records %}
-
-            {{record.type_title}}
-            
+            {% for record in GroupTours.items %}
             <li><a
-                href="{{ detailsPage|page({ (detailsUrlParameter): attribute(record, detailsKeyColumn) }) }}"></a>
+                href="{{GroupTours.property('recordPage') ? GroupTours.property('recordPage')|page({(GroupTours.paramName('recordPageSlug')):(record.slug)})}}">{{record.name}}</a>
             </li>
-            {% else %}
-            <li class="no-data">{{ noRecordsMessage }}</li>
             {% endfor %}
 
-
           </ul>
-
-
         </div>
 
 
@@ -2500,58 +2341,6 @@ pageNumber = "{{ :page }}"
         </div>
 
 
-        <div class="sdb_most_popular visible-xs">
-
-          <h3>Most popular tours</h3>
-
-          <div class="item item_tour with_border auto_height ">
-            <a href="https://kyrgyzstan-tourism.com/tours/trekking-to-the-lake-kel-suu/">
-              <span class="img_wrapper">
-                <span class="img lazy" style=""
-                  data-bg="url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/10/Kel-Suu-660x360.jpg)"></span>
-
-              </span>
-              <div class="desc">
-                <h3>Trekking to the Lake Kel-Suu</h3>
-                <p class="excerpt">Trekking</p>
-              </div>
-              <p class="duration"><i class="fa fa-clock-o"></i> 5</p>
-            </a>
-          </div>
-
-          <div class="item item_tour with_border auto_height ">
-            <a
-              href="https://kyrgyzstan-tourism.com/tours/travelling-from-kichik-alay-to-pamir-alay-through-jiptik-pass/">
-              <span class="img_wrapper">
-                <span class="img lazy" style=""
-                  data-bg="url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/HikerLeninPeak-1-of-1-660x360.jpg)"></span>
-
-              </span>
-              <div class="desc">
-                <h3>Travelling from Kichik-Alay to Pamir-Alay.</h3>
-                <p class="excerpt">Alay mountains, Lenin peak panorama</p>
-              </div>
-              <p class="duration"><i class="fa fa-clock-o"></i> 7 days</p>
-            </a>
-          </div>
-
-          <div class="item item_tour with_border auto_height ">
-            <a href="https://kyrgyzstan-tourism.com/tours/lake-hopping-issyk-kul-and-song-kul/">
-              <span class="img_wrapper">
-                <span class="img lazy" style=""
-                  data-bg="url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/SunsetSKyurt-1-of-1-660x360.jpg)"></span>
-
-              </span>
-              <div class="desc">
-                <h3>Lake hopping: Issyk-Kul and Song-Kul</h3>
-                <p class="excerpt">Milti-active tour</p>
-              </div>
-              <p class="duration"><i class="fa fa-clock-o"></i> 7 days</p>
-            </a>
-          </div>
-
-
-        </div>
 
         <div class="form_wrapper sdb_form">
 
@@ -2600,51 +2389,28 @@ pageNumber = "{{ :page }}"
 
           <h3>Most popular tours</h3>
 
-          <div class="item item_tour with_border auto_height ">
-            <a href="https://kyrgyzstan-tourism.com/tours/trekking-to-the-lake-kel-suu/">
-              <span class="img_wrapper">
-                <span class="img lazy" style=""
-                  data-bg="url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/10/Kel-Suu-660x360.jpg)"></span>
 
-              </span>
-              <div class="desc">
-                <h3>Trekking to the Lake Kel-Suu</h3>
-                <p class="excerpt">Trekking</p>
-              </div>
-              <p class="duration"><i class="fa fa-clock-o"></i> 5</p>
-            </a>
-          </div>
+
+          {% for record in GroupTours.items %}
 
           <div class="item item_tour with_border auto_height ">
             <a
-              href="https://kyrgyzstan-tourism.com/tours/travelling-from-kichik-alay-to-pamir-alay-through-jiptik-pass/">
+              href="{{GroupTours.property('recordPage') ? GroupTours.property('recordPage')|page({(GroupTours.paramName('recordPageSlug')):(record.slug)})}}">
               <span class="img_wrapper">
-                <span class="img lazy" style=""
-                  data-bg="url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/HikerLeninPeak-1-of-1-660x360.jpg)"></span>
+                <span class="img lazy" style="" data-bg="url({{ record.preview_image.getPath }})"></span>
 
               </span>
               <div class="desc">
-                <h3>Travelling from Kichik-Alay to Pamir-Alay.</h3>
-                <p class="excerpt">Alay mountains, Lenin peak panorama</p>
+                <h3>{{ record.name }}</h3>
+                <p class="excerpt">{{ record.description }}</p>
               </div>
-              <p class="duration"><i class="fa fa-clock-o"></i> 7 days</p>
+              <p class="duration"><i class="fa fa-clock-o"></i>
+                {{ record.getAttributeValueBySlug('prodolzhitelnost_tura') }}
+                days</p>
             </a>
           </div>
 
-          <div class="item item_tour with_border auto_height ">
-            <a href="https://kyrgyzstan-tourism.com/tours/lake-hopping-issyk-kul-and-song-kul/">
-              <span class="img_wrapper">
-                <span class="img lazy" style=""
-                  data-bg="url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/SunsetSKyurt-1-of-1-660x360.jpg)"></span>
-
-              </span>
-              <div class="desc">
-                <h3>Lake hopping: Issyk-Kul and Song-Kul</h3>
-                <p class="excerpt">Milti-active tour</p>
-              </div>
-              <p class="duration"><i class="fa fa-clock-o"></i> 7 days</p>
-            </a>
-          </div>
+          {% endfor %}
 
 
         </div>
@@ -2656,17 +2422,4 @@ pageNumber = "{{ :page }}"
 
     </div>
   </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-{% else %}
-{{ notFoundMessage }}
-{% endif %}";s:4:"code";N;s:5:"title";s:5:"Tours";s:3:"url";s:12:"/tours/:slug";s:6:"layout";s:13:"static-layout";s:9:"is_hidden";s:1:"0";s:20:"builderDetails Tours";a:5:{s:10:"modelClass";s:24:"Tours\Tours\Models\Tours";s:15:"identifierValue";s:11:"{{ :slug }}";s:14:"modelKeyColumn";s:4:"slug";s:13:"displayColumn";s:5:"title";s:15:"notFoundMessage";s:16:"Record not found";}s:22:"builderList GroupTours";a:9:{s:10:"modelClass";s:24:"Tours\Tours\Models\Tours";s:5:"scope";s:1:"-";s:10:"scopeValue";s:12:"{{ :scope }}";s:13:"displayColumn";s:4:"slug";s:16:"noRecordsMessage";s:16:"No records found";s:11:"detailsPage";s:5:"tours";s:16:"detailsKeyColumn";s:4:"slug";s:19:"detailsUrlParameter";s:4:"slug";s:10:"pageNumber";s:11:"{{ :page }}";}}}
+</div>";s:4:"code";N;s:5:"title";s:5:"Tours";s:3:"url";s:12:"/tours/:slug";s:6:"layout";s:13:"static-layout";s:9:"is_hidden";s:1:"0";s:18:"records GroupTours";a:13:{s:10:"activeOnly";s:1:"0";s:13:"favouriteOnly";s:1:"0";s:8:"areaSlug";s:1:"0";s:12:"categorySlug";s:14:"gruppovye-tury";s:15:"useMainCategory";s:1:"0";s:18:"useMultiCategories";s:1:"1";s:7:"tagSlug";s:10:"{{ :tag }}";s:10:"recordPage";s:5:"tours";s:14:"recordPageSlug";s:11:"{{ :slug }}";s:5:"limit";s:2:"10";s:8:"pageSlug";s:11:"{{ :page }}";s:7:"orderBy";s:4:"name";s:16:"orderByDirection";s:3:"ASC";}}}

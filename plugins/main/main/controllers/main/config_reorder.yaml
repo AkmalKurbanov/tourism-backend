@@ -1,4 +1,0 @@
-title: Main
-modelClass: Main\Main\Models\Main
-toolbar:
-    buttons: reorder_toolbar
