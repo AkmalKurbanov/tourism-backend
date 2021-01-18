@@ -168,7 +168,7 @@ class __TwigTemplate_f7f3d08e74deb0f0953cc2af8de91ba287ddd936a2d76f03b796a623685
               ";
         // line 97
         $context['__cms_partial_params'] = [];
-        echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/group_tours"        , $context['__cms_partial_params']        , true        );
+        echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/tours/group_tours"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
         // line 98
         echo "
@@ -650,7 +650,7 @@ class __TwigTemplate_f7f3d08e74deb0f0953cc2af8de91ba287ddd936a2d76f03b796a623685
 
 
 
-              {% partial 'site/group_tours' %}
+              {% partial 'site/tours/group_tours' %}
 
 
 

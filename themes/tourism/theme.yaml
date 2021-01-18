@@ -1,3 +1,39 @@
 name: Tourism
 description: 'Возвращение к истокам.'
 author: Акмаль
+code: ''
+
+form:
+  fields:
+    site_name: 
+      label: Имя сайта
+      default: Tourism
+    phone1: 
+      label: телефон1
+      default: +996 706 363738
+    phone2: 
+      label: телефон2
+      default: +996 706 363738
+    phone3: 
+      label: телефон3
+      default: +996 777 970779
+    user_email:
+      label: Email адрес
+      type: email
+    copyright: 
+      label: Копирайт
+      default: © Kyrgyzstan tourism
+    info: 
+      label: Доп. информация
+      default: Kyrgyz Republic. Bishkek city
+        Mon – Sat 9.00 – 18.00 Sunday CLOSED
+    termsUse: 
+      label: Условия и использование
+      default: Terms & use
+    logo:
+      label: Logo
+      type: fileupload
+      mode: image
+      imageHeight: 260
+      imageWidth: 260
+      

@@ -1,4 +1,4 @@
-1610988897a:1:{s:17:"static-layout.htm";a:7:{s:8:"fileName";s:17:"static-layout.htm";s:7:"content";s:2943:"[staticPage]
+1611002632a:1:{s:17:"static-layout.htm";a:7:{s:8:"fileName";s:17:"static-layout.htm";s:7:"content";s:2956:"[staticPage]
 useContent = 1
 default = 0
 
@@ -32,7 +32,7 @@ code = "menu"
   {% partial 'site/head_styles_index_page/style5' %}
 
   <meta charset="utf-8">
-  <title>October CMS - {{ this.page.title }}</title>
+  <title>{{this.theme.site_name}} - {{ this.page.title }}</title>
   <meta name="description" content="{{ this.page.meta_description }}">
   <meta name="title" content="{{ this.page.meta_title }}">
   <meta name="author" content="OctoberCMS">
@@ -83,7 +83,7 @@ code = "menu"
 
 </body>
 
-</html>";s:5:"mtime";i:1610906502;s:6:"markup";s:2865:"<!DOCTYPE html>
+</html>";s:5:"mtime";i:1610999808;s:6:"markup";s:2878:"<!DOCTYPE html>
 <html>
 
 <head>
@@ -110,7 +110,7 @@ code = "menu"
   {% partial 'site/head_styles_index_page/style5' %}
 
   <meta charset="utf-8">
-  <title>October CMS - {{ this.page.title }}</title>
+  <title>{{this.theme.site_name}} - {{ this.page.title }}</title>
   <meta name="description" content="{{ this.page.meta_description }}">
   <meta name="title" content="{{ this.page.meta_title }}">
   <meta name="author" content="OctoberCMS">

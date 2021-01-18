@@ -5,7 +5,7 @@
 
        <div class="col-sm-4">
          <a href="https://kyrgyzstan-tourism.com">
-         <img src="{{record.logo.path}}" alt="">
+         <img src="{{this.theme.logo.path}}" alt="">
          </a>
          <div class="social">
           
@@ -25,18 +25,27 @@
 
            <div class="col-sm-6">
              <p class="phone">
-               <phone><a href="tel:"></a></phone>
+               <phone><a href="tel:{{this.theme.phone2}}">{{this.theme.phone2}}</a></phone>
              </p>
              <p class="phone">
-               <phone><a href="tel:"></a></phone>
+               <phone><a href="tel:{{this.theme.phone3}}">{{this.theme.phone3}}</a></phone>
              </p>
-             <p><a href="mailto:info@kyrgyzstan-tourism.com"></a></p>
+             <p><a href="mailto:{{this.theme.user_email}}">{{this.theme.user_email}}</a></p>
            </div>
            <div class="col-sm-6">
-             <p></p>
+             <p>{{this.theme.info}}</p>
            </div>
          </div>
        </div>
 
+     </div>
+   </div>
+   <div class="line_helper" style="background: #959da7;"></div>
+   <div class="container">
+     <div class="row">
+       <div class="col-xs-6">
+         <p>{{this.theme.copyright}}</p>
+       </div>
+       <div class="col-xs-6 text-right"><a href="#">{{this.theme.termsUse}}</a></div>
      </div>
    </div>

@@ -135,8 +135,10 @@ class __TwigTemplate_d0e3e91f087574b6925a1b19c2b890140ea9d30579d0ec20b3145382a05
         // line 26
         echo "
   <meta charset=\"utf-8\">
-  <title>October CMS - ";
+  <title>";
         // line 28
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 28), "site_name", [], "any", false, false, true, 28), 28, $this->source), "html", null, true);
+        echo " - ";
         echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, true, 28), "title", [], "any", false, false, true, 28), 28, $this->source), "html", null, true);
         echo "</title>
   <meta name=\"description\" content=\"";
@@ -280,7 +282,7 @@ class __TwigTemplate_d0e3e91f087574b6925a1b19c2b890140ea9d30579d0ec20b3145382a05
 
     public function getDebugInfo()
     {
-        return array (  265 => 76,  261 => 75,  250 => 74,  247 => 73,  242 => 72,  237 => 71,  233 => 70,  229 => 69,  225 => 68,  221 => 67,  216 => 64,  212 => 63,  206 => 59,  204 => 58,  198 => 54,  194 => 53,  189 => 50,  185 => 49,  173 => 39,  169 => 38,  164 => 37,  160 => 36,  155 => 34,  148 => 30,  144 => 29,  140 => 28,  136 => 26,  131 => 25,  126 => 24,  122 => 23,  119 => 22,  115 => 21,  111 => 20,  102 => 14,  99 => 13,  95 => 12,  92 => 11,  87 => 10,  82 => 9,  78 => 8,  72 => 6,  68 => 5,  62 => 1,);
+        return array (  267 => 76,  263 => 75,  252 => 74,  249 => 73,  244 => 72,  239 => 71,  235 => 70,  231 => 69,  227 => 68,  223 => 67,  218 => 64,  214 => 63,  208 => 59,  206 => 58,  200 => 54,  196 => 53,  191 => 50,  187 => 49,  175 => 39,  171 => 38,  166 => 37,  162 => 36,  157 => 34,  150 => 30,  146 => 29,  140 => 28,  136 => 26,  131 => 25,  126 => 24,  122 => 23,  119 => 22,  115 => 21,  111 => 20,  102 => 14,  99 => 13,  95 => 12,  92 => 11,  87 => 10,  82 => 9,  78 => 8,  72 => 6,  68 => 5,  62 => 1,);
     }
 
     public function getSourceContext()
@@ -312,7 +314,7 @@ class __TwigTemplate_d0e3e91f087574b6925a1b19c2b890140ea9d30579d0ec20b3145382a05
   {% partial 'site/head_styles_index_page/style5' %}
 
   <meta charset=\"utf-8\">
-  <title>October CMS - {{ this.page.title }}</title>
+  <title>{{this.theme.site_name}} - {{ this.page.title }}</title>
   <meta name=\"description\" content=\"{{ this.page.meta_description }}\">
   <meta name=\"title\" content=\"{{ this.page.meta_title }}\">
   <meta name=\"author\" content=\"OctoberCMS\">

@@ -1,4 +1,4 @@
-1610989182a:1:{s:15:"group-tours.htm";a:11:{s:8:"fileName";s:15:"group-tours.htm";s:7:"content";s:55205:"title = "group-tours"
+1611002632a:1:{s:15:"group-tours.htm";a:11:{s:8:"fileName";s:15:"group-tours.htm";s:7:"content";s:55205:"title = "group-tours"
 url = "/group-tours/:slug"
 layout = "static-layout"
 is_hidden = 0

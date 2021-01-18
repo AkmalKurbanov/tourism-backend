@@ -186,4 +186,5 @@
   'akmal\\introduction\\Plugin' => 'plugins\\akmal\\introduction\\Plugin.php',
   'akmal\\introduction\\Controllers\\introduction' => 'plugins\\akmal\\introduction\\controllers\\introduction.php',
   'Akmal\\Introduction\\Models\\IntroductionText' => 'plugins\\akmal\\introduction\\models\\IntroductionText.php',
+  'cms\\Controllers\\themeoptions' => 'modules\\cms\\controllers\\themeoptions.php',
 );

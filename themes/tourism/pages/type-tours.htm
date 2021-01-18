@@ -1,0 +1,133 @@
+title = "type-tours"
+url = "/type-tours/:slug"
+layout = "static-layout"
+is_hidden = 0
+
+[recordDetail TypeToursDetail]
+activeOnly = 0
+recordSlug = "{{ :slug }}"
+areaSlug = "tury"
+categorySlug = "vid-tura"
+useMainCategory = 0
+useMultiCategories = 1
+categoryPage = 0
+categoryPageSlug = "{{ :category }}"
+
+[records Tours]
+activeOnly = 0
+areaSlug = 0
+categorySlug = "{{ :category }}"
+tagSlug = "{{ :tag }}"
+recordPage = "tour-detail"
+recordPageSlug = "{{ :slug }}"
+limit = 10
+pageSlug = "{{ :page }}"
+orderBy = "name"
+orderByDirection = "ASC"
+==
+<div id="top" class="small_top lazy" style=""
+    data-bg="url({{TypeToursDetail.recordDetail.preview_image.getPath }})">
+
+    <div class="breadcrumb_wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <p id="breadcrumbs"><span><span><a href="https://kyrgyzstan-tourism.com/">Home</a> / <span
+                                    class="breadcrumb_last" aria-current="page">{{ TypeToursDetail.recordDetail.name }}</span></span></span></p>
+                    <div class="line_helper" style="background: rgba(255,255,255,.3)"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="desc">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h1 id="single_tour_title">{{ TypeToursDetail.recordDetail.name }}</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+            <div id="archive_content">
+
+                <div id="content" class="tax-content">
+                    <p>We offer a wide range of horseback tours throughout <a
+                            href="https://kyrgyzstan-tourism.com/kyrgyzstan/" target="_blank"
+                            rel="noopener noreferrer">Kyrgyzstan</a>. Each route and details can be fully tailor-made
+                        for your requests. Our guides have extensive experience in conducting horse tours of various
+                        categories from one to twenty days’ routes. During the tour, you will get riding skills and find
+                        the most good-natured friends and feel the spirit of adventure.</p>
+                    <h3><a href="https://kyrgyzstan-tourism.com/blog/horseriding-in-kyrgyzstan/" target="_blank"
+                            rel="noopener noreferrer">-The 7 horseback riding basic rules in Kyrgyzstan.-</a></h3>
+                    <h6><em>Horse tours in Kyrgyzstan. Directed by Myrzabek Ozubekov</em><iframe width="560"
+                            height="315" frameborder="0" allowfullscreen="allowfullscreen"
+                            data-src="https://www.youtube.com/embed/H4DLFG-aVOk" class="lazyload"
+                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></iframe>
+                    </h6>
+                    <div id="gtx-trans" style="position: absolute; left: 534px; top: 126px;">
+                        <div class="gtx-trans-icon"></div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+
+                 {% for record in Tours.items %}
+                    <div class="col-sm-4">
+                        <div class="item item_tour with_border auto_height ">
+                            <a href="{{Tours.property('recordPage') ? Tours.property('recordPage')|page({(Tours.paramName('recordPageSlug')):(record.slug)})}}">
+                                <span class="img_wrapper">
+                                    <span class="img lazy" style=""
+                                        data-bg="url({{ record.preview_image.getPath }})"></span>
+
+                                </span>
+                                <div class="desc">
+                                    <h3>{{record.name}}</h3>
+                                    <p class="excerpt">{{record.description}}</p>
+                                </div>
+                                <p class="duration"><i class="fa fa-clock-o"></i> {{ record.getAttributeValueBySlug('prodolzhitelnost_tura') }} days</p>
+                            </a>
+                        </div>
+
+                    </div>
+                    {% endfor %}
+
+                </div>
+            
+
+
+
+
+
+
+
+                <div id="pagin_wrapper">
+
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-sm-3">
+            <div class="sidebar_wrapper">
+
+                <div id="sidebar">
+
+
+                {% partial 'site/sidebar' %}
+                  
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
