@@ -30,14 +30,14 @@ class __TwigTemplate_f7f3d08e74deb0f0953cc2af8de91ba287ddd936a2d76f03b796a623685
         ];
         $this->sandbox = $this->env->getExtension('\Twig\Extension\SandboxExtension');
         $tags = array("partial" => 27);
-        $filters = array();
-        $functions = array();
+        $filters = array("escape" => 421);
+        $functions = array("form_token" => 423);
 
         try {
             $this->sandbox->checkSecurity(
                 ['partial'],
-                [],
-                []
+                ['escape'],
+                ['form_token']
             );
         } catch (SecurityError $e) {
             $e->setSourceContext($this->source);
@@ -508,28 +508,42 @@ class __TwigTemplate_f7f3d08e74deb0f0953cc2af8de91ba287ddd936a2d76f03b796a623685
         <h2 class=\"text-center with_line with_big_line\">Contact with us</h2>
         <div role=\"form\" class=\"wpcf7\" id=\"wpcf7-f198-o1\" lang=\"ru-RU\" dir=\"ltr\">
           <div class=\"screen-reader-response\" role=\"alert\" aria-live=\"polite\"></div>
-          <form action=\"/#wpcf7-f198-o1\" method=\"post\" class=\"wpcf7-form init\" novalidate=\"novalidate\">
-            <div style=\"display: none;\">
-              <input type=\"hidden\" name=\"_wpcf7\" value=\"198\" />
-              <input type=\"hidden\" name=\"_wpcf7_version\" value=\"5.2.2\" />
-              <input type=\"hidden\" name=\"_wpcf7_locale\" value=\"ru_RU\" />
-              <input type=\"hidden\" name=\"_wpcf7_unit_tag\" value=\"wpcf7-f198-o1\" />
-              <input type=\"hidden\" name=\"_wpcf7_container_post\" value=\"0\" />
-              <input type=\"hidden\" name=\"_wpcf7_posted_data_hash\" value=\"\" />
-              <input type=\"hidden\" name=\"_wpcf7_recaptcha_response\" value=\"\" />
-            </div>
-            <p><span class=\"wpcf7-form-control-wrap text-name\"><input type=\"text\" name=\"text-name\" value=\"\" size=\"40\"
-                  class=\"wpcf7-form-control wpcf7-text wpcf7-validates-as-required\" aria-required=\"true\"
-                  aria-invalid=\"false\" placeholder=\"Your name\" /></span></p>
-            <p><span class=\"wpcf7-form-control-wrap email-196\"><input type=\"email\" name=\"email-196\" value=\"\" size=\"40\"
-                  class=\"wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email\"
-                  aria-required=\"true\" aria-invalid=\"false\" placeholder=\"Your email\" /></span></p>
-            <p><span class=\"wpcf7-form-control-wrap textarea-630\"><textarea name=\"textarea-630\" cols=\"40\" rows=\"10\"
-                  class=\"wpcf7-form-control wpcf7-textarea\" aria-invalid=\"false\"
-                  placeholder=\"Your message\"></textarea></span></p>
-            <p><input type=\"submit\" value=\"Send\" class=\"wpcf7-form-control wpcf7-submit cstm_button submit\" /></p>
-            <div class=\"wpcf7-response-output\" role=\"alert\" aria-hidden=\"true\"></div>
-          </form>
+         
+    <form data-request=\"";
+        // line 421
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(($context["HomPageForm"] ?? null), 421, $this->source), "html", null, true);
+        echo "::onFormSubmit\">
+
+    ";
+        // line 423
+        echo call_user_func_array($this->env->getFunction('form_token')->getCallable(), ["token"]);
+        echo "
+
+    <div id=\"";
+        // line 425
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(($context["HomPageForm"] ?? null), 425, $this->source), "html", null, true);
+        echo "_forms_flash\"></div>
+
+   <div class=\"form-group\">
+        <input type=\"text\" id=\"name\" name=\"name\" class=\"form-control\" placeholder=\"Your name\">
+    </div>
+
+    <div class=\"form-group\">
+        <input type=\"text\" id=\"email\" name=\"email\" class=\"form-control\" placeholder=\"Your email\">
+    </div>
+
+ 
+
+    <div class=\"form-group\">
+        <textarea id=\"message\" name=\"message\" class=\"form-control\" cols=\"40\" rows=\"5\" placeholder=\"Your message\"></textarea>
+    </div>
+
+    <button id=\"simpleContactSubmitButton\" type=\"submit\" class=\"btn btn-default cstm_button submit\">send</button>
+
+</form>
+
+      
+          
         </div>
       </div>
     </div>
@@ -549,7 +563,7 @@ class __TwigTemplate_f7f3d08e74deb0f0953cc2af8de91ba287ddd936a2d76f03b796a623685
 
     public function getDebugInfo()
     {
-        return array (  313 => 222,  309 => 221,  258 => 172,  254 => 171,  220 => 139,  216 => 138,  174 => 98,  170 => 97,  124 => 53,  120 => 52,  94 => 28,  90 => 27,  62 => 1,);
+        return array (  524 => 425,  519 => 423,  514 => 421,  313 => 222,  309 => 221,  258 => 172,  254 => 171,  220 => 139,  216 => 138,  174 => 98,  170 => 97,  124 => 53,  120 => 52,  94 => 28,  90 => 27,  62 => 1,);
     }
 
     public function getSourceContext()
@@ -973,28 +987,33 @@ class __TwigTemplate_f7f3d08e74deb0f0953cc2af8de91ba287ddd936a2d76f03b796a623685
         <h2 class=\"text-center with_line with_big_line\">Contact with us</h2>
         <div role=\"form\" class=\"wpcf7\" id=\"wpcf7-f198-o1\" lang=\"ru-RU\" dir=\"ltr\">
           <div class=\"screen-reader-response\" role=\"alert\" aria-live=\"polite\"></div>
-          <form action=\"/#wpcf7-f198-o1\" method=\"post\" class=\"wpcf7-form init\" novalidate=\"novalidate\">
-            <div style=\"display: none;\">
-              <input type=\"hidden\" name=\"_wpcf7\" value=\"198\" />
-              <input type=\"hidden\" name=\"_wpcf7_version\" value=\"5.2.2\" />
-              <input type=\"hidden\" name=\"_wpcf7_locale\" value=\"ru_RU\" />
-              <input type=\"hidden\" name=\"_wpcf7_unit_tag\" value=\"wpcf7-f198-o1\" />
-              <input type=\"hidden\" name=\"_wpcf7_container_post\" value=\"0\" />
-              <input type=\"hidden\" name=\"_wpcf7_posted_data_hash\" value=\"\" />
-              <input type=\"hidden\" name=\"_wpcf7_recaptcha_response\" value=\"\" />
-            </div>
-            <p><span class=\"wpcf7-form-control-wrap text-name\"><input type=\"text\" name=\"text-name\" value=\"\" size=\"40\"
-                  class=\"wpcf7-form-control wpcf7-text wpcf7-validates-as-required\" aria-required=\"true\"
-                  aria-invalid=\"false\" placeholder=\"Your name\" /></span></p>
-            <p><span class=\"wpcf7-form-control-wrap email-196\"><input type=\"email\" name=\"email-196\" value=\"\" size=\"40\"
-                  class=\"wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email\"
-                  aria-required=\"true\" aria-invalid=\"false\" placeholder=\"Your email\" /></span></p>
-            <p><span class=\"wpcf7-form-control-wrap textarea-630\"><textarea name=\"textarea-630\" cols=\"40\" rows=\"10\"
-                  class=\"wpcf7-form-control wpcf7-textarea\" aria-invalid=\"false\"
-                  placeholder=\"Your message\"></textarea></span></p>
-            <p><input type=\"submit\" value=\"Send\" class=\"wpcf7-form-control wpcf7-submit cstm_button submit\" /></p>
-            <div class=\"wpcf7-response-output\" role=\"alert\" aria-hidden=\"true\"></div>
-          </form>
+         
+    <form data-request=\"{{ HomPageForm }}::onFormSubmit\">
+
+    {{ form_token() }}
+
+    <div id=\"{{ HomPageForm }}_forms_flash\"></div>
+
+   <div class=\"form-group\">
+        <input type=\"text\" id=\"name\" name=\"name\" class=\"form-control\" placeholder=\"Your name\">
+    </div>
+
+    <div class=\"form-group\">
+        <input type=\"text\" id=\"email\" name=\"email\" class=\"form-control\" placeholder=\"Your email\">
+    </div>
+
+ 
+
+    <div class=\"form-group\">
+        <textarea id=\"message\" name=\"message\" class=\"form-control\" cols=\"40\" rows=\"5\" placeholder=\"Your message\"></textarea>
+    </div>
+
+    <button id=\"simpleContactSubmitButton\" type=\"submit\" class=\"btn btn-default cstm_button submit\">send</button>
+
+</form>
+
+      
+          
         </div>
       </div>
     </div>

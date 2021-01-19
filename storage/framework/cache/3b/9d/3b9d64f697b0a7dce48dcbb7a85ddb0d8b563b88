@@ -1,4 +1,4 @@
-1610998252a:1:{s:25:"site/tours/type_tours.htm";a:5:{s:8:"fileName";s:25:"site/tours/type_tours.htm";s:7:"content";s:567:" {% for record in TypeTours.items %}
+1611088867a:1:{s:25:"site/tours/type_tours.htm";a:5:{s:8:"fileName";s:25:"site/tours/type_tours.htm";s:7:"content";s:567:" {% for record in TypeTours.items %}
 
  <div class="col-sm-4">
    <div class="item item_tour with_border auto_height tour_type">

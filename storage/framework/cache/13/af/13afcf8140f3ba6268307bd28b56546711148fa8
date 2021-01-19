@@ -1,4 +1,6 @@
-1611002632a:1:{s:16:"site/sidebar.htm";a:7:{s:8:"fileName";s:16:"site/sidebar.htm";s:7:"content";s:5865:"[records PopularTours]
+1611089310a:1:{s:16:"site/sidebar.htm";a:7:{s:8:"fileName";s:16:"site/sidebar.htm";s:7:"content";s:4645:"[viewBag]
+
+[records PopularTours]
 activeOnly = 0
 areaSlug = "tury"
 categorySlug = "populyarnye-tury"
@@ -10,8 +12,6 @@ limit = 10
 pageSlug = "{{ :page }}"
 orderBy = "name"
 orderByDirection = "ASC"
-
-[viewBag]
 ==
 <div class="tags tags_light">
   <h3>Sights</h3>
@@ -86,39 +86,56 @@ orderByDirection = "ASC"
   <h3>Book the tour</h3>
   <div role="form" class="wpcf7" id="wpcf7-f5211-o2" lang="ru-RU" dir="ltr">
     <div class="screen-reader-response" role="alert" aria-live="polite"></div>
-    <form action="/group-tours/explore-south-and-north-kyrgyzstan/#wpcf7-f5211-o2" method="post" class="wpcf7-form init"
-      novalidate="novalidate">
-      <div style="display: none;">
-        <input type="hidden" name="_wpcf7" value="5211" />
-        <input type="hidden" name="_wpcf7_version" value="5.2.2" />
-        <input type="hidden" name="_wpcf7_locale" value="ru_RU" />
-        <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f5211-o2" />
-        <input type="hidden" name="_wpcf7_container_post" value="0" />
-        <input type="hidden" name="_wpcf7_posted_data_hash" value="" />
-        <input type="hidden" name="_wpcf7_recaptcha_response" value="" />
-      </div>
-      <p><span class="wpcf7-form-control-wrap text-tour"><input type="text" name="text-tour" value="" size="40"
-            class="wpcf7-form-control wpcf7-text hidden input_tour_name" aria-invalid="false" /></span><span
-          class="wpcf7-form-control-wrap text-departure"><input type="text" name="text-departure" value="" size="40"
-            class="wpcf7-form-control wpcf7-text text_departure hidden" aria-invalid="false" /></span><span
-          class="wpcf7-form-control-wrap text-name"><input type="text" name="text-name" value="" size="40"
-            class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false"
-            placeholder="Your name" /></span></p>
-      <h4>Departure</h4>
-      <p><select name='available_departure_select' class='available_departure_select'>
-          <option value="Jul 22, 2021 - Thu" selected>Jul 22, 2021 - Thu</option>
-          <option value="Sep 4, 2021 - Sat">Sep 4, 2021 - Sat</option>
-        </select></p>
-      <p><span class="wpcf7-form-control-wrap email-196"><input type="email" name="email-196" value="" size="40"
-            class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email"
-            aria-required="true" aria-invalid="false" placeholder="Your email" /></span></p>
-      <p><span class="wpcf7-form-control-wrap textarea-630"><textarea name="textarea-630" cols="40" rows="10"
-            class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Your message"></textarea></span>
-      </p>
-      <p><input type="submit" value="Send" onclick="ga('send','event','НижняяФорма','send')"
-          class="wpcf7-form-control wpcf7-submit cstm_button submit"></p>
-      <div class="wpcf7-response-output" role="alert" aria-hidden="true"></div>
-    </form>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+     <form data-request="{{ TourForm }}::onFormSubmit">
+
+    {{ form_token() }}
+
+    <div id="{{ TourForm }}_forms_flash"></div>
+    
+      <div class="form-group">
+        <input type="hidden" id="tourName" name="tour name" class="form-control" value="{{ TourDetail.recordDetail.name }}">
+    </div>
+
+   <div class="form-group">
+        <input type="text" id="name" name="name" class="form-control" placeholder="Your name">
+    </div>
+    
+    <h4>Departure</h4>
+    <div class="form-group">
+  
+  <select name="available_departure_select" class="available_departure_select">
+<option value="Jul 13, 2021 - Tue" selected="">Jul 13, 2021 - Tue</option>
+<option value="Aug 26, 2021 - Thu">Aug 26, 2021 - Thu</option>
+</select>
+
+    </div>
+
+    <div class="form-group">
+        <input type="text" id="email" name="email" class="form-control" placeholder="Your email">
+    </div>
+
+ 
+
+    <div class="form-group">
+        <textarea id="message" name="message" class="form-control" cols="40" rows="5" placeholder="Your message"></textarea>
+    </div>
+
+    <button id="simpleContactSubmitButton" type="submit" class="btn btn-default cstm_button submit">send</button>
+
+<div class="wpcf7-response-output" role="alert" aria-hidden="true"></div>
+
+</form>
+ 
   </div>
 </div>
 
@@ -150,7 +167,7 @@ orderByDirection = "ASC"
   {% endfor %}
 
 
-</div>";s:5:"mtime";i:1610981937;s:6:"markup";s:5564:"<div class="tags tags_light">
+</div>";s:5:"mtime";i:1611083281;s:6:"markup";s:4344:"<div class="tags tags_light">
   <h3>Sights</h3>
   <div class="line_helper" style="background: #e9e9e9"></div>
   <ul class="list-unstyled sdb_ul">
@@ -223,39 +240,56 @@ orderByDirection = "ASC"
   <h3>Book the tour</h3>
   <div role="form" class="wpcf7" id="wpcf7-f5211-o2" lang="ru-RU" dir="ltr">
     <div class="screen-reader-response" role="alert" aria-live="polite"></div>
-    <form action="/group-tours/explore-south-and-north-kyrgyzstan/#wpcf7-f5211-o2" method="post" class="wpcf7-form init"
-      novalidate="novalidate">
-      <div style="display: none;">
-        <input type="hidden" name="_wpcf7" value="5211" />
-        <input type="hidden" name="_wpcf7_version" value="5.2.2" />
-        <input type="hidden" name="_wpcf7_locale" value="ru_RU" />
-        <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f5211-o2" />
-        <input type="hidden" name="_wpcf7_container_post" value="0" />
-        <input type="hidden" name="_wpcf7_posted_data_hash" value="" />
-        <input type="hidden" name="_wpcf7_recaptcha_response" value="" />
-      </div>
-      <p><span class="wpcf7-form-control-wrap text-tour"><input type="text" name="text-tour" value="" size="40"
-            class="wpcf7-form-control wpcf7-text hidden input_tour_name" aria-invalid="false" /></span><span
-          class="wpcf7-form-control-wrap text-departure"><input type="text" name="text-departure" value="" size="40"
-            class="wpcf7-form-control wpcf7-text text_departure hidden" aria-invalid="false" /></span><span
-          class="wpcf7-form-control-wrap text-name"><input type="text" name="text-name" value="" size="40"
-            class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false"
-            placeholder="Your name" /></span></p>
-      <h4>Departure</h4>
-      <p><select name='available_departure_select' class='available_departure_select'>
-          <option value="Jul 22, 2021 - Thu" selected>Jul 22, 2021 - Thu</option>
-          <option value="Sep 4, 2021 - Sat">Sep 4, 2021 - Sat</option>
-        </select></p>
-      <p><span class="wpcf7-form-control-wrap email-196"><input type="email" name="email-196" value="" size="40"
-            class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email"
-            aria-required="true" aria-invalid="false" placeholder="Your email" /></span></p>
-      <p><span class="wpcf7-form-control-wrap textarea-630"><textarea name="textarea-630" cols="40" rows="10"
-            class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Your message"></textarea></span>
-      </p>
-      <p><input type="submit" value="Send" onclick="ga('send','event','НижняяФорма','send')"
-          class="wpcf7-form-control wpcf7-submit cstm_button submit"></p>
-      <div class="wpcf7-response-output" role="alert" aria-hidden="true"></div>
-    </form>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+     <form data-request="{{ TourForm }}::onFormSubmit">
+
+    {{ form_token() }}
+
+    <div id="{{ TourForm }}_forms_flash"></div>
+    
+      <div class="form-group">
+        <input type="hidden" id="tourName" name="tour name" class="form-control" value="{{ TourDetail.recordDetail.name }}">
+    </div>
+
+   <div class="form-group">
+        <input type="text" id="name" name="name" class="form-control" placeholder="Your name">
+    </div>
+    
+    <h4>Departure</h4>
+    <div class="form-group">
+  
+  <select name="available_departure_select" class="available_departure_select">
+<option value="Jul 13, 2021 - Tue" selected="">Jul 13, 2021 - Tue</option>
+<option value="Aug 26, 2021 - Thu">Aug 26, 2021 - Thu</option>
+</select>
+
+    </div>
+
+    <div class="form-group">
+        <input type="text" id="email" name="email" class="form-control" placeholder="Your email">
+    </div>
+
+ 
+
+    <div class="form-group">
+        <textarea id="message" name="message" class="form-control" cols="40" rows="5" placeholder="Your message"></textarea>
+    </div>
+
+    <button id="simpleContactSubmitButton" type="submit" class="btn btn-default cstm_button submit">send</button>
+
+<div class="wpcf7-response-output" role="alert" aria-hidden="true"></div>
+
+</form>
+ 
   </div>
 </div>
 
@@ -287,4 +321,4 @@ orderByDirection = "ASC"
   {% endfor %}
 
 
-</div>";s:4:"code";N;s:20:"records PopularTours";a:11:{s:10:"activeOnly";s:1:"0";s:8:"areaSlug";s:4:"tury";s:12:"categorySlug";s:16:"populyarnye-tury";s:18:"useMultiCategories";s:1:"1";s:7:"tagSlug";s:10:"{{ :tag }}";s:10:"recordPage";s:11:"group-tours";s:14:"recordPageSlug";s:11:"{{ :slug }}";s:5:"limit";s:2:"10";s:8:"pageSlug";s:11:"{{ :page }}";s:7:"orderBy";s:4:"name";s:16:"orderByDirection";s:3:"ASC";}s:7:"viewBag";a:0:{}}}
+</div>";s:4:"code";N;s:7:"viewBag";a:0:{}s:20:"records PopularTours";a:11:{s:10:"activeOnly";s:1:"0";s:8:"areaSlug";s:4:"tury";s:12:"categorySlug";s:16:"populyarnye-tury";s:18:"useMultiCategories";s:1:"1";s:7:"tagSlug";s:10:"{{ :tag }}";s:10:"recordPage";s:11:"group-tours";s:14:"recordPageSlug";s:11:"{{ :slug }}";s:5:"limit";s:2:"10";s:8:"pageSlug";s:11:"{{ :page }}";s:7:"orderBy";s:4:"name";s:16:"orderByDirection";s:3:"ASC";}}}

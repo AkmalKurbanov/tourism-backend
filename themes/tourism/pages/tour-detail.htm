@@ -26,6 +26,18 @@ limit = 3
 pageSlug = "{{ :page }}"
 orderBy = "name"
 orderByDirection = "ASC"
+
+[genericForm TourForm]
+group = "Бронь тура"
+messages_success = "Ваша форма была успешно отправлена!"
+messages_errors = "В вашей заявке содержатся ошибки."
+inline_errors = "disabled"
+sanitize_data = "disabled"
+anonymize_ip = "disabled"
+recaptcha_theme = "light"
+recaptcha_type = "image"
+recaptcha_size = "normal"
+emails_date_format = "Y-m-d"
 ==
 <div class="lazy" id="top" style="" data-bg="url({{ TourDetail.recordDetail.preview_image.getPath }})">
 
@@ -973,15 +985,7 @@ orderByDirection = "ASC"
                 <div class="screen-reader-response" role="alert" aria-live="polite"></div>
                 <form action="/group-tours/explore-south-and-north-kyrgyzstan/#wpcf7-f5211-o1" method="post"
                   class="wpcf7-form init" novalidate="novalidate">
-                  <div style="display: none;">
-                    <input type="hidden" name="_wpcf7" value="5211" />
-                    <input type="hidden" name="_wpcf7_version" value="5.2.2" />
-                    <input type="hidden" name="_wpcf7_locale" value="ru_RU" />
-                    <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f5211-o1" />
-                    <input type="hidden" name="_wpcf7_container_post" value="0" />
-                    <input type="hidden" name="_wpcf7_posted_data_hash" value="" />
-                    <input type="hidden" name="_wpcf7_recaptcha_response" value="" />
-                  </div>
+            
                   <p><span class="wpcf7-form-control-wrap text-tour"><input type="text" name="text-tour" value=""
                         size="40" class="wpcf7-form-control wpcf7-text hidden input_tour_name"
                         aria-invalid="false" /></span><span class="wpcf7-form-control-wrap text-departure"><input

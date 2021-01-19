@@ -1,0 +1,21 @@
+1611089310a:1:{s:11:"default.htm";a:6:{s:8:"fileName";s:11:"default.htm";s:7:"content";s:518:"[viewBag]
+==
+{% framework %}
+{% framework extras %}
+  
+  <p> <input type="text" name="name" placeholder="Your name"> </p>
+          <p> <input type="text" name="name" placeholder="Your email"> </p>
+          <p> <textarea name="message" id="" cols="30" rows="10" placeholder="Your message"></textarea> </p>
+        
+          <input type="submit" value="Send" class="wpcf7-form-control wpcf7-submit cstm_button submit" />
+
+           <div class="wpcf7-response-output" role="alert" aria-hidden="true"></div>";s:5:"mtime";i:1611059040;s:6:"markup";s:503:"{% framework %}
+{% framework extras %}
+  
+  <p> <input type="text" name="name" placeholder="Your name"> </p>
+          <p> <input type="text" name="name" placeholder="Your email"> </p>
+          <p> <textarea name="message" id="" cols="30" rows="10" placeholder="Your message"></textarea> </p>
+        
+          <input type="submit" value="Send" class="wpcf7-form-control wpcf7-submit cstm_button submit" />
+
+           <div class="wpcf7-response-output" role="alert" aria-hidden="true"></div>";s:4:"code";N;s:7:"viewBag";a:0:{}}}

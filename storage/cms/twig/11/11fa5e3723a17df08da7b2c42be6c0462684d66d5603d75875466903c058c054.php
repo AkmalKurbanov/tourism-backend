@@ -29,13 +29,13 @@ class __TwigTemplate_d0e3e91f087574b6925a1b19c2b890140ea9d30579d0ec20b3145382a05
         $this->blocks = [
         ];
         $this->sandbox = $this->env->getExtension('\Twig\Extension\SandboxExtension');
-        $tags = array("partial" => 5, "styles" => 38, "page" => 58, "framework" => 74, "scripts" => 75);
+        $tags = array("partial" => 5, "styles" => 38, "for" => 76, "if" => 125, "page" => 167, "framework" => 183, "scripts" => 184);
         $filters = array("theme" => 6, "escape" => 28);
         $functions = array();
 
         try {
             $this->sandbox->checkSecurity(
-                ['partial', 'styles', 'page', 'framework', 'scripts'],
+                ['partial', 'styles', 'for', 'if', 'page', 'framework', 'scripts'],
                 ['theme', 'escape'],
                 []
             );
@@ -191,64 +191,204 @@ class __TwigTemplate_d0e3e91f087574b6925a1b19c2b890140ea9d30579d0ec20b3145382a05
         echo "
   <!-- Header -->
   <header id=\"header\">
-    ";
-        // line 53
-        $context['__cms_partial_params'] = [];
-        echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/header"        , $context['__cms_partial_params']        , true        );
-        unset($context['__cms_partial_params']);
-        // line 54
-        echo "  </header>
+    <div class=\"container\">
 
+  <div class=\"row\">
+
+    <div class=\"col-sm-6\">
+      <div class=\"phone\">
+
+
+        <phone><a href=\"tel:";
+        // line 61
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 61), "phone1", [], "any", false, false, true, 61), 61, $this->source), "html", null, true);
+        echo "\">";
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 61), "phone1", [], "any", false, false, true, 61), 61, $this->source), "html", null, true);
+        echo "</a></phone>
+
+
+
+      </div>
+    </div>
+
+    <div class=\"col-sm-6 text-right social_top\">
+
+
+
+
+
+
+      <div class=\"social\">
+        ";
+        // line 76
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 76), "social", [], "any", false, false, true, 76));
+        foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
+            // line 77
+            echo "        <a href=\"";
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "url", [], "any", false, false, true, 77), 77, $this->source), "html", null, true);
+            echo "\" target=\"_blank\"><i class=\"";
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "awesome_icon", [], "any", false, false, true, 77), 77, $this->source), "html", null, true);
+            echo "\"></i></a>
+        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 79
+        echo "
+
+      </div>
+
+      <button class=\"blank search_button\" id=\"show_search\" data-toggle=\"modal\" data-target=\"#modal_search\"><i
+          class=\"fa fa-search\"></i></button>
+    </div>
+
+  </div>
+
+  <div class=\"row\">
+
+    <div class=\"col-sm-12\">
+      <div class=\"line_helper\"></div>
+    </div>
+
+  </div>
+
+  <div class=\"row\">
+
+    <div class=\"col-sm-3\">
+      <a href=\"https://kyrgyzstan-tourism.com/\" class=\"logo\">
+        <img src=\"";
+        // line 101
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 101), "logo", [], "any", false, false, true, 101), "path", [], "any", false, false, true, 101), 101, $this->source), "html", null, true);
+        echo "\" alt=\"\">
+      </a>
+    </div>
+
+    <div class=\"col-sm-9\">
+      <nav class=\"navbar\" role=\"navigation\">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class=\"navbar-header\">
+          <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\"
+            data-target=\"#bs-example-navbar-collapse-1\">
+            <span class=\"sr-only\">Toggle navigation</span>
+            <span class=\"icon-bar\"></span>
+            <span class=\"icon-bar\"></span>
+            <span class=\"icon-bar\"></span>
+          </button>
+        </div>
+
+
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">
+          <ul class=\"nav navbar-nav navbar-right\">
+          
+          
+          ";
+        // line 125
+        if (twig_get_attribute($this->env, $this->source, ($context["staticMenu"] ?? null), "menuItems", [], "any", false, false, true, 125)) {
+            // line 126
+            echo "   
+    
+        ";
+            // line 128
+            $context['__cms_partial_params'] = [];
+            $context['__cms_partial_params']['items'] = twig_get_attribute($this->env, $this->source, ($context["staticMenu"] ?? null), "menuItems", [], "any", false, false, true, 128)            ;
+            echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction((($context["staticMenu"] ?? null) . "::items")            , $context['__cms_partial_params']            , true            );
+            unset($context['__cms_partial_params']);
+            // line 129
+            echo "   
+";
+        }
+        // line 131
+        echo "          
+          
+            
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </nav>
+    </div>
+
+  </div>
+
+</div>
+  </header>
+<script>
+\$(function(){
+    \$('.nav.navbar-nav.navbar-right li:has(ul)').addClass('dropdown');
+    \$('.nav.navbar-nav.navbar-right .dropdown a').append('<span class=\"caret\"></span>').addClass('event-off');
+    \$('.nav.navbar-nav.navbar-right li ul').addClass('dropdown-menu');
+    \$('.nav.navbar-nav.navbar-right li .dropdown-menu a').removeClass('event-off');
+    \$('.nav.navbar-nav.navbar-right .dropdown .event-off').on('click', function(e) {
+        e.preventDefault();
+        });
+}); 
+
+</script>
+<style>
+.nav.navbar-nav.navbar-right .dropdown:hover .dropdown-menu{
+display: block;
+}
+.nav.navbar-nav.navbar-right .dropdown ul li a .caret{
+display: none;
+}
+</style>
   <!-- Content -->
-
+<h1>";
+        // line 166
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, true, 166), "title", [], "any", false, false, true, 166), 166, $this->source), "html", null, true);
+        echo "</h1>
     ";
-        // line 58
+        // line 167
         echo $this->env->getExtension('Cms\Twig\Extension')->pageFunction();
-        // line 59
+        // line 168
         echo "
 
   <!-- Footer -->
   <footer id=\"footer\">
     ";
-        // line 63
+        // line 172
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/footer"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 64
+        // line 173
         echo "  </footer>
 
   <!-- Scripts -->
   <!-- <script src=\"";
-        // line 67
+        // line 176
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/vendor/jquery.js");
         echo "\"></script>
     <script src=\"";
-        // line 68
+        // line 177
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/vendor/bootstrap.js");
         echo "\"></script>
     <script src=\"";
-        // line 69
+        // line 178
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/javascript/app.js");
         echo "\"></script> -->
   ";
-        // line 70
+        // line 179
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/head_scripts_index_page/script6"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 71
+        // line 180
         echo "  ";
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/head_styles_index_page/style7"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 72
+        // line 181
         echo "  ";
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/head_scripts_index_page/script7"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 73
+        // line 182
         echo "
   ";
-        // line 74
+        // line 183
         $_minify = System\Classes\CombineAssets::instance()->useMinify;
         if ($_minify) {
             echo '<script src="' . Request::getBasePath() . '/modules/system/assets/js/framework.combined-min.js"></script>'.PHP_EOL;
@@ -259,11 +399,11 @@ class __TwigTemplate_d0e3e91f087574b6925a1b19c2b890140ea9d30579d0ec20b3145382a05
         }
         echo '<link rel="stylesheet" property="stylesheet" href="' . Request::getBasePath() .'/modules/system/assets/css/framework.extras'.($_minify ? '-min' : '').'.css">'.PHP_EOL;
         unset($_minify);
-        // line 75
+        // line 184
         echo "  ";
         echo $this->env->getExtension('Cms\Twig\Extension')->assetsFunction('js');
         echo $this->env->getExtension('Cms\Twig\Extension')->displayBlock('scripts');
-        // line 76
+        // line 185
         echo "
 </body>
 
@@ -282,7 +422,7 @@ class __TwigTemplate_d0e3e91f087574b6925a1b19c2b890140ea9d30579d0ec20b3145382a05
 
     public function getDebugInfo()
     {
-        return array (  267 => 76,  263 => 75,  252 => 74,  249 => 73,  244 => 72,  239 => 71,  235 => 70,  231 => 69,  227 => 68,  223 => 67,  218 => 64,  214 => 63,  208 => 59,  206 => 58,  200 => 54,  196 => 53,  191 => 50,  187 => 49,  175 => 39,  171 => 38,  166 => 37,  162 => 36,  157 => 34,  150 => 30,  146 => 29,  140 => 28,  136 => 26,  131 => 25,  126 => 24,  122 => 23,  119 => 22,  115 => 21,  111 => 20,  102 => 14,  99 => 13,  95 => 12,  92 => 11,  87 => 10,  82 => 9,  78 => 8,  72 => 6,  68 => 5,  62 => 1,);
+        return array (  407 => 185,  403 => 184,  392 => 183,  389 => 182,  384 => 181,  379 => 180,  375 => 179,  371 => 178,  367 => 177,  363 => 176,  358 => 173,  354 => 172,  348 => 168,  346 => 167,  342 => 166,  305 => 131,  301 => 129,  296 => 128,  292 => 126,  290 => 125,  263 => 101,  239 => 79,  228 => 77,  224 => 76,  204 => 61,  191 => 50,  187 => 49,  175 => 39,  171 => 38,  166 => 37,  162 => 36,  157 => 34,  150 => 30,  146 => 29,  140 => 28,  136 => 26,  131 => 25,  126 => 24,  122 => 23,  119 => 22,  115 => 21,  111 => 20,  102 => 14,  99 => 13,  95 => 12,  92 => 11,  87 => 10,  82 => 9,  78 => 8,  72 => 6,  68 => 5,  62 => 1,);
     }
 
     public function getSourceContext()
@@ -339,11 +479,120 @@ class __TwigTemplate_d0e3e91f087574b6925a1b19c2b890140ea9d30579d0ec20b3145382a05
 
   <!-- Header -->
   <header id=\"header\">
-    {% partial 'site/header' %}
+    <div class=\"container\">
+
+  <div class=\"row\">
+
+    <div class=\"col-sm-6\">
+      <div class=\"phone\">
+
+
+        <phone><a href=\"tel:{{this.theme.phone1}}\">{{this.theme.phone1}}</a></phone>
+
+
+
+      </div>
+    </div>
+
+    <div class=\"col-sm-6 text-right social_top\">
+
+
+
+
+
+
+      <div class=\"social\">
+        {% for item in this.theme.social %}
+        <a href=\"{{item.url}}\" target=\"_blank\"><i class=\"{{item.awesome_icon}}\"></i></a>
+        {%endfor%}
+
+
+      </div>
+
+      <button class=\"blank search_button\" id=\"show_search\" data-toggle=\"modal\" data-target=\"#modal_search\"><i
+          class=\"fa fa-search\"></i></button>
+    </div>
+
+  </div>
+
+  <div class=\"row\">
+
+    <div class=\"col-sm-12\">
+      <div class=\"line_helper\"></div>
+    </div>
+
+  </div>
+
+  <div class=\"row\">
+
+    <div class=\"col-sm-3\">
+      <a href=\"https://kyrgyzstan-tourism.com/\" class=\"logo\">
+        <img src=\"{{this.theme.logo.path}}\" alt=\"\">
+      </a>
+    </div>
+
+    <div class=\"col-sm-9\">
+      <nav class=\"navbar\" role=\"navigation\">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class=\"navbar-header\">
+          <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\"
+            data-target=\"#bs-example-navbar-collapse-1\">
+            <span class=\"sr-only\">Toggle navigation</span>
+            <span class=\"icon-bar\"></span>
+            <span class=\"icon-bar\"></span>
+            <span class=\"icon-bar\"></span>
+          </button>
+        </div>
+
+
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">
+          <ul class=\"nav navbar-nav navbar-right\">
+          
+          
+          {% if staticMenu.menuItems %}
+   
+    
+        {% partial staticMenu ~ \"::items\" items=staticMenu.menuItems %}
+   
+{% endif %}
+          
+          
+            
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </nav>
+    </div>
+
+  </div>
+
+</div>
   </header>
+<script>
+\$(function(){
+    \$('.nav.navbar-nav.navbar-right li:has(ul)').addClass('dropdown');
+    \$('.nav.navbar-nav.navbar-right .dropdown a').append('<span class=\"caret\"></span>').addClass('event-off');
+    \$('.nav.navbar-nav.navbar-right li ul').addClass('dropdown-menu');
+    \$('.nav.navbar-nav.navbar-right li .dropdown-menu a').removeClass('event-off');
+    \$('.nav.navbar-nav.navbar-right .dropdown .event-off').on('click', function(e) {
+        e.preventDefault();
+        });
+}); 
 
+</script>
+<style>
+.nav.navbar-nav.navbar-right .dropdown:hover .dropdown-menu{
+display: block;
+}
+.nav.navbar-nav.navbar-right .dropdown ul li a .caret{
+display: none;
+}
+</style>
   <!-- Content -->
-
+<h1>{{this.page.title}}</h1>
     {% page %}
 
 

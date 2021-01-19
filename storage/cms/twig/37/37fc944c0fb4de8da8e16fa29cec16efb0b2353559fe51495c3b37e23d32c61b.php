@@ -29,15 +29,15 @@ class __TwigTemplate_b6298741483ef57b053b09678184716f4b665cad851d0f00a6ede0e44cc
         $this->blocks = [
         ];
         $this->sandbox = $this->env->getExtension('\Twig\Extension\SandboxExtension');
-        $tags = array("for" => 992, "partial" => 1051);
-        $filters = array("escape" => 1, "page" => 996);
-        $functions = array();
+        $tags = array("for" => 998, "partial" => 1057);
+        $filters = array("escape" => 1, "page" => 1002);
+        $functions = array("form_token" => 951);
 
         try {
             $this->sandbox->checkSecurity(
                 ['for', 'partial'],
                 ['escape', 'page'],
-                []
+                ['form_token']
             );
         } catch (SecurityError $e) {
             $e->setSourceContext($this->source);
@@ -60,7 +60,7 @@ class __TwigTemplate_b6298741483ef57b053b09678184716f4b665cad851d0f00a6ede0e44cc
         $macros = $this->macros;
         // line 1
         echo "<div class=\"lazy\" id=\"top\" style=\"\" data-bg=\"url(";
-        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["GroupTourDetail"] ?? null), "recordDetail", [], "any", false, false, true, 1), "preview_image", [], "any", false, false, true, 1), "getPath", [], "any", false, false, true, 1), 1, $this->source), "html", null, true);
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["TourDetail"] ?? null), "recordDetail", [], "any", false, false, true, 1), "preview_image", [], "any", false, false, true, 1), "getPath", [], "any", false, false, true, 1), 1, $this->source), "html", null, true);
         echo ")\">
 
   <div class=\"breadcrumb_wrapper\">
@@ -74,7 +74,7 @@ class __TwigTemplate_b6298741483ef57b053b09678184716f4b665cad851d0f00a6ede0e44cc
                   <a href=\"https://kyrgyzstan-tourism.com/group-tours/\">Group Tours 2021</a> /<span
                     class=\"breadcrumb_last\" aria-current=\"page\">";
         // line 12
-        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["GroupTourDetail"] ?? null), "recordDetail", [], "any", false, false, true, 12), "name", [], "any", false, false, true, 12), 12, $this->source), "html", null, true);
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["TourDetail"] ?? null), "recordDetail", [], "any", false, false, true, 12), "name", [], "any", false, false, true, 12), 12, $this->source), "html", null, true);
         echo "</span>
                 </span>
               </span>
@@ -91,7 +91,7 @@ class __TwigTemplate_b6298741483ef57b053b09678184716f4b665cad851d0f00a6ede0e44cc
         <div class=\"col-sm-12 text-center\">
           <h1 id=\"single_tour_title\">";
         // line 26
-        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["GroupTourDetail"] ?? null), "recordDetail", [], "any", false, false, true, 26), "name", [], "any", false, false, true, 26), 26, $this->source), "html", null, true);
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["TourDetail"] ?? null), "recordDetail", [], "any", false, false, true, 26), "name", [], "any", false, false, true, 26), 26, $this->source), "html", null, true);
         echo "</h1>
         </div>
       </div>
@@ -1014,41 +1014,59 @@ class __TwigTemplate_b6298741483ef57b053b09678184716f4b665cad851d0f00a6ede0e44cc
               <h2>Book tour</h2>
               <div role=\"form\" class=\"wpcf7\" id=\"wpcf7-f5211-o1\" lang=\"ru-RU\" dir=\"ltr\">
                 <div class=\"screen-reader-response\" role=\"alert\" aria-live=\"polite\"></div>
-                <form action=\"/group-tours/explore-south-and-north-kyrgyzstan/#wpcf7-f5211-o1\" method=\"post\"
-                  class=\"wpcf7-form init\" novalidate=\"novalidate\">
-                  <div style=\"display: none;\">
-                    <input type=\"hidden\" name=\"_wpcf7\" value=\"5211\" />
-                    <input type=\"hidden\" name=\"_wpcf7_version\" value=\"5.2.2\" />
-                    <input type=\"hidden\" name=\"_wpcf7_locale\" value=\"ru_RU\" />
-                    <input type=\"hidden\" name=\"_wpcf7_unit_tag\" value=\"wpcf7-f5211-o1\" />
-                    <input type=\"hidden\" name=\"_wpcf7_container_post\" value=\"0\" />
-                    <input type=\"hidden\" name=\"_wpcf7_posted_data_hash\" value=\"\" />
-                    <input type=\"hidden\" name=\"_wpcf7_recaptcha_response\" value=\"\" />
-                  </div>
-                  <p><span class=\"wpcf7-form-control-wrap text-tour\"><input type=\"text\" name=\"text-tour\" value=\"\"
-                        size=\"40\" class=\"wpcf7-form-control wpcf7-text hidden input_tour_name\"
-                        aria-invalid=\"false\" /></span><span class=\"wpcf7-form-control-wrap text-departure\"><input
-                        type=\"text\" name=\"text-departure\" value=\"\" size=\"40\"
-                        class=\"wpcf7-form-control wpcf7-text text_departure hidden\" aria-invalid=\"false\" /></span><span
-                      class=\"wpcf7-form-control-wrap text-name\"><input type=\"text\" name=\"text-name\" value=\"\" size=\"40\"
-                        class=\"wpcf7-form-control wpcf7-text wpcf7-validates-as-required\" aria-required=\"true\"
-                        aria-invalid=\"false\" placeholder=\"Your name\" /></span></p>
-                  <h4>Departure</h4>
-                  <p><select name='available_departure_select' class='available_departure_select'>
-                      <option value=\"Jul 22, 2021 - Thu\" selected>Jul 22, 2021 - Thu</option>
-                      <option value=\"Sep 4, 2021 - Sat\">Sep 4, 2021 - Sat</option>
-                    </select></p>
-                  <p><span class=\"wpcf7-form-control-wrap email-196\"><input type=\"email\" name=\"email-196\" value=\"\"
-                        size=\"40\"
-                        class=\"wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email\"
-                        aria-required=\"true\" aria-invalid=\"false\" placeholder=\"Your email\" /></span></p>
-                  <p><span class=\"wpcf7-form-control-wrap textarea-630\"><textarea name=\"textarea-630\" cols=\"40\"
-                        rows=\"10\" class=\"wpcf7-form-control wpcf7-textarea\" aria-invalid=\"false\"
-                        placeholder=\"Your message\"></textarea></span></p>
-                  <p><input type=\"submit\" value=\"Send\" onclick=\"ga('send','event','НижняяФорма','send')\"
-                      class=\"wpcf7-form-control wpcf7-submit cstm_button submit\"></p>
-                  <div class=\"wpcf7-response-output\" role=\"alert\" aria-hidden=\"true\"></div>
-                </form>
+                
+ 
+                
+                
+                     <form data-request=\"";
+        // line 949
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(($context["TourForm"] ?? null), 949, $this->source), "html", null, true);
+        echo "::onFormSubmit\">
+
+    ";
+        // line 951
+        echo call_user_func_array($this->env->getFunction('form_token')->getCallable(), ["token"]);
+        echo "
+
+    <div id=\"";
+        // line 953
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(($context["TourForm"] ?? null), 953, $this->source), "html", null, true);
+        echo "_forms_flash\"></div>
+    
+      <div class=\"form-group\">
+        <input type=\"hidden\" id=\"tourName\" name=\"tour name\" class=\"form-control\" value=\"";
+        // line 956
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["TourDetail"] ?? null), "recordDetail", [], "any", false, false, true, 956), "name", [], "any", false, false, true, 956), 956, $this->source), "html", null, true);
+        echo "\">
+    </div>
+
+   <div class=\"form-group\">
+        <input type=\"text\" id=\"name\" name=\"name\" class=\"form-control\" placeholder=\"Your name\">
+    </div>
+    
+    <h4>Departure</h4>
+    <div class=\"form-group\">
+<select name=\"available_departure_select\" class=\"available_departure_select\">
+<option value=\"Jul 13, 2021 - Tue\" selected=\"\">Jul 13, 2021 - Tue</option>
+<option value=\"Aug 26, 2021 - Thu\">Aug 26, 2021 - Thu</option>
+</select>
+    </div>
+    
+    <div class=\"form-group\">
+        <input type=\"text\" id=\"email\" name=\"email\" class=\"form-control\" placeholder=\"Your email\">
+    </div>
+
+ 
+
+    <div class=\"form-group\">
+        <textarea id=\"message\" name=\"message\" class=\"form-control\" cols=\"40\" rows=\"5\" placeholder=\"Your message\"></textarea>
+    </div>
+
+    <button id=\"simpleContactSubmitButton\" type=\"submit\" class=\"btn btn-default cstm_button submit\">send</button>
+
+<div class=\"wpcf7-response-output\" role=\"alert\" aria-hidden=\"true\"></div>
+
+</form>
               </div>
             </div>
           </div>
@@ -1062,22 +1080,22 @@ class __TwigTemplate_b6298741483ef57b053b09678184716f4b665cad851d0f00a6ede0e44cc
 
 
           ";
-        // line 992
+        // line 998
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["GroupTours"] ?? null), "items", [], "any", false, false, true, 992));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["GroupTours"] ?? null), "items", [], "any", false, false, true, 998));
         foreach ($context['_seq'] as $context["_key"] => $context["record"]) {
-            // line 993
+            // line 999
             echo "          <div class=\"col-sm-4\">
             <div class=\"item item_tour with_border auto_height \">
               <a
                 href=\"";
-            // line 996
-            echo ((twig_get_attribute($this->env, $this->source, ($context["GroupTours"] ?? null), "property", [0 => "recordPage"], "method", false, false, true, 996)) ? ($this->extensions['Cms\Twig\Extension']->pageFilter($this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["GroupTours"] ?? null), "property", [0 => "recordPage"], "method", false, false, true, 996), 996, $this->source), [twig_get_attribute($this->env, $this->source, ($context["GroupTours"] ?? null), "paramName", [0 => "recordPageSlug"], "method", false, false, true, 996) => twig_get_attribute($this->env, $this->source, $context["record"], "slug", [], "any", false, false, true, 996)])) : (""));
+            // line 1002
+            echo ((twig_get_attribute($this->env, $this->source, ($context["GroupTours"] ?? null), "property", [0 => "recordPage"], "method", false, false, true, 1002)) ? ($this->extensions['Cms\Twig\Extension']->pageFilter($this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["GroupTours"] ?? null), "property", [0 => "recordPage"], "method", false, false, true, 1002), 1002, $this->source), [twig_get_attribute($this->env, $this->source, ($context["GroupTours"] ?? null), "paramName", [0 => "recordPageSlug"], "method", false, false, true, 1002) => twig_get_attribute($this->env, $this->source, $context["record"], "slug", [], "any", false, false, true, 1002)])) : (""));
             echo "\">
                 <span class=\"img_wrapper\">
                   <span class=\"img lazy\" style=\"\" data-bg=\"url(";
-            // line 998
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["record"], "preview_image", [], "any", false, false, true, 998), "getPath", [], "any", false, false, true, 998), 998, $this->source), "html", null, true);
+            // line 1004
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["record"], "preview_image", [], "any", false, false, true, 1004), "getPath", [], "any", false, false, true, 1004), 1004, $this->source), "html", null, true);
             echo ")\"></span>
                   <span class=\"price-round group_price\">
                     <span class=\"inner\">\$890 US</span>
@@ -1085,18 +1103,18 @@ class __TwigTemplate_b6298741483ef57b053b09678184716f4b665cad851d0f00a6ede0e44cc
                 </span>
                 <div class=\"desc\">
                   <h3>";
-            // line 1004
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "name", [], "any", false, false, true, 1004), 1004, $this->source), "html", null, true);
+            // line 1010
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "name", [], "any", false, false, true, 1010), 1010, $this->source), "html", null, true);
             echo "</h3>
                   <p class=\"excerpt\">";
-            // line 1005
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "description", [], "any", false, false, true, 1005), 1005, $this->source), "html", null, true);
+            // line 1011
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "description", [], "any", false, false, true, 1011), 1011, $this->source), "html", null, true);
             echo "</p>
                 </div>
                 <p class=\"duration\"><i class=\"fa fa-clock-o\"></i>
                   ";
-            // line 1008
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "getAttributeValueBySlug", [0 => "prodolzhitelnost_tura"], "method", false, false, true, 1008), 1008, $this->source), "html", null, true);
+            // line 1014
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "getAttributeValueBySlug", [0 => "prodolzhitelnost_tura"], "method", false, false, true, 1014), 1014, $this->source), "html", null, true);
             echo "
                   days</p>
               </a>
@@ -1107,7 +1125,7 @@ class __TwigTemplate_b6298741483ef57b053b09678184716f4b665cad851d0f00a6ede0e44cc
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['record'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 1014
+        // line 1020
         echo "
 
 
@@ -1137,17 +1155,17 @@ class __TwigTemplate_b6298741483ef57b053b09678184716f4b665cad851d0f00a6ede0e44cc
           <ul class=\"list-unstyled sdb_ul\">
 
             ";
-        // line 1042
+        // line 1048
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["GroupTours"] ?? null), "items", [], "any", false, false, true, 1042));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["GroupTours"] ?? null), "items", [], "any", false, false, true, 1048));
         foreach ($context['_seq'] as $context["_key"] => $context["record"]) {
-            // line 1043
+            // line 1049
             echo "            <li><a
                 href=\"";
-            // line 1044
-            echo ((twig_get_attribute($this->env, $this->source, ($context["GroupTours"] ?? null), "property", [0 => "recordPage"], "method", false, false, true, 1044)) ? ($this->extensions['Cms\Twig\Extension']->pageFilter($this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["GroupTours"] ?? null), "property", [0 => "recordPage"], "method", false, false, true, 1044), 1044, $this->source), [twig_get_attribute($this->env, $this->source, ($context["GroupTours"] ?? null), "paramName", [0 => "recordPageSlug"], "method", false, false, true, 1044) => twig_get_attribute($this->env, $this->source, $context["record"], "slug", [], "any", false, false, true, 1044)])) : (""));
+            // line 1050
+            echo ((twig_get_attribute($this->env, $this->source, ($context["GroupTours"] ?? null), "property", [0 => "recordPage"], "method", false, false, true, 1050)) ? ($this->extensions['Cms\Twig\Extension']->pageFilter($this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["GroupTours"] ?? null), "property", [0 => "recordPage"], "method", false, false, true, 1050), 1050, $this->source), [twig_get_attribute($this->env, $this->source, ($context["GroupTours"] ?? null), "paramName", [0 => "recordPageSlug"], "method", false, false, true, 1050) => twig_get_attribute($this->env, $this->source, $context["record"], "slug", [], "any", false, false, true, 1050)])) : (""));
             echo "\">";
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "name", [], "any", false, false, true, 1044), 1044, $this->source), "html", null, true);
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "name", [], "any", false, false, true, 1050), 1050, $this->source), "html", null, true);
             echo "</a>
             </li>
             ";
@@ -1155,24 +1173,22 @@ class __TwigTemplate_b6298741483ef57b053b09678184716f4b665cad851d0f00a6ede0e44cc
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['record'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 1047
+        // line 1053
         echo "
           </ul>
         </div>
 
         ";
-        // line 1051
+        // line 1057
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/sidebar"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 1052
+        // line 1058
         echo "
 
 
       </div>
-      <div id=\"sidebar\">
-
-      </div>
+   
 
     </div>
   </div>
@@ -1191,12 +1207,12 @@ class __TwigTemplate_b6298741483ef57b053b09678184716f4b665cad851d0f00a6ede0e44cc
 
     public function getDebugInfo()
     {
-        return array (  1169 => 1052,  1165 => 1051,  1159 => 1047,  1148 => 1044,  1145 => 1043,  1141 => 1042,  1111 => 1014,  1099 => 1008,  1093 => 1005,  1089 => 1004,  1080 => 998,  1075 => 996,  1070 => 993,  1066 => 992,  130 => 59,  94 => 26,  77 => 12,  62 => 1,);
+        return array (  1187 => 1058,  1183 => 1057,  1177 => 1053,  1166 => 1050,  1163 => 1049,  1159 => 1048,  1129 => 1020,  1117 => 1014,  1111 => 1011,  1107 => 1010,  1098 => 1004,  1093 => 1002,  1088 => 999,  1084 => 998,  1039 => 956,  1033 => 953,  1028 => 951,  1023 => 949,  130 => 59,  94 => 26,  77 => 12,  62 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("<div class=\"lazy\" id=\"top\" style=\"\" data-bg=\"url({{ GroupTourDetail.recordDetail.preview_image.getPath }})\">
+        return new Source("<div class=\"lazy\" id=\"top\" style=\"\" data-bg=\"url({{ TourDetail.recordDetail.preview_image.getPath }})\">
 
   <div class=\"breadcrumb_wrapper\">
     <div class=\"container\">
@@ -1207,7 +1223,7 @@ class __TwigTemplate_b6298741483ef57b053b09678184716f4b665cad851d0f00a6ede0e44cc
                 <a href=\"https://kyrgyzstan-tourism.com/\">Home</a> /
                 <span>
                   <a href=\"https://kyrgyzstan-tourism.com/group-tours/\">Group Tours 2021</a> /<span
-                    class=\"breadcrumb_last\" aria-current=\"page\">{{ GroupTourDetail.recordDetail.name }}</span>
+                    class=\"breadcrumb_last\" aria-current=\"page\">{{ TourDetail.recordDetail.name }}</span>
                 </span>
               </span>
             </span></p>
@@ -1221,7 +1237,7 @@ class __TwigTemplate_b6298741483ef57b053b09678184716f4b665cad851d0f00a6ede0e44cc
     <div class=\"container\">
       <div class=\"row\">
         <div class=\"col-sm-12 text-center\">
-          <h1 id=\"single_tour_title\">{{ GroupTourDetail.recordDetail.name }}</h1>
+          <h1 id=\"single_tour_title\">{{ TourDetail.recordDetail.name }}</h1>
         </div>
       </div>
     </div>
@@ -2140,41 +2156,47 @@ class __TwigTemplate_b6298741483ef57b053b09678184716f4b665cad851d0f00a6ede0e44cc
               <h2>Book tour</h2>
               <div role=\"form\" class=\"wpcf7\" id=\"wpcf7-f5211-o1\" lang=\"ru-RU\" dir=\"ltr\">
                 <div class=\"screen-reader-response\" role=\"alert\" aria-live=\"polite\"></div>
-                <form action=\"/group-tours/explore-south-and-north-kyrgyzstan/#wpcf7-f5211-o1\" method=\"post\"
-                  class=\"wpcf7-form init\" novalidate=\"novalidate\">
-                  <div style=\"display: none;\">
-                    <input type=\"hidden\" name=\"_wpcf7\" value=\"5211\" />
-                    <input type=\"hidden\" name=\"_wpcf7_version\" value=\"5.2.2\" />
-                    <input type=\"hidden\" name=\"_wpcf7_locale\" value=\"ru_RU\" />
-                    <input type=\"hidden\" name=\"_wpcf7_unit_tag\" value=\"wpcf7-f5211-o1\" />
-                    <input type=\"hidden\" name=\"_wpcf7_container_post\" value=\"0\" />
-                    <input type=\"hidden\" name=\"_wpcf7_posted_data_hash\" value=\"\" />
-                    <input type=\"hidden\" name=\"_wpcf7_recaptcha_response\" value=\"\" />
-                  </div>
-                  <p><span class=\"wpcf7-form-control-wrap text-tour\"><input type=\"text\" name=\"text-tour\" value=\"\"
-                        size=\"40\" class=\"wpcf7-form-control wpcf7-text hidden input_tour_name\"
-                        aria-invalid=\"false\" /></span><span class=\"wpcf7-form-control-wrap text-departure\"><input
-                        type=\"text\" name=\"text-departure\" value=\"\" size=\"40\"
-                        class=\"wpcf7-form-control wpcf7-text text_departure hidden\" aria-invalid=\"false\" /></span><span
-                      class=\"wpcf7-form-control-wrap text-name\"><input type=\"text\" name=\"text-name\" value=\"\" size=\"40\"
-                        class=\"wpcf7-form-control wpcf7-text wpcf7-validates-as-required\" aria-required=\"true\"
-                        aria-invalid=\"false\" placeholder=\"Your name\" /></span></p>
-                  <h4>Departure</h4>
-                  <p><select name='available_departure_select' class='available_departure_select'>
-                      <option value=\"Jul 22, 2021 - Thu\" selected>Jul 22, 2021 - Thu</option>
-                      <option value=\"Sep 4, 2021 - Sat\">Sep 4, 2021 - Sat</option>
-                    </select></p>
-                  <p><span class=\"wpcf7-form-control-wrap email-196\"><input type=\"email\" name=\"email-196\" value=\"\"
-                        size=\"40\"
-                        class=\"wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email\"
-                        aria-required=\"true\" aria-invalid=\"false\" placeholder=\"Your email\" /></span></p>
-                  <p><span class=\"wpcf7-form-control-wrap textarea-630\"><textarea name=\"textarea-630\" cols=\"40\"
-                        rows=\"10\" class=\"wpcf7-form-control wpcf7-textarea\" aria-invalid=\"false\"
-                        placeholder=\"Your message\"></textarea></span></p>
-                  <p><input type=\"submit\" value=\"Send\" onclick=\"ga('send','event','НижняяФорма','send')\"
-                      class=\"wpcf7-form-control wpcf7-submit cstm_button submit\"></p>
-                  <div class=\"wpcf7-response-output\" role=\"alert\" aria-hidden=\"true\"></div>
-                </form>
+                
+ 
+                
+                
+                     <form data-request=\"{{ TourForm }}::onFormSubmit\">
+
+    {{ form_token() }}
+
+    <div id=\"{{ TourForm }}_forms_flash\"></div>
+    
+      <div class=\"form-group\">
+        <input type=\"hidden\" id=\"tourName\" name=\"tour name\" class=\"form-control\" value=\"{{ TourDetail.recordDetail.name }}\">
+    </div>
+
+   <div class=\"form-group\">
+        <input type=\"text\" id=\"name\" name=\"name\" class=\"form-control\" placeholder=\"Your name\">
+    </div>
+    
+    <h4>Departure</h4>
+    <div class=\"form-group\">
+<select name=\"available_departure_select\" class=\"available_departure_select\">
+<option value=\"Jul 13, 2021 - Tue\" selected=\"\">Jul 13, 2021 - Tue</option>
+<option value=\"Aug 26, 2021 - Thu\">Aug 26, 2021 - Thu</option>
+</select>
+    </div>
+    
+    <div class=\"form-group\">
+        <input type=\"text\" id=\"email\" name=\"email\" class=\"form-control\" placeholder=\"Your email\">
+    </div>
+
+ 
+
+    <div class=\"form-group\">
+        <textarea id=\"message\" name=\"message\" class=\"form-control\" cols=\"40\" rows=\"5\" placeholder=\"Your message\"></textarea>
+    </div>
+
+    <button id=\"simpleContactSubmitButton\" type=\"submit\" class=\"btn btn-default cstm_button submit\">send</button>
+
+<div class=\"wpcf7-response-output\" role=\"alert\" aria-hidden=\"true\"></div>
+
+</form>
               </div>
             </div>
           </div>
@@ -2251,9 +2273,7 @@ class __TwigTemplate_b6298741483ef57b053b09678184716f4b665cad851d0f00a6ede0e44cc
 
 
       </div>
-      <div id=\"sidebar\">
-
-      </div>
+   
 
     </div>
   </div>

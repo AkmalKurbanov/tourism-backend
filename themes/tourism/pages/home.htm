@@ -53,12 +53,25 @@ categorySlug = "predlozheniya-i-skidki"
 useMainCategory = 1
 useMultiCategories = 1
 tagSlug = "{{ :tag }}"
-recordPage = "tours"
+recordPage = "tour-detail"
 recordPageSlug = "{{ :slug }}"
 limit = 10
 pageSlug = "{{ :page }}"
 orderBy = "name"
 orderByDirection = "ASC"
+
+[genericForm HomPageForm]
+group = "Форма главной страницы"
+messages_success = "Ваша форма была успешно отправлена!"
+messages_errors = "В вашей заявке содержатся ошибки."
+inline_errors = "disabled"
+sanitize_data = "disabled"
+anonymize_ip = "disabled"
+recaptcha_enabled = 0
+recaptcha_theme = "light"
+recaptcha_type = "image"
+recaptcha_size = "normal"
+emails_date_format = "Y-m-d"
 ==
 <script>
   $(window).load(function () {
@@ -479,28 +492,33 @@ orderByDirection = "ASC"
         <h2 class="text-center with_line with_big_line">Contact with us</h2>
         <div role="form" class="wpcf7" id="wpcf7-f198-o1" lang="ru-RU" dir="ltr">
           <div class="screen-reader-response" role="alert" aria-live="polite"></div>
-          <form action="/#wpcf7-f198-o1" method="post" class="wpcf7-form init" novalidate="novalidate">
-            <div style="display: none;">
-              <input type="hidden" name="_wpcf7" value="198" />
-              <input type="hidden" name="_wpcf7_version" value="5.2.2" />
-              <input type="hidden" name="_wpcf7_locale" value="ru_RU" />
-              <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f198-o1" />
-              <input type="hidden" name="_wpcf7_container_post" value="0" />
-              <input type="hidden" name="_wpcf7_posted_data_hash" value="" />
-              <input type="hidden" name="_wpcf7_recaptcha_response" value="" />
-            </div>
-            <p><span class="wpcf7-form-control-wrap text-name"><input type="text" name="text-name" value="" size="40"
-                  class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true"
-                  aria-invalid="false" placeholder="Your name" /></span></p>
-            <p><span class="wpcf7-form-control-wrap email-196"><input type="email" name="email-196" value="" size="40"
-                  class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email"
-                  aria-required="true" aria-invalid="false" placeholder="Your email" /></span></p>
-            <p><span class="wpcf7-form-control-wrap textarea-630"><textarea name="textarea-630" cols="40" rows="10"
-                  class="wpcf7-form-control wpcf7-textarea" aria-invalid="false"
-                  placeholder="Your message"></textarea></span></p>
-            <p><input type="submit" value="Send" class="wpcf7-form-control wpcf7-submit cstm_button submit" /></p>
-            <div class="wpcf7-response-output" role="alert" aria-hidden="true"></div>
-          </form>
+         
+    <form data-request="{{ HomPageForm }}::onFormSubmit">
+
+    {{ form_token() }}
+
+    <div id="{{ HomPageForm }}_forms_flash"></div>
+
+   <div class="form-group">
+        <input type="text" id="name" name="name" class="form-control" placeholder="Your name">
+    </div>
+
+    <div class="form-group">
+        <input type="text" id="email" name="email" class="form-control" placeholder="Your email">
+    </div>
+
+ 
+
+    <div class="form-group">
+        <textarea id="message" name="message" class="form-control" cols="40" rows="5" placeholder="Your message"></textarea>
+    </div>
+
+    <button id="simpleContactSubmitButton" type="submit" class="btn btn-default cstm_button submit">send</button>
+
+</form>
+
+      
+          
         </div>
       </div>
     </div>

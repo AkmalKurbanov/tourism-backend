@@ -29,13 +29,13 @@ class __TwigTemplate_424734f792bf4c9d83037135ab187bfec7a34be2ad79190eaa0e767e13b
         $this->blocks = [
         ];
         $this->sandbox = $this->env->getExtension('\Twig\Extension\SandboxExtension');
-        $tags = array();
+        $tags = array("for" => 12);
         $filters = array("escape" => 6);
         $functions = array();
 
         try {
             $this->sandbox->checkSecurity(
-                [],
+                ['for'],
                 ['escape'],
                 []
             );
@@ -60,81 +60,97 @@ class __TwigTemplate_424734f792bf4c9d83037135ab187bfec7a34be2ad79190eaa0e767e13b
         $macros = $this->macros;
         // line 1
         echo "<div class=\"container\">
-     <div class=\"row\">
+  <div class=\"row\">
 
-       <div class=\"col-sm-4\">
-         <a href=\"https://kyrgyzstan-tourism.com\">
-         <img src=\"";
+    <div class=\"col-sm-4\">
+      <a href=\"https://kyrgyzstan-tourism.com\">
+        <img src=\"";
         // line 6
         echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 6), "logo", [], "any", false, false, true, 6), "path", [], "any", false, false, true, 6), 6, $this->source), "html", null, true);
         echo "\" alt=\"\">
-         </a>
-         <div class=\"social\">
-          
+      </a>
+      <div class=\"social\">
 
 
- 
-        <a href=\"\" target=\"_blank\"><i class=\"\"></i></a>
- 
 
-            
-          </div>
-       </div>
+        ";
+        // line 12
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 12), "social", [], "any", false, false, true, 12));
+        foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
+            // line 13
+            echo "        <a href=\"";
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "url", [], "any", false, false, true, 13), 13, $this->source), "html", null, true);
+            echo "\" target=\"_blank\"><i class=\"";
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "awesome_icon", [], "any", false, false, true, 13), 13, $this->source), "html", null, true);
+            echo "\"></i></a>
+        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 15
+        echo "
 
-       <div class=\"col-sm-8\">
-         <h2>Contacts</h2>
-         <div class=\"row\">
 
-           <div class=\"col-sm-6\">
-             <p class=\"phone\">
-               <phone><a href=\"tel:";
-        // line 26
-        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 26), "phone2", [], "any", false, false, true, 26), 26, $this->source), "html", null, true);
+
+      </div>
+    </div>
+
+    <div class=\"col-sm-8\">
+      <h2>Contacts</h2>
+      <div class=\"row\">
+
+        <div class=\"col-sm-6\">
+          <p class=\"phone\">
+            <phone><a href=\"tel:";
+        // line 28
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 28), "phone2", [], "any", false, false, true, 28), 28, $this->source), "html", null, true);
         echo "\">";
-        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 26), "phone2", [], "any", false, false, true, 26), 26, $this->source), "html", null, true);
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 28), "phone2", [], "any", false, false, true, 28), 28, $this->source), "html", null, true);
         echo "</a></phone>
-             </p>
-             <p class=\"phone\">
-               <phone><a href=\"tel:";
-        // line 29
-        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 29), "phone3", [], "any", false, false, true, 29), 29, $this->source), "html", null, true);
-        echo "\">";
-        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 29), "phone3", [], "any", false, false, true, 29), 29, $this->source), "html", null, true);
-        echo "</a></phone>
-             </p>
-             <p><a href=\"mailto:";
+          </p>
+          <p class=\"phone\">
+            <phone><a href=\"tel:";
         // line 31
-        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 31), "user_email", [], "any", false, false, true, 31), 31, $this->source), "html", null, true);
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 31), "phone3", [], "any", false, false, true, 31), 31, $this->source), "html", null, true);
         echo "\">";
-        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 31), "user_email", [], "any", false, false, true, 31), 31, $this->source), "html", null, true);
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 31), "phone3", [], "any", false, false, true, 31), 31, $this->source), "html", null, true);
+        echo "</a></phone>
+          </p>
+          <p><a href=\"mailto:";
+        // line 33
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 33), "user_email", [], "any", false, false, true, 33), 33, $this->source), "html", null, true);
+        echo "\">";
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 33), "user_email", [], "any", false, false, true, 33), 33, $this->source), "html", null, true);
         echo "</a></p>
-           </div>
-           <div class=\"col-sm-6\">
-             <p>";
-        // line 34
-        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 34), "info", [], "any", false, false, true, 34), 34, $this->source), "html", null, true);
+        </div>
+        <div class=\"col-sm-6\">
+          <p>";
+        // line 36
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 36), "info", [], "any", false, false, true, 36), 36, $this->source), "html", null, true);
         echo "</p>
-           </div>
-         </div>
-       </div>
+        </div>
+      </div>
+    </div>
 
-     </div>
-   </div>
-   <div class=\"line_helper\" style=\"background: #959da7;\"></div>
-   <div class=\"container\">
-     <div class=\"row\">
-       <div class=\"col-xs-6\">
-         <p>";
-        // line 45
-        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 45), "copyright", [], "any", false, false, true, 45), 45, $this->source), "html", null, true);
-        echo "</p>
-       </div>
-       <div class=\"col-xs-6 text-right\"><a href=\"#\">";
+  </div>
+</div>
+<div class=\"line_helper\" style=\"background: #959da7;\"></div>
+<div class=\"container\">
+  <div class=\"row\">
+    <div class=\"col-xs-6\">
+      <p>";
         // line 47
-        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 47), "termsUse", [], "any", false, false, true, 47), 47, $this->source), "html", null, true);
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 47), "copyright", [], "any", false, false, true, 47), 47, $this->source), "html", null, true);
+        echo "</p>
+    </div>
+    <div class=\"col-xs-6 text-right\"><a href=\"#\">";
+        // line 49
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 49), "termsUse", [], "any", false, false, true, 49), 49, $this->source), "html", null, true);
         echo "</a></div>
-     </div>
-   </div>";
+  </div>
+</div>";
     }
 
     public function getTemplateName()
@@ -149,59 +165,61 @@ class __TwigTemplate_424734f792bf4c9d83037135ab187bfec7a34be2ad79190eaa0e767e13b
 
     public function getDebugInfo()
     {
-        return array (  134 => 47,  129 => 45,  115 => 34,  107 => 31,  100 => 29,  92 => 26,  69 => 6,  62 => 1,);
+        return array (  150 => 49,  145 => 47,  131 => 36,  123 => 33,  116 => 31,  108 => 28,  93 => 15,  82 => 13,  78 => 12,  69 => 6,  62 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("<div class=\"container\">
-     <div class=\"row\">
+  <div class=\"row\">
 
-       <div class=\"col-sm-4\">
-         <a href=\"https://kyrgyzstan-tourism.com\">
-         <img src=\"{{this.theme.logo.path}}\" alt=\"\">
-         </a>
-         <div class=\"social\">
-          
+    <div class=\"col-sm-4\">
+      <a href=\"https://kyrgyzstan-tourism.com\">
+        <img src=\"{{this.theme.logo.path}}\" alt=\"\">
+      </a>
+      <div class=\"social\">
 
 
- 
-        <a href=\"\" target=\"_blank\"><i class=\"\"></i></a>
- 
 
-            
-          </div>
-       </div>
+        {% for item in this.theme.social %}
+        <a href=\"{{item.url}}\" target=\"_blank\"><i class=\"{{item.awesome_icon}}\"></i></a>
+        {%endfor%}
 
-       <div class=\"col-sm-8\">
-         <h2>Contacts</h2>
-         <div class=\"row\">
 
-           <div class=\"col-sm-6\">
-             <p class=\"phone\">
-               <phone><a href=\"tel:{{this.theme.phone2}}\">{{this.theme.phone2}}</a></phone>
-             </p>
-             <p class=\"phone\">
-               <phone><a href=\"tel:{{this.theme.phone3}}\">{{this.theme.phone3}}</a></phone>
-             </p>
-             <p><a href=\"mailto:{{this.theme.user_email}}\">{{this.theme.user_email}}</a></p>
-           </div>
-           <div class=\"col-sm-6\">
-             <p>{{this.theme.info}}</p>
-           </div>
-         </div>
-       </div>
 
-     </div>
-   </div>
-   <div class=\"line_helper\" style=\"background: #959da7;\"></div>
-   <div class=\"container\">
-     <div class=\"row\">
-       <div class=\"col-xs-6\">
-         <p>{{this.theme.copyright}}</p>
-       </div>
-       <div class=\"col-xs-6 text-right\"><a href=\"#\">{{this.theme.termsUse}}</a></div>
-     </div>
-   </div>", "C:\\work\\xampp\\htdocs\\tourism/themes/tourism/partials/site/footer.htm", "");
+
+      </div>
+    </div>
+
+    <div class=\"col-sm-8\">
+      <h2>Contacts</h2>
+      <div class=\"row\">
+
+        <div class=\"col-sm-6\">
+          <p class=\"phone\">
+            <phone><a href=\"tel:{{this.theme.phone2}}\">{{this.theme.phone2}}</a></phone>
+          </p>
+          <p class=\"phone\">
+            <phone><a href=\"tel:{{this.theme.phone3}}\">{{this.theme.phone3}}</a></phone>
+          </p>
+          <p><a href=\"mailto:{{this.theme.user_email}}\">{{this.theme.user_email}}</a></p>
+        </div>
+        <div class=\"col-sm-6\">
+          <p>{{this.theme.info}}</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<div class=\"line_helper\" style=\"background: #959da7;\"></div>
+<div class=\"container\">
+  <div class=\"row\">
+    <div class=\"col-xs-6\">
+      <p>{{this.theme.copyright}}</p>
+    </div>
+    <div class=\"col-xs-6 text-right\"><a href=\"#\">{{this.theme.termsUse}}</a></div>
+  </div>
+</div>", "C:\\work\\xampp\\htdocs\\tourism/themes/tourism/partials/site/footer.htm", "");
     }
 }

@@ -1,4 +1,4 @@
-name: Tourism
+name: Mountain way
 description: 'Возвращение к истокам.'
 author: Акмаль
 code: ''
@@ -7,33 +7,53 @@ form:
   fields:
     site_name: 
       label: Имя сайта
-      default: Tourism
+      placeholder: Mountain way
     phone1: 
       label: телефон1
-      default: +996 706 363738
+      placeholder: +996 999 999
+      default: 
     phone2: 
       label: телефон2
-      default: +996 706 363738
+      placeholder: +996 999 999
     phone3: 
       label: телефон3
-      default: +996 777 970779
+      placeholder: +996 999 999
     user_email:
       label: Email адрес
       type: email
+      placeholder: mountainway@gmail.com
     copyright: 
       label: Копирайт
-      default: © Kyrgyzstan tourism
+      placeholder: © Mountain way
     info: 
       label: Доп. информация
       default: Kyrgyz Republic. Bishkek city
         Mon – Sat 9.00 – 18.00 Sunday CLOSED
     termsUse: 
       label: Условия и использование
-      default: Terms & use
+      placeholder: Terms & use
     logo:
       label: Logo
       type: fileupload
       mode: image
       imageHeight: 260
       imageWidth: 260
-      
+    social:
+      type: repeater
+      label: Социальные сети
+      titleFrom: name  
+      form:
+        fields:
+          awesome_icon:
+            label: Социальная сеть ( Иконка )
+            type: awesomeiconslist
+            unicodeValue: false
+            emptyOption: false
+            iconTypes: brands
+            placeholder: Выбрать иконку
+            span: left 
+          url:
+            label: Ссылка социальной сети
+            type: text
+            placeholder: https://www.instagram.com/
+                      

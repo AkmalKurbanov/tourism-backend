@@ -1,4 +1,4 @@
-1610998252a:1:{s:29:"site/tours/discount_tours.htm";a:5:{s:8:"fileName";s:29:"site/tours/discount_tours.htm";s:7:"content";s:854:"{% for record in DealsAndDiscounts.items %}
+1611088867a:1:{s:29:"site/tours/discount_tours.htm";a:5:{s:8:"fileName";s:29:"site/tours/discount_tours.htm";s:7:"content";s:854:"{% for record in DealsAndDiscounts.items %}
 <div class="item item_tour with_border  ">
   <a
     href="{{DealsAndDiscounts.property('recordPage') ? DealsAndDiscounts.property('recordPage')|page({(DealsAndDiscounts.paramName('recordPageSlug')):(record.slug)})}}">

@@ -1,3 +1,13 @@
 static-pages:
     group-tours: {  }
     blog: {  }
+    about:
+        about-about-us: {  }
+        about-about-us-2: {  }
+    kyrgyzstan:
+        kyrgyzstan-projects: {  }
+        kyrgyzstan-getting-around: {  }
+        kyrgyzstan-permits: {  }
+        kyrgyzstan-inspiration-visiting-kyrgyzstan: {  }
+        kyrgyzstan-photo-gallery: {  }
+        kyrgyzstan-about-kyrgyzstan: {  }

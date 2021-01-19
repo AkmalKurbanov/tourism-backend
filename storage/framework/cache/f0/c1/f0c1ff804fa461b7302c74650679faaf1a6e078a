@@ -1,4 +1,4 @@
-1611002632a:1:{s:12:"about-us.htm";a:9:{s:8:"fileName";s:12:"about-us.htm";s:7:"content";s:13389:"title = "about us"
+1611088867a:1:{s:12:"about-us.htm";a:9:{s:8:"fileName";s:12:"about-us.htm";s:7:"content";s:12768:"title = "about us"
 url = "/about-us"
 layout = "static-layout"
 is_hidden = 0
@@ -213,15 +213,7 @@ is_hidden = 0
             <div role="form" class="wpcf7" id="wpcf7-f198-o1" lang="ru-RU" dir="ltr">
               <div class="screen-reader-response" role="alert" aria-live="polite"></div>
               <form action="/kyrgyz-tours/#wpcf7-f198-o1" method="post" class="wpcf7-form init" novalidate="novalidate">
-                <div style="display: none;">
-                  <input type="hidden" name="_wpcf7" value="198" />
-                  <input type="hidden" name="_wpcf7_version" value="5.2.2" />
-                  <input type="hidden" name="_wpcf7_locale" value="ru_RU" />
-                  <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f198-o1" />
-                  <input type="hidden" name="_wpcf7_container_post" value="0" />
-                  <input type="hidden" name="_wpcf7_posted_data_hash" value="" />
-                  <input type="hidden" name="_wpcf7_recaptcha_response" value="" />
-                </div>
+           
                 <p><span class="wpcf7-form-control-wrap text-name"><input type="text" name="text-name" value=""
                       size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true"
                       aria-invalid="false" placeholder="Your name" /></span></p>
@@ -300,7 +292,7 @@ is_hidden = 0
     </div>
 
   </div>
-</div>";s:5:"mtime";i:1610980676;s:6:"markup";s:13305:"<div id="top" class="small_top lazy" style=""
+</div>";s:5:"mtime";i:1611078090;s:6:"markup";s:12684:"<div id="top" class="small_top lazy" style=""
   data-bg="url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Sunset_1920.jpg)">
 
   <div class="breadcrumb_wrapper">
@@ -510,15 +502,7 @@ is_hidden = 0
             <div role="form" class="wpcf7" id="wpcf7-f198-o1" lang="ru-RU" dir="ltr">
               <div class="screen-reader-response" role="alert" aria-live="polite"></div>
               <form action="/kyrgyz-tours/#wpcf7-f198-o1" method="post" class="wpcf7-form init" novalidate="novalidate">
-                <div style="display: none;">
-                  <input type="hidden" name="_wpcf7" value="198" />
-                  <input type="hidden" name="_wpcf7_version" value="5.2.2" />
-                  <input type="hidden" name="_wpcf7_locale" value="ru_RU" />
-                  <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f198-o1" />
-                  <input type="hidden" name="_wpcf7_container_post" value="0" />
-                  <input type="hidden" name="_wpcf7_posted_data_hash" value="" />
-                  <input type="hidden" name="_wpcf7_recaptcha_response" value="" />
-                </div>
+           
                 <p><span class="wpcf7-form-control-wrap text-name"><input type="text" name="text-name" value=""
                       size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true"
                       aria-invalid="false" placeholder="Your name" /></span></p>
