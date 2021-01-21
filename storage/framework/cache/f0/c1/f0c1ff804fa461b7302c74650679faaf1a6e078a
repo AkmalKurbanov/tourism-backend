@@ -1,6 +1,6 @@
-1611088867a:1:{s:12:"about-us.htm";a:9:{s:8:"fileName";s:12:"about-us.htm";s:7:"content";s:12768:"title = "about us"
+1611134707a:1:{s:12:"about-us.htm";a:9:{s:8:"fileName";s:12:"about-us.htm";s:7:"content";s:12766:"title = "about us"
 url = "/about-us"
-layout = "static-layout"
+layout = "static-page"
 is_hidden = 0
 ==
 <div id="top" class="small_top lazy" style=""
@@ -292,7 +292,7 @@ is_hidden = 0
     </div>
 
   </div>
-</div>";s:5:"mtime";i:1611078090;s:6:"markup";s:12684:"<div id="top" class="small_top lazy" style=""
+</div>";s:5:"mtime";i:1611125434;s:6:"markup";s:12684:"<div id="top" class="small_top lazy" style=""
   data-bg="url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Sunset_1920.jpg)">
 
   <div class="breadcrumb_wrapper">
@@ -581,4 +581,4 @@ is_hidden = 0
     </div>
 
   </div>
-</div>";s:4:"code";N;s:5:"title";s:8:"about us";s:3:"url";s:9:"/about-us";s:6:"layout";s:13:"static-layout";s:9:"is_hidden";s:1:"0";}}
+</div>";s:4:"code";N;s:5:"title";s:8:"about us";s:3:"url";s:9:"/about-us";s:6:"layout";s:11:"static-page";s:9:"is_hidden";s:1:"0";}}

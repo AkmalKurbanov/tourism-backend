@@ -1,4 +1,4 @@
-1611088867a:1:{s:26:"site/tours/group_tours.htm";a:7:{s:8:"fileName";s:26:"site/tours/group_tours.htm";s:7:"content";s:1259:"[records GroupTours]
+1611244436a:1:{s:26:"site/tours/group_tours.htm";a:8:{s:8:"fileName";s:26:"site/tours/group_tours.htm";s:7:"content";s:1657:"[records GroupTours]
 activeOnly = 0
 areaSlug = "tury"
 categorySlug = "gruppovye-tury"
@@ -12,26 +12,40 @@ pageSlug = "{{ :page }}"
 orderBy = "name"
 orderByDirection = "ASC"
 
+
+[recordDetail TourDetail]
+activeOnly = 0
+recordSlug = "{{ :slug }}"
+areaSlug = 0
+categorySlug = "{{ :gruppovye-tury }}"
+useMainCategory = 1
+categoryPage = 0
+categoryPageSlug = "{{ :category }}"
+
 [viewBag]
 ==
 {% for record in GroupTours.items %}
 
+ 
+
 <div class="item item_tour with_border  ">
   <a
     href="{{GroupTours.property('recordPage') ? GroupTours.property('recordPage')|page({(GroupTours.paramName('recordPageSlug')):(record.slug)})}}">
 
     <span class="img_wrapper">
 
-      <span class="img lazy" style="background-image: url({{ record.preview_image.getPath }});"
-        data-bg="url({{ record.preview_image.getPath }}" data-was-processed="true"></span>
+      <span class="img lazy" style="background-image: url({{ record.preview_image.getPath }});" data-bg="url({{ record.preview_image.getPath }}" data-was-processed="true"></span>
 
       <span class="price-round group_price">
         <span class="inner">${{ record.getAttributeValueBySlug('stoimost_tura') }} US</span>
-      </span>
+         {% for custom_repeater in TourDetail.recordDetail.custom_repeater %}
+          <li>{{ custom_repeater.tour_duration }}</li>
+          {% endfor %}
+</span>
 
     </span>
     <div class="desc">
-      <h3>{{ record.name }}</h3>
+      <h3>{{ record.name }} </h3> 
       <p class="excerpt">{{ record.description }} </p>
     </div>
     <p class="duration">
@@ -41,7 +55,18 @@ orderByDirection = "ASC"
   </a>
 </div>
 
-{% endfor %}";s:5:"mtime";i:1610992941;s:6:"markup";s:941:"{% for record in GroupTours.items %}
+     
+{% endfor %}
+      
+
+ 
+
+
+
+
+           ";s:5:"mtime";i:1611236053;s:6:"markup";s:1099:"{% for record in GroupTours.items %}
+
+ 
 
 <div class="item item_tour with_border  ">
   <a
@@ -49,16 +74,18 @@ orderByDirection = "ASC"
 
     <span class="img_wrapper">
 
-      <span class="img lazy" style="background-image: url({{ record.preview_image.getPath }});"
-        data-bg="url({{ record.preview_image.getPath }}" data-was-processed="true"></span>
+      <span class="img lazy" style="background-image: url({{ record.preview_image.getPath }});" data-bg="url({{ record.preview_image.getPath }}" data-was-processed="true"></span>
 
       <span class="price-round group_price">
         <span class="inner">${{ record.getAttributeValueBySlug('stoimost_tura') }} US</span>
-      </span>
+         {% for custom_repeater in TourDetail.recordDetail.custom_repeater %}
+          <li>{{ custom_repeater.tour_duration }}</li>
+          {% endfor %}
+</span>
 
     </span>
     <div class="desc">
-      <h3>{{ record.name }}</h3>
+      <h3>{{ record.name }} </h3> 
       <p class="excerpt">{{ record.description }} </p>
     </div>
     <p class="duration">
@@ -68,4 +95,5 @@ orderByDirection = "ASC"
   </a>
 </div>
 
-{% endfor %}";s:4:"code";N;s:18:"records GroupTours";a:12:{s:10:"activeOnly";s:1:"0";s:8:"areaSlug";s:4:"tury";s:12:"categorySlug";s:14:"gruppovye-tury";s:15:"useMainCategory";s:1:"1";s:18:"useMultiCategories";s:1:"1";s:7:"tagSlug";s:10:"{{ :tag }}";s:10:"recordPage";s:11:"group-tours";s:14:"recordPageSlug";s:11:"{{ :slug }}";s:5:"limit";s:2:"10";s:8:"pageSlug";s:11:"{{ :page }}";s:7:"orderBy";s:4:"name";s:16:"orderByDirection";s:3:"ASC";}s:7:"viewBag";a:0:{}}}
+     
+{% endfor %}";s:4:"code";N;s:18:"records GroupTours";a:12:{s:10:"activeOnly";s:1:"0";s:8:"areaSlug";s:4:"tury";s:12:"categorySlug";s:14:"gruppovye-tury";s:15:"useMainCategory";s:1:"1";s:18:"useMultiCategories";s:1:"1";s:7:"tagSlug";s:10:"{{ :tag }}";s:10:"recordPage";s:11:"group-tours";s:14:"recordPageSlug";s:11:"{{ :slug }}";s:5:"limit";s:2:"10";s:8:"pageSlug";s:11:"{{ :page }}";s:7:"orderBy";s:4:"name";s:16:"orderByDirection";s:3:"ASC";}s:23:"recordDetail TourDetail";a:7:{s:10:"activeOnly";s:1:"0";s:10:"recordSlug";s:11:"{{ :slug }}";s:8:"areaSlug";s:1:"0";s:12:"categorySlug";s:21:"{{ :gruppovye-tury }}";s:15:"useMainCategory";s:1:"1";s:12:"categoryPage";s:1:"0";s:16:"categoryPageSlug";s:15:"{{ :category }}";}s:7:"viewBag";a:0:{}}}

@@ -1,7 +1,7 @@
-1611089425a:1:{s:31:"kyrgyzstan-about-kyrgyzstan.htm";a:7:{s:8:"fileName";s:31:"kyrgyzstan-about-kyrgyzstan.htm";s:7:"content";s:143:"[viewBag]
+1611244436a:1:{s:31:"kyrgyzstan-about-kyrgyzstan.htm";a:7:{s:8:"fileName";s:31:"kyrgyzstan-about-kyrgyzstan.htm";s:7:"content";s:141:"[viewBag]
 title = "About Kyrgyzstan"
 url = "/kyrgyzstan/about-kyrgyzstan"
-layout = "static-layout"
+layout = "static-page"
 is_hidden = 0
 navigation_hidden = 0
-==";s:5:"mtime";i:1611088088;s:6:"markup";s:0:"";s:4:"code";N;s:7:"viewBag";a:5:{s:5:"title";s:16:"About Kyrgyzstan";s:3:"url";s:28:"/kyrgyzstan/about-kyrgyzstan";s:6:"layout";s:13:"static-layout";s:9:"is_hidden";s:1:"0";s:17:"navigation_hidden";s:1:"0";}s:12:"parsedMarkup";s:0:"";}}
+==";s:5:"mtime";i:1611136587;s:6:"markup";s:0:"";s:4:"code";N;s:7:"viewBag";a:5:{s:5:"title";s:16:"About Kyrgyzstan";s:3:"url";s:28:"/kyrgyzstan/about-kyrgyzstan";s:6:"layout";s:11:"static-page";s:9:"is_hidden";s:1:"0";s:17:"navigation_hidden";s:1:"0";}s:12:"parsedMarkup";s:0:"";}}

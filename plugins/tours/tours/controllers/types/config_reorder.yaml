@@ -1,4 +1,0 @@
-title: Types
-modelClass: Tours\Tours\Models\Type
-toolbar:
-    buttons: reorder_toolbar

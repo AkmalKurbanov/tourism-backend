@@ -1,10 +1,9 @@
 fields:
-
     id:
         cssClass: hidden
         readOnly: true
         disabled: true
-
+        type: text
     name:
         label: 'janvince.smallrecords::lang.common.columns.name'
         span: left
@@ -12,7 +11,6 @@ fields:
         required: true
         attributes:
             autofocus: ''
-
     slug:
         label: 'janvince.smallrecords::lang.common.columns.slug'
         span: right
@@ -21,53 +19,50 @@ fields:
         preset:
             field: name
             type: slug
-
     area:
         label: 'janvince.smallrecords::lang.common.columns.area'
         type: relation
         nameFrom: name
         span: left
-
 tabs:
     fields:
-
         category:
             label: 'janvince.smallrecords::lang.common.columns.category'
-            # comment: 'janvince.smallrecords::lang.common.columns.category_comment'
-            # commentHtml: true
             type: relation
             nameFrom: name
             span: left
             emptyOption: 'janvince.smallrecords::lang.common.fields.empty_option'
             tab: 'janvince.smallrecords::lang.common.tabs.info'
-
         preview_image:
             label: 'janvince.smallrecords::lang.common.columns.preview_image'
             type: fileupload
             mode: image
             span: right
             tab: 'janvince.smallrecords::lang.common.tabs.info'
-
         preview_image_media:
             label: 'janvince.smallrecords::lang.common.columns.preview_image_media'
             type: mediafinder
             mode: image
             span: right
             tab: 'janvince.smallrecords::lang.common.tabs.info'
-
         description:
             type: textarea
             size: large
             span: left
             label: 'janvince.smallrecords::lang.common.columns.description'
             tab: 'janvince.smallrecords::lang.common.tabs.info'
-
         date:
             label: 'janvince.smallrecords::lang.common.columns.date'
-            type: datepicker
+            mode: datetime
             span: left
+            type: datepicker
             tab: 'janvince.smallrecords::lang.common.tabs.info'
-
+        date1:
+            label: 'janvince.smallrecords::lang.common.columns.date'
+            mode: datetime
+            span: left
+            type: datepicker
+            tab: 'janvince.smallrecords::lang.common.tabs.info'    
         author:
             type: relation
             nameFrom: fullname
@@ -75,40 +70,34 @@ tabs:
             emptyOption: 'janvince.smallrecords::lang.common.fields.empty_option'
             label: 'janvince.smallrecords::lang.common.columns.author'
             tab: 'janvince.smallrecords::lang.common.tabs.info'
-
         url:
             type: text
             span: left
             label: 'janvince.smallrecords::lang.common.columns.url'
             tab: 'janvince.smallrecords::lang.common.tabs.info'
-
         active:
             label: 'janvince.smallrecords::lang.common.columns.active'
             span: left
             type: checkbox
             default: true
             tab: 'janvince.smallrecords::lang.common.tabs.info'
-
         favourite:
             label: 'janvince.smallrecords::lang.common.columns.favourite'
             span: left
             type: checkbox
             tab: 'janvince.smallrecords::lang.common.tabs.info'
-
         content:
             type: richeditor
             size: giant
             span: full
             label: 'janvince.smallrecords::lang.common.columns.content'
             tab: 'janvince.smallrecords::lang.common.tabs.content'
-
         images:
             label: 'janvince.smallrecords::lang.common.columns.images'
             type: fileupload
             mode: image
             span: full
             tab: 'janvince.smallrecords::lang.common.tabs.images'
-
         images_media:
             type: repeater
             prompt: 'janvince.smallrecords::lang.common.columns.repeater_prompt'
@@ -129,42 +118,31 @@ tabs:
                         type: textarea
                         size: medium
                         span: left
-
         tags:
-            # label: 'janvince.smallrecords::lang.tags.tabs.tags'
             type: relation
             tab: 'janvince.smallrecords::lang.common.tabs.tags'
             trigger:
                 action: hide
                 field: id
-                condition: value[]
-
+                condition: 'value[]'
         attributes:
-            # label: 'janvince.smallrecords::lang.attributes.tabs.attributes'
             type: partial
             path: $/janvince/smallrecords/controllers/relations/attributes.htm
             tab: 'janvince.smallrecords::lang.common.tabs.attributes'
             trigger:
                 action: hide
                 field: id
-                condition: value[]
-
-
+                condition: 'value[]'
         files:
-            # label: 'janvince.smallrecords::lang.records.files'
             type: fileupload
             mode: file
             span: full
             tab: 'janvince.smallrecords::lang.common.tabs.attachments'
-
         categories:
-            # label: 'janvince.smallrecords::lang.categories.tabs.secondary_categories'
-            # commentAbove: 'janvince.smallrecords::lang.categories.tabs.secondary_categories_comment'
             type: relation
             nameFrom: name
             span: full
             tab: 'janvince.smallrecords::lang.common.tabs.secondary_categories'
-
         repeater:
             type: repeater
             prompt: 'janvince.smallrecords::lang.common.columns.repeater_prompt'
@@ -172,7 +150,7 @@ tabs:
             trigger:
                 action: hide
                 field: id
-                condition: value[]
+                condition: 'value[]'
             form:
                 fields:
                     repeater_value1:
@@ -195,7 +173,6 @@ tabs:
                         label: 'janvince.smallrecords::lang.records.repeater.text'
                         type: richeditor
                         span: full
-
         testimonials:
             type: repeater
             prompt: 'janvince.smallrecords::lang.common.columns.testimonials_prompt'
@@ -203,7 +180,7 @@ tabs:
             trigger:
                 action: hide
                 field: id
-                condition: value[]
+                condition: 'value[]'
             form:
                 fields:
                     testimonial_title:
@@ -230,7 +207,6 @@ tabs:
                         type: richeditor
                         span: left
                         size: huge
-
         content_blocks:
             type: repeater
             prompt: 'janvince.smallrecords::lang.common.columns.repeater_prompt'
@@ -238,7 +214,7 @@ tabs:
             trigger:
                 action: hide
                 field: id
-                condition: value[]
+                condition: 'value[]'
             form:
                 fields:
                     content_block_title:

@@ -1,12 +1,77 @@
-1611089270a:1:{s:9:"menu.yaml";a:7:{s:8:"fileName";s:9:"menu.yaml";s:7:"content";s:214:"items:
+1611244436a:1:{s:9:"menu.yaml";a:7:{s:8:"fileName";s:9:"menu.yaml";s:7:"content";s:1570:"items:
     -
-        title: 'All pages'
-        type: all-static-pages
+        title: Home
+        nesting: null
+        type: url
+        url: /tourism
         code: ''
+        reference: null
+        cmsPage: null
+        replace: null
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Tours
+        nesting: null
+        type: all-static-pages
+        url: null
+        code: ''
+        reference: null
+        cmsPage: null
+        replace: 1
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Group tours'
+        nesting: 0
+        type: static-page
+        url: null
+        code: ''
+        reference: group-tours
+        cmsPage: null
+        replace: 1
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Blog
+        type: url
+        url: /blog
+        code: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Kyrgyzstan
+        nesting: 0
+        type: static-page
+        url: null
+        code: ''
+        reference: kyrgyzstan
+        cmsPage: null
+        replace: 1
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: About
+        nesting: 0
+        type: static-page
+        url: null
+        code: ''
+        reference: about
+        cmsPage: null
         replace: 1
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
 name: menu
-";s:5:"mtime";i:1611084988;s:6:"markup";N;s:4:"code";N;s:4:"name";N;s:5:"items";a:0:{}}}
+";s:5:"mtime";i:1611153907;s:6:"markup";N;s:4:"code";N;s:4:"name";N;s:5:"items";a:0:{}}}

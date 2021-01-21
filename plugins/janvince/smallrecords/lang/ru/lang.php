@@ -41,6 +41,7 @@
             'active' => 'Активно',
             'favourite' => 'В избранном',
             'date' => 'Дата',
+            'date1' => 'Дата',
             'url' => 'URL',
             'description' => 'Описание',
             'content' => 'Контент',

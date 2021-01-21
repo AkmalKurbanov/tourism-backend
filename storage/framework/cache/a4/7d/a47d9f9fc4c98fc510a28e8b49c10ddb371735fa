@@ -1,9 +1,9 @@
-1611089300a:1:{s:17:"static-pages.yaml";a:5:{s:8:"fileName";s:17:"static-pages.yaml";s:7:"content";s:383:"static-pages:
+1611244436a:1:{s:17:"static-pages.yaml";a:5:{s:8:"fileName";s:17:"static-pages.yaml";s:7:"content";s:383:"static-pages:
     group-tours: {  }
     blog: {  }
     about:
-        about-about-us: {  }
         about-about-us-2: {  }
+        about-about-us: {  }
     kyrgyzstan:
         kyrgyzstan-projects: {  }
         kyrgyzstan-getting-around: {  }
@@ -11,4 +11,4 @@
         kyrgyzstan-inspiration-visiting-kyrgyzstan: {  }
         kyrgyzstan-photo-gallery: {  }
         kyrgyzstan-about-kyrgyzstan: {  }
-";s:5:"mtime";i:1611088088;s:6:"markup";N;s:4:"code";N;}}
+";s:5:"mtime";i:1611152967;s:6:"markup";N;s:4:"code";N;}}

@@ -1,6 +1,0 @@
-columns:
-    type_title:
-        label: 'Виды туров'
-        type: text
-        searchable: true
-        sortable: true

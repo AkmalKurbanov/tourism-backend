@@ -32,16 +32,13 @@ orderBy = "name"
 orderByDirection = "ASC"
 
 [records GroupTours]
-activeOnly = 0
+activeOnly = 1
 areaSlug = "tury"
-categorySlug = "gruppovye-tury"
-useMainCategory = 1
-useMultiCategories = 1
+categorySlug = "{{ :category }}"
 tagSlug = "{{ :tag }}"
-recordPage = "group-tours"
-recordPageSlug = "{{ :slug }}"
-allowLimit = 1
-limit = 3
+recordPage = 0
+recordPageSlug = "{{ :record }}"
+limit = 10
 pageSlug = "{{ :page }}"
 orderBy = "name"
 orderByDirection = "ASC"
@@ -72,6 +69,27 @@ recaptcha_theme = "light"
 recaptcha_type = "image"
 recaptcha_size = "normal"
 emails_date_format = "Y-m-d"
+
+[recordDetail TourDetail]
+activeOnly = 0
+recordSlug = "{{ :slug }}"
+areaSlug = 0
+categorySlug = "{{ :gruppovye-tury }}"
+useMainCategory = 1
+categoryPage = 0
+categoryPageSlug = "{{ :category }}"
+
+[records]
+activeOnly = 1
+areaSlug = "tury"
+categorySlug = "gruppovye-tury"
+tagSlug = "{{ :tag }}"
+recordPage = 0
+recordPageSlug = "{{ :record }}"
+limit = 10
+pageSlug = "{{ :page }}"
+orderBy = "name"
+orderByDirection = "ASC"
 ==
 <script>
   $(window).load(function () {
@@ -146,12 +164,155 @@ emails_date_format = "Y-m-d"
 
 
 
+ <div class="container {{ cssClass }}">
 
+    <div class="row">
+
+        <div class="col-xs-12">
+
+            <h1>Records</h1>
+
+        </div>
+
+        <div class="col-xs-12 col-sm-6">
+
+            <ul class="list-group">
+                
+                <li class="list-group-item">Records from list: <strong>{{records.getProperties.areaSlug ? records.getProperties.areaSlug : 'Not set'}}</strong></li>
+
+                {% if records.property('categorySlug') %}
+                    <li class="list-group-item">Records filtered by category: <strong>{{records.property('categorySlug')}}</strong></li>
+                {% endif %}
+
+                {% if records.property('areaSlug') %}
+                    <li class="list-group-item">Records filtered by category used as: <strong>{{records.property('useMultiCategories') ? 'Secondary categories' : 'Main category'}}</strong></li>
+                {% endif %}
+
+                <li class="list-group-item">Ordered by: <strong>{{records.getProperties.orderBy}} ({{records.getProperties.orderByDirection}})</strong></li>
+
+            </ul>
+
+        </div>
+
+        <div class="col-xs-12">
+
+            <h3>Records details</h3>
+
+            <table class="table table-bordered table-striped table-hover">
+
+                <tr>
+                
+                    <th>Preview image</th>
+                    <th>Name</th>
+                    <th>List</th>
+                    <th>Main category</th>
+                    <th>Secondary categories</th>
+                    <th>Tags</th>
+                    <th>Attributes</th>
+                
+                </tr>
+
+                {% for record in records.items %}
+
+                    <tr>
+
+                        <th width="150">
+                            {% if record.preview_image %}
+                                <img class="thumbnail" alt="{{ record.name }}" src="{{ record.preview_image.getPath }}" width="100%" />
+                            {% elseif record.preview_image_media %}
+                                <img class="thumbnail" alt="{{ record.name }}" src="{{ record.preview_image_media|media }}" width="100%" />
+                            {% endif %}            
+                        </th>
+
+                        <td>
+                            <a href="{{records.property('recordPage') ? records.property('recordPage')|page({(records.paramName('recordPageSlug')):(record.slug)})}}">
+                                {{ record.name }}
+                            </a>
+                        </td>
+
+                        <td>
+                            {{ record.area.name }}
+                        </td>
+
+                        <td>
+                            {{ record.category.name }}
+                        </td>
+
+                        <td>
+                            {% if record.categories|length %}
+
+                            <ul>
+
+                                {% for category in record.categories %}
+
+                                    <li>{{ category.name }}</li>
+
+                                {% endfor %}
+
+                            </ul>
+
+                            {% endif %}
+                        </td>
+
+                        <td>
+                            {% if record.tags|length %}
+
+                            <ul>
+
+                                {% for tag in record.tags %}
+
+                                    <li>{{ tag.name }}</li>
+
+                                {% endfor %}
+
+                            </ul>
+
+                            {% endif %}
+                        </td>
+
+                        <td>
+                            {% if record.attributes|length %}
+
+                            <ul>
+
+                                {% for attribute in record.attributes %}
+
+                                    <li>{{ attribute.name }}:{{ attribute.value }}</li>
+
+                                {% endfor %}
+
+                            </ul>
+
+                            {% endif %}
+                        </td>
+
+                    </tr>
+
+                {% endfor %}
+
+            </table>
+
+            {% if records.property('allowLimit') %}
+            
+                <div>
+
+                    {{ records.items.render|raw }}
+                
+                </div>      
+            
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</div>
 
 
 
         <h2 class="with_line"><a href="https://kyrgyzstan-tourism.com/group-tours/">GROUP TOURS 2021</a>
         </h2>
+         
 
         <div class="tour_slider" id="discounts_slider_wrapper" data-count="3">
 

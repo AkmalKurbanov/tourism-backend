@@ -1,4 +1,0 @@
-title: Introduction
-modelClass: Akmal\Introduction\Models\IntroductionText
-toolbar:
-    buttons: reorder_toolbar

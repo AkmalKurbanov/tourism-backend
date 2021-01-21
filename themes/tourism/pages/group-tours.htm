@@ -64,6 +64,10 @@ emails_date_format = "Y-m-d"
       <div class="row">
         <div class="col-sm-12 text-center">
           <h1 id="single_tour_title">{{ TourDetail.recordDetail.name }}</h1>
+          {% for custom_repeater in TourDetail.recordDetail.custom_repeater %}
+          <li>{{ custom_repeater.tour_duration }}</li>
+          {% endfor %}
+          
         </div>
       </div>
     </div>

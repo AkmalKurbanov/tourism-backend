@@ -41,6 +41,7 @@
             'active' => 'Aktivno',
             'favourite' => 'Izpostavljeno',
             'date' => 'Datum',
+            'date1' => 'Datum',
             'url' => 'URL',
             'description' => 'Opis',
             'content' => 'Vsebina',

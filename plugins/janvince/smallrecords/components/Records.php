@@ -164,6 +164,7 @@ class Records extends ComponentBase
             'url' =>  e(trans('janvince.smallrecords::lang.common.columns.url')),
             'slug' =>  e(trans('janvince.smallrecords::lang.common.columns.slug')),
             'date' => e(trans('janvince.smallrecords::lang.common.columns.date')),
+            'date1' => e(trans('janvince.smallrecords::lang.common.columns.date')),
             'active' => e(trans('janvince.smallrecords::lang.common.columns.active')),
             'favourite' => e(trans('janvince.smallrecords::lang.common.columns.favourite')),
             'created_at' => e(trans('janvince.smallrecords::lang.common.columns.created_at')),

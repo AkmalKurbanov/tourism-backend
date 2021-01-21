@@ -1,8 +1,73 @@
 items:
     -
-        title: 'All pages'
-        type: all-static-pages
+        title: Home
+        nesting: null
+        type: url
+        url: /tourism
         code: ''
+        reference: null
+        cmsPage: null
+        replace: null
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Tours
+        nesting: null
+        type: all-static-pages
+        url: null
+        code: ''
+        reference: null
+        cmsPage: null
+        replace: 1
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Group tours'
+        nesting: 0
+        type: static-page
+        url: null
+        code: ''
+        reference: group-tours
+        cmsPage: null
+        replace: 1
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Blog
+        type: url
+        url: /blog
+        code: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Kyrgyzstan
+        nesting: 0
+        type: static-page
+        url: null
+        code: ''
+        reference: kyrgyzstan
+        cmsPage: null
+        replace: 1
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: About
+        nesting: 0
+        type: static-page
+        url: null
+        code: ''
+        reference: about
+        cmsPage: null
         replace: 1
         viewBag:
             isHidden: '0'

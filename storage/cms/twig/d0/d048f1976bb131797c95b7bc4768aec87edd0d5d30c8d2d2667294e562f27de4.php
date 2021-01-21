@@ -30,7 +30,7 @@ class __TwigTemplate_19149381e72534c2b30f7d4694f08b0ae3fa5f14f89d6e38687eda2f616
         ];
         $this->sandbox = $this->env->getExtension('\Twig\Extension\SandboxExtension');
         $tags = array("for" => 1);
-        $filters = array("page" => 5, "escape" => 9);
+        $filters = array("page" => 7, "escape" => 11);
         $functions = array();
 
         try {
@@ -64,52 +64,68 @@ class __TwigTemplate_19149381e72534c2b30f7d4694f08b0ae3fa5f14f89d6e38687eda2f616
         foreach ($context['_seq'] as $context["_key"] => $context["record"]) {
             // line 2
             echo "
+ 
+
 <div class=\"item item_tour with_border  \">
   <a
     href=\"";
-            // line 5
-            echo ((twig_get_attribute($this->env, $this->source, ($context["GroupTours"] ?? null), "property", [0 => "recordPage"], "method", false, false, true, 5)) ? ($this->extensions['Cms\Twig\Extension']->pageFilter($this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["GroupTours"] ?? null), "property", [0 => "recordPage"], "method", false, false, true, 5), 5, $this->source), [twig_get_attribute($this->env, $this->source, ($context["GroupTours"] ?? null), "paramName", [0 => "recordPageSlug"], "method", false, false, true, 5) => twig_get_attribute($this->env, $this->source, $context["record"], "slug", [], "any", false, false, true, 5)])) : (""));
+            // line 7
+            echo ((twig_get_attribute($this->env, $this->source, ($context["GroupTours"] ?? null), "property", [0 => "recordPage"], "method", false, false, true, 7)) ? ($this->extensions['Cms\Twig\Extension']->pageFilter($this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["GroupTours"] ?? null), "property", [0 => "recordPage"], "method", false, false, true, 7), 7, $this->source), [twig_get_attribute($this->env, $this->source, ($context["GroupTours"] ?? null), "paramName", [0 => "recordPageSlug"], "method", false, false, true, 7) => twig_get_attribute($this->env, $this->source, $context["record"], "slug", [], "any", false, false, true, 7)])) : (""));
             echo "\">
 
     <span class=\"img_wrapper\">
 
       <span class=\"img lazy\" style=\"background-image: url(";
-            // line 9
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["record"], "preview_image", [], "any", false, false, true, 9), "getPath", [], "any", false, false, true, 9), 9, $this->source), "html", null, true);
-            echo ");\"
-        data-bg=\"url(";
-            // line 10
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["record"], "preview_image", [], "any", false, false, true, 10), "getPath", [], "any", false, false, true, 10), 10, $this->source), "html", null, true);
+            // line 11
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["record"], "preview_image", [], "any", false, false, true, 11), "getPath", [], "any", false, false, true, 11), 11, $this->source), "html", null, true);
+            echo ");\" data-bg=\"url(";
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["record"], "preview_image", [], "any", false, false, true, 11), "getPath", [], "any", false, false, true, 11), 11, $this->source), "html", null, true);
             echo "\" data-was-processed=\"true\"></span>
 
       <span class=\"price-round group_price\">
         <span class=\"inner\">\$";
-            // line 13
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "getAttributeValueBySlug", [0 => "stoimost_tura"], "method", false, false, true, 13), 13, $this->source), "html", null, true);
+            // line 14
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "getAttributeValueBySlug", [0 => "stoimost_tura"], "method", false, false, true, 14), 14, $this->source), "html", null, true);
             echo " US</span>
-      </span>
+         ";
+            // line 15
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["TourDetail"] ?? null), "recordDetail", [], "any", false, false, true, 15), "custom_repeater", [], "any", false, false, true, 15));
+            foreach ($context['_seq'] as $context["_key"] => $context["custom_repeater"]) {
+                // line 16
+                echo "          <li>";
+                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["custom_repeater"], "tour_duration", [], "any", false, false, true, 16), 16, $this->source), "html", null, true);
+                echo "</li>
+          ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['custom_repeater'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 18
+            echo "</span>
 
     </span>
     <div class=\"desc\">
       <h3>";
-            // line 18
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "name", [], "any", false, false, true, 18), 18, $this->source), "html", null, true);
-            echo "</h3>
+            // line 22
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "name", [], "any", false, false, true, 22), 22, $this->source), "html", null, true);
+            echo " </h3> 
       <p class=\"excerpt\">";
-            // line 19
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "description", [], "any", false, false, true, 19), 19, $this->source), "html", null, true);
+            // line 23
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "description", [], "any", false, false, true, 23), 23, $this->source), "html", null, true);
             echo " </p>
     </div>
     <p class=\"duration\">
       <i class=\"fa fa-clock-o\"></i>
       ";
-            // line 23
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "getAttributeValueBySlug", [0 => "prodolzhitelnost_tura"], "method", false, false, true, 23), 23, $this->source), "html", null, true);
+            // line 27
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "getAttributeValueBySlug", [0 => "prodolzhitelnost_tura"], "method", false, false, true, 27), 27, $this->source), "html", null, true);
             echo "
       days</p>
   </a>
 </div>
 
+     
 ";
         }
         $_parent = $context['_parent'];
@@ -129,12 +145,14 @@ class __TwigTemplate_19149381e72534c2b30f7d4694f08b0ae3fa5f14f89d6e38687eda2f616
 
     public function getDebugInfo()
     {
-        return array (  107 => 23,  100 => 19,  96 => 18,  88 => 13,  82 => 10,  78 => 9,  71 => 5,  66 => 2,  62 => 1,);
+        return array (  122 => 27,  115 => 23,  111 => 22,  105 => 18,  96 => 16,  92 => 15,  88 => 14,  80 => 11,  73 => 7,  66 => 2,  62 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% for record in GroupTours.items %}
+
+ 
 
 <div class=\"item item_tour with_border  \">
   <a
@@ -142,16 +160,18 @@ class __TwigTemplate_19149381e72534c2b30f7d4694f08b0ae3fa5f14f89d6e38687eda2f616
 
     <span class=\"img_wrapper\">
 
-      <span class=\"img lazy\" style=\"background-image: url({{ record.preview_image.getPath }});\"
-        data-bg=\"url({{ record.preview_image.getPath }}\" data-was-processed=\"true\"></span>
+      <span class=\"img lazy\" style=\"background-image: url({{ record.preview_image.getPath }});\" data-bg=\"url({{ record.preview_image.getPath }}\" data-was-processed=\"true\"></span>
 
       <span class=\"price-round group_price\">
         <span class=\"inner\">\${{ record.getAttributeValueBySlug('stoimost_tura') }} US</span>
-      </span>
+         {% for custom_repeater in TourDetail.recordDetail.custom_repeater %}
+          <li>{{ custom_repeater.tour_duration }}</li>
+          {% endfor %}
+</span>
 
     </span>
     <div class=\"desc\">
-      <h3>{{ record.name }}</h3>
+      <h3>{{ record.name }} </h3> 
       <p class=\"excerpt\">{{ record.description }} </p>
     </div>
     <p class=\"duration\">
@@ -161,6 +181,7 @@ class __TwigTemplate_19149381e72534c2b30f7d4694f08b0ae3fa5f14f89d6e38687eda2f616
   </a>
 </div>
 
+     
 {% endfor %}", "C:\\work\\xampp\\htdocs\\tourism/themes/tourism/partials/site/tours/group_tours.htm", "");
     }
 }

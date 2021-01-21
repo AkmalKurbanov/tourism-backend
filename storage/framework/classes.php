@@ -211,4 +211,8 @@
   'Martin\\Forms\\Components\\EmptyForm' => 'plugins\\martin\\forms\\components\\EmptyForm.php',
   'martin\\forms\\Controllers\\exports' => 'plugins\\martin\\forms\\controllers\\exports.php',
   'jorgeandrade\\events\\Plugin' => 'plugins\\jorgeandrade\\events\\Plugin.php',
+  'RainLab\\User\\Models\\Settings' => 'plugins\\rainlab\\user\\models\\Settings.php',
+  'backend\\Controllers\\users' => 'modules\\backend\\controllers\\users.php',
+  'backend\\Controllers\\userroles' => 'modules\\backend\\controllers\\userroles.php',
+  'backend\\Controllers\\usergroups' => 'modules\\backend\\controllers\\usergroups.php',
 );

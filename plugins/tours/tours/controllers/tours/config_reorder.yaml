@@ -1,4 +1,0 @@
-title: Tours
-modelClass: Tours\Tours\Models\Tours
-toolbar:
-    buttons: reorder_toolbar

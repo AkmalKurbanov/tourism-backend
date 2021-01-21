@@ -12,6 +12,17 @@ limit = 10
 pageSlug = "{{ :page }}"
 orderBy = "name"
 orderByDirection = "ASC"
+
+[genericForm TourForm]
+messages_success = "Ваша форма была успешно отправлена!"
+messages_errors = "В вашей заявке содержатся ошибки."
+inline_errors = "disabled"
+sanitize_data = "disabled"
+anonymize_ip = "disabled"
+recaptcha_theme = "light"
+recaptcha_type = "image"
+recaptcha_size = "normal"
+emails_date_format = "Y-m-d"
 ==
 <div class="tags tags_light">
   <h3>Sights</h3>
@@ -93,7 +104,7 @@ orderByDirection = "ASC"
     
     
     
-    
+
     
     
      <form data-request="{{ TourForm }}::onFormSubmit">

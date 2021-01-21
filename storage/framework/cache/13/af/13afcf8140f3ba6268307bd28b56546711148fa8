@@ -1,4 +1,4 @@
-1611089310a:1:{s:16:"site/sidebar.htm";a:7:{s:8:"fileName";s:16:"site/sidebar.htm";s:7:"content";s:4645:"[viewBag]
+1611236276a:1:{s:16:"site/sidebar.htm";a:8:{s:8:"fileName";s:16:"site/sidebar.htm";s:7:"content";s:5031:"[viewBag]
 
 [records PopularTours]
 activeOnly = 0
@@ -12,6 +12,17 @@ limit = 10
 pageSlug = "{{ :page }}"
 orderBy = "name"
 orderByDirection = "ASC"
+
+[genericForm TourForm]
+messages_success = "Ваша форма была успешно отправлена!"
+messages_errors = "В вашей заявке содержатся ошибки."
+inline_errors = "disabled"
+sanitize_data = "disabled"
+anonymize_ip = "disabled"
+recaptcha_theme = "light"
+recaptcha_type = "image"
+recaptcha_size = "normal"
+emails_date_format = "Y-m-d"
 ==
 <div class="tags tags_light">
   <h3>Sights</h3>
@@ -93,7 +104,7 @@ orderByDirection = "ASC"
     
     
     
-    
+
     
     
      <form data-request="{{ TourForm }}::onFormSubmit">
@@ -167,7 +178,7 @@ orderByDirection = "ASC"
   {% endfor %}
 
 
-</div>";s:5:"mtime";i:1611083281;s:6:"markup";s:4344:"<div class="tags tags_light">
+</div>";s:5:"mtime";i:1611144998;s:6:"markup";s:4340:"<div class="tags tags_light">
   <h3>Sights</h3>
   <div class="line_helper" style="background: #e9e9e9"></div>
   <ul class="list-unstyled sdb_ul">
@@ -247,7 +258,7 @@ orderByDirection = "ASC"
     
     
     
-    
+
     
     
      <form data-request="{{ TourForm }}::onFormSubmit">
@@ -321,4 +332,4 @@ orderByDirection = "ASC"
   {% endfor %}
 
 
-</div>";s:4:"code";N;s:7:"viewBag";a:0:{}s:20:"records PopularTours";a:11:{s:10:"activeOnly";s:1:"0";s:8:"areaSlug";s:4:"tury";s:12:"categorySlug";s:16:"populyarnye-tury";s:18:"useMultiCategories";s:1:"1";s:7:"tagSlug";s:10:"{{ :tag }}";s:10:"recordPage";s:11:"group-tours";s:14:"recordPageSlug";s:11:"{{ :slug }}";s:5:"limit";s:2:"10";s:8:"pageSlug";s:11:"{{ :page }}";s:7:"orderBy";s:4:"name";s:16:"orderByDirection";s:3:"ASC";}}}
+</div>";s:4:"code";N;s:7:"viewBag";a:0:{}s:20:"records PopularTours";a:11:{s:10:"activeOnly";s:1:"0";s:8:"areaSlug";s:4:"tury";s:12:"categorySlug";s:16:"populyarnye-tury";s:18:"useMultiCategories";s:1:"1";s:7:"tagSlug";s:10:"{{ :tag }}";s:10:"recordPage";s:11:"group-tours";s:14:"recordPageSlug";s:11:"{{ :slug }}";s:5:"limit";s:2:"10";s:8:"pageSlug";s:11:"{{ :page }}";s:7:"orderBy";s:4:"name";s:16:"orderByDirection";s:3:"ASC";}s:20:"genericForm TourForm";a:9:{s:16:"messages_success";s:65:"Ваша форма была успешно отправлена!";s:15:"messages_errors";s:61:"В вашей заявке содержатся ошибки.";s:13:"inline_errors";s:8:"disabled";s:13:"sanitize_data";s:8:"disabled";s:12:"anonymize_ip";s:8:"disabled";s:15:"recaptcha_theme";s:5:"light";s:14:"recaptcha_type";s:5:"image";s:14:"recaptcha_size";s:6:"normal";s:18:"emails_date_format";s:5:"Y-m-d";}}}

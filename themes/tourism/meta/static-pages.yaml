@@ -2,8 +2,8 @@ static-pages:
     group-tours: {  }
     blog: {  }
     about:
-        about-about-us: {  }
         about-about-us-2: {  }
+        about-about-us: {  }
     kyrgyzstan:
         kyrgyzstan-projects: {  }
         kyrgyzstan-getting-around: {  }

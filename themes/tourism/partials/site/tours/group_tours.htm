@@ -12,9 +12,21 @@ pageSlug = "{{ :page }}"
 orderBy = "name"
 orderByDirection = "ASC"
 
+
+[recordDetail TourDetail]
+activeOnly = 0
+recordSlug = "{{ :slug }}"
+areaSlug = 0
+categorySlug = "{{ :gruppovye-tury }}"
+useMainCategory = 1
+categoryPage = 0
+categoryPageSlug = "{{ :category }}"
+
 [viewBag]
 ==
 {% for record in GroupTours.items %}
+
+ 
 
 <div class="item item_tour with_border  ">
   <a
@@ -22,16 +34,18 @@ orderByDirection = "ASC"
 
     <span class="img_wrapper">
 
-      <span class="img lazy" style="background-image: url({{ record.preview_image.getPath }});"
-        data-bg="url({{ record.preview_image.getPath }}" data-was-processed="true"></span>
+      <span class="img lazy" style="background-image: url({{ record.preview_image.getPath }});" data-bg="url({{ record.preview_image.getPath }}" data-was-processed="true"></span>
 
       <span class="price-round group_price">
         <span class="inner">${{ record.getAttributeValueBySlug('stoimost_tura') }} US</span>
-      </span>
+         {% for custom_repeater in TourDetail.recordDetail.custom_repeater %}
+          <li>{{ custom_repeater.tour_duration }}</li>
+          {% endfor %}
+</span>
 
     </span>
     <div class="desc">
-      <h3>{{ record.name }}</h3>
+      <h3>{{ record.name }} </h3> 
       <p class="excerpt">{{ record.description }} </p>
     </div>
     <p class="duration">
@@ -41,4 +55,13 @@ orderByDirection = "ASC"
   </a>
 </div>
 
+     
 {% endfor %}
+      
+
+ 
+
+
+
+
+           

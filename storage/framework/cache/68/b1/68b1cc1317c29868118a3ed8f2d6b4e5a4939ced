@@ -1,4 +1,4 @@
-1611088867a:1:{s:15:"tour-detail.htm";a:12:{s:8:"fileName";s:15:"tour-detail.htm";s:7:"content";s:54434:"title = "tour-detail"
+1611244436a:1:{s:15:"tour-detail.htm";a:12:{s:8:"fileName";s:15:"tour-detail.htm";s:7:"content";s:54440:"title = "tour-detail"
 url = "/tour-detail/:slug"
 layout = "static-layout"
 is_hidden = 0
@@ -7,7 +7,7 @@ is_hidden = 0
 activeOnly = 0
 recordSlug = "{{ :slug }}"
 areaSlug = 0
-categorySlug = "{{ :category }}"
+categorySlug = "{{ :gruppovye-tury }}"
 useMainCategory = 1
 categoryPage = 0
 categoryPageSlug = "{{ :category }}"
@@ -1076,7 +1076,7 @@ emails_date_format = "Y-m-d"
 
     </div>
   </div>
-</div>";s:5:"mtime";i:1611082632;s:6:"markup";s:53415:"<div class="lazy" id="top" style="" data-bg="url({{ TourDetail.recordDetail.preview_image.getPath }})">
+</div>";s:5:"mtime";i:1611226279;s:6:"markup";s:53415:"<div class="lazy" id="top" style="" data-bg="url({{ TourDetail.recordDetail.preview_image.getPath }})">
 
   <div class="breadcrumb_wrapper">
     <div class="container">
@@ -2113,4 +2113,4 @@ emails_date_format = "Y-m-d"
 
     </div>
   </div>
-</div>";s:4:"code";N;s:5:"title";s:11:"tour-detail";s:3:"url";s:18:"/tour-detail/:slug";s:6:"layout";s:13:"static-layout";s:9:"is_hidden";s:1:"0";s:23:"recordDetail TourDetail";a:7:{s:10:"activeOnly";s:1:"0";s:10:"recordSlug";s:11:"{{ :slug }}";s:8:"areaSlug";s:1:"0";s:12:"categorySlug";s:15:"{{ :category }}";s:15:"useMainCategory";s:1:"1";s:12:"categoryPage";s:1:"0";s:16:"categoryPageSlug";s:15:"{{ :category }}";}s:13:"records Tours";a:13:{s:10:"activeOnly";s:1:"0";s:8:"areaSlug";s:4:"tury";s:12:"categorySlug";s:15:"{{ :category }}";s:15:"useMainCategory";s:1:"0";s:18:"useMultiCategories";s:1:"0";s:7:"tagSlug";s:10:"{{ :tag }}";s:10:"recordPage";s:1:"0";s:14:"recordPageSlug";s:13:"{{ :record }}";s:10:"allowLimit";s:1:"1";s:5:"limit";s:1:"3";s:8:"pageSlug";s:11:"{{ :page }}";s:7:"orderBy";s:4:"name";s:16:"orderByDirection";s:3:"ASC";}s:20:"genericForm TourForm";a:10:{s:5:"group";s:19:"Бронь тура";s:16:"messages_success";s:65:"Ваша форма была успешно отправлена!";s:15:"messages_errors";s:61:"В вашей заявке содержатся ошибки.";s:13:"inline_errors";s:8:"disabled";s:13:"sanitize_data";s:8:"disabled";s:12:"anonymize_ip";s:8:"disabled";s:15:"recaptcha_theme";s:5:"light";s:14:"recaptcha_type";s:5:"image";s:14:"recaptcha_size";s:6:"normal";s:18:"emails_date_format";s:5:"Y-m-d";}}}
+</div>";s:4:"code";N;s:5:"title";s:11:"tour-detail";s:3:"url";s:18:"/tour-detail/:slug";s:6:"layout";s:13:"static-layout";s:9:"is_hidden";s:1:"0";s:23:"recordDetail TourDetail";a:7:{s:10:"activeOnly";s:1:"0";s:10:"recordSlug";s:11:"{{ :slug }}";s:8:"areaSlug";s:1:"0";s:12:"categorySlug";s:21:"{{ :gruppovye-tury }}";s:15:"useMainCategory";s:1:"1";s:12:"categoryPage";s:1:"0";s:16:"categoryPageSlug";s:15:"{{ :category }}";}s:13:"records Tours";a:13:{s:10:"activeOnly";s:1:"0";s:8:"areaSlug";s:4:"tury";s:12:"categorySlug";s:15:"{{ :category }}";s:15:"useMainCategory";s:1:"0";s:18:"useMultiCategories";s:1:"0";s:7:"tagSlug";s:10:"{{ :tag }}";s:10:"recordPage";s:1:"0";s:14:"recordPageSlug";s:13:"{{ :record }}";s:10:"allowLimit";s:1:"1";s:5:"limit";s:1:"3";s:8:"pageSlug";s:11:"{{ :page }}";s:7:"orderBy";s:4:"name";s:16:"orderByDirection";s:3:"ASC";}s:20:"genericForm TourForm";a:10:{s:5:"group";s:19:"Бронь тура";s:16:"messages_success";s:65:"Ваша форма была успешно отправлена!";s:15:"messages_errors";s:61:"В вашей заявке содержатся ошибки.";s:13:"inline_errors";s:8:"disabled";s:13:"sanitize_data";s:8:"disabled";s:12:"anonymize_ip";s:8:"disabled";s:15:"recaptcha_theme";s:5:"light";s:14:"recaptcha_type";s:5:"image";s:14:"recaptcha_size";s:6:"normal";s:18:"emails_date_format";s:5:"Y-m-d";}}}

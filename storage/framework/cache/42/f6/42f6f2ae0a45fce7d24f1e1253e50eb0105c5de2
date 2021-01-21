@@ -1,4 +1,4 @@
-1611088867a:1:{s:15:"group-tours.htm";a:12:{s:8:"fileName";s:15:"group-tours.htm";s:7:"content";s:53926:"title = "group-tours"
+1611244436a:1:{s:15:"group-tours.htm";a:12:{s:8:"fileName";s:15:"group-tours.htm";s:7:"content";s:54098:"title = "group-tours"
 url = "/group-tours/:slug"
 layout = "static-layout"
 is_hidden = 0
@@ -64,6 +64,10 @@ emails_date_format = "Y-m-d"
       <div class="row">
         <div class="col-sm-12 text-center">
           <h1 id="single_tour_title">{{ TourDetail.recordDetail.name }}</h1>
+          {% for custom_repeater in TourDetail.recordDetail.custom_repeater %}
+          <li>{{ custom_repeater.tour_duration }}</li>
+          {% endfor %}
+          
         </div>
       </div>
     </div>
@@ -1103,7 +1107,7 @@ emails_date_format = "Y-m-d"
 
     </div>
   </div>
-</div>";s:5:"mtime";i:1611083252;s:6:"markup";s:52897:"<div class="lazy" id="top" style="" data-bg="url({{ TourDetail.recordDetail.preview_image.getPath }})">
+</div>";s:5:"mtime";i:1611242181;s:6:"markup";s:53069:"<div class="lazy" id="top" style="" data-bg="url({{ TourDetail.recordDetail.preview_image.getPath }})">
 
   <div class="breadcrumb_wrapper">
     <div class="container">
@@ -1129,6 +1133,10 @@ emails_date_format = "Y-m-d"
       <div class="row">
         <div class="col-sm-12 text-center">
           <h1 id="single_tour_title">{{ TourDetail.recordDetail.name }}</h1>
+          {% for custom_repeater in TourDetail.recordDetail.custom_repeater %}
+          <li>{{ custom_repeater.tour_duration }}</li>
+          {% endfor %}
+          
         </div>
       </div>
     </div>

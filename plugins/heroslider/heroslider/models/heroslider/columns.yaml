@@ -1,7 +1,0 @@
-columns:
-    title:
-        label: 'Заголовок слайда'
-        type: text
-    sub_title:
-        label: 'Подзаголовок слайда'
-        type: text

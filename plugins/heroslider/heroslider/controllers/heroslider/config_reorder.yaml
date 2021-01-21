@@ -1,4 +1,0 @@
-title: HeroSlider
-modelClass: HeroSlider\HeroSlider\Models\HeroSlider
-toolbar:
-    buttons: reorder_toolbar

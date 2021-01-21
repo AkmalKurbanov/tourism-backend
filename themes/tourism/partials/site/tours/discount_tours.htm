@@ -6,7 +6,13 @@
       <span class="img lazy" style="" data-bg="url( {{ record.preview_image.getPath }})"></span>
 
       <span class="price-round">
-        <span class="inner">from <br />$ {{ record.getAttributeValueBySlug('stoimost_tura') }}</span>
+        <span class="inner">from <br />$ {{ record.getAttributeValueBySlug('stoimost_tura') }} 
+        
+         {% for custom_repeater in DealsAndDiscounts.records.custom_repeater %}
+         <li>{{ custom_repeater.tour_cost }}</li>
+         {% endfor %}
+        
+        </span>
       </span>
 
 
@@ -16,7 +22,9 @@
       <p class="excerpt"> {{ record.description }}</p>
     </div>
     <p class="duration"><i class="fa fa-clock-o"></i>
-      {{ record.getAttributeValueBySlug('prodolzhitelnost_tura') }} days</p>
+      {{ record.getAttributeValueBySlug('prodolzhitelnost_tura') }}
+       days
+    </p>
   </a>
 </div>
 {% endfor %}

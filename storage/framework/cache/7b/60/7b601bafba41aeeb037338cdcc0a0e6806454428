@@ -1,4 +1,4 @@
-1611089270a:1:{s:20:"site/main_slider.htm";a:5:{s:8:"fileName";s:20:"site/main_slider.htm";s:7:"content";s:916:"{% for record in TypeTours.items %}
+1611244436a:1:{s:20:"site/main_slider.htm";a:5:{s:8:"fileName";s:20:"site/main_slider.htm";s:7:"content";s:916:"{% for record in TypeTours.items %}
 <div class="item lazy" style="background-image: url(&quot;{{ record.preview_image.getPath }}&quot;);"
   data-bg="url({{ record.preview_image.getPath }})" data-was-processed="true">
   <div class="carousel-caption">

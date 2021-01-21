@@ -1,7 +1,0 @@
-columns:
-    introduction_text:
-        label: 'Вступительный текст'
-        type: text
-    title:
-        label: 'Вступительный заголовок'
-        type: text

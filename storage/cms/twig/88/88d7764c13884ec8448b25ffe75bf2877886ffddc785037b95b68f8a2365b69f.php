@@ -29,14 +29,14 @@ class __TwigTemplate_f7f3d08e74deb0f0953cc2af8de91ba287ddd936a2d76f03b796a623685
         $this->blocks = [
         ];
         $this->sandbox = $this->env->getExtension('\Twig\Extension\SandboxExtension');
-        $tags = array("partial" => 27);
-        $filters = array("escape" => 421);
-        $functions = array("form_token" => 423);
+        $tags = array("partial" => 27, "if" => 90, "for" => 122);
+        $filters = array("escape" => 74, "media" => 130, "page" => 135, "length" => 149, "raw" => 206);
+        $functions = array("form_token" => 566);
 
         try {
             $this->sandbox->checkSecurity(
-                ['partial'],
-                ['escape'],
+                ['partial', 'if', 'for'],
+                ['escape', 'media', 'page', 'length', 'raw'],
                 ['form_token']
             );
         } catch (SecurityError $e) {
@@ -142,12 +142,283 @@ class __TwigTemplate_f7f3d08e74deb0f0953cc2af8de91ba287ddd936a2d76f03b796a623685
 
 
 
+ <div class=\"container ";
+        // line 74
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(($context["cssClass"] ?? null), 74, $this->source), "html", null, true);
+        echo "\">
 
+    <div class=\"row\">
+
+        <div class=\"col-xs-12\">
+
+            <h1>Records</h1>
+
+        </div>
+
+        <div class=\"col-xs-12 col-sm-6\">
+
+            <ul class=\"list-group\">
+                
+                <li class=\"list-group-item\">Records from list: <strong>";
+        // line 88
+        ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["records"] ?? null), "getProperties", [], "any", false, false, true, 88), "areaSlug", [], "any", false, false, true, 88)) ? (print (twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["records"] ?? null), "getProperties", [], "any", false, false, true, 88), "areaSlug", [], "any", false, false, true, 88), "html", null, true))) : (print ("Not set")));
+        echo "</strong></li>
+
+                ";
+        // line 90
+        if (twig_get_attribute($this->env, $this->source, ($context["records"] ?? null), "property", [0 => "categorySlug"], "method", false, false, true, 90)) {
+            // line 91
+            echo "                    <li class=\"list-group-item\">Records filtered by category: <strong>";
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["records"] ?? null), "property", [0 => "categorySlug"], "method", false, false, true, 91), 91, $this->source), "html", null, true);
+            echo "</strong></li>
+                ";
+        }
+        // line 93
+        echo "
+                ";
+        // line 94
+        if (twig_get_attribute($this->env, $this->source, ($context["records"] ?? null), "property", [0 => "areaSlug"], "method", false, false, true, 94)) {
+            // line 95
+            echo "                    <li class=\"list-group-item\">Records filtered by category used as: <strong>";
+            echo ((twig_get_attribute($this->env, $this->source, ($context["records"] ?? null), "property", [0 => "useMultiCategories"], "method", false, false, true, 95)) ? ("Secondary categories") : ("Main category"));
+            echo "</strong></li>
+                ";
+        }
+        // line 97
+        echo "
+                <li class=\"list-group-item\">Ordered by: <strong>";
+        // line 98
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["records"] ?? null), "getProperties", [], "any", false, false, true, 98), "orderBy", [], "any", false, false, true, 98), 98, $this->source), "html", null, true);
+        echo " (";
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["records"] ?? null), "getProperties", [], "any", false, false, true, 98), "orderByDirection", [], "any", false, false, true, 98), 98, $this->source), "html", null, true);
+        echo ")</strong></li>
+
+            </ul>
+
+        </div>
+
+        <div class=\"col-xs-12\">
+
+            <h3>Records details</h3>
+
+            <table class=\"table table-bordered table-striped table-hover\">
+
+                <tr>
+                
+                    <th>Preview image</th>
+                    <th>Name</th>
+                    <th>List</th>
+                    <th>Main category</th>
+                    <th>Secondary categories</th>
+                    <th>Tags</th>
+                    <th>Attributes</th>
+                
+                </tr>
+
+                ";
+        // line 122
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["records"] ?? null), "items", [], "any", false, false, true, 122));
+        foreach ($context['_seq'] as $context["_key"] => $context["record"]) {
+            // line 123
+            echo "
+                    <tr>
+
+                        <th width=\"150\">
+                            ";
+            // line 127
+            if (twig_get_attribute($this->env, $this->source, $context["record"], "preview_image", [], "any", false, false, true, 127)) {
+                // line 128
+                echo "                                <img class=\"thumbnail\" alt=\"";
+                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "name", [], "any", false, false, true, 128), 128, $this->source), "html", null, true);
+                echo "\" src=\"";
+                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["record"], "preview_image", [], "any", false, false, true, 128), "getPath", [], "any", false, false, true, 128), 128, $this->source), "html", null, true);
+                echo "\" width=\"100%\" />
+                            ";
+            } elseif (twig_get_attribute($this->env, $this->source,             // line 129
+$context["record"], "preview_image_media", [], "any", false, false, true, 129)) {
+                // line 130
+                echo "                                <img class=\"thumbnail\" alt=\"";
+                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "name", [], "any", false, false, true, 130), 130, $this->source), "html", null, true);
+                echo "\" src=\"";
+                echo $this->extensions['System\Twig\Extension']->mediaFilter($this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "preview_image_media", [], "any", false, false, true, 130), 130, $this->source));
+                echo "\" width=\"100%\" />
+                            ";
+            }
+            // line 131
+            echo "            
+                        </th>
+
+                        <td>
+                            <a href=\"";
+            // line 135
+            echo ((twig_get_attribute($this->env, $this->source, ($context["records"] ?? null), "property", [0 => "recordPage"], "method", false, false, true, 135)) ? ($this->extensions['Cms\Twig\Extension']->pageFilter($this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["records"] ?? null), "property", [0 => "recordPage"], "method", false, false, true, 135), 135, $this->source), [twig_get_attribute($this->env, $this->source, ($context["records"] ?? null), "paramName", [0 => "recordPageSlug"], "method", false, false, true, 135) => twig_get_attribute($this->env, $this->source, $context["record"], "slug", [], "any", false, false, true, 135)])) : (""));
+            echo "\">
+                                ";
+            // line 136
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "name", [], "any", false, false, true, 136), 136, $this->source), "html", null, true);
+            echo "
+                            </a>
+                        </td>
+
+                        <td>
+                            ";
+            // line 141
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["record"], "area", [], "any", false, false, true, 141), "name", [], "any", false, false, true, 141), 141, $this->source), "html", null, true);
+            echo "
+                        </td>
+
+                        <td>
+                            ";
+            // line 145
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["record"], "category", [], "any", false, false, true, 145), "name", [], "any", false, false, true, 145), 145, $this->source), "html", null, true);
+            echo "
+                        </td>
+
+                        <td>
+                            ";
+            // line 149
+            if (twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, $context["record"], "categories", [], "any", false, false, true, 149))) {
+                // line 150
+                echo "
+                            <ul>
+
+                                ";
+                // line 153
+                $context['_parent'] = $context;
+                $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["record"], "categories", [], "any", false, false, true, 153));
+                foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
+                    // line 154
+                    echo "
+                                    <li>";
+                    // line 155
+                    echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["category"], "name", [], "any", false, false, true, 155), 155, $this->source), "html", null, true);
+                    echo "</li>
+
+                                ";
+                }
+                $_parent = $context['_parent'];
+                unset($context['_seq'], $context['_iterated'], $context['_key'], $context['category'], $context['_parent'], $context['loop']);
+                $context = array_intersect_key($context, $_parent) + $_parent;
+                // line 158
+                echo "
+                            </ul>
+
+                            ";
+            }
+            // line 162
+            echo "                        </td>
+
+                        <td>
+                            ";
+            // line 165
+            if (twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, $context["record"], "tags", [], "any", false, false, true, 165))) {
+                // line 166
+                echo "
+                            <ul>
+
+                                ";
+                // line 169
+                $context['_parent'] = $context;
+                $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["record"], "tags", [], "any", false, false, true, 169));
+                foreach ($context['_seq'] as $context["_key"] => $context["tag"]) {
+                    // line 170
+                    echo "
+                                    <li>";
+                    // line 171
+                    echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["tag"], "name", [], "any", false, false, true, 171), 171, $this->source), "html", null, true);
+                    echo "</li>
+
+                                ";
+                }
+                $_parent = $context['_parent'];
+                unset($context['_seq'], $context['_iterated'], $context['_key'], $context['tag'], $context['_parent'], $context['loop']);
+                $context = array_intersect_key($context, $_parent) + $_parent;
+                // line 174
+                echo "
+                            </ul>
+
+                            ";
+            }
+            // line 178
+            echo "                        </td>
+
+                        <td>
+                            ";
+            // line 181
+            if (twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, $context["record"], "attributes", [], "any", false, false, true, 181))) {
+                // line 182
+                echo "
+                            <ul>
+
+                                ";
+                // line 185
+                $context['_parent'] = $context;
+                $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["record"], "attributes", [], "any", false, false, true, 185));
+                foreach ($context['_seq'] as $context["_key"] => $context["attribute"]) {
+                    // line 186
+                    echo "
+                                    <li>";
+                    // line 187
+                    echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["attribute"], "name", [], "any", false, false, true, 187), 187, $this->source), "html", null, true);
+                    echo ":";
+                    echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["attribute"], "value", [], "any", false, false, true, 187), 187, $this->source), "html", null, true);
+                    echo "</li>
+
+                                ";
+                }
+                $_parent = $context['_parent'];
+                unset($context['_seq'], $context['_iterated'], $context['_key'], $context['attribute'], $context['_parent'], $context['loop']);
+                $context = array_intersect_key($context, $_parent) + $_parent;
+                // line 190
+                echo "
+                            </ul>
+
+                            ";
+            }
+            // line 194
+            echo "                        </td>
+
+                    </tr>
+
+                ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['record'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 199
+        echo "
+            </table>
+
+            ";
+        // line 202
+        if (twig_get_attribute($this->env, $this->source, ($context["records"] ?? null), "property", [0 => "allowLimit"], "method", false, false, true, 202)) {
+            // line 203
+            echo "            
+                <div>
+
+                    ";
+            // line 206
+            echo $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["records"] ?? null), "items", [], "any", false, false, true, 206), "render", [], "any", false, false, true, 206), 206, $this->source);
+            echo "
+                
+                </div>      
+            
+            ";
+        }
+        // line 211
+        echo "
+        </div>
+
+    </div>
+
+</div>
 
 
 
         <h2 class=\"with_line\"><a href=\"https://kyrgyzstan-tourism.com/group-tours/\">GROUP TOURS 2021</a>
         </h2>
+         
 
         <div class=\"tour_slider\" id=\"discounts_slider_wrapper\" data-count=\"3\">
 
@@ -166,11 +437,11 @@ class __TwigTemplate_f7f3d08e74deb0f0953cc2af8de91ba287ddd936a2d76f03b796a623685
 
 
               ";
-        // line 97
+        // line 240
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/tours/group_tours"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 98
+        // line 241
         echo "
 
 
@@ -212,11 +483,11 @@ class __TwigTemplate_f7f3d08e74deb0f0953cc2af8de91ba287ddd936a2d76f03b796a623685
 
 
     ";
-        // line 138
+        // line 281
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/tours/type_tours"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 139
+        // line 282
         echo "
 
 
@@ -250,11 +521,11 @@ class __TwigTemplate_f7f3d08e74deb0f0953cc2af8de91ba287ddd936a2d76f03b796a623685
 
 
               ";
-        // line 171
+        // line 314
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/tours/popular_tours"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 172
+        // line 315
         echo "
 
 
@@ -305,11 +576,11 @@ class __TwigTemplate_f7f3d08e74deb0f0953cc2af8de91ba287ddd936a2d76f03b796a623685
 
 
               ";
-        // line 221
+        // line 364
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/tours/discount_tours"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 222
+        // line 365
         echo "
 
 
@@ -510,18 +781,18 @@ class __TwigTemplate_f7f3d08e74deb0f0953cc2af8de91ba287ddd936a2d76f03b796a623685
           <div class=\"screen-reader-response\" role=\"alert\" aria-live=\"polite\"></div>
          
     <form data-request=\"";
-        // line 421
-        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(($context["HomPageForm"] ?? null), 421, $this->source), "html", null, true);
+        // line 564
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(($context["HomPageForm"] ?? null), 564, $this->source), "html", null, true);
         echo "::onFormSubmit\">
 
     ";
-        // line 423
+        // line 566
         echo call_user_func_array($this->env->getFunction('form_token')->getCallable(), ["token"]);
         echo "
 
     <div id=\"";
-        // line 425
-        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(($context["HomPageForm"] ?? null), 425, $this->source), "html", null, true);
+        // line 568
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(($context["HomPageForm"] ?? null), 568, $this->source), "html", null, true);
         echo "_forms_flash\"></div>
 
    <div class=\"form-group\">
@@ -563,7 +834,7 @@ class __TwigTemplate_f7f3d08e74deb0f0953cc2af8de91ba287ddd936a2d76f03b796a623685
 
     public function getDebugInfo()
     {
-        return array (  524 => 425,  519 => 423,  514 => 421,  313 => 222,  309 => 221,  258 => 172,  254 => 171,  220 => 139,  216 => 138,  174 => 98,  170 => 97,  124 => 53,  120 => 52,  94 => 28,  90 => 27,  62 => 1,);
+        return array (  795 => 568,  790 => 566,  785 => 564,  584 => 365,  580 => 364,  529 => 315,  525 => 314,  491 => 282,  487 => 281,  445 => 241,  441 => 240,  410 => 211,  402 => 206,  397 => 203,  395 => 202,  390 => 199,  380 => 194,  374 => 190,  363 => 187,  360 => 186,  356 => 185,  351 => 182,  349 => 181,  344 => 178,  338 => 174,  329 => 171,  326 => 170,  322 => 169,  317 => 166,  315 => 165,  310 => 162,  304 => 158,  295 => 155,  292 => 154,  288 => 153,  283 => 150,  281 => 149,  274 => 145,  267 => 141,  259 => 136,  255 => 135,  249 => 131,  241 => 130,  239 => 129,  232 => 128,  230 => 127,  224 => 123,  220 => 122,  191 => 98,  188 => 97,  182 => 95,  180 => 94,  177 => 93,  171 => 91,  169 => 90,  164 => 88,  147 => 74,  124 => 53,  120 => 52,  94 => 28,  90 => 27,  62 => 1,);
     }
 
     public function getSourceContext()
@@ -641,12 +912,155 @@ class __TwigTemplate_f7f3d08e74deb0f0953cc2af8de91ba287ddd936a2d76f03b796a623685
 
 
 
+ <div class=\"container {{ cssClass }}\">
 
+    <div class=\"row\">
+
+        <div class=\"col-xs-12\">
+
+            <h1>Records</h1>
+
+        </div>
+
+        <div class=\"col-xs-12 col-sm-6\">
+
+            <ul class=\"list-group\">
+                
+                <li class=\"list-group-item\">Records from list: <strong>{{records.getProperties.areaSlug ? records.getProperties.areaSlug : 'Not set'}}</strong></li>
+
+                {% if records.property('categorySlug') %}
+                    <li class=\"list-group-item\">Records filtered by category: <strong>{{records.property('categorySlug')}}</strong></li>
+                {% endif %}
+
+                {% if records.property('areaSlug') %}
+                    <li class=\"list-group-item\">Records filtered by category used as: <strong>{{records.property('useMultiCategories') ? 'Secondary categories' : 'Main category'}}</strong></li>
+                {% endif %}
+
+                <li class=\"list-group-item\">Ordered by: <strong>{{records.getProperties.orderBy}} ({{records.getProperties.orderByDirection}})</strong></li>
+
+            </ul>
+
+        </div>
+
+        <div class=\"col-xs-12\">
+
+            <h3>Records details</h3>
+
+            <table class=\"table table-bordered table-striped table-hover\">
+
+                <tr>
+                
+                    <th>Preview image</th>
+                    <th>Name</th>
+                    <th>List</th>
+                    <th>Main category</th>
+                    <th>Secondary categories</th>
+                    <th>Tags</th>
+                    <th>Attributes</th>
+                
+                </tr>
+
+                {% for record in records.items %}
+
+                    <tr>
+
+                        <th width=\"150\">
+                            {% if record.preview_image %}
+                                <img class=\"thumbnail\" alt=\"{{ record.name }}\" src=\"{{ record.preview_image.getPath }}\" width=\"100%\" />
+                            {% elseif record.preview_image_media %}
+                                <img class=\"thumbnail\" alt=\"{{ record.name }}\" src=\"{{ record.preview_image_media|media }}\" width=\"100%\" />
+                            {% endif %}            
+                        </th>
+
+                        <td>
+                            <a href=\"{{records.property('recordPage') ? records.property('recordPage')|page({(records.paramName('recordPageSlug')):(record.slug)})}}\">
+                                {{ record.name }}
+                            </a>
+                        </td>
+
+                        <td>
+                            {{ record.area.name }}
+                        </td>
+
+                        <td>
+                            {{ record.category.name }}
+                        </td>
+
+                        <td>
+                            {% if record.categories|length %}
+
+                            <ul>
+
+                                {% for category in record.categories %}
+
+                                    <li>{{ category.name }}</li>
+
+                                {% endfor %}
+
+                            </ul>
+
+                            {% endif %}
+                        </td>
+
+                        <td>
+                            {% if record.tags|length %}
+
+                            <ul>
+
+                                {% for tag in record.tags %}
+
+                                    <li>{{ tag.name }}</li>
+
+                                {% endfor %}
+
+                            </ul>
+
+                            {% endif %}
+                        </td>
+
+                        <td>
+                            {% if record.attributes|length %}
+
+                            <ul>
+
+                                {% for attribute in record.attributes %}
+
+                                    <li>{{ attribute.name }}:{{ attribute.value }}</li>
+
+                                {% endfor %}
+
+                            </ul>
+
+                            {% endif %}
+                        </td>
+
+                    </tr>
+
+                {% endfor %}
+
+            </table>
+
+            {% if records.property('allowLimit') %}
+            
+                <div>
+
+                    {{ records.items.render|raw }}
+                
+                </div>      
+            
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</div>
 
 
 
         <h2 class=\"with_line\"><a href=\"https://kyrgyzstan-tourism.com/group-tours/\">GROUP TOURS 2021</a>
         </h2>
+         
 
         <div class=\"tour_slider\" id=\"discounts_slider_wrapper\" data-count=\"3\">
 

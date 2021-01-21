@@ -1,8 +1,32 @@
-1611089270a:1:{s:18:"about-about-us.htm";a:7:{s:8:"fileName";s:18:"about-about-us.htm";s:7:"content";s:150:"[viewBag]
+1611244436a:1:{s:18:"about-about-us.htm";a:7:{s:8:"fileName";s:18:"about-about-us.htm";s:7:"content";s:317:"[viewBag]
 title = "Contact us"
 url = "/about/contact-us"
-layout = "static-layout"
+layout = "static-page"
 is_hidden = 0
 navigation_hidden = 0
 ==
-<p>Contact us page</p>";s:5:"mtime";i:1611084577;s:6:"markup";s:22:"<p>Contact us page</p>";s:4:"code";N;s:7:"viewBag";a:5:{s:5:"title";s:10:"Contact us";s:3:"url";s:17:"/about/contact-us";s:6:"layout";s:13:"static-layout";s:9:"is_hidden";s:1:"0";s:17:"navigation_hidden";s:1:"0";}s:12:"parsedMarkup";s:22:"<p>Contact us page</p>";}}
+<p>+996 706 363738</p>
+
+<p>+996 777 970779</p>
+
+<p>info@kyrgyzstan-tourism.com</p>
+
+<p>Kyrgyz Republic. Bishkek city, Abay Str.,21</p>
+
+<p>Mon – Sat 9.00 – 18.00 Sunday CLOSED</p>";s:5:"mtime";i:1611157933;s:6:"markup";s:191:"<p>+996 706 363738</p>
+
+<p>+996 777 970779</p>
+
+<p>info@kyrgyzstan-tourism.com</p>
+
+<p>Kyrgyz Republic. Bishkek city, Abay Str.,21</p>
+
+<p>Mon – Sat 9.00 – 18.00 Sunday CLOSED</p>";s:4:"code";N;s:7:"viewBag";a:5:{s:5:"title";s:10:"Contact us";s:3:"url";s:17:"/about/contact-us";s:6:"layout";s:11:"static-page";s:9:"is_hidden";s:1:"0";s:17:"navigation_hidden";s:1:"0";}s:12:"parsedMarkup";s:191:"<p>+996 706 363738</p>
+
+<p>+996 777 970779</p>
+
+<p>info@kyrgyzstan-tourism.com</p>
+
+<p>Kyrgyz Republic. Bishkek city, Abay Str.,21</p>
+
+<p>Mon – Sat 9.00 – 18.00 Sunday CLOSED</p>";}}

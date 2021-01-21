@@ -74,6 +74,12 @@ columns:
         type: date
         sortable: true
         invisible: true
+        
+    date1:
+        label: 'janvince.smallrecords::lang.common.columns.date'
+        type: date
+        sortable: true
+        invisible: true
 
     active:
         label: 'janvince.smallrecords::lang.common.columns.active'

@@ -44,6 +44,7 @@ tabs:
                 preview_image_media: 'janvince.smallrecords::lang.common.columns.preview_image_media'
                 description: 'janvince.smallrecords::lang.common.columns.description'
                 date: 'janvince.smallrecords::lang.common.columns.date'
+                date1: 'janvince.smallrecords::lang.common.columns.date'
                 url: 'janvince.smallrecords::lang.common.columns.url'
                 author: 'janvince.smallrecords::lang.common.columns.author'
                 active: 'janvince.smallrecords::lang.common.columns.active'
@@ -185,3 +186,4 @@ tabs:
                             large: 'janvince.smallrecords::lang.areas.columns.custom_repeater.options.large'
                             huge: 'janvince.smallrecords::lang.areas.columns.custom_repeater.options.huge'
                             giant: 'janvince.smallrecords::lang.areas.columns.custom_repeater.options.giant'
+            

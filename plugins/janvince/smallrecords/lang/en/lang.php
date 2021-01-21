@@ -41,6 +41,7 @@
             'active' => 'Active',
             'favourite' => 'Favourite',
             'date' => 'Date',
+            'date1' => 'Date',
             'url' => 'URL',
             'description' => 'Description',
             'content' => 'Content',
