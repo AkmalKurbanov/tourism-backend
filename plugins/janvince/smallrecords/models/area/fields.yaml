@@ -1,5 +1,4 @@
 fields:
-
     name:
         label: 'janvince.smallrecords::lang.common.columns.name'
         span: left
@@ -7,7 +6,6 @@ fields:
         required: true
         attributes:
             autofocus: ''
-
     slug:
         label: 'janvince.smallrecords::lang.common.columns.slug'
         span: right
@@ -16,35 +14,29 @@ fields:
         preset:
             field: name
             type: slug
-
 tabs:
     fields:
-
         description:
             type: textarea
             size: large
             span: left
             label: 'janvince.smallrecords::lang.common.columns.description'
             tab: 'janvince.smallrecords::lang.common.tabs.info'
-
-        ##
-        # Fields
-        #
         allowed_fields:
             label: 'janvince.smallrecords::lang.areas.columns.allowed_fields'
-            comment: 'janvince.smallrecords::lang.areas.columns.allowed_fields_comment'
-            commentHtml: true
-            span: right
-            type: checkboxlist
-            default: true
-            tab: 'janvince.smallrecords::lang.common.tabs.info'
             options:
                 category: 'janvince.smallrecords::lang.common.columns.category'
                 preview_image: 'janvince.smallrecords::lang.common.columns.preview_image'
                 preview_image_media: 'janvince.smallrecords::lang.common.columns.preview_image_media'
                 description: 'janvince.smallrecords::lang.common.columns.description'
                 date: 'janvince.smallrecords::lang.common.columns.date'
-                date1: 'janvince.smallrecords::lang.common.columns.date'
+                date1: 'janvince.smallrecords::lang.common.columns.date1'
+                schedule_tours: 'janvince.smallrecords::lang.common.columns.schedule_tours'
+                tour_cost: 'janvince.smallrecords::lang.common.columns.tour_cost'
+                tour_duration: 'janvince.smallrecords::lang.common.columns.tour_duration'
+                tour_status: 'janvince.smallrecords::lang.common.columns.tour_status'
+                itinerary_desc: 'janvince.smallrecords::lang.common.columns.itinerary_desc'
+                itinerary_map: 'janvince.smallrecords::lang.common.columns.itinerary_map'
                 url: 'janvince.smallrecords::lang.common.columns.url'
                 author: 'janvince.smallrecords::lang.common.columns.author'
                 active: 'janvince.smallrecords::lang.common.columns.active'
@@ -59,21 +51,22 @@ tabs:
                 repeater: 'janvince.smallrecords::lang.common.columns.repeater'
                 testimonials: 'janvince.smallrecords::lang.common.columns.testimonials'
                 content_blocks: 'janvince.smallrecords::lang.common.tabs.content_blocks'
-
+            span: right
+            type: checkboxlist
+            comment: 'janvince.smallrecords::lang.areas.columns.allowed_fields_comment'
+            tab: 'janvince.smallrecords::lang.common.tabs.info'
         active:
             label: 'janvince.smallrecords::lang.common.columns.active'
             span: left
             type: checkbox
             default: true
             tab: 'janvince.smallrecords::lang.common.tabs.info'
-
         custom_repeater_allow:
             label: 'janvince.smallrecords::lang.areas.columns.custom_repeater_allow'
             span: left
             type: checkbox
             default: false
             tab: 'janvince.smallrecords::lang.areas.tabs.custom_repeater'
-
         custom_repeater_tab_title:
             label: 'janvince.smallrecords::lang.areas.columns.custom_repeater_tab_title'
             span: left
@@ -83,7 +76,6 @@ tabs:
                 action: hide
                 field: custom_repeater_allow
                 condition: unchecked
-
         custom_repeater_prompt:
             label: 'janvince.smallrecords::lang.areas.columns.custom_repeater_prompt'
             span: right
@@ -93,7 +85,6 @@ tabs:
                 action: hide
                 field: custom_repeater_allow
                 condition: unchecked
-
         custom_repeater_min_items:
             label: 'janvince.smallrecords::lang.areas.columns.custom_repeater_min_items'
             span: left
@@ -104,7 +95,6 @@ tabs:
                 action: hide
                 field: custom_repeater_allow
                 condition: unchecked
-
         custom_repeater_max_items:
             label: 'janvince.smallrecords::lang.areas.columns.custom_repeater_max_items'
             span: right
@@ -115,7 +105,6 @@ tabs:
                 action: hide
                 field: custom_repeater_allow
                 condition: unchecked
-
         custom_repeater_fields:
             type: repeater
             prompt: 'janvince.smallrecords::lang.areas.columns.custom_repeater.repeater_prompt'
@@ -137,7 +126,7 @@ tabs:
                         type: text
                         span: right
                         required: true
-                        preset: 
+                        preset:
                             field: custom_repeater_field_label
                             type: camel
                     custom_repeater_section_1:
@@ -166,7 +155,7 @@ tabs:
                         trigger:
                             action: show
                             field: custom_repeater_field_type
-                            condition: value[mediafinder]
+                            condition: 'value[mediafinder]'
                     custom_repeater_field_span:
                         label: 'janvince.smallrecords::lang.areas.columns.custom_repeater.field_span'
                         type: dropdown
@@ -186,4 +175,3 @@ tabs:
                             large: 'janvince.smallrecords::lang.areas.columns.custom_repeater.options.large'
                             huge: 'janvince.smallrecords::lang.areas.columns.custom_repeater.options.huge'
                             giant: 'janvince.smallrecords::lang.areas.columns.custom_repeater.options.giant'
-            

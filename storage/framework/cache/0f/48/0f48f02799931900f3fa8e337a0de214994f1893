@@ -1,4 +1,4 @@
-1611244436a:1:{s:9:"menu.yaml";a:7:{s:8:"fileName";s:9:"menu.yaml";s:7:"content";s:1570:"items:
+1611349932a:1:{s:9:"menu.yaml";a:7:{s:8:"fileName";s:9:"menu.yaml";s:7:"content";s:1620:"items:
     -
         title: Home
         nesting: null
@@ -29,10 +29,8 @@
         title: 'Group tours'
         nesting: 0
         type: static-page
-        url: null
         code: ''
         reference: group-tours
-        cmsPage: null
         replace: 1
         viewBag:
             isHidden: '0'
@@ -40,9 +38,13 @@
             isExternal: '0'
     -
         title: Blog
+        nesting: null
         type: url
         url: /blog
         code: ''
+        reference: null
+        cmsPage: null
+        replace: null
         viewBag:
             isHidden: '0'
             cssClass: ''
@@ -74,4 +76,4 @@
             cssClass: ''
             isExternal: '0'
 name: menu
-";s:5:"mtime";i:1611153907;s:6:"markup";N;s:4:"code";N;s:4:"name";N;s:5:"items";a:0:{}}}
+";s:5:"mtime";i:1611302446;s:6:"markup";N;s:4:"code";N;s:4:"name";N;s:5:"items";a:0:{}}}

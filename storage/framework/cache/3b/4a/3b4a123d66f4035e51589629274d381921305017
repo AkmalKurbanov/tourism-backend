@@ -1,4 +1,4 @@
-1611244436a:1:{s:8:"home.htm";a:16:{s:8:"fileName";s:8:"home.htm";s:7:"content";s:19111:"title = "Home"
+1611349932a:1:{s:8:"home.htm";a:15:{s:8:"fileName";s:8:"home.htm";s:7:"content";s:14432:"title = "Home"
 url = "/"
 layout = "static-layout"
 is_hidden = 0
@@ -19,12 +19,12 @@ orderByDirection = "ASC"
 
 [records TypeTours]
 activeOnly = 0
-areaSlug = "tury"
+areaSlug = 0
 categorySlug = "vid-tura"
 useMainCategory = 0
 useMultiCategories = 1
 tagSlug = "{{ :tag }}"
-recordPage = "type-tours"
+recordPage = "tour-detail"
 recordPageSlug = "{{ :slug }}"
 limit = 9
 pageSlug = "{{ :page }}"
@@ -32,12 +32,13 @@ orderBy = "name"
 orderByDirection = "ASC"
 
 [records GroupTours]
-activeOnly = 1
-areaSlug = "tury"
-categorySlug = "{{ :category }}"
+activeOnly = 0
+areaSlug = 0
+categorySlug = "gruppovye-tury"
+useMultiCategories = 1
 tagSlug = "{{ :tag }}"
-recordPage = 0
-recordPageSlug = "{{ :record }}"
+recordPage = "group-tours-detail"
+recordPageSlug = "{{ :slug }}"
 limit = 10
 pageSlug = "{{ :page }}"
 orderBy = "name"
@@ -78,18 +79,6 @@ categorySlug = "{{ :gruppovye-tury }}"
 useMainCategory = 1
 categoryPage = 0
 categoryPageSlug = "{{ :category }}"
-
-[records]
-activeOnly = 1
-areaSlug = "tury"
-categorySlug = "gruppovye-tury"
-tagSlug = "{{ :tag }}"
-recordPage = 0
-recordPageSlug = "{{ :record }}"
-limit = 10
-pageSlug = "{{ :page }}"
-orderBy = "name"
-orderByDirection = "ASC"
 ==
 <script>
   $(window).load(function () {
@@ -164,149 +153,6 @@ orderByDirection = "ASC"
 
 
 
- <div class="container {{ cssClass }}">
-
-    <div class="row">
-
-        <div class="col-xs-12">
-
-            <h1>Records</h1>
-
-        </div>
-
-        <div class="col-xs-12 col-sm-6">
-
-            <ul class="list-group">
-                
-                <li class="list-group-item">Records from list: <strong>{{records.getProperties.areaSlug ? records.getProperties.areaSlug : 'Not set'}}</strong></li>
-
-                {% if records.property('categorySlug') %}
-                    <li class="list-group-item">Records filtered by category: <strong>{{records.property('categorySlug')}}</strong></li>
-                {% endif %}
-
-                {% if records.property('areaSlug') %}
-                    <li class="list-group-item">Records filtered by category used as: <strong>{{records.property('useMultiCategories') ? 'Secondary categories' : 'Main category'}}</strong></li>
-                {% endif %}
-
-                <li class="list-group-item">Ordered by: <strong>{{records.getProperties.orderBy}} ({{records.getProperties.orderByDirection}})</strong></li>
-
-            </ul>
-
-        </div>
-
-        <div class="col-xs-12">
-
-            <h3>Records details</h3>
-
-            <table class="table table-bordered table-striped table-hover">
-
-                <tr>
-                
-                    <th>Preview image</th>
-                    <th>Name</th>
-                    <th>List</th>
-                    <th>Main category</th>
-                    <th>Secondary categories</th>
-                    <th>Tags</th>
-                    <th>Attributes</th>
-                
-                </tr>
-
-                {% for record in records.items %}
-
-                    <tr>
-
-                        <th width="150">
-                            {% if record.preview_image %}
-                                <img class="thumbnail" alt="{{ record.name }}" src="{{ record.preview_image.getPath }}" width="100%" />
-                            {% elseif record.preview_image_media %}
-                                <img class="thumbnail" alt="{{ record.name }}" src="{{ record.preview_image_media|media }}" width="100%" />
-                            {% endif %}            
-                        </th>
-
-                        <td>
-                            <a href="{{records.property('recordPage') ? records.property('recordPage')|page({(records.paramName('recordPageSlug')):(record.slug)})}}">
-                                {{ record.name }}
-                            </a>
-                        </td>
-
-                        <td>
-                            {{ record.area.name }}
-                        </td>
-
-                        <td>
-                            {{ record.category.name }}
-                        </td>
-
-                        <td>
-                            {% if record.categories|length %}
-
-                            <ul>
-
-                                {% for category in record.categories %}
-
-                                    <li>{{ category.name }}</li>
-
-                                {% endfor %}
-
-                            </ul>
-
-                            {% endif %}
-                        </td>
-
-                        <td>
-                            {% if record.tags|length %}
-
-                            <ul>
-
-                                {% for tag in record.tags %}
-
-                                    <li>{{ tag.name }}</li>
-
-                                {% endfor %}
-
-                            </ul>
-
-                            {% endif %}
-                        </td>
-
-                        <td>
-                            {% if record.attributes|length %}
-
-                            <ul>
-
-                                {% for attribute in record.attributes %}
-
-                                    <li>{{ attribute.name }}:{{ attribute.value }}</li>
-
-                                {% endfor %}
-
-                            </ul>
-
-                            {% endif %}
-                        </td>
-
-                    </tr>
-
-                {% endfor %}
-
-            </table>
-
-            {% if records.property('allowLimit') %}
-            
-                <div>
-
-                    {{ records.items.render|raw }}
-                
-                </div>      
-            
-            {% endif %}
-
-        </div>
-
-    </div>
-
-</div>
 
 
 
@@ -684,7 +530,7 @@ orderByDirection = "ASC"
       </div>
     </div>
   </div>
-</div>";s:5:"mtime";i:1611235872;s:6:"markup";s:16966:"<script>
+</div>";s:5:"mtime";i:1611308522;s:6:"markup";s:12493:"<script>
   $(window).load(function () {
     $("#wpcf7-f198-o2 input[type=submit]").first().attr("onclick",
       "ga('send','event','НижняяФорма','send')");
@@ -757,149 +603,6 @@ orderByDirection = "ASC"
 
 
 
- <div class="container {{ cssClass }}">
-
-    <div class="row">
-
-        <div class="col-xs-12">
-
-            <h1>Records</h1>
-
-        </div>
-
-        <div class="col-xs-12 col-sm-6">
-
-            <ul class="list-group">
-                
-                <li class="list-group-item">Records from list: <strong>{{records.getProperties.areaSlug ? records.getProperties.areaSlug : 'Not set'}}</strong></li>
-
-                {% if records.property('categorySlug') %}
-                    <li class="list-group-item">Records filtered by category: <strong>{{records.property('categorySlug')}}</strong></li>
-                {% endif %}
-
-                {% if records.property('areaSlug') %}
-                    <li class="list-group-item">Records filtered by category used as: <strong>{{records.property('useMultiCategories') ? 'Secondary categories' : 'Main category'}}</strong></li>
-                {% endif %}
-
-                <li class="list-group-item">Ordered by: <strong>{{records.getProperties.orderBy}} ({{records.getProperties.orderByDirection}})</strong></li>
-
-            </ul>
-
-        </div>
-
-        <div class="col-xs-12">
-
-            <h3>Records details</h3>
-
-            <table class="table table-bordered table-striped table-hover">
-
-                <tr>
-                
-                    <th>Preview image</th>
-                    <th>Name</th>
-                    <th>List</th>
-                    <th>Main category</th>
-                    <th>Secondary categories</th>
-                    <th>Tags</th>
-                    <th>Attributes</th>
-                
-                </tr>
-
-                {% for record in records.items %}
-
-                    <tr>
-
-                        <th width="150">
-                            {% if record.preview_image %}
-                                <img class="thumbnail" alt="{{ record.name }}" src="{{ record.preview_image.getPath }}" width="100%" />
-                            {% elseif record.preview_image_media %}
-                                <img class="thumbnail" alt="{{ record.name }}" src="{{ record.preview_image_media|media }}" width="100%" />
-                            {% endif %}            
-                        </th>
-
-                        <td>
-                            <a href="{{records.property('recordPage') ? records.property('recordPage')|page({(records.paramName('recordPageSlug')):(record.slug)})}}">
-                                {{ record.name }}
-                            </a>
-                        </td>
-
-                        <td>
-                            {{ record.area.name }}
-                        </td>
-
-                        <td>
-                            {{ record.category.name }}
-                        </td>
-
-                        <td>
-                            {% if record.categories|length %}
-
-                            <ul>
-
-                                {% for category in record.categories %}
-
-                                    <li>{{ category.name }}</li>
-
-                                {% endfor %}
-
-                            </ul>
-
-                            {% endif %}
-                        </td>
-
-                        <td>
-                            {% if record.tags|length %}
-
-                            <ul>
-
-                                {% for tag in record.tags %}
-
-                                    <li>{{ tag.name }}</li>
-
-                                {% endfor %}
-
-                            </ul>
-
-                            {% endif %}
-                        </td>
-
-                        <td>
-                            {% if record.attributes|length %}
-
-                            <ul>
-
-                                {% for attribute in record.attributes %}
-
-                                    <li>{{ attribute.name }}:{{ attribute.value }}</li>
-
-                                {% endfor %}
-
-                            </ul>
-
-                            {% endif %}
-                        </td>
-
-                    </tr>
-
-                {% endfor %}
-
-            </table>
-
-            {% if records.property('allowLimit') %}
-            
-                <div>
-
-                    {{ records.items.render|raw }}
-                
-                </div>      
-            
-            {% endif %}
-
-        </div>
-
-    </div>
-
-</div>
 
 
 
@@ -1277,4 +980,4 @@ orderByDirection = "ASC"
       </div>
     </div>
   </div>
-</div>";s:4:"code";N;s:5:"title";s:4:"Home";s:3:"url";s:1:"/";s:6:"layout";s:13:"static-layout";s:9:"is_hidden";s:1:"0";s:20:"records PopularTours";a:12:{s:10:"activeOnly";s:1:"0";s:8:"areaSlug";s:4:"tury";s:12:"categorySlug";s:16:"populyarnye-tury";s:15:"useMainCategory";s:1:"1";s:18:"useMultiCategories";s:1:"1";s:7:"tagSlug";s:10:"{{ :tag }}";s:10:"recordPage";s:5:"tours";s:14:"recordPageSlug";s:11:"{{ :slug }}";s:5:"limit";s:2:"10";s:8:"pageSlug";s:11:"{{ :page }}";s:7:"orderBy";s:4:"name";s:16:"orderByDirection";s:3:"ASC";}s:17:"records TypeTours";a:12:{s:10:"activeOnly";s:1:"0";s:8:"areaSlug";s:4:"tury";s:12:"categorySlug";s:8:"vid-tura";s:15:"useMainCategory";s:1:"0";s:18:"useMultiCategories";s:1:"1";s:7:"tagSlug";s:10:"{{ :tag }}";s:10:"recordPage";s:10:"type-tours";s:14:"recordPageSlug";s:11:"{{ :slug }}";s:5:"limit";s:1:"9";s:8:"pageSlug";s:11:"{{ :page }}";s:7:"orderBy";s:4:"name";s:16:"orderByDirection";s:3:"ASC";}s:18:"records GroupTours";a:10:{s:10:"activeOnly";s:1:"1";s:8:"areaSlug";s:4:"tury";s:12:"categorySlug";s:15:"{{ :category }}";s:7:"tagSlug";s:10:"{{ :tag }}";s:10:"recordPage";s:1:"0";s:14:"recordPageSlug";s:13:"{{ :record }}";s:5:"limit";s:2:"10";s:8:"pageSlug";s:11:"{{ :page }}";s:7:"orderBy";s:4:"name";s:16:"orderByDirection";s:3:"ASC";}s:25:"records DealsAndDiscounts";a:12:{s:10:"activeOnly";s:1:"0";s:8:"areaSlug";s:4:"tury";s:12:"categorySlug";s:22:"predlozheniya-i-skidki";s:15:"useMainCategory";s:1:"1";s:18:"useMultiCategories";s:1:"1";s:7:"tagSlug";s:10:"{{ :tag }}";s:10:"recordPage";s:11:"tour-detail";s:14:"recordPageSlug";s:11:"{{ :slug }}";s:5:"limit";s:2:"10";s:8:"pageSlug";s:11:"{{ :page }}";s:7:"orderBy";s:4:"name";s:16:"orderByDirection";s:3:"ASC";}s:23:"genericForm HomPageForm";a:11:{s:5:"group";s:42:"Форма главной страницы";s:16:"messages_success";s:65:"Ваша форма была успешно отправлена!";s:15:"messages_errors";s:61:"В вашей заявке содержатся ошибки.";s:13:"inline_errors";s:8:"disabled";s:13:"sanitize_data";s:8:"disabled";s:12:"anonymize_ip";s:8:"disabled";s:17:"recaptcha_enabled";s:1:"0";s:15:"recaptcha_theme";s:5:"light";s:14:"recaptcha_type";s:5:"image";s:14:"recaptcha_size";s:6:"normal";s:18:"emails_date_format";s:5:"Y-m-d";}s:23:"recordDetail TourDetail";a:7:{s:10:"activeOnly";s:1:"0";s:10:"recordSlug";s:11:"{{ :slug }}";s:8:"areaSlug";s:1:"0";s:12:"categorySlug";s:21:"{{ :gruppovye-tury }}";s:15:"useMainCategory";s:1:"1";s:12:"categoryPage";s:1:"0";s:16:"categoryPageSlug";s:15:"{{ :category }}";}s:7:"records";a:10:{s:10:"activeOnly";s:1:"1";s:8:"areaSlug";s:4:"tury";s:12:"categorySlug";s:14:"gruppovye-tury";s:7:"tagSlug";s:10:"{{ :tag }}";s:10:"recordPage";s:1:"0";s:14:"recordPageSlug";s:13:"{{ :record }}";s:5:"limit";s:2:"10";s:8:"pageSlug";s:11:"{{ :page }}";s:7:"orderBy";s:4:"name";s:16:"orderByDirection";s:3:"ASC";}}}
+</div>";s:4:"code";N;s:5:"title";s:4:"Home";s:3:"url";s:1:"/";s:6:"layout";s:13:"static-layout";s:9:"is_hidden";s:1:"0";s:20:"records PopularTours";a:12:{s:10:"activeOnly";s:1:"0";s:8:"areaSlug";s:4:"tury";s:12:"categorySlug";s:16:"populyarnye-tury";s:15:"useMainCategory";s:1:"1";s:18:"useMultiCategories";s:1:"1";s:7:"tagSlug";s:10:"{{ :tag }}";s:10:"recordPage";s:5:"tours";s:14:"recordPageSlug";s:11:"{{ :slug }}";s:5:"limit";s:2:"10";s:8:"pageSlug";s:11:"{{ :page }}";s:7:"orderBy";s:4:"name";s:16:"orderByDirection";s:3:"ASC";}s:17:"records TypeTours";a:12:{s:10:"activeOnly";s:1:"0";s:8:"areaSlug";s:1:"0";s:12:"categorySlug";s:8:"vid-tura";s:15:"useMainCategory";s:1:"0";s:18:"useMultiCategories";s:1:"1";s:7:"tagSlug";s:10:"{{ :tag }}";s:10:"recordPage";s:11:"tour-detail";s:14:"recordPageSlug";s:11:"{{ :slug }}";s:5:"limit";s:1:"9";s:8:"pageSlug";s:11:"{{ :page }}";s:7:"orderBy";s:4:"name";s:16:"orderByDirection";s:3:"ASC";}s:18:"records GroupTours";a:11:{s:10:"activeOnly";s:1:"0";s:8:"areaSlug";s:1:"0";s:12:"categorySlug";s:14:"gruppovye-tury";s:18:"useMultiCategories";s:1:"1";s:7:"tagSlug";s:10:"{{ :tag }}";s:10:"recordPage";s:18:"group-tours-detail";s:14:"recordPageSlug";s:11:"{{ :slug }}";s:5:"limit";s:2:"10";s:8:"pageSlug";s:11:"{{ :page }}";s:7:"orderBy";s:4:"name";s:16:"orderByDirection";s:3:"ASC";}s:25:"records DealsAndDiscounts";a:12:{s:10:"activeOnly";s:1:"0";s:8:"areaSlug";s:4:"tury";s:12:"categorySlug";s:22:"predlozheniya-i-skidki";s:15:"useMainCategory";s:1:"1";s:18:"useMultiCategories";s:1:"1";s:7:"tagSlug";s:10:"{{ :tag }}";s:10:"recordPage";s:11:"tour-detail";s:14:"recordPageSlug";s:11:"{{ :slug }}";s:5:"limit";s:2:"10";s:8:"pageSlug";s:11:"{{ :page }}";s:7:"orderBy";s:4:"name";s:16:"orderByDirection";s:3:"ASC";}s:23:"genericForm HomPageForm";a:11:{s:5:"group";s:42:"Форма главной страницы";s:16:"messages_success";s:65:"Ваша форма была успешно отправлена!";s:15:"messages_errors";s:61:"В вашей заявке содержатся ошибки.";s:13:"inline_errors";s:8:"disabled";s:13:"sanitize_data";s:8:"disabled";s:12:"anonymize_ip";s:8:"disabled";s:17:"recaptcha_enabled";s:1:"0";s:15:"recaptcha_theme";s:5:"light";s:14:"recaptcha_type";s:5:"image";s:14:"recaptcha_size";s:6:"normal";s:18:"emails_date_format";s:5:"Y-m-d";}s:23:"recordDetail TourDetail";a:7:{s:10:"activeOnly";s:1:"0";s:10:"recordSlug";s:11:"{{ :slug }}";s:8:"areaSlug";s:1:"0";s:12:"categorySlug";s:21:"{{ :gruppovye-tury }}";s:15:"useMainCategory";s:1:"1";s:12:"categoryPage";s:1:"0";s:16:"categoryPageSlug";s:15:"{{ :category }}";}}}

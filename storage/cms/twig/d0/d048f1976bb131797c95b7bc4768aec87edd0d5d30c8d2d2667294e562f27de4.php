@@ -85,41 +85,28 @@ class __TwigTemplate_19149381e72534c2b30f7d4694f08b0ae3fa5f14f89d6e38687eda2f616
       <span class=\"price-round group_price\">
         <span class=\"inner\">\$";
             // line 14
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "getAttributeValueBySlug", [0 => "stoimost_tura"], "method", false, false, true, 14), 14, $this->source), "html", null, true);
-            echo " US</span>
-         ";
-            // line 15
-            $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["TourDetail"] ?? null), "recordDetail", [], "any", false, false, true, 15), "custom_repeater", [], "any", false, false, true, 15));
-            foreach ($context['_seq'] as $context["_key"] => $context["custom_repeater"]) {
-                // line 16
-                echo "          <li>";
-                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["custom_repeater"], "tour_duration", [], "any", false, false, true, 16), 16, $this->source), "html", null, true);
-                echo "</li>
-          ";
-            }
-            $_parent = $context['_parent'];
-            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['custom_repeater'], $context['_parent'], $context['loop']);
-            $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 18
-            echo "</span>
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "tour_cost", [], "any", false, false, true, 14), 14, $this->source), "html", null, true);
+            echo "  US</span>
+        
+</span>
 
     </span>
     <div class=\"desc\">
       <h3>";
-            // line 22
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "name", [], "any", false, false, true, 22), 22, $this->source), "html", null, true);
+            // line 20
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "name", [], "any", false, false, true, 20), 20, $this->source), "html", null, true);
             echo " </h3> 
+        
       <p class=\"excerpt\">";
-            // line 23
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "description", [], "any", false, false, true, 23), 23, $this->source), "html", null, true);
-            echo " </p>
+            // line 22
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "description", [], "any", false, false, true, 22), 22, $this->source), "html", null, true);
+            echo "</p>
     </div>
     <p class=\"duration\">
       <i class=\"fa fa-clock-o\"></i>
       ";
-            // line 27
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "getAttributeValueBySlug", [0 => "prodolzhitelnost_tura"], "method", false, false, true, 27), 27, $this->source), "html", null, true);
+            // line 26
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "tour_duration", [], "any", false, false, true, 26), 26, $this->source), "html", null, true);
             echo "
       days</p>
   </a>
@@ -145,7 +132,7 @@ class __TwigTemplate_19149381e72534c2b30f7d4694f08b0ae3fa5f14f89d6e38687eda2f616
 
     public function getDebugInfo()
     {
-        return array (  122 => 27,  115 => 23,  111 => 22,  105 => 18,  96 => 16,  92 => 15,  88 => 14,  80 => 11,  73 => 7,  66 => 2,  62 => 1,);
+        return array (  109 => 26,  102 => 22,  97 => 20,  88 => 14,  80 => 11,  73 => 7,  66 => 2,  62 => 1,);
     }
 
     public function getSourceContext()
@@ -163,20 +150,19 @@ class __TwigTemplate_19149381e72534c2b30f7d4694f08b0ae3fa5f14f89d6e38687eda2f616
       <span class=\"img lazy\" style=\"background-image: url({{ record.preview_image.getPath }});\" data-bg=\"url({{ record.preview_image.getPath }}\" data-was-processed=\"true\"></span>
 
       <span class=\"price-round group_price\">
-        <span class=\"inner\">\${{ record.getAttributeValueBySlug('stoimost_tura') }} US</span>
-         {% for custom_repeater in TourDetail.recordDetail.custom_repeater %}
-          <li>{{ custom_repeater.tour_duration }}</li>
-          {% endfor %}
+        <span class=\"inner\">\${{ record.tour_cost }}  US</span>
+        
 </span>
 
     </span>
     <div class=\"desc\">
       <h3>{{ record.name }} </h3> 
-      <p class=\"excerpt\">{{ record.description }} </p>
+        
+      <p class=\"excerpt\">{{ record.description }}</p>
     </div>
     <p class=\"duration\">
       <i class=\"fa fa-clock-o\"></i>
-      {{ record.getAttributeValueBySlug('prodolzhitelnost_tura') }}
+      {{ record.tour_duration }}
       days</p>
   </a>
 </div>

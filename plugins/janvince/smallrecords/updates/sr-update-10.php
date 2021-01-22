@@ -21,3 +21,5 @@ class SmallRecordsTablesUpdate10 extends Migration
         });
     }
 }
+
+

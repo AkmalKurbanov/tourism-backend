@@ -79,7 +79,7 @@ class __TwigTemplate_11cb7c5202d1a559bcb54cbeae7406d939f8e7258ab92026ae93755e189
       <span class=\"price-round\">
         <span class=\"inner\">from <br />\$";
             // line 10
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "getAttributeValueBySlug", [0 => "stoimost_tura"], "method", false, false, true, 10), 10, $this->source), "html", null, true);
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "tour_cost", [], "any", false, false, true, 10), 10, $this->source), "html", null, true);
             echo "</span>
       </span>
 
@@ -98,7 +98,7 @@ class __TwigTemplate_11cb7c5202d1a559bcb54cbeae7406d939f8e7258ab92026ae93755e189
     <p class=\"duration\"><i class=\"fa fa-clock-o\"></i>
       ";
             // line 20
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "getAttributeValueBySlug", [0 => "prodolzhitelnost_tura"], "method", false, false, true, 20), 20, $this->source), "html", null, true);
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "tour_duration", [], "any", false, false, true, 20), 20, $this->source), "html", null, true);
             echo " days</p>
   </a>
 </div>
@@ -136,7 +136,7 @@ class __TwigTemplate_11cb7c5202d1a559bcb54cbeae7406d939f8e7258ab92026ae93755e189
       <span class=\"img lazy\" style=\"\" data-bg=\"url({{ record.preview_image.getPath }})\"></span>
 
       <span class=\"price-round\">
-        <span class=\"inner\">from <br />\${{ record.getAttributeValueBySlug('stoimost_tura') }}</span>
+        <span class=\"inner\">from <br />\${{ record.tour_cost }}</span>
       </span>
 
 
@@ -146,7 +146,7 @@ class __TwigTemplate_11cb7c5202d1a559bcb54cbeae7406d939f8e7258ab92026ae93755e189
       <p class=\"excerpt\">{{ record.description }}</p>
     </div>
     <p class=\"duration\"><i class=\"fa fa-clock-o\"></i>
-      {{ record.getAttributeValueBySlug('prodolzhitelnost_tura') }} days</p>
+      {{ record.tour_duration }} days</p>
   </a>
 </div>
 

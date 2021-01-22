@@ -1,4 +1,4 @@
-1611244436a:1:{s:15:"group-tours.htm";a:12:{s:8:"fileName";s:15:"group-tours.htm";s:7:"content";s:54098:"title = "group-tours"
+1611303825a:1:{s:15:"group-tours.htm";a:12:{s:8:"fileName";s:15:"group-tours.htm";s:7:"content";s:54098:"title = "group-tours"
 url = "/group-tours/:slug"
 layout = "static-layout"
 is_hidden = 0
@@ -1107,7 +1107,7 @@ emails_date_format = "Y-m-d"
 
     </div>
   </div>
-</div>";s:5:"mtime";i:1611242181;s:6:"markup";s:53069:"<div class="lazy" id="top" style="" data-bg="url({{ TourDetail.recordDetail.preview_image.getPath }})">
+</div>";s:5:"mtime";i:1611303222;s:6:"markup";s:53069:"<div class="lazy" id="top" style="" data-bg="url({{ TourDetail.recordDetail.preview_image.getPath }})">
 
   <div class="breadcrumb_wrapper">
     <div class="container">

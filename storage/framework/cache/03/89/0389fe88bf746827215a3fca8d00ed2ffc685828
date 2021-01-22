@@ -1,4 +1,4 @@
-1611244437a:1:{s:29:"site/tours/discount_tours.htm";a:5:{s:8:"fileName";s:29:"site/tours/discount_tours.htm";s:7:"content";s:1054:"{% for record in DealsAndDiscounts.items %}
+1611348067a:1:{s:29:"site/tours/discount_tours.htm";a:5:{s:8:"fileName";s:29:"site/tours/discount_tours.htm";s:7:"content";s:825:"{% for record in DealsAndDiscounts.items %}
 <div class="item item_tour with_border  ">
   <a
     href="{{DealsAndDiscounts.property('recordPage') ? DealsAndDiscounts.property('recordPage')|page({(DealsAndDiscounts.paramName('recordPageSlug')):(record.slug)})}}">
@@ -6,11 +6,7 @@
       <span class="img lazy" style="" data-bg="url( {{ record.preview_image.getPath }})"></span>
 
       <span class="price-round">
-        <span class="inner">from <br />$ {{ record.getAttributeValueBySlug('stoimost_tura') }} 
-        
-         {% for custom_repeater in DealsAndDiscounts.records.custom_repeater %}
-         <li>{{ custom_repeater.tour_cost }}</li>
-         {% endfor %}
+        <span class="inner">from <br />$ {{ record.tour_cost }} US
         
         </span>
       </span>
@@ -22,12 +18,12 @@
       <p class="excerpt"> {{ record.description }}</p>
     </div>
     <p class="duration"><i class="fa fa-clock-o"></i>
-      {{ record.getAttributeValueBySlug('prodolzhitelnost_tura') }}
+      {{ record.tour_duration }}
        days
     </p>
   </a>
 </div>
-{% endfor %}";s:5:"mtime";i:1611163955;s:6:"markup";s:1054:"{% for record in DealsAndDiscounts.items %}
+{% endfor %}";s:5:"mtime";i:1611259878;s:6:"markup";s:825:"{% for record in DealsAndDiscounts.items %}
 <div class="item item_tour with_border  ">
   <a
     href="{{DealsAndDiscounts.property('recordPage') ? DealsAndDiscounts.property('recordPage')|page({(DealsAndDiscounts.paramName('recordPageSlug')):(record.slug)})}}">
@@ -35,11 +31,7 @@
       <span class="img lazy" style="" data-bg="url( {{ record.preview_image.getPath }})"></span>
 
       <span class="price-round">
-        <span class="inner">from <br />$ {{ record.getAttributeValueBySlug('stoimost_tura') }} 
-        
-         {% for custom_repeater in DealsAndDiscounts.records.custom_repeater %}
-         <li>{{ custom_repeater.tour_cost }}</li>
-         {% endfor %}
+        <span class="inner">from <br />$ {{ record.tour_cost }} US
         
         </span>
       </span>
@@ -51,7 +43,7 @@
       <p class="excerpt"> {{ record.description }}</p>
     </div>
     <p class="duration"><i class="fa fa-clock-o"></i>
-      {{ record.getAttributeValueBySlug('prodolzhitelnost_tura') }}
+      {{ record.tour_duration }}
        days
     </p>
   </a>

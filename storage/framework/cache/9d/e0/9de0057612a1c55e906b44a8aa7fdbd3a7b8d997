@@ -1,9 +1,11 @@
-1611218341a:1:{s:15:"group-tours.htm";a:7:{s:8:"fileName";s:15:"group-tours.htm";s:7:"content";s:7962:"[staticPage]
+1611349846a:1:{s:15:"group-tours.htm";a:8:{s:8:"fileName";s:15:"group-tours.htm";s:7:"content";s:6332:"[staticPage]
 useContent = 1
 default = 0
 
 [staticMenu]
 code = "menu"
+
+[fontAwesomeCssLink]
 ==
 {variable name="tagline" label="Tagline" tab="Header" type="text"}{/variable}
 <!DOCTYPE html>
@@ -187,58 +189,13 @@ code = "menu"
   </style>
   <!-- Content -->
 
-    
-    <div id="top" class="small_top lazy" style="background-image: url(&quot;https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Sunset_1920.jpg&quot;);" data-bg="url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Sunset_1920.jpg)" data-was-processed="true">
+   
 
-    <div class="breadcrumb_wrapper">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <p id="breadcrumbs"><span><span><a href="https://kyrgyzstan-tourism.com/">Home</a> / <span class="breadcrumb_last" aria-current="page">{{this.page.title}}</span></span></span></p>                    <div class="line_helper" style="background: rgba(255,255,255,.3)"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="desc">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 text-center">
-                    <h1 id="single_tour_title">{{this.page.title}}</h1>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-  
-
-<div class="container">
-    <div class="row">
-
-        <div class="col-sm-9">
-            <div id="content">
-                    
-                    
                     {% page %}
                     
-                <div class="line_helper" style="background: #e4e4e4"></div>
-                <p><a class="cstm_button" href="{{ 'tours' | page }}">View all tours</a></p>
+           
 
-            </div>
-        </div>
 
-        <div class="col-sm-3">
-            <div class="sidebar_wrapper">
-                
-<div id="sidebar">
-
-    {% partial 'site/sidebar' %}
-
-</div>            </div>
-        </div>
-
-    </div>
-</div>
 
 
   <!-- Footer -->
@@ -259,7 +216,7 @@ code = "menu"
 
 </body>
 
-</html>";s:5:"mtime";i:1611158233;s:6:"markup";s:7884:"{variable name="tagline" label="Tagline" tab="Header" type="text"}{/variable}
+</html>";s:5:"mtime";i:1611345315;s:6:"markup";s:6230:"{variable name="tagline" label="Tagline" tab="Header" type="text"}{/variable}
 <!DOCTYPE html>
 <html>
 
@@ -441,58 +398,13 @@ code = "menu"
   </style>
   <!-- Content -->
 
-    
-    <div id="top" class="small_top lazy" style="background-image: url(&quot;https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Sunset_1920.jpg&quot;);" data-bg="url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Sunset_1920.jpg)" data-was-processed="true">
+   
 
-    <div class="breadcrumb_wrapper">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <p id="breadcrumbs"><span><span><a href="https://kyrgyzstan-tourism.com/">Home</a> / <span class="breadcrumb_last" aria-current="page">{{this.page.title}}</span></span></span></p>                    <div class="line_helper" style="background: rgba(255,255,255,.3)"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="desc">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 text-center">
-                    <h1 id="single_tour_title">{{this.page.title}}</h1>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-  
-
-<div class="container">
-    <div class="row">
-
-        <div class="col-sm-9">
-            <div id="content">
-                    
-                    
                     {% page %}
                     
-                <div class="line_helper" style="background: #e4e4e4"></div>
-                <p><a class="cstm_button" href="{{ 'tours' | page }}">View all tours</a></p>
+           
 
-            </div>
-        </div>
 
-        <div class="col-sm-3">
-            <div class="sidebar_wrapper">
-                
-<div id="sidebar">
-
-    {% partial 'site/sidebar' %}
-
-</div>            </div>
-        </div>
-
-    </div>
-</div>
 
 
   <!-- Footer -->
@@ -513,4 +425,4 @@ code = "menu"
 
 </body>
 
-</html>";s:4:"code";N;s:10:"staticPage";a:2:{s:10:"useContent";s:1:"1";s:7:"default";s:1:"0";}s:10:"staticMenu";a:1:{s:4:"code";s:4:"menu";}}}
+</html>";s:4:"code";N;s:10:"staticPage";a:2:{s:10:"useContent";s:1:"1";s:7:"default";s:1:"0";}s:10:"staticMenu";a:1:{s:4:"code";s:4:"menu";}s:18:"fontAwesomeCssLink";a:0:{}}}

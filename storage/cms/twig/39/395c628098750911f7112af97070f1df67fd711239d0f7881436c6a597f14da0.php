@@ -29,14 +29,14 @@ class __TwigTemplate_4dcc1cef9cccc9303cfc3a9c4addcab74d18e563b0c9ca6d564aeff6557
         $this->blocks = [
         ];
         $this->sandbox = $this->env->getExtension('\Twig\Extension\SandboxExtension');
-        $tags = array("partial" => 6, "styles" => 39, "for" => 92, "if" => 141, "page" => 215, "framework" => 250, "scripts" => 251);
-        $filters = array("theme" => 7, "escape" => 29, "page" => 218);
+        $tags = array("partial" => 6, "styles" => 39, "for" => 92, "if" => 141, "page" => 185, "framework" => 205, "scripts" => 206);
+        $filters = array("theme" => 7, "escape" => 29);
         $functions = array();
 
         try {
             $this->sandbox->checkSecurity(
                 ['partial', 'styles', 'for', 'if', 'page', 'framework', 'scripts'],
-                ['theme', 'escape', 'page'],
+                ['theme', 'escape'],
                 []
             );
         } catch (SecurityError $e) {
@@ -354,119 +354,60 @@ class __TwigTemplate_4dcc1cef9cccc9303cfc3a9c4addcab74d18e563b0c9ca6d564aeff6557
   </style>
   <!-- Content -->
 
-    
-    <div id=\"top\" class=\"small_top lazy\" style=\"background-image: url(&quot;https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Sunset_1920.jpg&quot;);\" data-bg=\"url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Sunset_1920.jpg)\" data-was-processed=\"true\">
+   
 
-    <div class=\"breadcrumb_wrapper\">
-        <div class=\"container\">
-            <div class=\"row\">
-                <div class=\"col-sm-12\">
-                    <p id=\"breadcrumbs\"><span><span><a href=\"https://kyrgyzstan-tourism.com/\">Home</a> / <span class=\"breadcrumb_last\" aria-current=\"page\">";
-        // line 190
-        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, true, 190), "title", [], "any", false, false, true, 190), 190, $this->source), "html", null, true);
-        echo "</span></span></span></p>                    <div class=\"line_helper\" style=\"background: rgba(255,255,255,.3)\"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class=\"desc\">
-        <div class=\"container\">
-            <div class=\"row\">
-                <div class=\"col-sm-12 text-center\">
-                    <h1 id=\"single_tour_title\">";
-        // line 200
-        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, true, 200), "title", [], "any", false, false, true, 200), 200, $this->source), "html", null, true);
-        echo "</h1>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-  
-
-<div class=\"container\">
-    <div class=\"row\">
-
-        <div class=\"col-sm-9\">
-            <div id=\"content\">
-                    
-                    
                     ";
-        // line 215
+        // line 185
         echo $this->env->getExtension('Cms\Twig\Extension')->pageFunction();
-        // line 216
+        // line 186
         echo "                    
-                <div class=\"line_helper\" style=\"background: #e4e4e4\"></div>
-                <p><a class=\"cstm_button\" href=\"";
-        // line 218
-        echo $this->extensions['Cms\Twig\Extension']->pageFilter("tours");
-        echo "\">View all tours</a></p>
+           
 
-            </div>
-        </div>
 
-        <div class=\"col-sm-3\">
-            <div class=\"sidebar_wrapper\">
-                
-<div id=\"sidebar\">
-
-    ";
-        // line 228
-        $context['__cms_partial_params'] = [];
-        echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/sidebar"        , $context['__cms_partial_params']        , true        );
-        unset($context['__cms_partial_params']);
-        // line 229
-        echo "
-</div>            </div>
-        </div>
-
-    </div>
-</div>
 
 
   <!-- Footer -->
   <footer id=\"footer\">
     ";
-        // line 239
+        // line 194
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/footer"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 240
+        // line 195
         echo "  </footer>
 
   <!-- Scripts -->
   <!-- <script src=\"";
-        // line 243
+        // line 198
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/vendor/jquery.js");
         echo "\"></script>
     <script src=\"";
-        // line 244
+        // line 199
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/vendor/bootstrap.js");
         echo "\"></script>
     <script src=\"";
-        // line 245
+        // line 200
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/javascript/app.js");
         echo "\"></script> -->
   ";
-        // line 246
+        // line 201
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/head_scripts_index_page/script6"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 247
+        // line 202
         echo "  ";
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/head_styles_index_page/style7"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 248
+        // line 203
         echo "  ";
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/head_scripts_index_page/script7"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 249
+        // line 204
         echo "
   ";
-        // line 250
+        // line 205
         $_minify = System\Classes\CombineAssets::instance()->useMinify;
         if ($_minify) {
             echo '<script src="' . Request::getBasePath() . '/modules/system/assets/js/framework.combined-min.js"></script>'.PHP_EOL;
@@ -477,11 +418,11 @@ class __TwigTemplate_4dcc1cef9cccc9303cfc3a9c4addcab74d18e563b0c9ca6d564aeff6557
         }
         echo '<link rel="stylesheet" property="stylesheet" href="' . Request::getBasePath() .'/modules/system/assets/css/framework.extras'.($_minify ? '-min' : '').'.css">'.PHP_EOL;
         unset($_minify);
-        // line 251
+        // line 206
         echo "  ";
         echo $this->env->getExtension('Cms\Twig\Extension')->assetsFunction('js');
         echo $this->env->getExtension('Cms\Twig\Extension')->displayBlock('scripts');
-        // line 252
+        // line 207
         echo "
 </body>
 
@@ -500,7 +441,7 @@ class __TwigTemplate_4dcc1cef9cccc9303cfc3a9c4addcab74d18e563b0c9ca6d564aeff6557
 
     public function getDebugInfo()
     {
-        return array (  485 => 252,  481 => 251,  470 => 250,  467 => 249,  462 => 248,  457 => 247,  453 => 246,  449 => 245,  445 => 244,  441 => 243,  436 => 240,  432 => 239,  420 => 229,  416 => 228,  403 => 218,  399 => 216,  397 => 215,  379 => 200,  366 => 190,  321 => 147,  317 => 145,  312 => 144,  308 => 142,  306 => 141,  279 => 117,  255 => 95,  244 => 93,  240 => 92,  220 => 77,  207 => 66,  203 => 65,  176 => 40,  172 => 39,  167 => 38,  163 => 37,  158 => 35,  151 => 31,  147 => 30,  141 => 29,  137 => 27,  132 => 26,  127 => 25,  123 => 24,  120 => 23,  116 => 22,  112 => 21,  103 => 15,  100 => 14,  96 => 13,  93 => 12,  88 => 11,  83 => 10,  79 => 9,  73 => 7,  69 => 6,  62 => 1,);
+        return array (  426 => 207,  422 => 206,  411 => 205,  408 => 204,  403 => 203,  398 => 202,  394 => 201,  390 => 200,  386 => 199,  382 => 198,  377 => 195,  373 => 194,  363 => 186,  361 => 185,  321 => 147,  317 => 145,  312 => 144,  308 => 142,  306 => 141,  279 => 117,  255 => 95,  244 => 93,  240 => 92,  220 => 77,  207 => 66,  203 => 65,  176 => 40,  172 => 39,  167 => 38,  163 => 37,  158 => 35,  151 => 31,  147 => 30,  141 => 29,  137 => 27,  132 => 26,  127 => 25,  123 => 24,  120 => 23,  116 => 22,  112 => 21,  103 => 15,  100 => 14,  96 => 13,  93 => 12,  88 => 11,  83 => 10,  79 => 9,  73 => 7,  69 => 6,  62 => 1,);
     }
 
     public function getSourceContext()
@@ -687,58 +628,13 @@ class __TwigTemplate_4dcc1cef9cccc9303cfc3a9c4addcab74d18e563b0c9ca6d564aeff6557
   </style>
   <!-- Content -->
 
-    
-    <div id=\"top\" class=\"small_top lazy\" style=\"background-image: url(&quot;https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Sunset_1920.jpg&quot;);\" data-bg=\"url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Sunset_1920.jpg)\" data-was-processed=\"true\">
+   
 
-    <div class=\"breadcrumb_wrapper\">
-        <div class=\"container\">
-            <div class=\"row\">
-                <div class=\"col-sm-12\">
-                    <p id=\"breadcrumbs\"><span><span><a href=\"https://kyrgyzstan-tourism.com/\">Home</a> / <span class=\"breadcrumb_last\" aria-current=\"page\">{{this.page.title}}</span></span></span></p>                    <div class=\"line_helper\" style=\"background: rgba(255,255,255,.3)\"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class=\"desc\">
-        <div class=\"container\">
-            <div class=\"row\">
-                <div class=\"col-sm-12 text-center\">
-                    <h1 id=\"single_tour_title\">{{this.page.title}}</h1>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-  
-
-<div class=\"container\">
-    <div class=\"row\">
-
-        <div class=\"col-sm-9\">
-            <div id=\"content\">
-                    
-                    
                     {% page %}
                     
-                <div class=\"line_helper\" style=\"background: #e4e4e4\"></div>
-                <p><a class=\"cstm_button\" href=\"{{ 'tours' | page }}\">View all tours</a></p>
+           
 
-            </div>
-        </div>
 
-        <div class=\"col-sm-3\">
-            <div class=\"sidebar_wrapper\">
-                
-<div id=\"sidebar\">
-
-    {% partial 'site/sidebar' %}
-
-</div>            </div>
-        </div>
-
-    </div>
-</div>
 
 
   <!-- Footer -->

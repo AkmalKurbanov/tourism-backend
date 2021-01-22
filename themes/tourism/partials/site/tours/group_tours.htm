@@ -1,29 +1,3 @@
-[records GroupTours]
-activeOnly = 0
-areaSlug = "tury"
-categorySlug = "gruppovye-tury"
-useMainCategory = 1
-useMultiCategories = 1
-tagSlug = "{{ :tag }}"
-recordPage = "group-tours"
-recordPageSlug = "{{ :slug }}"
-limit = 10
-pageSlug = "{{ :page }}"
-orderBy = "name"
-orderByDirection = "ASC"
-
-
-[recordDetail TourDetail]
-activeOnly = 0
-recordSlug = "{{ :slug }}"
-areaSlug = 0
-categorySlug = "{{ :gruppovye-tury }}"
-useMainCategory = 1
-categoryPage = 0
-categoryPageSlug = "{{ :category }}"
-
-[viewBag]
-==
 {% for record in GroupTours.items %}
 
  
@@ -37,20 +11,19 @@ categoryPageSlug = "{{ :category }}"
       <span class="img lazy" style="background-image: url({{ record.preview_image.getPath }});" data-bg="url({{ record.preview_image.getPath }}" data-was-processed="true"></span>
 
       <span class="price-round group_price">
-        <span class="inner">${{ record.getAttributeValueBySlug('stoimost_tura') }} US</span>
-         {% for custom_repeater in TourDetail.recordDetail.custom_repeater %}
-          <li>{{ custom_repeater.tour_duration }}</li>
-          {% endfor %}
+        <span class="inner">${{ record.tour_cost }}  US</span>
+        
 </span>
 
     </span>
     <div class="desc">
       <h3>{{ record.name }} </h3> 
-      <p class="excerpt">{{ record.description }} </p>
+        
+      <p class="excerpt">{{ record.description }}</p>
     </div>
     <p class="duration">
       <i class="fa fa-clock-o"></i>
-      {{ record.getAttributeValueBySlug('prodolzhitelnost_tura') }}
+      {{ record.tour_duration }}
       days</p>
   </a>
 </div>

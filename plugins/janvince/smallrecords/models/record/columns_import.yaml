@@ -30,8 +30,32 @@ columns:
         type: datetime
 
     date1:
-        label: 'janvince.smallrecords::lang.common.columns.date'
+        label: 'janvince.smallrecords::lang.common.columns.date1'
         type: datetime
+
+    schedule_tours:
+        label: 'janvince.smallrecords::lang.common.columns.schedule_tours'
+        type: text
+        
+    tour_cost:
+        label: 'janvince.smallrecords::lang.common.columns.tour_cost'
+        type: text
+
+    tour_duration:
+        label: 'janvince.smallrecords::lang.common.columns.tour_duration'
+        type: text
+
+    tour_status:
+        label: 'janvince.smallrecords::lang.common.columns.tour_status'
+        type: switch
+
+    itinerary_desc:
+        label: 'janvince.smallrecords::lang.common.columns.itinerary_desc'
+        type: text
+
+    itinerary_map:
+        label: 'janvince.smallrecords::lang.common.columns.itinerary_map'
+        type: text    
 
     preview_image_media:
         label: 'janvince.smallrecords::lang.common.columns.preview_image_media'

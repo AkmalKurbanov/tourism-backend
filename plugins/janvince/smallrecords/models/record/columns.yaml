@@ -1,93 +1,108 @@
 columns:
     id:
-        label: janvince.smallrecords::lang.common.columns.id
-        sortable: true
+        label: 'janvince.smallrecords::lang.common.columns.id'
+        type: number
         searchable: true
         invisible: true
-
+        sortable: true
     slug:
         label: 'janvince.smallrecords::lang.common.columns.slug'
         type: text
         searchable: true
         sortable: true
         invisible: true
-
     preview_image:
         label: 'janvince.smallrecords::lang.common.columns.preview_image'
-        type: record_image_preview
-        width: 30px
-        cssClass: text-center
+        type: text
         invisible: true
-
+        cssClass: text-center
+        width: 30px
     preview_image_media:
         label: 'janvince.smallrecords::lang.common.columns.preview_image_media'
-        type: record_image_preview_media
-        width: 30px
-        cssClass: text-center
+        type: text
         invisible: true
-
+        cssClass: text-center
+        width: 30px
     name:
         label: 'janvince.smallrecords::lang.common.columns.name'
-        type: strong
-        select: name
+        type: text
         searchable: true
         sortable: true
-
+        select: name
     category:
         label: 'janvince.smallrecords::lang.common.columns.category'
-        relation: category
-        select: name
-        sortable: true
+        type: text
         searchable: true
-
+        sortable: true
+        select: name
+        relation: category
     categories:
         label: 'janvince.smallrecords::lang.common.columns.categories'
-        relation: categories
-        select: name
-        sortable: true
+        type: text
         searchable: true
         invisible: true
-
+        sortable: true
+        select: name
+        relation: categories
     description:
         label: 'janvince.smallrecords::lang.common.columns.description'
-        type: html_text_preview
-        select: description
+        type: text
         searchable: true
+        invisible: true
         sortable: true
-        invisible: true        
-
+        select: description
     content:
         label: 'janvince.smallrecords::lang.common.columns.content'
-        type: html_text_preview
-        select: content
+        type: text
         searchable: true
-        sortable: true
         invisible: true
-
+        sortable: true
+        select: content
     tags:
         label: 'janvince.smallrecords::lang.common.columns.tags'
-        type: tags_names
+        type: switch
         sortable: true
-
     date:
         label: 'janvince.smallrecords::lang.common.columns.date'
         type: date
         sortable: true
         invisible: true
-        
     date1:
-        label: 'janvince.smallrecords::lang.common.columns.date'
+        label: 'janvince.smallrecords::lang.common.columns.date1'
         type: date
         sortable: true
         invisible: true
-
+    schedule_tours:
+        label: 'janvince.smallrecords::lang.common.columns.schedule_tours'
+        type: text
+        sortable: true
+        invisible: true
+    tour_cost:
+        label: 'janvince.smallrecords::lang.common.columns.tour_cost'
+        type: text
+        sortable: true
+        invisible: true
+    tour_duration:
+        label: 'janvince.smallrecords::lang.common.columns.tour_duration'
+        type: text
+        sortable: true
+        invisible: true
+    itinerary_desc:
+        label: 'janvince.smallrecords::lang.common.columns.itinerary_desc'
+        type: text
+        sortable: true
+        invisible: true
+    itinerary_map:
+        label: 'janvince.smallrecords::lang.common.columns.itinerary_map'
+        type: text
+        sortable: true
+        invisible: true
     active:
         label: 'janvince.smallrecords::lang.common.columns.active'
-        type: switch_extended
-        cssClass: text-center
+        type: switch
         sortable: true
+        cssClass: text-center
         width: 60px
-
     sort_order:
         label: 'janvince.smallrecords::lang.common.columns.sort_order'
         type: number
@@ -95,40 +110,34 @@ columns:
         sortable: true
         width: 60px
         invisible: true
-
-   
     favourite:
         label: 'janvince.smallrecords::lang.common.columns.favourite'
-        type: switch_extended
-        cssClass: text-center
+        type: switch
         sortable: true
+        cssClass: text-center
         width: 60px
-
     images:
         label: 'janvince.smallrecords::lang.common.columns.attached_images_count'
-        type: attached_images_count
+        type: text
+        invisible: true
         sortable: true
-        invisible: true
-
     created_at:
-        label: janvince.smallrecords::lang.common.columns.created_at
+        label: 'janvince.smallrecords::lang.common.columns.created_at'
         type: datetime
         invisible: true
-
     updated_at:
-        label: janvince.smallrecords::lang.common.columns.updated_at
+        label: 'janvince.smallrecords::lang.common.columns.updated_at'
         type: datetime
         invisible: true
-
     author:
-        label: janvince.smallrecords::lang.common.columns.created_by
+        label: 'janvince.smallrecords::lang.common.columns.created_by'
+        type: switch
+        invisible: true
+        select: 'concat(first_name, '' '',  last_name)'
         relation: author
-        select: concat(first_name, ' ',  last_name)
-        invisible: true
-
     editor:
-        label: janvince.smallrecords::lang.common.columns.updated_by
-        relation: editor
-        select: concat(first_name, ' ',  last_name)
+        label: 'janvince.smallrecords::lang.common.columns.updated_by'
+        type: text
         invisible: true
-
+        select: 'concat(first_name, '' '',  last_name)'
+        relation: editor

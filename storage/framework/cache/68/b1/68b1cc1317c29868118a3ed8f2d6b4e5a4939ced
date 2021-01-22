@@ -1,4 +1,4 @@
-1611244436a:1:{s:15:"tour-detail.htm";a:12:{s:8:"fileName";s:15:"tour-detail.htm";s:7:"content";s:54440:"title = "tour-detail"
+1611349932a:1:{s:15:"tour-detail.htm";a:12:{s:8:"fileName";s:15:"tour-detail.htm";s:7:"content";s:54440:"title = "tour-detail"
 url = "/tour-detail/:slug"
 layout = "static-layout"
 is_hidden = 0

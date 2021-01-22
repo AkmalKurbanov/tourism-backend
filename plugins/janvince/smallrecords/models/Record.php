@@ -31,7 +31,7 @@ class Record extends Model
 
     protected $guarded = [];
 
-    protected $jsonable = ['repeater', 'testimonials', 'images_media', 'content_blocks', 'custom_repeater'];
+    protected $jsonable = ['repeater', 'testimonials', 'images_media', 'content_blocks', 'custom_repeater','schedule_tours'];
 
     protected $dates = [
         'created_at',
@@ -241,6 +241,7 @@ class Record extends Model
             'slug',
             'area',
             'custom_repeater',
+            
         ];
 
         foreach( $fields as $fieldKey => $field ) {

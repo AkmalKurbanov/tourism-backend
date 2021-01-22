@@ -1,16 +1,11 @@
 fields:
-    id:
-        cssClass: hidden
-        readOnly: true
-        disabled: true
-        type: text
     name:
         label: 'janvince.smallrecords::lang.common.columns.name'
         span: left
-        type: text
         required: true
         attributes:
             autofocus: ''
+        type: text
     slug:
         label: 'janvince.smallrecords::lang.common.columns.slug'
         span: right
@@ -19,19 +14,23 @@ fields:
         preset:
             field: name
             type: slug
-    area:
-        label: 'janvince.smallrecords::lang.common.columns.area'
-        type: relation
-        nameFrom: name
-        span: left
 tabs:
     fields:
         category:
             label: 'janvince.smallrecords::lang.common.columns.category'
-            type: relation
             nameFrom: name
-            span: left
+            descriptionFrom: description
             emptyOption: 'janvince.smallrecords::lang.common.fields.empty_option'
+            span: auto
+            type: relation
+            tab: 'janvince.smallrecords::lang.common.tabs.info'
+        area:
+            label: 'janvince.smallrecords::lang.common.columns.category'
+            nameFrom: name
+            descriptionFrom: description
+            emptyOption: 'janvince.smallrecords::lang.common.fields.empty_option'
+            span: auto
+            type: relation
             tab: 'janvince.smallrecords::lang.common.tabs.info'
         preview_image:
             label: 'janvince.smallrecords::lang.common.columns.preview_image'
@@ -53,27 +52,17 @@ tabs:
             tab: 'janvince.smallrecords::lang.common.tabs.info'
         date:
             label: 'janvince.smallrecords::lang.common.columns.date'
-            mode: datetime
+            mode: date
             span: left
+            disabled: 0
+            hidden: 0
             type: datepicker
             tab: 'janvince.smallrecords::lang.common.tabs.info'
         date1:
-            label: 'janvince.smallrecords::lang.common.columns.date'
-            mode: datetime
+            label: 'janvince.smallrecords::lang.common.columns.date1'
+            mode: date
             span: left
             type: datepicker
-            tab: 'janvince.smallrecords::lang.common.tabs.info'    
-        author:
-            type: relation
-            nameFrom: fullname
-            span: left
-            emptyOption: 'janvince.smallrecords::lang.common.fields.empty_option'
-            label: 'janvince.smallrecords::lang.common.columns.author'
-            tab: 'janvince.smallrecords::lang.common.tabs.info'
-        url:
-            type: text
-            span: left
-            label: 'janvince.smallrecords::lang.common.columns.url'
             tab: 'janvince.smallrecords::lang.common.tabs.info'
         active:
             label: 'janvince.smallrecords::lang.common.columns.active'
@@ -83,173 +72,69 @@ tabs:
             tab: 'janvince.smallrecords::lang.common.tabs.info'
         favourite:
             label: 'janvince.smallrecords::lang.common.columns.favourite'
-            span: left
+            span: auto
             type: checkbox
             tab: 'janvince.smallrecords::lang.common.tabs.info'
-        content:
-            type: richeditor
-            size: giant
-            span: full
-            label: 'janvince.smallrecords::lang.common.columns.content'
-            tab: 'janvince.smallrecords::lang.common.tabs.content'
-        images:
-            label: 'janvince.smallrecords::lang.common.columns.images'
-            type: fileupload
-            mode: image
-            span: full
-            tab: 'janvince.smallrecords::lang.common.tabs.images'
-        images_media:
+        tour_cost:
+            label: 'Стоимость тура'
+            span: auto
+            type: text
+            tab: 'janvince.smallrecords::lang.common.tabs.info'
+        tour_duration:
+            label: 'Продолжительность тура'
+            span: auto
+            type: text
+            tab: 'janvince.smallrecords::lang.common.tabs.info'
+        tour_status:
+            label: 'Статус тура'
+            options:
+                'Имеется в наличии': 'Имеется в наличии'
+                'Не имеется в наличии': 'Не имеется в наличии'
+            span: auto
+            hidden: 0
+            type: radio
+            tab: 'janvince.smallrecords::lang.common.tabs.info'
+        schedule_tours:
+            label: 'Расписание туров'
+            prompt: Добавить
+            span: auto
             type: repeater
-            prompt: 'janvince.smallrecords::lang.common.columns.repeater_prompt'
-            tab: 'janvince.smallrecords::lang.common.tabs.images'
+            tab: 'janvince.smallrecords::lang.common.tabs.info'
             form:
                 fields:
-                    image_title:
-                        label: 'janvince.smallrecords::lang.records.images_media.title'
-                        type: text
-                        span: left
-                    image:
-                        label: 'janvince.smallrecords::lang.records.images_media.image'
-                        type: mediafinder
-                        mode: image
-                        span: right
-                    image_description:
-                        label: 'janvince.smallrecords::lang.records.images_media.description'
-                        type: textarea
-                        size: medium
-                        span: left
-        tags:
-            type: relation
-            tab: 'janvince.smallrecords::lang.common.tabs.tags'
-            trigger:
-                action: hide
-                field: id
-                condition: 'value[]'
-        attributes:
-            type: partial
-            path: $/janvince/smallrecords/controllers/relations/attributes.htm
-            tab: 'janvince.smallrecords::lang.common.tabs.attributes'
-            trigger:
-                action: hide
-                field: id
-                condition: 'value[]'
-        files:
+                    tour_dateDeparture:
+                        label: 'Дата начала тура'
+                        mode: datetime
+                        span: auto
+                        type: datepicker
+                    tour_dateEnd:
+                        label: 'Дата окончания тура'
+                        mode: datetime
+                        span: auto
+                        type: datepicker
+        images:
+            label: 'janvince.smallrecords::lang.common.columns.images'
+            mode: image
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            span: auto
             type: fileupload
-            mode: file
-            span: full
-            tab: 'janvince.smallrecords::lang.common.tabs.attachments'
+            tab: Галерея
+        itinerary_map:
+            label: 'janvince.smallrecords::lang.common.columns.itinerary_map'
+            span: auto
+            type: text
+            tab: Маршрут
+        itinerary_desc:
+            label: 'Описание маршрута'
+            size: ''
+            span: auto
+            type: richeditor
+            tab: Маршрут
         categories:
             type: relation
             nameFrom: name
             span: full
             tab: 'janvince.smallrecords::lang.common.tabs.secondary_categories'
-        repeater:
-            type: repeater
-            prompt: 'janvince.smallrecords::lang.common.columns.repeater_prompt'
-            tab: 'janvince.smallrecords::lang.common.tabs.notes'
-            trigger:
-                action: hide
-                field: id
-                condition: 'value[]'
-            form:
-                fields:
-                    repeater_value1:
-                        label: 'janvince.smallrecords::lang.records.repeater.value1'
-                        type: text
-                        span: left
-                    repeater_value2:
-                        label: 'janvince.smallrecords::lang.records.repeater.value2'
-                        type: text
-                        span: right
-                    repeater_value3:
-                        label: 'janvince.smallrecords::lang.records.repeater.value3'
-                        type: text
-                        span: left
-                    repeater_value4:
-                        label: 'janvince.smallrecords::lang.records.repeater.value4'
-                        type: text
-                        span: right
-                    repeater_text:
-                        label: 'janvince.smallrecords::lang.records.repeater.text'
-                        type: richeditor
-                        span: full
-        testimonials:
-            type: repeater
-            prompt: 'janvince.smallrecords::lang.common.columns.testimonials_prompt'
-            tab: 'janvince.smallrecords::lang.common.tabs.testimonials'
-            trigger:
-                action: hide
-                field: id
-                condition: 'value[]'
-            form:
-                fields:
-                    testimonial_title:
-                        label: 'janvince.smallrecords::lang.records.testimonials.title'
-                        type: text
-                        span: left
-                    testimonial_image:
-                        label: 'janvince.smallrecords::lang.records.testimonials.image'
-                        type: mediafinder
-                        mode: image
-                        span: right
-                        imageHeight: 260
-                        imageWidth: 260
-                    testimonial_author:
-                        label: 'janvince.smallrecords::lang.records.testimonials.author'
-                        type: text
-                        span: left
-                    testimonial_date:
-                        label: 'janvince.smallrecords::lang.records.testimonials.date'
-                        type: datepicker
-                        span: left
-                    testimonial_content:
-                        label: 'janvince.smallrecords::lang.records.testimonials.content'
-                        type: richeditor
-                        span: left
-                        size: huge
-        content_blocks:
-            type: repeater
-            prompt: 'janvince.smallrecords::lang.common.columns.repeater_prompt'
-            tab: 'janvince.smallrecords::lang.common.tabs.content_blocks'
-            trigger:
-                action: hide
-                field: id
-                condition: 'value[]'
-            form:
-                fields:
-                    content_block_title:
-                        label: 'janvince.smallrecords::lang.records.content_blocks.title'
-                        type: text
-                        span: left
-                    content_block_preview_image:
-                        label: 'janvince.smallrecords::lang.records.content_blocks.preview_image'
-                        type: mediafinder
-                        span: right
-                        mode: image
-                    content_block_subtitle:
-                        label: 'janvince.smallrecords::lang.records.content_blocks.subtitle'
-                        type: text
-                        span: left
-                    content_block_code:
-                        label: 'janvince.smallrecords::lang.records.content_blocks.code'
-                        type: text
-                        span: left
-                    content_block_content:
-                        label: 'janvince.smallrecords::lang.records.content_blocks.content'
-                        type: richeditor
-                        span: left
-                        size: giant
-                    content_block_description:
-                        label: 'janvince.smallrecords::lang.records.content_blocks.description'
-                        type: richeditor
-                        span: right
-                    content_block_disable:
-                        label: 'janvince.smallrecords::lang.records.content_blocks.disable'
-                        type: checkbox
-                        span: right
-                        default: false
-                    content_block_favourite:
-                        label: 'janvince.smallrecords::lang.records.content_blocks.favourite'
-                        type: checkbox
-                        span: right
-                        default: false

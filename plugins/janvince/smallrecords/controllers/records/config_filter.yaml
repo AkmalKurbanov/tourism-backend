@@ -30,7 +30,3 @@ scopes:
         type: daterange
         conditions: date >= ':after' AND date <= ':before'
     
-    date1:
-        label: janvince.smallrecords::lang.common.columns.date
-        type: daterange
-        conditions: date >= ':after' AND date <= ':before'

@@ -1,4 +1,4 @@
-1611160393a:1:{s:15:"static-page.htm";a:9:{s:8:"fileName";s:15:"static-page.htm";s:7:"content";s:8422:"[fontAwesomeCssLink]
+1611339965a:1:{s:15:"static-page.htm";a:9:{s:8:"fileName";s:15:"static-page.htm";s:7:"content";s:8422:"[fontAwesomeCssLink]
 
 [staticPage]
 useContent = 1
@@ -272,7 +272,7 @@ emails_date_format = "Y-m-d"
 
 </body>
 
-</html>";s:5:"mtime";i:1611158005;s:6:"markup";s:7870:"{variable name="tagline" label="Tagline" tab="Header" type="text"}{/variable}
+</html>";s:5:"mtime";i:1611298259;s:6:"markup";s:7870:"{variable name="tagline" label="Tagline" tab="Header" type="text"}{/variable}
 <!DOCTYPE html>
 <html>
 

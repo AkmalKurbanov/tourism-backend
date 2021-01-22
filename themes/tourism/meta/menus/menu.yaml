@@ -29,10 +29,8 @@ items:
         title: 'Group tours'
         nesting: 0
         type: static-page
-        url: null
         code: ''
         reference: group-tours
-        cmsPage: null
         replace: 1
         viewBag:
             isHidden: '0'
@@ -40,9 +38,13 @@ items:
             isExternal: '0'
     -
         title: Blog
+        nesting: null
         type: url
         url: /blog
         code: ''
+        reference: null
+        cmsPage: null
+        replace: null
         viewBag:
             isHidden: '0'
             cssClass: ''
