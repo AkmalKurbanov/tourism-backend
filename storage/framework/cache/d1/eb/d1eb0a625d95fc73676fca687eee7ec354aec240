@@ -1,4 +1,4 @@
-1611521509a:1:{s:22:"group-tours-detail.htm";a:12:{s:8:"fileName";s:22:"group-tours-detail.htm";s:7:"content";s:20269:"title = "Group-tours-detail"
+1611522338a:1:{s:22:"group-tours-detail.htm";a:12:{s:8:"fileName";s:22:"group-tours-detail.htm";s:7:"content";s:20269:"title = "Group-tours-detail"
 url = "/group-tours-detail/:slug"
 layout = "group-tours"
 is_hidden = 0
@@ -642,7 +642,7 @@ emails_date_format = "Y-m-d"
       $(".available_departure_select option[value='" + text + "']").attr('selected', 'selected');
     });
   });
-</script>";s:5:"mtime";i:1611516526;s:6:"markup";s:19287:"<div id="top" class="lazy" style="background-image: url({{ TourDetail.recordDetail.preview_image.getPath }})">
+</script>";s:5:"mtime";i:1611521706;s:6:"markup";s:19287:"<div id="top" class="lazy" style="background-image: url({{ TourDetail.recordDetail.preview_image.getPath }})">
 
   <div class="breadcrumb_wrapper">
     <div class="container">

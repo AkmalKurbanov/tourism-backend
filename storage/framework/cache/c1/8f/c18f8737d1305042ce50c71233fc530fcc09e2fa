@@ -1,4 +1,4 @@
-1611521509a:1:{s:9:"tours.htm";a:11:{s:8:"fileName";s:9:"tours.htm";s:7:"content";s:3722:"title = "Tours"
+1611522339a:1:{s:9:"tours.htm";a:11:{s:8:"fileName";s:9:"tours.htm";s:7:"content";s:3722:"title = "Tours"
 url = "/tours/:slug"
 layout = "static-layout"
 is_hidden = 0
@@ -146,7 +146,7 @@ emails_date_format = "Y-m-d"
     </div>
   </div>
 </div>
-</div>";s:5:"mtime";i:1611519880;s:6:"markup";s:2907:"<div class="small_top lazy" id="top" style=""
+</div>";s:5:"mtime";i:1611521706;s:6:"markup";s:2907:"<div class="small_top lazy" id="top" style=""
   data-bg="url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Sunset_1920.jpg)">
 
 

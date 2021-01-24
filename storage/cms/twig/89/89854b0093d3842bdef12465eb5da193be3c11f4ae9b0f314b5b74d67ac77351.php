@@ -29,13 +29,13 @@ class __TwigTemplate_0629aba0e3a377cc6d21f16e9718dd9a9da0a99742b37d4d5c773122d0e
         $this->blocks = [
         ];
         $this->sandbox = $this->env->getExtension('\Twig\Extension\SandboxExtension');
-        $tags = array("set" => 1, "for" => 5, "component" => 47, "partial" => 60);
+        $tags = array("set" => 1, "for" => 5, "partial" => 60);
         $filters = array("escape" => 6, "raw" => 41);
         $functions = array();
 
         try {
             $this->sandbox->checkSecurity(
-                ['set', 'for', 'component', 'partial'],
+                ['set', 'for', 'partial'],
                 ['escape', 'raw'],
                 []
             );
@@ -134,13 +134,8 @@ class __TwigTemplate_0629aba0e3a377cc6d21f16e9718dd9a9da0a99742b37d4d5c773122d0e
         echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "published_at", [], "any", false, false, true, 45), 45, $this->source), "html", null, true);
         echo "</em></p>
         
-        ";
-        // line 47
-        $context['__cms_component_params'] = [];
-        echo $this->env->getExtension('Cms\Twig\Extension')->componentFunction("shares"        , $context['__cms_component_params']        );
-        unset($context['__cms_component_params']);
-        // line 48
-        echo "      </div>
+        
+      </div>
 
       <div class=\"row\">
 
@@ -180,7 +175,7 @@ class __TwigTemplate_0629aba0e3a377cc6d21f16e9718dd9a9da0a99742b37d4d5c773122d0e
 
     public function getDebugInfo()
     {
-        return array (  161 => 61,  157 => 60,  143 => 48,  139 => 47,  134 => 45,  128 => 44,  122 => 41,  105 => 27,  85 => 9,  73 => 6,  69 => 5,  64 => 2,  62 => 1,);
+        return array (  156 => 61,  152 => 60,  134 => 45,  128 => 44,  122 => 41,  105 => 27,  85 => 9,  73 => 6,  69 => 5,  64 => 2,  62 => 1,);
     }
 
     public function getSourceContext()
@@ -231,7 +226,7 @@ class __TwigTemplate_0629aba0e3a377cc6d21f16e9718dd9a9da0a99742b37d4d5c773122d0e
         <p><em>{{ post.user.first_name}} {{ post.user.last_name}}.</em></p>
         <p><em>&nbsp;{{post.published_at}}</em></p>
         
-        {% component 'shares' %}
+        
       </div>
 
       <div class=\"row\">
