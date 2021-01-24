@@ -1,4 +1,4 @@
-1611349932a:1:{s:9:"tours.htm";a:10:{s:8:"fileName";s:9:"tours.htm";s:7:"content";s:3451:"title = "Tours"
+1611521509a:1:{s:9:"tours.htm";a:11:{s:8:"fileName";s:9:"tours.htm";s:7:"content";s:3722:"title = "Tours"
 url = "/tours/:slug"
 layout = "static-layout"
 is_hidden = 0
@@ -19,8 +19,21 @@ pageSlug = "{{ :page }}"
 orderBy = "name"
 orderByDirection = "ASC"
 orderAsCollection = 0
+
+[genericForm]
+messages_success = "Ваша форма была успешно отправлена!"
+messages_errors = "В вашей заявке содержатся ошибки."
+inline_errors = "disabled"
+sanitize_data = "disabled"
+anonymize_ip = "disabled"
+recaptcha_theme = "light"
+recaptcha_type = "image"
+recaptcha_size = "normal"
+emails_date_format = "Y-m-d"
+
 ==
-<div class="small_top lazy" id="top" style="" data-bg="url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Sunset_1920.jpg)">
+<div class="small_top lazy" id="top" style=""
+  data-bg="url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Sunset_1920.jpg)">
 
 
 
@@ -48,7 +61,7 @@ orderAsCollection = 0
     <div class="container">
       <div class="row">
         <div class="col-sm-12 text-center">
-          <h1 id="single_tour_title">All Tours</h1>
+          <h1 id="single_tour_title">{{this.page.title}}</h1>
         </div>
       </div>
     </div>
@@ -58,82 +71,83 @@ orderAsCollection = 0
 
 
 <div class="container">
-    <div class="row">
-      <div class="col-sm-9">
+  <div class="row">
+    <div class="col-sm-9">
 
-        <div id="archive_content" class="">
-
-
-          <div class="row">
+      <div id="archive_content" class="">
 
 
-   {% for record in AllTours.items %}
-
-            <div class="col-sm-4">
-
-              <div class="item item_tour with_border auto_height ">
-                <a href="{{AllTours.property('recordPage') ? AllTours.property('recordPage')|page({(AllTours.paramName('recordPageSlug')):(record.slug)})}}">
-                  <span class="img_wrapper">
-                    <span class="img lazy" style=""
-                      data-bg="url({{ record.preview_image.getPath }})"></span>
-    
-                  </span>
-                  <div class="desc">
-                    <h3>{{record.name}}</h3>
-                    <p class="excerpt">{{ record.description }}</p>
-                  </div>
-                  <p class="duration"><i class="fa fa-clock-o"></i> {{ record.getAttributeValueBySlug('prodolzhitelnost_tura') }} days</p>
-                </a>
-              </div>
+        <div class="row">
 
 
+          {% for record in AllTours.items %}
+
+          <div class="col-sm-4">
+
+            <div class="item item_tour with_border auto_height ">
+              <a
+                href="{{AllTours.property('recordPage') ? AllTours.property('recordPage')|page({(AllTours.paramName('recordPageSlug')):(record.slug)})}}">
+                <span class="img_wrapper">
+                  <span class="img lazy" style="" data-bg="url({{ record.preview_image.getPath }})"></span>
+
+                </span>
+                <div class="desc">
+                  <h3>{{record.name}}</h3>
+                  <p class="excerpt">{{ record.description }}</p>
+                </div>
+                <p class="duration"><i class="fa fa-clock-o"></i> {{ record.tour_duration }} days</p>
+              </a>
             </div>
 
-{% endfor %}
-
-
-
-
-          
-
-
-            </div>
 
           </div>
-        
+
+          {% endfor %}
 
 
 
-          <div id="pagin_wrapper">
 
 
 
-            <nav class="navigation pagination" role="navigation" aria-label=" ">
-              <h2 class="screen-reader-text"> </h2>
-              <div class="nav-links"><span aria-current="page" class="page-numbers current">1</span>
-                <a class="page-numbers" href="https://kyrgyzstan-tourism.com/tours/page/2/">2</a>
-                <a class="next page-numbers" href="https://kyrgyzstan-tourism.com/tours/page/2/">Next »</a></div>
-            </nav>
-          </div>
+
         </div>
 
-
-   
-
-      <div class="col-sm-3">
-        <div class="sidebar_wrapper">
-
-          <div id="sidebar">
+      </div>
 
 
-{% partial 'site/sidebar' %}
 
-          </div>
+
+      <div id="pagin_wrapper">
+
+
+
+        <nav class="navigation pagination" role="navigation" aria-label=" ">
+          <h2 class="screen-reader-text"> </h2>
+          <div class="nav-links"><span aria-current="page" class="page-numbers current">1</span>
+            <a class="page-numbers" href="https://kyrgyzstan-tourism.com/tours/page/2/">2</a>
+            <a class="next page-numbers" href="https://kyrgyzstan-tourism.com/tours/page/2/">Next »</a></div>
+        </nav>
+      </div>
+    </div>
+
+
+
+
+    <div class="col-sm-3">
+      <div class="sidebar_wrapper">
+
+        <div id="sidebar">
+
+
+          {% partial 'site/sidebar_without_date' %}
+
         </div>
       </div>
-   </div>
     </div>
-  </div>";s:5:"mtime";i:1610999071;s:6:"markup";s:3019:"<div class="small_top lazy" id="top" style="" data-bg="url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Sunset_1920.jpg)">
+  </div>
+</div>
+</div>";s:5:"mtime";i:1611519880;s:6:"markup";s:2907:"<div class="small_top lazy" id="top" style=""
+  data-bg="url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Sunset_1920.jpg)">
 
 
 
@@ -161,7 +175,7 @@ orderAsCollection = 0
     <div class="container">
       <div class="row">
         <div class="col-sm-12 text-center">
-          <h1 id="single_tour_title">All Tours</h1>
+          <h1 id="single_tour_title">{{this.page.title}}</h1>
         </div>
       </div>
     </div>
@@ -171,79 +185,79 @@ orderAsCollection = 0
 
 
 <div class="container">
-    <div class="row">
-      <div class="col-sm-9">
+  <div class="row">
+    <div class="col-sm-9">
 
-        <div id="archive_content" class="">
-
-
-          <div class="row">
+      <div id="archive_content" class="">
 
 
-   {% for record in AllTours.items %}
-
-            <div class="col-sm-4">
-
-              <div class="item item_tour with_border auto_height ">
-                <a href="{{AllTours.property('recordPage') ? AllTours.property('recordPage')|page({(AllTours.paramName('recordPageSlug')):(record.slug)})}}">
-                  <span class="img_wrapper">
-                    <span class="img lazy" style=""
-                      data-bg="url({{ record.preview_image.getPath }})"></span>
-    
-                  </span>
-                  <div class="desc">
-                    <h3>{{record.name}}</h3>
-                    <p class="excerpt">{{ record.description }}</p>
-                  </div>
-                  <p class="duration"><i class="fa fa-clock-o"></i> {{ record.getAttributeValueBySlug('prodolzhitelnost_tura') }} days</p>
-                </a>
-              </div>
+        <div class="row">
 
 
+          {% for record in AllTours.items %}
+
+          <div class="col-sm-4">
+
+            <div class="item item_tour with_border auto_height ">
+              <a
+                href="{{AllTours.property('recordPage') ? AllTours.property('recordPage')|page({(AllTours.paramName('recordPageSlug')):(record.slug)})}}">
+                <span class="img_wrapper">
+                  <span class="img lazy" style="" data-bg="url({{ record.preview_image.getPath }})"></span>
+
+                </span>
+                <div class="desc">
+                  <h3>{{record.name}}</h3>
+                  <p class="excerpt">{{ record.description }}</p>
+                </div>
+                <p class="duration"><i class="fa fa-clock-o"></i> {{ record.tour_duration }} days</p>
+              </a>
             </div>
 
-{% endfor %}
-
-
-
-
-          
-
-
-            </div>
 
           </div>
-        
+
+          {% endfor %}
 
 
 
-          <div id="pagin_wrapper">
 
 
 
-            <nav class="navigation pagination" role="navigation" aria-label=" ">
-              <h2 class="screen-reader-text"> </h2>
-              <div class="nav-links"><span aria-current="page" class="page-numbers current">1</span>
-                <a class="page-numbers" href="https://kyrgyzstan-tourism.com/tours/page/2/">2</a>
-                <a class="next page-numbers" href="https://kyrgyzstan-tourism.com/tours/page/2/">Next »</a></div>
-            </nav>
-          </div>
+
         </div>
 
-
-   
-
-      <div class="col-sm-3">
-        <div class="sidebar_wrapper">
-
-          <div id="sidebar">
+      </div>
 
 
-{% partial 'site/sidebar' %}
 
-          </div>
+
+      <div id="pagin_wrapper">
+
+
+
+        <nav class="navigation pagination" role="navigation" aria-label=" ">
+          <h2 class="screen-reader-text"> </h2>
+          <div class="nav-links"><span aria-current="page" class="page-numbers current">1</span>
+            <a class="page-numbers" href="https://kyrgyzstan-tourism.com/tours/page/2/">2</a>
+            <a class="next page-numbers" href="https://kyrgyzstan-tourism.com/tours/page/2/">Next »</a></div>
+        </nav>
+      </div>
+    </div>
+
+
+
+
+    <div class="col-sm-3">
+      <div class="sidebar_wrapper">
+
+        <div id="sidebar">
+
+
+          {% partial 'site/sidebar_without_date' %}
+
         </div>
       </div>
-   </div>
     </div>
-  </div>";s:4:"code";N;s:5:"title";s:5:"Tours";s:3:"url";s:12:"/tours/:slug";s:6:"layout";s:13:"static-layout";s:9:"is_hidden";s:1:"0";s:16:"records AllTours";a:15:{s:10:"activeOnly";s:1:"0";s:13:"favouriteOnly";s:1:"0";s:8:"areaSlug";s:4:"tury";s:12:"categorySlug";s:4:"tury";s:15:"useMainCategory";s:1:"0";s:18:"useMultiCategories";s:1:"1";s:7:"tagSlug";s:10:"{{ :tag }}";s:10:"recordPage";s:11:"tour-detail";s:14:"recordPageSlug";s:11:"{{ :slug }}";s:10:"allowLimit";s:1:"0";s:5:"limit";s:1:"1";s:8:"pageSlug";s:11:"{{ :page }}";s:7:"orderBy";s:4:"name";s:16:"orderByDirection";s:3:"ASC";s:17:"orderAsCollection";s:1:"0";}}}
+  </div>
+</div>
+</div>";s:4:"code";N;s:5:"title";s:5:"Tours";s:3:"url";s:12:"/tours/:slug";s:6:"layout";s:13:"static-layout";s:9:"is_hidden";s:1:"0";s:16:"records AllTours";a:15:{s:10:"activeOnly";s:1:"0";s:13:"favouriteOnly";s:1:"0";s:8:"areaSlug";s:4:"tury";s:12:"categorySlug";s:4:"tury";s:15:"useMainCategory";s:1:"0";s:18:"useMultiCategories";s:1:"1";s:7:"tagSlug";s:10:"{{ :tag }}";s:10:"recordPage";s:11:"tour-detail";s:14:"recordPageSlug";s:11:"{{ :slug }}";s:10:"allowLimit";s:1:"0";s:5:"limit";s:1:"1";s:8:"pageSlug";s:11:"{{ :page }}";s:7:"orderBy";s:4:"name";s:16:"orderByDirection";s:3:"ASC";s:17:"orderAsCollection";s:1:"0";}s:11:"genericForm";a:9:{s:16:"messages_success";s:65:"Ваша форма была успешно отправлена!";s:15:"messages_errors";s:61:"В вашей заявке содержатся ошибки.";s:13:"inline_errors";s:8:"disabled";s:13:"sanitize_data";s:8:"disabled";s:12:"anonymize_ip";s:8:"disabled";s:15:"recaptcha_theme";s:5:"light";s:14:"recaptcha_type";s:5:"image";s:14:"recaptcha_size";s:6:"normal";s:18:"emails_date_format";s:5:"Y-m-d";}}}

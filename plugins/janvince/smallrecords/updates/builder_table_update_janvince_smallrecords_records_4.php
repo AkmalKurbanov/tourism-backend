@@ -30,6 +30,7 @@ class BuilderTableUpdateJanvinceSmallrecordsRecords4 extends Migration
             $table->integer('updated_by')->nullable(false)->default(null)->change();
             $table->dateTime('date1')->nullable(false)->default(null)->change();
             $table->dateTime('schedule_tours')->nullable(false)->default(null)->change();
+            $table->dateTime('faq')->nullable(false)->default(null)->change();
             $table->dateTime('tour_cost')->nullable(false)->default(null)->change();
             $table->dateTime('tour_duration')->nullable(false)->default(null)->change();
             $table->dateTime('tour_status')->nullable(false)->default(null)->change();
@@ -62,6 +63,7 @@ class BuilderTableUpdateJanvinceSmallrecordsRecords4 extends Migration
             $table->integer('created_by')->nullable()->default(NULL)->change();
             $table->integer('updated_by')->nullable()->default(NULL)->change();
             $table->dateTime('schedule_tours')->nullable()->default('NULL')->change();
+            $table->dateTime('faq')->nullable()->default('NULL')->change();
             $table->dateTime('tour_cost')->nullable()->default('NULL')->change();
             $table->dateTime('tour_duration')->nullable()->default('NULL')->change();
             $table->dateTime('tour_status')->nullable()->default('NULL')->change();

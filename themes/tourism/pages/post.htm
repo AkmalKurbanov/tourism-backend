@@ -1,0 +1,97 @@
+title = "Post"
+url = "/post/:slug"
+layout = "static-layout"
+is_hidden = 0
+
+[blogPost]
+slug = "{{ :slug }}"
+categoryPage = "blog"
+
+[genericForm]
+messages_success = "Ваша форма была успешно отправлена!"
+messages_errors = "В вашей заявке содержатся ошибки."
+inline_errors = "disabled"
+sanitize_data = "disabled"
+anonymize_ip = "disabled"
+recaptcha_theme = "light"
+recaptcha_type = "image"
+recaptcha_size = "normal"
+emails_date_format = "Y-m-d"
+
+[shares]
+facebook = 1
+twitter = 1
+googleplus = 1
+tumblr = 1
+linkedin = 1
+reddit = 1
+digg = 1
+==
+{% set post = blogPost.post %}
+
+
+
+<div id="top" class="small_top lazy" {% for image in post.featured_images %}
+  style="background-image: url(&quot;{{ image.path }}&quot;);" data-bg="url({{ image.path }})"
+  data-was-processed="true">
+  {% endfor %}
+  <div class="breadcrumb_wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <p id="breadcrumbs"><span><span><a href="https://kyrgyzstan-tourism.com/">Home</a> / <span><a
+                    href="https://kyrgyzstan-tourism.com/blog/">Blog</a> / <span class="breadcrumb_last"
+                    aria-current="page">Wildlife photography expedition in the Tien-Shan
+                    mountains.</span></span></span></span></p>
+          <div class="line_helper" style="background: rgba(255,255,255,.3)"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="desc">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 text-center">
+          <h1 id="single_tour_title">{{ post.title }}</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-sm-9">
+      <div id="content">
+        <p><span style="font-weight: 400;">
+
+            {{post.content_html | raw }}
+
+          </span></p>
+        <p><em>{{ post.user.first_name}} {{ post.user.last_name}}.</em></p>
+        <p><em>&nbsp;{{post.published_at}}</em></p>
+        
+        {% component 'shares' %}
+      </div>
+
+      <div class="row">
+
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <div class="sidebar_wrapper">
+
+        <div id="sidebar">
+
+          {% partial 'site/sidebar_without_date' %}
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>

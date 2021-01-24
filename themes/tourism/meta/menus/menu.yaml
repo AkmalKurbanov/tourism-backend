@@ -2,10 +2,10 @@ items:
     -
         title: Home
         nesting: null
-        type: url
-        url: /tourism
+        type: cms-page
+        url: null
         code: ''
-        reference: null
+        reference: home
         cmsPage: null
         replace: null
         viewBag:
@@ -14,24 +14,22 @@ items:
             isExternal: '0'
     -
         title: Tours
-        nesting: null
-        type: all-static-pages
-        url: null
+        type: cms-page
         code: ''
-        reference: null
-        cmsPage: null
-        replace: 1
+        reference: tours
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
         title: 'Group tours'
-        nesting: 0
-        type: static-page
+        nesting: null
+        type: cms-page
+        url: null
         code: ''
         reference: group-tours
-        replace: 1
+        cmsPage: null
+        replace: null
         viewBag:
             isHidden: '0'
             cssClass: ''
@@ -39,10 +37,10 @@ items:
     -
         title: Blog
         nesting: null
-        type: url
-        url: /blog
+        type: cms-page
+        url: null
         code: ''
-        reference: null
+        reference: blog
         cmsPage: null
         replace: null
         viewBag:
@@ -53,10 +51,8 @@ items:
         title: Kyrgyzstan
         nesting: 0
         type: static-page
-        url: null
         code: ''
         reference: kyrgyzstan
-        cmsPage: null
         replace: 1
         viewBag:
             isHidden: '0'
@@ -66,10 +62,8 @@ items:
         title: About
         nesting: 0
         type: static-page
-        url: null
         code: ''
         reference: about
-        cmsPage: null
         replace: 1
         viewBag:
             isHidden: '0'

@@ -11,6 +11,7 @@ class BuilderTableUpdateJanvinceSmallrecordsRecords extends Migration
         {
             $table->dateTime('date1')->nullable();
             $table->dateTime('schedule_tours')->nullable();
+            $table->dateTime('faq')->nullable();
             $table->dateTime('tour_cost')->nullable();
             $table->dateTime('tour_duration')->nullable();
             $table->dateTime('tour_status')->nullable();
@@ -46,6 +47,7 @@ class BuilderTableUpdateJanvinceSmallrecordsRecords extends Migration
         {
             $table->dropColumn('date1');
             $table->dropColumn('schedule_tours');
+            $table->dropColumn('faq');
             $table->dropColumn('tour_cost');
             $table->text('tour_duration');
             $table->text('tour_status');

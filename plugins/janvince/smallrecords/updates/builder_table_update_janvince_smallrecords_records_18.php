@@ -10,6 +10,7 @@ class BuilderTableUpdateJanvinceSmallrecordsRecords18 extends Migration
         Schema::table('janvince_smallrecords_records', function($table)
         {
             $table->smallInteger('schedule_tours');
+            $table->smallInteger('faq');
             $table->text('content_blocks')->change();
             $table->dropColumn('created_at');
             $table->dropColumn('updated_at');
@@ -21,6 +22,7 @@ class BuilderTableUpdateJanvinceSmallrecordsRecords18 extends Migration
         Schema::table('janvince_smallrecords_records', function($table)
         {
             $table->dropColumn('schedule_tours');
+            $table->dropColumn('faq');
             $table->text('content_blocks')->change();
             $table->timestamp('created_at')->nullable()->default('NULL');
             $table->timestamp('updated_at')->nullable()->default('NULL');

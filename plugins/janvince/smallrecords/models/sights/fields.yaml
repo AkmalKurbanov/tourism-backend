@@ -1,0 +1,10 @@
+fields:
+    sight_map:
+        label: 'Карта достопримечательности'
+        span: left
+        type: text
+    sight_desc:
+        label: 'Описание достопримечательности'
+        size: ''
+        span: right
+        type: richeditor

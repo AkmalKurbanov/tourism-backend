@@ -240,3 +240,30 @@
 3.10.20:
     - 'Updated table janvince_smallrecords_records'
     - builder_table_update_janvince_smallrecords_records_19.php
+3.10.21:
+    - 'Updated table janvince_smallrecords_records'
+    - builder_table_update_janvince_smallrecords_records_20.php
+3.10.22:
+    - 'Updated table janvince_smallrecords_records'
+    - builder_table_update_janvince_smallrecords_records_21.php
+3.10.23:
+    - 'Updated table janvince_smallrecords_records'
+    - builder_table_update_janvince_smallrecords_records_22.php
+3.10.24:
+    - 'Updated table janvince_smallrecords_records'
+    - builder_table_update_janvince_smallrecords_records_23.php
+3.10.25:
+    - 'Updated table janvince_smallrecords_records'
+    - builder_table_update_janvince_smallrecords_records_24.php
+3.10.26:
+    - 'Updated table janvince_smallrecords_records'
+    - builder_table_update_janvince_smallrecords_records_25.php
+3.10.27:
+    - 'Updated table janvince_smallrecords_records'
+    - builder_table_update_janvince_smallrecords_records_26.php
+3.10.28:
+    - 'Created table janvince_smallrecords_sights'
+    - builder_table_create_janvince_smallrecords_sights.php
+3.10.29:
+    - 'Updated table janvince_smallrecords_sights'
+    - builder_table_update_janvince_smallrecords_sights.php

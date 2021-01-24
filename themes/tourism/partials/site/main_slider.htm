@@ -1,3 +1,18 @@
+[records TypeTours]
+activeOnly = 0
+areaSlug = 0
+categorySlug = "vid-tura"
+useMainCategory = 0
+useMultiCategories = 1
+tagSlug = "{{ :tag }}"
+recordPage = "type-tours"
+recordPageSlug = "{{ :slug }}"
+limit = 9
+pageSlug = "{{ :page }}"
+orderBy = "name"
+orderByDirection = "ASC"
+==
+
 {% for record in TypeTours.items %}
 <div class="item lazy" style="background-image: url(&quot;{{ record.preview_image.getPath }}&quot;);"
   data-bg="url({{ record.preview_image.getPath }})" data-was-processed="true">

@@ -1,0 +1,7 @@
+columns:
+    sight_map:
+        label: sight_map
+        type: text
+    sight_desc:
+        label: sight_desc
+        type: text

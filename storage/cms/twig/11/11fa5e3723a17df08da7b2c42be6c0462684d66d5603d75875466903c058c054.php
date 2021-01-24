@@ -343,7 +343,7 @@ display: none;
         echo $this->env->getExtension('Cms\Twig\Extension')->pageFunction();
         // line 168
         echo "
-
+  <button id=\"toTop\" style=\"display: none;\"><i class=\"fa fa-arrow-up\"></i></button>
   <!-- Footer -->
   <footer id=\"footer\">
     ";
@@ -592,7 +592,7 @@ display: none;
     
     {% page %}
 
-
+  <button id=\"toTop\" style=\"display: none;\"><i class=\"fa fa-arrow-up\"></i></button>
   <!-- Footer -->
   <footer id=\"footer\">
     {% partial 'site/footer' %}

@@ -32,6 +32,7 @@ class BuilderTableUpdateJanvinceSmallrecordsRecords2 extends Migration
             $table->integer('updated_by')->default(null)->change();
             $table->dateTime('date1')->default(null)->change();
             $table->dateTime('schedule_tours')->default(null)->change();
+            $table->dateTime('faq')->default(null)->change();
             $table->dateTime('tour_cost')->default(null)->change();
             $table->dateTime('tour_duration')->default(null)->change();
             $table->dateTime('tour_status')->default(null)->change();
@@ -67,6 +68,7 @@ class BuilderTableUpdateJanvinceSmallrecordsRecords2 extends Migration
             $table->integer('updated_by')->default(NULL)->change();
             $table->dateTime('date1')->default('NULL')->change();
             $table->dateTime('schedule_tours')->default('NULL')->change();
+            $table->dateTime('faq')->default('NULL')->change();
             $table->dateTime('tour_cost')->default('NULL')->change();
             $table->dateTime('tour_duration')->default('NULL')->change();
             $table->dateTime('tour_status')->default('NULL')->change();

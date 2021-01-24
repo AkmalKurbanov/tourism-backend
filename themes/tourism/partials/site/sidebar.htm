@@ -2,27 +2,17 @@
 
 [records PopularTours]
 activeOnly = 0
-areaSlug = "tury"
+areaSlug = 0
 categorySlug = "populyarnye-tury"
 useMultiCategories = 1
 tagSlug = "{{ :tag }}"
-recordPage = "group-tours"
+recordPage = "tour-detail"
 recordPageSlug = "{{ :slug }}"
 limit = 10
 pageSlug = "{{ :page }}"
 orderBy = "name"
 orderByDirection = "ASC"
 
-[genericForm TourForm]
-messages_success = "Ваша форма была успешно отправлена!"
-messages_errors = "В вашей заявке содержатся ошибки."
-inline_errors = "disabled"
-sanitize_data = "disabled"
-anonymize_ip = "disabled"
-recaptcha_theme = "light"
-recaptcha_type = "image"
-recaptcha_size = "normal"
-emails_date_format = "Y-m-d"
 ==
 <div class="tags tags_light">
   <h3>Sights</h3>
@@ -95,59 +85,76 @@ emails_date_format = "Y-m-d"
 
 
   <h3>Book the tour</h3>
-  <div role="form" class="wpcf7" id="wpcf7-f5211-o2" lang="ru-RU" dir="ltr">
-    <div class="screen-reader-response" role="alert" aria-live="polite"></div>
-    
-    
-    
-    
-    
-    
-    
 
-    
-    
-     <form data-request="{{ TourForm }}::onFormSubmit">
+  <div class="screen-reader-response" role="alert" aria-live="polite"></div>
+
+
+
+
+
+
+
+
+
+
+  <form data-request="{{ genericForm }}::onFormSubmit">
 
     {{ form_token() }}
 
-    <div id="{{ TourForm }}_forms_flash"></div>
-    
+    <div id="{{ genericForm }}_forms_flash"></div>
+
       <div class="form-group">
-        <input type="hidden" id="tourName" name="tour name" class="form-control" value="{{ TourDetail.recordDetail.name }}">
+        <input type="hidden" id="pageTitle" name="page title" class="form-control" value="{{this.page.title}}">
+      </div>
+
+      <div class="form-group">
+        <input type="hidden" id="tourName" name="tour name/ post name /" class="form-control" value="{{ TourDetail.recordDetail.name }} {{ post.title }} {{ TypeToursDetail.recordDetail.name }}">
+      </div>
+
+    <div class="form-group">
+      <input type="text" id="name" name="name" class="form-control" placeholder="Your name" required>
     </div>
 
-   <div class="form-group">
-        <input type="text" id="name" name="name" class="form-control" placeholder="Your name">
-    </div>
-    
     <h4>Departure</h4>
     <div class="form-group">
-  
-  <select name="available_departure_select" class="available_departure_select">
-<option value="Jul 13, 2021 - Tue" selected="">Jul 13, 2021 - Tue</option>
-<option value="Aug 26, 2021 - Thu">Aug 26, 2021 - Thu</option>
-</select>
+
+      <select name="available_departure_select" class="available_departure_select">
+
+        <option value="{{TourDetail.recordDetail.date}}">
+          {{TourDetail.recordDetail.date}}
+        </option>
+        {% for schedule in recordDetail.schedule_tours %}
+        <option value="{{schedule.tour_dateDeparture}}">{{schedule.tour_dateDeparture}}
+        </option>
+        {% endfor %}
+
+
+
+
+
+
+      </select>
 
     </div>
 
     <div class="form-group">
-        <input type="text" id="email" name="email" class="form-control" placeholder="Your email">
+      <input type="text" id="email" name="email" class="form-control" placeholder="Your email" required>
     </div>
 
- 
+
 
     <div class="form-group">
-        <textarea id="message" name="message" class="form-control" cols="40" rows="5" placeholder="Your message"></textarea>
+      <textarea id="message" name="message" class="form-control" cols="40" rows="5" placeholder="Your message"
+        required></textarea>
     </div>
 
     <button id="simpleContactSubmitButton" type="submit" class="btn btn-default cstm_button submit">send</button>
 
-<div class="wpcf7-response-output" role="alert" aria-hidden="true"></div>
+    <div class="wpcf7-response-output" role="alert" aria-hidden="true" style="opacity: 0;"></div>
 
-</form>
- 
-  </div>
+  </form>
+
+</div>
 </div>
 
 <div class="sdb_most_popular hidden-xs">
@@ -155,12 +162,11 @@ emails_date_format = "Y-m-d"
   <h3>Most popular tours</h3>
 
 
-
   {% for record in PopularTours.items %}
 
   <div class="item item_tour with_border auto_height ">
     <a
-      href="{{GroupTours.property('recordPage') ? GroupTours.property('recordPage')|page({(GroupTours.paramName('recordPageSlug')):(record.slug)})}}">
+      href="{{PopularTours.property('recordPage') ? PopularTours.property('recordPage')|page({(PopularTours.paramName('recordPageSlug')):(record.slug)})}}">
       <span class="img_wrapper">
         <span class="img lazy" style="" data-bg="url({{ record.preview_image.getPath }})"></span>
 
@@ -170,7 +176,7 @@ emails_date_format = "Y-m-d"
         <p class="excerpt">{{ record.description }}</p>
       </div>
       <p class="duration"><i class="fa fa-clock-o"></i>
-        {{ record.getAttributeValueBySlug('prodolzhitelnost_tura') }}
+        {{record.tour_duration}}
         days</p>
     </a>
   </div>

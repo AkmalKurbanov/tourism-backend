@@ -215,4 +215,9 @@
   'backend\\Controllers\\users' => 'modules\\backend\\controllers\\users.php',
   'backend\\Controllers\\userroles' => 'modules\\backend\\controllers\\userroles.php',
   'backend\\Controllers\\usergroups' => 'modules\\backend\\controllers\\usergroups.php',
+  'rainlab\\blogvideo\\Plugin' => 'plugins\\rainlab\\blogvideo\\Plugin.php',
+  'RainLab\\Blog\\Controllers\\Posts' => 'plugins\\rainlab\\blog\\controllers\\Posts.php',
+  'hariadi\\share\\Plugin' => 'plugins\\hariadi\\share\\Plugin.php',
+  'Hariadi\\Share\\Components\\Share' => 'plugins\\hariadi\\share\\components\\Share.php',
+  'Hariadi\\Share\\Models\\Settings' => 'plugins\\hariadi\\share\\models\\Settings.php',
 );

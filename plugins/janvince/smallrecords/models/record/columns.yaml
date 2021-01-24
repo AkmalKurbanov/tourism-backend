@@ -77,6 +77,11 @@ columns:
         type: text
         sortable: true
         invisible: true
+    faq:
+        label: 'janvince.smallrecords::lang.common.columns.faq'
+        type: text
+        sortable: true
+        invisible: true
     tour_cost:
         label: 'janvince.smallrecords::lang.common.columns.tour_cost'
         type: text

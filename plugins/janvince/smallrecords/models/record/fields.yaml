@@ -24,31 +24,21 @@ tabs:
             span: auto
             type: relation
             tab: 'janvince.smallrecords::lang.common.tabs.info'
-        area:
-            label: 'janvince.smallrecords::lang.common.columns.category'
-            nameFrom: name
-            descriptionFrom: description
-            emptyOption: 'janvince.smallrecords::lang.common.fields.empty_option'
-            span: auto
-            type: relation
-            tab: 'janvince.smallrecords::lang.common.tabs.info'
         preview_image:
             label: 'janvince.smallrecords::lang.common.columns.preview_image'
+            mode: image
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            span: auto
             type: fileupload
-            mode: image
-            span: right
-            tab: 'janvince.smallrecords::lang.common.tabs.info'
-        preview_image_media:
-            label: 'janvince.smallrecords::lang.common.columns.preview_image_media'
-            type: mediafinder
-            mode: image
-            span: right
             tab: 'janvince.smallrecords::lang.common.tabs.info'
         description:
-            type: textarea
-            size: large
-            span: left
             label: 'janvince.smallrecords::lang.common.columns.description'
+            size: large
+            span: auto
+            type: textarea
             tab: 'janvince.smallrecords::lang.common.tabs.info'
         date:
             label: 'janvince.smallrecords::lang.common.columns.date'
@@ -58,15 +48,25 @@ tabs:
             hidden: 0
             type: datepicker
             tab: 'janvince.smallrecords::lang.common.tabs.info'
+        tour_cost:
+            label: 'Стоимость тура'
+            span: auto
+            type: text
+            tab: 'janvince.smallrecords::lang.common.tabs.info'
         date1:
             label: 'janvince.smallrecords::lang.common.columns.date1'
             mode: date
             span: left
             type: datepicker
             tab: 'janvince.smallrecords::lang.common.tabs.info'
+        tour_duration:
+            label: 'Продолжительность тура'
+            span: auto
+            type: text
+            tab: 'janvince.smallrecords::lang.common.tabs.info'
         active:
             label: 'janvince.smallrecords::lang.common.columns.active'
-            span: left
+            span: auto
             type: checkbox
             default: true
             tab: 'janvince.smallrecords::lang.common.tabs.info'
@@ -74,16 +74,6 @@ tabs:
             label: 'janvince.smallrecords::lang.common.columns.favourite'
             span: auto
             type: checkbox
-            tab: 'janvince.smallrecords::lang.common.tabs.info'
-        tour_cost:
-            label: 'Стоимость тура'
-            span: auto
-            type: text
-            tab: 'janvince.smallrecords::lang.common.tabs.info'
-        tour_duration:
-            label: 'Продолжительность тура'
-            span: auto
-            type: text
             tab: 'janvince.smallrecords::lang.common.tabs.info'
         tour_status:
             label: 'Статус тура'
@@ -94,12 +84,20 @@ tabs:
             hidden: 0
             type: radio
             tab: 'janvince.smallrecords::lang.common.tabs.info'
+        area:
+            label: 'janvince.smallrecords::lang.common.columns.category'
+            nameFrom: name
+            descriptionFrom: description
+            emptyOption: 'janvince.smallrecords::lang.common.fields.empty_option'
+            span: auto
+            type: relation
+            tab: 'janvince.smallrecords::lang.common.tabs.info'
         schedule_tours:
             label: 'Расписание туров'
             prompt: Добавить
             span: auto
             type: repeater
-            tab: 'janvince.smallrecords::lang.common.tabs.info'
+            tab: 'Расписание туров'
             form:
                 fields:
                     tour_dateDeparture:
@@ -112,6 +110,34 @@ tabs:
                         mode: datetime
                         span: auto
                         type: datepicker
+                    status_tour:
+                        label: 'Статус тура'
+                        options:
+                            'Имеется в наличии': 'Имеется в наличии'
+                            'Не имеется в наличии': 'Не имеется в наличии'
+                        span: auto
+                        type: radio
+                    cost_tour:
+                        label: 'Стоимость тура'
+                        span: auto
+                        type: text
+        faq:
+            label: 'Часто задаваемые вопросы'
+            prompt: Добавить
+            span: full
+            type: repeater
+            tab: 'Часто задаваемые вопросы'
+            form:
+                fields:
+                    question:
+                        label: Вопрос
+                        span: auto
+                        type: text
+                    answer:
+                        label: Ответ
+                        size: ''
+                        span: auto
+                        type: richeditor
         images:
             label: 'janvince.smallrecords::lang.common.columns.images'
             mode: image
@@ -126,13 +152,13 @@ tabs:
             label: 'janvince.smallrecords::lang.common.columns.itinerary_map'
             span: auto
             type: text
-            tab: Маршрут
+            tab: 'Краткое описание тура / описание маршрута'
         itinerary_desc:
             label: 'Описание маршрута'
             size: ''
             span: auto
             type: richeditor
-            tab: Маршрут
+            tab: 'Краткое описание тура / описание маршрута'
         categories:
             type: relation
             nameFrom: name

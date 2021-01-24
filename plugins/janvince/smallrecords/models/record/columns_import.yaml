@@ -36,6 +36,10 @@ columns:
     schedule_tours:
         label: 'janvince.smallrecords::lang.common.columns.schedule_tours'
         type: text
+
+    faq:
+        label: 'janvince.smallrecords::lang.common.columns.faq'
+        type: text
         
     tour_cost:
         label: 'janvince.smallrecords::lang.common.columns.tour_cost'

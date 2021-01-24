@@ -32,6 +32,7 @@ tabs:
                 date: 'janvince.smallrecords::lang.common.columns.date'
                 date1: 'janvince.smallrecords::lang.common.columns.date1'
                 schedule_tours: 'janvince.smallrecords::lang.common.columns.schedule_tours'
+                faq: 'janvince.smallrecords::lang.common.columns.faq'
                 tour_cost: 'janvince.smallrecords::lang.common.columns.tour_cost'
                 tour_duration: 'janvince.smallrecords::lang.common.columns.tour_duration'
                 tour_status: 'janvince.smallrecords::lang.common.columns.tour_status'

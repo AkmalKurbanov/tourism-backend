@@ -1,4 +1,4 @@
-1611350388a:1:{s:22:"group-tours-detail.htm";a:12:{s:8:"fileName";s:22:"group-tours-detail.htm";s:7:"content";s:25770:"title = "group-tours-detail"
+1611521509a:1:{s:22:"group-tours-detail.htm";a:12:{s:8:"fileName";s:22:"group-tours-detail.htm";s:7:"content";s:20269:"title = "Group-tours-detail"
 url = "/group-tours-detail/:slug"
 layout = "group-tours"
 is_hidden = 0
@@ -16,7 +16,6 @@ categoryPageSlug = "{{ :category }}"
 activeOnly = 0
 areaSlug = 0
 categorySlug = "gruppovye-tury"
-useMainCategory = 1
 useMultiCategories = 1
 tagSlug = "{{ :tag }}"
 recordPage = "group-tours-detail"
@@ -26,12 +25,7 @@ pageSlug = "{{ :page }}"
 orderBy = "name"
 orderByDirection = "ASC"
 
-
-
-
-
-[genericForm TourForm]
-group = "Бронь тура"
+[genericForm]
 messages_success = "Ваша форма была успешно отправлена!"
 messages_errors = "В вашей заявке содержатся ошибки."
 inline_errors = "disabled"
@@ -161,32 +155,56 @@ emails_date_format = "Y-m-d"
 
                   <tbody>
 
-
                     <tr>
                       <td>
-                        <!-- <p> -->
-                          {% for actor in recordDetail.schedule_tours %}
-                            {{actor.tour_dateDeparture}}
-                          
-                          {% endfor %}
+                        <p>
+                          {{TourDetail.recordDetail.date}}
+                        </p>
+                      </td>
 
-                          {{TourDetail.recordDetail.schedule_tours.tour_dateDeparture}}
+                      <td>
+                        <p>
+                          {{TourDetail.recordDetail.date1}}
+                        </p>
                       </td>
                       <td>
-                        <!-- <p>{{ TourDetail.recordDetail.date1 }}</p> -->
+                        <p class="available">{{TourDetail.recordDetail.tour_status}}</p>
                       </td>
                       <td>
-                        <p class="available">{{ TourDetail.recordDetail.tour_status }}</p>
-                      </td>
-                      <td>
-                        <p>${{ TourDetail.recordDetail.tour_cost }} US</p>
+                        <p>${{TourDetail.recordDetail.tour_cost}} US</p>
                       </td>
                       <td>
                         <button class="cstm_button group_archive_book_button"
-                          data-departure="{{ TourDetail.recordDetail.date }}"
-                          data-title="Pearls of Kyrgyzstan: Issyk-Kul and Song-Kul.">Book</button>
+                          id="{{TourDetail.recordDetail.date}}">Book</button>
                       </td>
                     </tr>
+
+
+
+                    {% for schedule in recordDetail.schedule_tours %}
+                    <tr>
+                      <td>
+                        <p>
+                          {{schedule.tour_dateDeparture}}
+                        </p>
+                      </td>
+                      <td>
+                        <p>
+                          {{schedule.tour_dateEnd}}
+                        </p>
+                      </td>
+                      <td>
+                        <p class="available">{{ schedule.status_tour }}</p>
+                      </td>
+                      <td>
+                        <p>${{ schedule.cost_tour }} US</p>
+                      </td>
+                      <td>
+                        <button class="cstm_button group_archive_book_button" id="{{schedule.tour_dateDeparture}}">
+                          Book</button>
+                      </td>
+                    </tr>
+                    {% endfor %}
 
                   </tbody>
 
@@ -283,8 +301,9 @@ emails_date_format = "Y-m-d"
 
 
 
-            <h2><a href="https://kyrgyzstan-tourism.com/group-tours/pearls-of-kyrgyzstan-issyk-kul-and-song-kul/">Pearls
-                of Kyrgyzstan: Issyk-Kul and Song-Kul.</a></h2>
+            <h2><a
+                href="{{TourDetail.property('recordPage') ? TourDetail.property('recordPage')|page({(TourDetail.paramName('recordPageSlug')):(record.slug)})}}">{{ TourDetail.recordDetail.name }}</a>
+            </h2>
 
             <div class="table-responsive">
               <table class="table table-striped table-hover dates_table_archive">
@@ -301,44 +320,70 @@ emails_date_format = "Y-m-d"
                 <tbody>
 
 
+
                   <tr>
                     <td>
-                      <p>Jul 13, 2021 - Tue</p>
+                      <p>
+                        {{TourDetail.recordDetail.date}}
+                      </p>
+                    </td>
+
+                    <td>
+                      <p>
+                        {{TourDetail.recordDetail.date1}}
+                      </p>
                     </td>
                     <td>
-                      <p>Jul 21, 2021 - Wed</p>
+                      <p class="available">{{TourDetail.recordDetail.tour_status}}</p>
                     </td>
                     <td>
-                      <p class="available">Available</p>
+                      <p>${{TourDetail.recordDetail.tour_cost}} US</p>
                     </td>
                     <td>
-                      <p>$890 US</p>
-                    </td>
-                    <td>
-                      <button class="cstm_button group_archive_book_button" data-departure="Jul 13, 2021 - Tue"
-                        data-title="Pearls of Kyrgyzstan: Issyk-Kul and Song-Kul.">Book</button>
+                      <button class="cstm_button group_archive_book_button"
+                        id="{{TourDetail.recordDetail.date}}">Book</button>
                     </td>
                   </tr>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  {% for schedule in recordDetail.schedule_tours %}
                   <tr>
                     <td>
-                      <p>Aug 26, 2021 - Thu</p>
+                      <p>
+                        {{schedule.tour_dateDeparture}}
+                      </p>
                     </td>
                     <td>
-                      <p>Sep 3, 2021 - Fri</p>
+                      <p>
+                        {{schedule.tour_dateEnd}}
+                      </p>
                     </td>
                     <td>
-                      <p class="available">Available</p>
+                      <p class="available">{{ schedule.status_tour }}</p>
                     </td>
                     <td>
-                      <p>$890 US</p>
+                      <p>${{ schedule.cost_tour }} US</p>
                     </td>
                     <td>
-                      <button class="cstm_button group_archive_book_button" data-departure="Aug 26, 2021 - Thu"
-                        data-title="Pearls of Kyrgyzstan: Issyk-Kul and Song-Kul.">Book</button>
+                      <button class="cstm_button group_archive_book_button"
+                        id="{{schedule.tour_dateDeparture}}">Book</button>
                     </td>
                   </tr>
+                  {% endfor %}
+
                 </tbody>
 
               </table>
@@ -346,10 +391,8 @@ emails_date_format = "Y-m-d"
 
 
 
-            <iframe width="100%" height="480"
-              data-src="https://www.google.com/maps/d/embed?mid=10MUqRJ8-Hf8Gcl42TX6sUCcVN-usk2b9&amp;hl=en&amp;z=7"
-              class="lazyload"
-              src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></iframe>
+            <iframe src="{{ TourDetail.recordDetail.itinerary_map }}&amp;hl=en&amp;z=8" width="100%"
+              height="480"></iframe>
             <div class="mobile_book_btn_wrapper text-center">
               <button class="cstm_button mobile_book_btn">Book</button>
             </div>
@@ -372,18 +415,16 @@ emails_date_format = "Y-m-d"
               <div id="collapseFour" class="panel-collapse collapse">
                 <div class="panel-body">
                   <div class="custom_gallery justified-gallery" style="height: 724px;" lg-uid="lg1">
-                    
+
                     {% for image in recordDetail.images %}
                     <a href="{{image.path}}" class="jg-entry"
                       style="width: 129px; height: 128.5px; top: 6px; left: 6px; opacity: 1;">
                       <img class="ls-is-cached lazyloaded" src="{{image.path}}" alt="">
                     </a>
                     {%endfor%}
-                   
+
                   </div>
-                  <!--                                    <div class="mobile_book_btn_wrapper text-center">-->
-                  <!--                                        <button class="cstm_button mobile_book_btn">Book</button>-->
-                  <!--                                    </div>-->
+
                 </div>
               </div>
             </div>
@@ -400,130 +441,30 @@ emails_date_format = "Y-m-d"
         <h2>FAQ</h2>
         <p class="text-right"><button class="cstm_button" id="faqExpand">Expand all</button></p>
         <div class="panel-group" id="accordion_group_faq">
+          {% for faq in recordDetail.faq %}
+
 
           <div class="panel panel-default">
             <div class="panel-heading">
               <h4 class="panel-title">
                 <a data-toggle="collapse" data-parent="#accordion_group_faq" href="#group_collapse_faq_1">
-                  What included and excluded? </a>
+                  {{faq.question}} </a>
               </h4>
             </div>
-            <div id="group_collapse_faq_1" class="panel-collapse collapse in">
+            <div id="group_collapse_faq_1" class="panel-collapse collapse">
               <div class="panel-body">
-                <p><strong>It is included:</strong><br>
-                  – All accommodations (hotels, guest houses, yurt camps) except the first day in Bishkek.</p>
-                <p>– Eng.speaking guide from Airport to Airport</p>
-                <p>– All meals (Lunches, Dinners, and breakfasts)</p>
-                <p>– Mineral waters</p>
-                <p>– Individual transport from the Airport to the Airport</p>
-                <p><strong>It is not included:</strong></p>
-                <p>– Air flight ticket</p>
-                <p>– Bishkek hotel for arrival dates.</p>
-                <p>– Personal expenses</p>
-                <p>– Alcohol drinks</p>
+                {{faq.answer|raw}}
               </div>
             </div>
           </div>
 
 
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion_group_faq" href="#group_collapse_faq_2">
-                  Am I fit enough? </a>
-              </h4>
-            </div>
-            <div id="group_collapse_faq_2" class="panel-collapse collapse ">
-              <div class="panel-body">
-                <p>Song-Kul mountain is a high altitude and some point you prefer to do walking instead of horse riding.
-                  We recommend you train with sport or jogging 2-3 times a week in the run-up to your trip.</p>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion_group_faq" href="#group_collapse_faq_3">
-                  How old do I need to be? </a>
-              </h4>
-            </div>
-            <div id="group_collapse_faq_3" class="panel-collapse collapse ">
-              <div class="panel-body">
-                <p>The minimum age for this tour and horse trek is 18, or 16 with a parent/guardian.</p>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion_group_faq" href="#group_collapse_faq_4">
-                  What kit do I need? </a>
-              </h4>
-            </div>
-            <div id="group_collapse_faq_4" class="panel-collapse collapse ">
-              <div class="panel-body">
-                <p>Clothing for hiking in temperatures from +25C to -0C. A detailed kit list will be sent to you when
-                  you book on.</p>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion_group_faq" href="#group_collapse_faq_5">
-                  How big is the group? </a>
-              </h4>
-            </div>
-            <div id="group_collapse_faq_5" class="panel-collapse collapse ">
-              <div class="panel-body">
-                <p>Most groups have 6-10 people, with a maximum of 12.</p>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion_group_faq" href="#group_collapse_faq_6">
-                  Which hotel do we stay at in Bishkek on the last day, Karakol? </a>
-              </h4>
-            </div>
-            <div id="group_collapse_faq_6" class="panel-collapse collapse ">
-              <div class="panel-body">
-                <p>In Bishkek, we arrange you hotel with 3 stars level (Olive. My hotel …). in Karakol will be Green
-                  Yard, Karagat or similar.</p>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion_group_faq" href="#group_collapse_faq_7">
-                  How to book? </a>
-              </h4>
-            </div>
-            <div id="group_collapse_faq_7" class="panel-collapse collapse ">
-              <div class="panel-body">
-                <p>Contact us and we issue the invoice for 20% payment from the net tour cost. You can send it by bank
-                  transfer. The rest of the payment you can pay in cash upon your arrival day in Bishkek (welcoming the
-                  first day with briefing ). Be informed that the bank transfer fee will be additionally 3% over the
-                  cost of the transaction and it will be on the client (For cash payment no additional costs).</p>
-                <p>&nbsp;</p>
-              </div>
-            </div>
-          </div>
-
+          {% endfor %}
 
         </div>
+
+
+     
 
       </div>
 
@@ -532,45 +473,58 @@ emails_date_format = "Y-m-d"
           <div class="col-sm-12">
             <div id="content">
               <h2>Book tour</h2>
-              <div role="form" class="wpcf7" id="wpcf7-f5211-o1" lang="ru-RU" dir="ltr">
-                <div class="screen-reader-response" role="alert" aria-live="polite"></div>
-                <form action="/group-tours/pearls-of-kyrgyzstan-issyk-kul-and-song-kul/#wpcf7-f5211-o1" method="post"
-                  class="wpcf7-form init" novalidate="novalidate">
-                  <div style="display: none;">
-                    <input type="hidden" name="_wpcf7" value="5211">
-                    <input type="hidden" name="_wpcf7_version" value="5.2.2">
-                    <input type="hidden" name="_wpcf7_locale" value="ru_RU">
-                    <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f5211-o1">
-                    <input type="hidden" name="_wpcf7_container_post" value="0">
-                    <input type="hidden" name="_wpcf7_posted_data_hash" value="">
-                    <input type="hidden" name="_wpcf7_recaptcha_response"
-                      value="03AGdBq245nfBlA-4PfYV9pYgYZusS80N7wGHGd9ySGeXG7Ofhd1rIBj62UKAuAGI6CqFU9b3MrSGwIociEk5M_OKUc9IUw8sqQnX7wXkhuZPGKVS0ZetjCtAo1eOCnKc2_n5jEG-LiOq9lYQthI__3eaDEKYAQA3BSHK3KbCbVsIjUKRXt0mE3GnnVCs7-wKnzJnSzU72h9yZ7DqPsODDu7szsXs7IkttFL2OTgF9NW6I86GHHRgj3lFm6FJuyoPTJW16GCi38xn4PjFB1slutYSd8E6SpzQpLPEUnIhIV_zrbqziZeoyVcrOqhduGlIkF7MgrFkNB6q6trXlSRrARsy7z8jC3QjIgCKaBqRsGUNaHkMSflZV6_2xHj3U1PL56Xwl9_nbkhoQz0vzPwF49vzzG3GH-yV-bL_UAwRKD9RiFqgB4n7h8LSwqFT6ELS2ECGkaaxAXxZXVKzYHmBwNWpSmrM_SAIvmA">
-                  </div>
-                  <p><span class="wpcf7-form-control-wrap text-tour"><input type="text" name="text-tour" value=""
-                        size="40" class="wpcf7-form-control wpcf7-text hidden input_tour_name"
-                        aria-invalid="false"></span><span class="wpcf7-form-control-wrap text-departure"><input
-                        type="text" name="text-departure" value="" size="40"
-                        class="wpcf7-form-control wpcf7-text text_departure hidden" aria-invalid="false"></span><span
-                      class="wpcf7-form-control-wrap text-name"><input type="text" name="text-name" value="" size="40"
-                        class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true"
-                        aria-invalid="false" placeholder="Your name"></span></p>
-                  <h4>Departure</h4>
-                  <p><select name="available_departure_select" class="available_departure_select">
-                      <option value="Jul 13, 2021 - Tue" selected="">Jul 13, 2021 - Tue</option>
-                      <option value="Aug 26, 2021 - Thu">Aug 26, 2021 - Thu</option>
-                    </select></p>
-                  <p><span class="wpcf7-form-control-wrap email-196"><input type="email" name="email-196" value=""
-                        size="40"
-                        class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email"
-                        aria-required="true" aria-invalid="false" placeholder="Your email"></span></p>
-                  <p><span class="wpcf7-form-control-wrap textarea-630"><textarea name="textarea-630" cols="40"
-                        rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false"
-                        placeholder="Your message"></textarea></span></p>
-                  <p><input type="submit" value="Send" onclick="ga('send','event','НижняяФорма','send')"
-                      class="wpcf7-form-control wpcf7-submit cstm_button submit"><span class="ajax-loader"></span></p>
-                  <div class="wpcf7-response-output" role="alert" aria-hidden="true"></div>
-                </form>
-              </div>
+
+              <div class="screen-reader-response" role="alert" aria-live="polite"></div>
+              <form data-request="{{ TourForm }}::onFormSubmit" class="">
+
+                {{ form_token() }}
+
+                <div id="{{ TourForm }}_forms_flash"></div>
+
+                <div class="form-group">
+                  <input type="hidden" id="tourName" name="tour name" class="form-control"
+                    value="{{ TourDetail.recordDetail.name }}">
+                </div>
+
+                <div class="form-group">
+                  <input type="text" id="name" name="name" class="form-control" placeholder="Your name" required>
+                </div>
+
+                <h4>Departure</h4>
+                <div class="form-group">
+
+                  <select name="available_departure_select" class="available_departure_select">
+
+                    <option value="{{TourDetail.recordDetail.date}}">
+                      {{TourDetail.recordDetail.date}}
+                    </option>
+                    {% for schedule in recordDetail.schedule_tours %}
+                    <option value="{{schedule.tour_dateDeparture}}">{{schedule.tour_dateDeparture}}
+                    </option>
+                    {% endfor %}
+
+                  </select>
+
+                </div>
+
+                <div class="form-group">
+                  <input type="text" id="email" name="email" class="form-control" placeholder="Your email" required>
+                </div>
+
+
+
+                <div class="form-group">
+                  <textarea id="message" name="message" class="form-control" cols="40" rows="5"
+                    placeholder="Your message" required></textarea>
+                </div>
+
+                <button id="simpleContactSubmitButton" type="submit" class="btn btn-default cstm_button submit" style="background: #2cb1b6;
+                  border: 0; ">send</button>
+
+
+
+              </form>
+
             </div>
           </div>
         </div>
@@ -602,6 +556,7 @@ emails_date_format = "Y-m-d"
                 <p class="duration"><i class="fa fa-clock-o"></i> {{ record.tour_duration }} days</p>
               </a>
             </div>
+
 
           </div>
           {% endfor %}
@@ -653,6 +608,18 @@ emails_date_format = "Y-m-d"
   });
 
 
+  $('#accordion_group_faq .panel-default .panel-collapse').attr('id',
+    function (i) {
+      return 'faqtitle' + (i + 1);
+    });
+
+  $('#accordion_group_faq .panel-default .panel-collapse').first().addClass('in');
+
+  $('#accordion_group_faq .panel-heading .panel-title a').attr('href', function (i) {
+    return '#faqtitle' + (i + 1);
+  });
+
+
 
 
 
@@ -666,7 +633,16 @@ emails_date_format = "Y-m-d"
   $('#accordion_group_mobile .panel-heading .panel-title a').attr('href', function (i) {
     return '#title_mobile' + (i + 1);
   });
-</script>";s:5:"mtime";i:1611349786;s:6:"markup";s:24719:"<div id="top" class="lazy" style="background-image: url({{ TourDetail.recordDetail.preview_image.getPath }})">
+
+
+
+  $(document).ready(function () {
+    $(".dates_table_archive .group_archive_book_button").click(function () {
+      var text = $(this).attr('id');
+      $(".available_departure_select option[value='" + text + "']").attr('selected', 'selected');
+    });
+  });
+</script>";s:5:"mtime";i:1611516526;s:6:"markup";s:19287:"<div id="top" class="lazy" style="background-image: url({{ TourDetail.recordDetail.preview_image.getPath }})">
 
   <div class="breadcrumb_wrapper">
     <div class="container">
@@ -785,32 +761,56 @@ emails_date_format = "Y-m-d"
 
                   <tbody>
 
-
                     <tr>
                       <td>
-                        <!-- <p> -->
-                          {% for actor in recordDetail.schedule_tours %}
-                            {{actor.tour_dateDeparture}}
-                          
-                          {% endfor %}
+                        <p>
+                          {{TourDetail.recordDetail.date}}
+                        </p>
+                      </td>
 
-                          {{TourDetail.recordDetail.schedule_tours.tour_dateDeparture}}
+                      <td>
+                        <p>
+                          {{TourDetail.recordDetail.date1}}
+                        </p>
                       </td>
                       <td>
-                        <!-- <p>{{ TourDetail.recordDetail.date1 }}</p> -->
+                        <p class="available">{{TourDetail.recordDetail.tour_status}}</p>
                       </td>
                       <td>
-                        <p class="available">{{ TourDetail.recordDetail.tour_status }}</p>
-                      </td>
-                      <td>
-                        <p>${{ TourDetail.recordDetail.tour_cost }} US</p>
+                        <p>${{TourDetail.recordDetail.tour_cost}} US</p>
                       </td>
                       <td>
                         <button class="cstm_button group_archive_book_button"
-                          data-departure="{{ TourDetail.recordDetail.date }}"
-                          data-title="Pearls of Kyrgyzstan: Issyk-Kul and Song-Kul.">Book</button>
+                          id="{{TourDetail.recordDetail.date}}">Book</button>
                       </td>
                     </tr>
+
+
+
+                    {% for schedule in recordDetail.schedule_tours %}
+                    <tr>
+                      <td>
+                        <p>
+                          {{schedule.tour_dateDeparture}}
+                        </p>
+                      </td>
+                      <td>
+                        <p>
+                          {{schedule.tour_dateEnd}}
+                        </p>
+                      </td>
+                      <td>
+                        <p class="available">{{ schedule.status_tour }}</p>
+                      </td>
+                      <td>
+                        <p>${{ schedule.cost_tour }} US</p>
+                      </td>
+                      <td>
+                        <button class="cstm_button group_archive_book_button" id="{{schedule.tour_dateDeparture}}">
+                          Book</button>
+                      </td>
+                    </tr>
+                    {% endfor %}
 
                   </tbody>
 
@@ -907,8 +907,9 @@ emails_date_format = "Y-m-d"
 
 
 
-            <h2><a href="https://kyrgyzstan-tourism.com/group-tours/pearls-of-kyrgyzstan-issyk-kul-and-song-kul/">Pearls
-                of Kyrgyzstan: Issyk-Kul and Song-Kul.</a></h2>
+            <h2><a
+                href="{{TourDetail.property('recordPage') ? TourDetail.property('recordPage')|page({(TourDetail.paramName('recordPageSlug')):(record.slug)})}}">{{ TourDetail.recordDetail.name }}</a>
+            </h2>
 
             <div class="table-responsive">
               <table class="table table-striped table-hover dates_table_archive">
@@ -925,44 +926,70 @@ emails_date_format = "Y-m-d"
                 <tbody>
 
 
+
                   <tr>
                     <td>
-                      <p>Jul 13, 2021 - Tue</p>
+                      <p>
+                        {{TourDetail.recordDetail.date}}
+                      </p>
+                    </td>
+
+                    <td>
+                      <p>
+                        {{TourDetail.recordDetail.date1}}
+                      </p>
                     </td>
                     <td>
-                      <p>Jul 21, 2021 - Wed</p>
+                      <p class="available">{{TourDetail.recordDetail.tour_status}}</p>
                     </td>
                     <td>
-                      <p class="available">Available</p>
+                      <p>${{TourDetail.recordDetail.tour_cost}} US</p>
                     </td>
                     <td>
-                      <p>$890 US</p>
-                    </td>
-                    <td>
-                      <button class="cstm_button group_archive_book_button" data-departure="Jul 13, 2021 - Tue"
-                        data-title="Pearls of Kyrgyzstan: Issyk-Kul and Song-Kul.">Book</button>
+                      <button class="cstm_button group_archive_book_button"
+                        id="{{TourDetail.recordDetail.date}}">Book</button>
                     </td>
                   </tr>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  {% for schedule in recordDetail.schedule_tours %}
                   <tr>
                     <td>
-                      <p>Aug 26, 2021 - Thu</p>
+                      <p>
+                        {{schedule.tour_dateDeparture}}
+                      </p>
                     </td>
                     <td>
-                      <p>Sep 3, 2021 - Fri</p>
+                      <p>
+                        {{schedule.tour_dateEnd}}
+                      </p>
                     </td>
                     <td>
-                      <p class="available">Available</p>
+                      <p class="available">{{ schedule.status_tour }}</p>
                     </td>
                     <td>
-                      <p>$890 US</p>
+                      <p>${{ schedule.cost_tour }} US</p>
                     </td>
                     <td>
-                      <button class="cstm_button group_archive_book_button" data-departure="Aug 26, 2021 - Thu"
-                        data-title="Pearls of Kyrgyzstan: Issyk-Kul and Song-Kul.">Book</button>
+                      <button class="cstm_button group_archive_book_button"
+                        id="{{schedule.tour_dateDeparture}}">Book</button>
                     </td>
                   </tr>
+                  {% endfor %}
+
                 </tbody>
 
               </table>
@@ -970,10 +997,8 @@ emails_date_format = "Y-m-d"
 
 
 
-            <iframe width="100%" height="480"
-              data-src="https://www.google.com/maps/d/embed?mid=10MUqRJ8-Hf8Gcl42TX6sUCcVN-usk2b9&amp;hl=en&amp;z=7"
-              class="lazyload"
-              src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></iframe>
+            <iframe src="{{ TourDetail.recordDetail.itinerary_map }}&amp;hl=en&amp;z=8" width="100%"
+              height="480"></iframe>
             <div class="mobile_book_btn_wrapper text-center">
               <button class="cstm_button mobile_book_btn">Book</button>
             </div>
@@ -996,18 +1021,16 @@ emails_date_format = "Y-m-d"
               <div id="collapseFour" class="panel-collapse collapse">
                 <div class="panel-body">
                   <div class="custom_gallery justified-gallery" style="height: 724px;" lg-uid="lg1">
-                    
+
                     {% for image in recordDetail.images %}
                     <a href="{{image.path}}" class="jg-entry"
                       style="width: 129px; height: 128.5px; top: 6px; left: 6px; opacity: 1;">
                       <img class="ls-is-cached lazyloaded" src="{{image.path}}" alt="">
                     </a>
                     {%endfor%}
-                   
+
                   </div>
-                  <!--                                    <div class="mobile_book_btn_wrapper text-center">-->
-                  <!--                                        <button class="cstm_button mobile_book_btn">Book</button>-->
-                  <!--                                    </div>-->
+
                 </div>
               </div>
             </div>
@@ -1024,130 +1047,30 @@ emails_date_format = "Y-m-d"
         <h2>FAQ</h2>
         <p class="text-right"><button class="cstm_button" id="faqExpand">Expand all</button></p>
         <div class="panel-group" id="accordion_group_faq">
+          {% for faq in recordDetail.faq %}
+
 
           <div class="panel panel-default">
             <div class="panel-heading">
               <h4 class="panel-title">
                 <a data-toggle="collapse" data-parent="#accordion_group_faq" href="#group_collapse_faq_1">
-                  What included and excluded? </a>
+                  {{faq.question}} </a>
               </h4>
             </div>
-            <div id="group_collapse_faq_1" class="panel-collapse collapse in">
+            <div id="group_collapse_faq_1" class="panel-collapse collapse">
               <div class="panel-body">
-                <p><strong>It is included:</strong><br>
-                  – All accommodations (hotels, guest houses, yurt camps) except the first day in Bishkek.</p>
-                <p>– Eng.speaking guide from Airport to Airport</p>
-                <p>– All meals (Lunches, Dinners, and breakfasts)</p>
-                <p>– Mineral waters</p>
-                <p>– Individual transport from the Airport to the Airport</p>
-                <p><strong>It is not included:</strong></p>
-                <p>– Air flight ticket</p>
-                <p>– Bishkek hotel for arrival dates.</p>
-                <p>– Personal expenses</p>
-                <p>– Alcohol drinks</p>
+                {{faq.answer|raw}}
               </div>
             </div>
           </div>
 
 
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion_group_faq" href="#group_collapse_faq_2">
-                  Am I fit enough? </a>
-              </h4>
-            </div>
-            <div id="group_collapse_faq_2" class="panel-collapse collapse ">
-              <div class="panel-body">
-                <p>Song-Kul mountain is a high altitude and some point you prefer to do walking instead of horse riding.
-                  We recommend you train with sport or jogging 2-3 times a week in the run-up to your trip.</p>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion_group_faq" href="#group_collapse_faq_3">
-                  How old do I need to be? </a>
-              </h4>
-            </div>
-            <div id="group_collapse_faq_3" class="panel-collapse collapse ">
-              <div class="panel-body">
-                <p>The minimum age for this tour and horse trek is 18, or 16 with a parent/guardian.</p>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion_group_faq" href="#group_collapse_faq_4">
-                  What kit do I need? </a>
-              </h4>
-            </div>
-            <div id="group_collapse_faq_4" class="panel-collapse collapse ">
-              <div class="panel-body">
-                <p>Clothing for hiking in temperatures from +25C to -0C. A detailed kit list will be sent to you when
-                  you book on.</p>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion_group_faq" href="#group_collapse_faq_5">
-                  How big is the group? </a>
-              </h4>
-            </div>
-            <div id="group_collapse_faq_5" class="panel-collapse collapse ">
-              <div class="panel-body">
-                <p>Most groups have 6-10 people, with a maximum of 12.</p>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion_group_faq" href="#group_collapse_faq_6">
-                  Which hotel do we stay at in Bishkek on the last day, Karakol? </a>
-              </h4>
-            </div>
-            <div id="group_collapse_faq_6" class="panel-collapse collapse ">
-              <div class="panel-body">
-                <p>In Bishkek, we arrange you hotel with 3 stars level (Olive. My hotel …). in Karakol will be Green
-                  Yard, Karagat or similar.</p>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion_group_faq" href="#group_collapse_faq_7">
-                  How to book? </a>
-              </h4>
-            </div>
-            <div id="group_collapse_faq_7" class="panel-collapse collapse ">
-              <div class="panel-body">
-                <p>Contact us and we issue the invoice for 20% payment from the net tour cost. You can send it by bank
-                  transfer. The rest of the payment you can pay in cash upon your arrival day in Bishkek (welcoming the
-                  first day with briefing ). Be informed that the bank transfer fee will be additionally 3% over the
-                  cost of the transaction and it will be on the client (For cash payment no additional costs).</p>
-                <p>&nbsp;</p>
-              </div>
-            </div>
-          </div>
-
+          {% endfor %}
 
         </div>
+
+
+     
 
       </div>
 
@@ -1156,45 +1079,58 @@ emails_date_format = "Y-m-d"
           <div class="col-sm-12">
             <div id="content">
               <h2>Book tour</h2>
-              <div role="form" class="wpcf7" id="wpcf7-f5211-o1" lang="ru-RU" dir="ltr">
-                <div class="screen-reader-response" role="alert" aria-live="polite"></div>
-                <form action="/group-tours/pearls-of-kyrgyzstan-issyk-kul-and-song-kul/#wpcf7-f5211-o1" method="post"
-                  class="wpcf7-form init" novalidate="novalidate">
-                  <div style="display: none;">
-                    <input type="hidden" name="_wpcf7" value="5211">
-                    <input type="hidden" name="_wpcf7_version" value="5.2.2">
-                    <input type="hidden" name="_wpcf7_locale" value="ru_RU">
-                    <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f5211-o1">
-                    <input type="hidden" name="_wpcf7_container_post" value="0">
-                    <input type="hidden" name="_wpcf7_posted_data_hash" value="">
-                    <input type="hidden" name="_wpcf7_recaptcha_response"
-                      value="03AGdBq245nfBlA-4PfYV9pYgYZusS80N7wGHGd9ySGeXG7Ofhd1rIBj62UKAuAGI6CqFU9b3MrSGwIociEk5M_OKUc9IUw8sqQnX7wXkhuZPGKVS0ZetjCtAo1eOCnKc2_n5jEG-LiOq9lYQthI__3eaDEKYAQA3BSHK3KbCbVsIjUKRXt0mE3GnnVCs7-wKnzJnSzU72h9yZ7DqPsODDu7szsXs7IkttFL2OTgF9NW6I86GHHRgj3lFm6FJuyoPTJW16GCi38xn4PjFB1slutYSd8E6SpzQpLPEUnIhIV_zrbqziZeoyVcrOqhduGlIkF7MgrFkNB6q6trXlSRrARsy7z8jC3QjIgCKaBqRsGUNaHkMSflZV6_2xHj3U1PL56Xwl9_nbkhoQz0vzPwF49vzzG3GH-yV-bL_UAwRKD9RiFqgB4n7h8LSwqFT6ELS2ECGkaaxAXxZXVKzYHmBwNWpSmrM_SAIvmA">
-                  </div>
-                  <p><span class="wpcf7-form-control-wrap text-tour"><input type="text" name="text-tour" value=""
-                        size="40" class="wpcf7-form-control wpcf7-text hidden input_tour_name"
-                        aria-invalid="false"></span><span class="wpcf7-form-control-wrap text-departure"><input
-                        type="text" name="text-departure" value="" size="40"
-                        class="wpcf7-form-control wpcf7-text text_departure hidden" aria-invalid="false"></span><span
-                      class="wpcf7-form-control-wrap text-name"><input type="text" name="text-name" value="" size="40"
-                        class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true"
-                        aria-invalid="false" placeholder="Your name"></span></p>
-                  <h4>Departure</h4>
-                  <p><select name="available_departure_select" class="available_departure_select">
-                      <option value="Jul 13, 2021 - Tue" selected="">Jul 13, 2021 - Tue</option>
-                      <option value="Aug 26, 2021 - Thu">Aug 26, 2021 - Thu</option>
-                    </select></p>
-                  <p><span class="wpcf7-form-control-wrap email-196"><input type="email" name="email-196" value=""
-                        size="40"
-                        class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email"
-                        aria-required="true" aria-invalid="false" placeholder="Your email"></span></p>
-                  <p><span class="wpcf7-form-control-wrap textarea-630"><textarea name="textarea-630" cols="40"
-                        rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false"
-                        placeholder="Your message"></textarea></span></p>
-                  <p><input type="submit" value="Send" onclick="ga('send','event','НижняяФорма','send')"
-                      class="wpcf7-form-control wpcf7-submit cstm_button submit"><span class="ajax-loader"></span></p>
-                  <div class="wpcf7-response-output" role="alert" aria-hidden="true"></div>
-                </form>
-              </div>
+
+              <div class="screen-reader-response" role="alert" aria-live="polite"></div>
+              <form data-request="{{ TourForm }}::onFormSubmit" class="">
+
+                {{ form_token() }}
+
+                <div id="{{ TourForm }}_forms_flash"></div>
+
+                <div class="form-group">
+                  <input type="hidden" id="tourName" name="tour name" class="form-control"
+                    value="{{ TourDetail.recordDetail.name }}">
+                </div>
+
+                <div class="form-group">
+                  <input type="text" id="name" name="name" class="form-control" placeholder="Your name" required>
+                </div>
+
+                <h4>Departure</h4>
+                <div class="form-group">
+
+                  <select name="available_departure_select" class="available_departure_select">
+
+                    <option value="{{TourDetail.recordDetail.date}}">
+                      {{TourDetail.recordDetail.date}}
+                    </option>
+                    {% for schedule in recordDetail.schedule_tours %}
+                    <option value="{{schedule.tour_dateDeparture}}">{{schedule.tour_dateDeparture}}
+                    </option>
+                    {% endfor %}
+
+                  </select>
+
+                </div>
+
+                <div class="form-group">
+                  <input type="text" id="email" name="email" class="form-control" placeholder="Your email" required>
+                </div>
+
+
+
+                <div class="form-group">
+                  <textarea id="message" name="message" class="form-control" cols="40" rows="5"
+                    placeholder="Your message" required></textarea>
+                </div>
+
+                <button id="simpleContactSubmitButton" type="submit" class="btn btn-default cstm_button submit" style="background: #2cb1b6;
+                  border: 0; ">send</button>
+
+
+
+              </form>
+
             </div>
           </div>
         </div>
@@ -1226,6 +1162,7 @@ emails_date_format = "Y-m-d"
                 <p class="duration"><i class="fa fa-clock-o"></i> {{ record.tour_duration }} days</p>
               </a>
             </div>
+
 
           </div>
           {% endfor %}
@@ -1277,6 +1214,18 @@ emails_date_format = "Y-m-d"
   });
 
 
+  $('#accordion_group_faq .panel-default .panel-collapse').attr('id',
+    function (i) {
+      return 'faqtitle' + (i + 1);
+    });
+
+  $('#accordion_group_faq .panel-default .panel-collapse').first().addClass('in');
+
+  $('#accordion_group_faq .panel-heading .panel-title a').attr('href', function (i) {
+    return '#faqtitle' + (i + 1);
+  });
+
+
 
 
 
@@ -1290,4 +1239,13 @@ emails_date_format = "Y-m-d"
   $('#accordion_group_mobile .panel-heading .panel-title a').attr('href', function (i) {
     return '#title_mobile' + (i + 1);
   });
-</script>";s:4:"code";N;s:5:"title";s:18:"group-tours-detail";s:3:"url";s:25:"/group-tours-detail/:slug";s:6:"layout";s:11:"group-tours";s:9:"is_hidden";s:1:"0";s:23:"recordDetail TourDetail";a:7:{s:10:"activeOnly";s:1:"0";s:10:"recordSlug";s:11:"{{ :slug }}";s:8:"areaSlug";s:4:"tury";s:12:"categorySlug";s:21:"{{ :gruppovye-tury }}";s:15:"useMainCategory";s:1:"1";s:12:"categoryPage";s:1:"0";s:16:"categoryPageSlug";s:15:"{{ :category }}";}s:18:"records GroupTours";a:12:{s:10:"activeOnly";s:1:"0";s:8:"areaSlug";s:1:"0";s:12:"categorySlug";s:14:"gruppovye-tury";s:15:"useMainCategory";s:1:"1";s:18:"useMultiCategories";s:1:"1";s:7:"tagSlug";s:10:"{{ :tag }}";s:10:"recordPage";s:18:"group-tours-detail";s:14:"recordPageSlug";s:11:"{{ :slug }}";s:5:"limit";s:2:"10";s:8:"pageSlug";s:11:"{{ :page }}";s:7:"orderBy";s:4:"name";s:16:"orderByDirection";s:3:"ASC";}s:20:"genericForm TourForm";a:10:{s:5:"group";s:19:"Бронь тура";s:16:"messages_success";s:65:"Ваша форма была успешно отправлена!";s:15:"messages_errors";s:61:"В вашей заявке содержатся ошибки.";s:13:"inline_errors";s:8:"disabled";s:13:"sanitize_data";s:8:"disabled";s:12:"anonymize_ip";s:8:"disabled";s:15:"recaptcha_theme";s:5:"light";s:14:"recaptcha_type";s:5:"image";s:14:"recaptcha_size";s:6:"normal";s:18:"emails_date_format";s:5:"Y-m-d";}}}
+
+
+
+  $(document).ready(function () {
+    $(".dates_table_archive .group_archive_book_button").click(function () {
+      var text = $(this).attr('id');
+      $(".available_departure_select option[value='" + text + "']").attr('selected', 'selected');
+    });
+  });
+</script>";s:4:"code";N;s:5:"title";s:18:"Group-tours-detail";s:3:"url";s:25:"/group-tours-detail/:slug";s:6:"layout";s:11:"group-tours";s:9:"is_hidden";s:1:"0";s:23:"recordDetail TourDetail";a:7:{s:10:"activeOnly";s:1:"0";s:10:"recordSlug";s:11:"{{ :slug }}";s:8:"areaSlug";s:4:"tury";s:12:"categorySlug";s:21:"{{ :gruppovye-tury }}";s:15:"useMainCategory";s:1:"1";s:12:"categoryPage";s:1:"0";s:16:"categoryPageSlug";s:15:"{{ :category }}";}s:18:"records GroupTours";a:11:{s:10:"activeOnly";s:1:"0";s:8:"areaSlug";s:1:"0";s:12:"categorySlug";s:14:"gruppovye-tury";s:18:"useMultiCategories";s:1:"1";s:7:"tagSlug";s:10:"{{ :tag }}";s:10:"recordPage";s:18:"group-tours-detail";s:14:"recordPageSlug";s:11:"{{ :slug }}";s:5:"limit";s:2:"10";s:8:"pageSlug";s:11:"{{ :page }}";s:7:"orderBy";s:4:"name";s:16:"orderByDirection";s:3:"ASC";}s:11:"genericForm";a:9:{s:16:"messages_success";s:65:"Ваша форма была успешно отправлена!";s:15:"messages_errors";s:61:"В вашей заявке содержатся ошибки.";s:13:"inline_errors";s:8:"disabled";s:13:"sanitize_data";s:8:"disabled";s:12:"anonymize_ip";s:8:"disabled";s:15:"recaptcha_theme";s:5:"light";s:14:"recaptcha_type";s:5:"image";s:14:"recaptcha_size";s:6:"normal";s:18:"emails_date_format";s:5:"Y-m-d";}}}

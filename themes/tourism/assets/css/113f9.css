@@ -1329,7 +1329,7 @@ textarea {
   height: 30px;
   background-size: cover;
   background-position: center;
-  background-image: url("/wp-content/themes/native/img/arrow.svg")
+  background-image: url("../../assets/images/arrow.svg")
 }
 
 .panel-default .panel-heading a:hover {
@@ -2021,6 +2021,10 @@ textarea {
   #archive_content {
     margin-right: -15px;
     margin-left: -15px
+  }
+
+  #archive_content .row {
+    display: flex;
   }
 
   .table>thead>tr>th {

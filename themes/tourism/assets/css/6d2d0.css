@@ -14735,3 +14735,19 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
     overflow-x: auto
   }
 }
+
+#archive_content .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 992px) {
+  #archive_content .row .col-sm-4 {
+    width: 50% !important;
+  }
+}
+@media (max-width: 460px) {
+  #archive_content .row .col-sm-4 {
+    width: 100% !important;
+  }
+}

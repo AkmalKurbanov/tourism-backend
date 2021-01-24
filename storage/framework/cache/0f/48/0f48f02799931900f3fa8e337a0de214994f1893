@@ -1,11 +1,11 @@
-1611349932a:1:{s:9:"menu.yaml";a:7:{s:8:"fileName";s:9:"menu.yaml";s:7:"content";s:1620:"items:
+1611521510a:1:{s:9:"menu.yaml";a:7:{s:8:"fileName";s:9:"menu.yaml";s:7:"content";s:1500:"items:
     -
         title: Home
         nesting: null
-        type: url
-        url: /tourism
+        type: cms-page
+        url: null
         code: ''
-        reference: null
+        reference: home
         cmsPage: null
         replace: null
         viewBag:
@@ -14,24 +14,22 @@
             isExternal: '0'
     -
         title: Tours
-        nesting: null
-        type: all-static-pages
-        url: null
+        type: cms-page
         code: ''
-        reference: null
-        cmsPage: null
-        replace: 1
+        reference: tours
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
         title: 'Group tours'
-        nesting: 0
-        type: static-page
+        nesting: null
+        type: cms-page
+        url: null
         code: ''
         reference: group-tours
-        replace: 1
+        cmsPage: null
+        replace: null
         viewBag:
             isHidden: '0'
             cssClass: ''
@@ -39,10 +37,10 @@
     -
         title: Blog
         nesting: null
-        type: url
-        url: /blog
+        type: cms-page
+        url: null
         code: ''
-        reference: null
+        reference: blog
         cmsPage: null
         replace: null
         viewBag:
@@ -53,10 +51,8 @@
         title: Kyrgyzstan
         nesting: 0
         type: static-page
-        url: null
         code: ''
         reference: kyrgyzstan
-        cmsPage: null
         replace: 1
         viewBag:
             isHidden: '0'
@@ -66,14 +62,12 @@
         title: About
         nesting: 0
         type: static-page
-        url: null
         code: ''
         reference: about
-        cmsPage: null
         replace: 1
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
 name: menu
-";s:5:"mtime";i:1611302446;s:6:"markup";N;s:4:"code";N;s:4:"name";N;s:5:"items";a:0:{}}}
+";s:5:"mtime";i:1611425382;s:6:"markup";N;s:4:"code";N;s:4:"name";N;s:5:"items";a:0:{}}}

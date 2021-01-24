@@ -58,20 +58,20 @@ emails_date_format = "Y-m-d"
   {% partial 'site/head_styles_index_page/style6' %}
   {% partial 'site/head_scripts_index_page/script5' %}
   {% styles %}
-  	<style>
-  	  #map {
-  	    height: 100%;
-  	  }
+  <style>
+    #map {
+      height: 100%;
+    }
 
-  	  /* Optional: Makes the sample page fill the window. */
-  	  html,
-  	  body {
-  	    height: 100%;
-  	    margin: 0;
-  	    padding: 0;
-  	  }
-  	</style>
-  
+    /* Optional: Makes the sample page fill the window. */
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+
 </head>
 
 <body>
@@ -200,60 +200,65 @@ emails_date_format = "Y-m-d"
   </style>
   <!-- Content -->
 
-    
-    <div id="top" class="small_top lazy" style="background-image: url(&quot;https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Sunset_1920.jpg&quot;);" data-bg="url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Sunset_1920.jpg)" data-was-processed="true">
+
+  <div id="top" class="small_top lazy"
+    style="background-image: url(&quot;https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Sunset_1920.jpg&quot;);"
+    data-bg="url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Sunset_1920.jpg)" data-was-processed="true">
 
     <div class="breadcrumb_wrapper">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <p id="breadcrumbs"><span><span><a href="https://kyrgyzstan-tourism.com/">Home</a> / <span class="breadcrumb_last" aria-current="page">{{this.page.title}}</span></span></span></p>                    <div class="line_helper" style="background: rgba(255,255,255,.3)"></div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <p id="breadcrumbs"><span><span><a href="https://kyrgyzstan-tourism.com/">Home</a> / <span
+                    class="breadcrumb_last" aria-current="page">{{this.page.title}}</span></span></span></p>
+            <div class="line_helper" style="background: rgba(255,255,255,.3)"></div>
+          </div>
         </div>
+      </div>
     </div>
 
     <div class="desc">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 text-center">
-                    <h1 id="single_tour_title">{{this.page.title}}</h1>
-                </div>
-            </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 text-center">
+            <h1 id="single_tour_title">{{this.page.title}}</h1>
+          </div>
         </div>
+      </div>
     </div>
-</div>
-  
+  </div>
 
-<div class="container">
+
+  <div class="container">
     <div class="row">
 
-        <div class="col-sm-9">
-            <div id="content">
-                
-            
-                    {% page %}
-                    
-                <div class="line_helper" style="background: #e4e4e4"></div>
-                <p><a class="cstm_button" href="{{ 'tours' | page }}">View all tours</a></p>
+      <div class="col-sm-9">
+        <div id="content">
 
-            </div>
+
+          {% page %}
+
+          <div class="line_helper" style="background: #e4e4e4"></div>
+          <p><a class="cstm_button" href="{{ 'tours' | page }}">View all tours</a></p>
+
         </div>
+      </div>
 
-        <div class="col-sm-3">
-            <div class="sidebar_wrapper">
-                
-<div id="sidebar">
+      <div class="col-sm-3">
+        <div class="sidebar_wrapper">
 
-    {% partial 'site/sidebar' %}
+          <div id="sidebar">
 
-</div>            </div>
+            {% partial 'site/sidebar' %}
+
+          </div>
         </div>
+      </div>
 
     </div>
-</div>
+  </div>
 
-
+  <button id="toTop" style="display: none;"><i class="fa fa-arrow-up"></i></button>
   <!-- Footer -->
   <footer id="footer">
     {% partial 'site/footer' %}

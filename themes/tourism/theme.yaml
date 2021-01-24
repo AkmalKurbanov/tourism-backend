@@ -38,6 +38,15 @@ form:
       mode: image
       imageHeight: 260
       imageWidth: 260
+    introduction_logo:
+      label: Logo в блоке с краткой информацей
+      type: fileupload
+      mode: image
+      imageHeight: 260
+      imageWidth: 260
+    introduction_text:
+      label: Вступителный текс в блоке с краткой информацей
+      type: richeditor     
     social:
       type: repeater
       label: Социальные сети
@@ -56,4 +65,4 @@ form:
             label: Ссылка социальной сети
             type: text
             placeholder: https://www.instagram.com/
-                      
+                     
