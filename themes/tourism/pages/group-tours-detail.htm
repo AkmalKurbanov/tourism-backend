@@ -6,7 +6,7 @@ is_hidden = 0
 [recordDetail TourDetail]
 activeOnly = 0
 recordSlug = "{{ :slug }}"
-areaSlug = "tury"
+areaSlug = 0
 categorySlug = "{{ :gruppovye-tury }}"
 useMainCategory = 1
 categoryPage = 0
@@ -35,6 +35,19 @@ recaptcha_theme = "light"
 recaptcha_type = "image"
 recaptcha_size = "normal"
 emails_date_format = "Y-m-d"
+
+[genericForm BottomForm]
+messages_success = "Ваша форма была успешно отправлена!"
+messages_errors = "В вашей заявке содержатся ошибки."
+inline_errors = "disabled"
+sanitize_data = "disabled"
+anonymize_ip = "disabled"
+recaptcha_theme = "light"
+recaptcha_type = "image"
+recaptcha_size = "normal"
+emails_date_format = "Y-m-d"
+
+[siteSearchInclude]
 ==
 <div id="top" class="lazy" style="background-image: url({{ TourDetail.recordDetail.preview_image.getPath }})">
 
@@ -42,8 +55,8 @@ emails_date_format = "Y-m-d"
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
-          <p id="breadcrumbs"><span><span><a href="https://kyrgyzstan-tourism.com/">Home</a> / <span
-                  class="breadcrumb_last" aria-current="page">{{this.page.title}}</span></span></span></p>
+          <p id="breadcrumbs"><span><span><a href="/">Home</a> / <a href="/group-tours">Group tours</a> / <span
+                  class="breadcrumb_last" aria-current="page">{{ TourDetail.recordDetail.name }}</span></span></span></p>
           <div class="line_helper" style="background: rgba(255,255,255,.3)"></div>
         </div>
       </div>
@@ -233,11 +246,12 @@ emails_date_format = "Y-m-d"
                 style="height: 724px; display:flex; flex-direction: row; flex-wrap: wrap;" lg-uid="lg0">
 
                 {% for image in recordDetail.images %}
-                <a href="{{image.path}}" class="jg-entry"
+                <a data-fancybox="gallery" href="{{image.path}}" class="jg-entry"
                   style="width: 129px; height: 128.5px; top: 6px; left: 6px; opacity: 1;">
                   <img class="ls-is-cached lazyloaded" src="{{image.path}}" alt="">
                 </a>
                 {%endfor%}
+                
               </div>
             </div>
           </div>
@@ -416,12 +430,12 @@ emails_date_format = "Y-m-d"
                 <div class="panel-body">
                   <div class="custom_gallery justified-gallery" style="height: 724px;" lg-uid="lg1">
 
-                    {% for image in recordDetail.images %}
-                    <a href="{{image.path}}" class="jg-entry"
-                      style="width: 129px; height: 128.5px; top: 6px; left: 6px; opacity: 1;">
-                      <img class="ls-is-cached lazyloaded" src="{{image.path}}" alt="">
-                    </a>
-                    {%endfor%}
+                         {% for image in recordDetail.images %}
+                <a data-fancybox="gallery" href="{{image.path}}" class="jg-entry"
+                  style="width: 129px; height: 128.5px; top: 6px; left: 6px; opacity: 1;">
+                  <img class="ls-is-cached lazyloaded" src="{{image.path}}" alt="">
+                </a>
+                {%endfor%}
 
                   </div>
 
@@ -475,11 +489,11 @@ emails_date_format = "Y-m-d"
               <h2>Book tour</h2>
 
               <div class="screen-reader-response" role="alert" aria-live="polite"></div>
-              <form data-request="{{ TourForm }}::onFormSubmit" class="">
+              <form data-request="{{ BottomForm }}::onFormSubmit" class="">
 
                 {{ form_token() }}
 
-                <div id="{{ TourForm }}_forms_flash"></div>
+                <div id="{{ BottomForm }}_forms_flash"></div>
 
                 <div class="form-group">
                   <input type="hidden" id="tourName" name="tour name" class="form-control"

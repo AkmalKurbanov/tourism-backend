@@ -1,0 +1,473 @@
+1611923559a:1:{s:15:"static-page.htm";a:9:{s:8:"fileName";s:15:"static-page.htm";s:7:"content";s:7107:"[fontAwesomeCssLink]
+
+[staticPage]
+useContent = 1
+default = 0
+
+[staticMenu]
+code = "menu"
+
+[genericForm]
+messages_success = "Ваша форма была успешно отправлена!"
+messages_errors = "В вашей заявке содержатся ошибки."
+inline_errors = "disabled"
+sanitize_data = "disabled"
+anonymize_ip = "disabled"
+recaptcha_theme = "light"
+recaptcha_type = "image"
+recaptcha_size = "normal"
+emails_date_format = "Y-m-d"
+==
+{variable name="tagline" label="Tagline" tab="Header" type="text"}{/variable}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>{{this.theme.site_name}} - {{ this.page.title }}</title>
+  <meta name="description" content="{{ this.page.meta_description }}">
+  <meta name="title" content="{{ this.page.meta_title }}">
+  <meta name="author" content="OctoberCMS">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="OctoberCMS">
+  <link rel="icon" type="image/png" href="{{ 'assets/images/october.png'|theme }}">
+
+<link href="{{ 'assets/css/6d2d0.css'|theme }}" rel="stylesheet">
+ <link href="{{ 'assets/css/113f9.css'|theme }}" rel="stylesheet">
+   
+  <link rel='stylesheet' id='font-style-css'
+    href='https://fonts.googleapis.com/css?family=Lato%3A400%2C700%2C900&#038;subset=latin-ext&#038;ver=5.3.2'
+    type='text/css' media='all' />
+  <link rel='stylesheet' id='font-style-2-css'
+    href='https://fonts.googleapis.com/css?family=Noto+Serif%3A400%2C700&#038;ver=5.3.2' type='text/css' media='all' />
+    <script src="{{ 'assets/javascript/c6d25.js'|theme }}"></script>
+
+  {% styles %}
+</head>
+
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe height="0" width="0" style="display:none;visibility:hidden"
+      data-src="https://www.googletagmanager.com/ns.html?id=GTM-5LMH84W" class="lazyload"
+      src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  {% partial 'site/modal_window' %}
+
+  <!-- Header -->
+  <header id="header">
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-sm-6">
+          <div class="phone">
+
+
+            <phone><a href="tel:{{this.theme.phone1}}">{{this.theme.phone1}}</a></phone>
+
+
+
+          </div>
+        </div>
+
+        <div class="col-sm-6 text-right social_top">
+
+
+
+
+
+
+          <div class="social">
+            {% for item in this.theme.social %}
+            <a href="{{item.url}}" target="_blank"><i class="{{item.awesome_icon}}"></i></a>
+            {%endfor%}
+
+
+          </div>
+
+          <button class="blank search_button" id="show_search" data-toggle="modal" data-target="#modal_search"><i
+              class="fa fa-search"></i></button>
+        </div>
+
+      </div>
+
+      <div class="row">
+
+        <div class="col-sm-12">
+          <div class="line_helper"></div>
+        </div>
+
+      </div>
+
+      <div class="row">
+
+        <div class="col-sm-3">
+          <a href="/" class="logo">
+            <img src="{{this.theme.logo.path}}" alt="">
+          </a>
+        </div>
+
+        <div class="col-sm-9">
+          <nav class="navbar" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse"
+                data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+
+
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav navbar-right">
+
+
+                {% if staticMenu.menuItems %}
+
+
+                {% partial staticMenu ~ "::items" items=staticMenu.menuItems %}
+
+                {% endif %}
+
+
+
+              </ul>
+              </li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </nav>
+        </div>
+
+      </div>
+
+    </div>
+  </header>
+  <script>
+    $(function () {
+      $('.nav.navbar-nav.navbar-right li:has(ul)').addClass('dropdown');
+      $('.nav.navbar-nav.navbar-right .dropdown a').append('<span class="caret"></span>').addClass('event-off');
+      $('.nav.navbar-nav.navbar-right li ul').addClass('dropdown-menu');
+      $('.nav.navbar-nav.navbar-right li .dropdown-menu a').removeClass('event-off');
+      $('.nav.navbar-nav.navbar-right .dropdown .event-off').on('click', function (e) {
+        e.preventDefault();
+      });
+    });
+  </script>
+  <style>
+    .nav.navbar-nav.navbar-right .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+
+    .nav.navbar-nav.navbar-right .dropdown ul li a .caret {
+      display: none;
+    }
+  </style>
+  <!-- Content -->
+
+
+  <div id="top" class="small_top lazy"
+    style="background-image: url(&quot;https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Sunset_1920.jpg&quot;);"
+    data-bg="url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Sunset_1920.jpg)" data-was-processed="true">
+
+
+    <div class="breadcrumb_wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <p id="breadcrumbs"><span><span><a href="https://kyrgyzstan-tourism.com/">Home</a> / <span
+                    class="breadcrumb_last" aria-current="page">{{this.page.title}}</span></span></span></p>
+            <div class="line_helper" style="background: rgba(255,255,255,.3)"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="desc">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 text-center">
+            <h1 id="single_tour_title">{{this.page.title}}</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="row">
+
+      <div class="col-sm-9">
+        <div id="content">
+
+
+          {% page %}
+
+          <div class="line_helper" style="background: #e4e4e4"></div>
+          <p><a class="cstm_button" href="{{ 'tours' | page }}">View all tours</a></p>
+
+        </div>
+      </div>
+
+      <div class="col-sm-3">
+        <div class="sidebar_wrapper">
+
+          <div id="sidebar">
+
+            {% partial 'site/sidebar_without_date' %}
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <button id="toTop" style="display: none;"><i class="fa fa-arrow-up"></i></button>
+  <!-- Footer -->
+  <footer id="footer">
+    {% partial 'site/footer' %}
+  </footer>
+
+ <!-- Scripts -->
+
+ <script src="{{ 'assets/javascript/e0855.js'|theme }}"></script>
+  {% framework extras %}
+  {% scripts %}
+
+</body>
+
+</html>";s:5:"mtime";i:1611922523;s:6:"markup";s:6624:"{variable name="tagline" label="Tagline" tab="Header" type="text"}{/variable}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>{{this.theme.site_name}} - {{ this.page.title }}</title>
+  <meta name="description" content="{{ this.page.meta_description }}">
+  <meta name="title" content="{{ this.page.meta_title }}">
+  <meta name="author" content="OctoberCMS">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="OctoberCMS">
+  <link rel="icon" type="image/png" href="{{ 'assets/images/october.png'|theme }}">
+
+<link href="{{ 'assets/css/6d2d0.css'|theme }}" rel="stylesheet">
+ <link href="{{ 'assets/css/113f9.css'|theme }}" rel="stylesheet">
+   
+  <link rel='stylesheet' id='font-style-css'
+    href='https://fonts.googleapis.com/css?family=Lato%3A400%2C700%2C900&#038;subset=latin-ext&#038;ver=5.3.2'
+    type='text/css' media='all' />
+  <link rel='stylesheet' id='font-style-2-css'
+    href='https://fonts.googleapis.com/css?family=Noto+Serif%3A400%2C700&#038;ver=5.3.2' type='text/css' media='all' />
+    <script src="{{ 'assets/javascript/c6d25.js'|theme }}"></script>
+
+  {% styles %}
+</head>
+
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe height="0" width="0" style="display:none;visibility:hidden"
+      data-src="https://www.googletagmanager.com/ns.html?id=GTM-5LMH84W" class="lazyload"
+      src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  {% partial 'site/modal_window' %}
+
+  <!-- Header -->
+  <header id="header">
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-sm-6">
+          <div class="phone">
+
+
+            <phone><a href="tel:{{this.theme.phone1}}">{{this.theme.phone1}}</a></phone>
+
+
+
+          </div>
+        </div>
+
+        <div class="col-sm-6 text-right social_top">
+
+
+
+
+
+
+          <div class="social">
+            {% for item in this.theme.social %}
+            <a href="{{item.url}}" target="_blank"><i class="{{item.awesome_icon}}"></i></a>
+            {%endfor%}
+
+
+          </div>
+
+          <button class="blank search_button" id="show_search" data-toggle="modal" data-target="#modal_search"><i
+              class="fa fa-search"></i></button>
+        </div>
+
+      </div>
+
+      <div class="row">
+
+        <div class="col-sm-12">
+          <div class="line_helper"></div>
+        </div>
+
+      </div>
+
+      <div class="row">
+
+        <div class="col-sm-3">
+          <a href="/" class="logo">
+            <img src="{{this.theme.logo.path}}" alt="">
+          </a>
+        </div>
+
+        <div class="col-sm-9">
+          <nav class="navbar" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse"
+                data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+
+
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav navbar-right">
+
+
+                {% if staticMenu.menuItems %}
+
+
+                {% partial staticMenu ~ "::items" items=staticMenu.menuItems %}
+
+                {% endif %}
+
+
+
+              </ul>
+              </li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </nav>
+        </div>
+
+      </div>
+
+    </div>
+  </header>
+  <script>
+    $(function () {
+      $('.nav.navbar-nav.navbar-right li:has(ul)').addClass('dropdown');
+      $('.nav.navbar-nav.navbar-right .dropdown a').append('<span class="caret"></span>').addClass('event-off');
+      $('.nav.navbar-nav.navbar-right li ul').addClass('dropdown-menu');
+      $('.nav.navbar-nav.navbar-right li .dropdown-menu a').removeClass('event-off');
+      $('.nav.navbar-nav.navbar-right .dropdown .event-off').on('click', function (e) {
+        e.preventDefault();
+      });
+    });
+  </script>
+  <style>
+    .nav.navbar-nav.navbar-right .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+
+    .nav.navbar-nav.navbar-right .dropdown ul li a .caret {
+      display: none;
+    }
+  </style>
+  <!-- Content -->
+
+
+  <div id="top" class="small_top lazy"
+    style="background-image: url(&quot;https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Sunset_1920.jpg&quot;);"
+    data-bg="url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Sunset_1920.jpg)" data-was-processed="true">
+
+
+    <div class="breadcrumb_wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <p id="breadcrumbs"><span><span><a href="https://kyrgyzstan-tourism.com/">Home</a> / <span
+                    class="breadcrumb_last" aria-current="page">{{this.page.title}}</span></span></span></p>
+            <div class="line_helper" style="background: rgba(255,255,255,.3)"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="desc">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 text-center">
+            <h1 id="single_tour_title">{{this.page.title}}</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="row">
+
+      <div class="col-sm-9">
+        <div id="content">
+
+
+          {% page %}
+
+          <div class="line_helper" style="background: #e4e4e4"></div>
+          <p><a class="cstm_button" href="{{ 'tours' | page }}">View all tours</a></p>
+
+        </div>
+      </div>
+
+      <div class="col-sm-3">
+        <div class="sidebar_wrapper">
+
+          <div id="sidebar">
+
+            {% partial 'site/sidebar_without_date' %}
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <button id="toTop" style="display: none;"><i class="fa fa-arrow-up"></i></button>
+  <!-- Footer -->
+  <footer id="footer">
+    {% partial 'site/footer' %}
+  </footer>
+
+ <!-- Scripts -->
+
+ <script src="{{ 'assets/javascript/e0855.js'|theme }}"></script>
+  {% framework extras %}
+  {% scripts %}
+
+</body>
+
+</html>";s:4:"code";N;s:18:"fontAwesomeCssLink";a:0:{}s:10:"staticPage";a:2:{s:10:"useContent";s:1:"1";s:7:"default";s:1:"0";}s:10:"staticMenu";a:1:{s:4:"code";s:4:"menu";}s:11:"genericForm";a:9:{s:16:"messages_success";s:65:"Ваша форма была успешно отправлена!";s:15:"messages_errors";s:61:"В вашей заявке содержатся ошибки.";s:13:"inline_errors";s:8:"disabled";s:13:"sanitize_data";s:8:"disabled";s:12:"anonymize_ip";s:8:"disabled";s:15:"recaptcha_theme";s:5:"light";s:14:"recaptcha_type";s:5:"image";s:14:"recaptcha_size";s:6:"normal";s:18:"emails_date_format";s:5:"Y-m-d";}}}

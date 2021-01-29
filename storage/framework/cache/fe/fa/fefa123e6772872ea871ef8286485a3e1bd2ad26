@@ -1,0 +1,43 @@
+1611924013a:1:{s:21:"site/modal_window.htm";a:8:{s:8:"fileName";s:21:"site/modal_window.htm";s:7:"content";s:705:"[viewBag]
+
+[searchInput]
+useAutoComplete = 1
+autoCompleteResultCount = 5
+showProviderBadge = 1
+searchPage = "searchresults.htm"
+
+[siteSearchInclude]
+==
+<div class="modal fade in" id="modal_search" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div id="search_form">
+
+<form action="{{ 'search' | page }}" method="get">
+    <input name="q" type="text" placeholder="What are you looking for?" autocomplete="off">
+     <button type="submit" id="search_button"><i class="fa fa-search"></i></button>
+</form>
+        
+
+        
+         </div>
+      </div>
+    </div>
+  </div>";s:5:"mtime";i:1611851484;s:6:"markup";s:543:"<div class="modal fade in" id="modal_search" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div id="search_form">
+
+<form action="{{ 'search' | page }}" method="get">
+    <input name="q" type="text" placeholder="What are you looking for?" autocomplete="off">
+     <button type="submit" id="search_button"><i class="fa fa-search"></i></button>
+</form>
+        
+
+        
+         </div>
+      </div>
+    </div>
+  </div>";s:4:"code";N;s:7:"viewBag";a:0:{}s:11:"searchInput";a:4:{s:15:"useAutoComplete";s:1:"1";s:23:"autoCompleteResultCount";s:1:"5";s:17:"showProviderBadge";s:1:"1";s:10:"searchPage";s:17:"searchresults.htm";}s:17:"siteSearchInclude";a:0:{}}}

@@ -1,9 +1,9 @@
 [records TypeTours]
 activeOnly = 0
 areaSlug = 0
-categorySlug = "vid-tura"
-useMainCategory = 0
-useMultiCategories = 1
+categorySlug = "tury"
+useMainCategory = 1
+useMultiCategories = 0
 tagSlug = "{{ :tag }}"
 recordPage = "type-tours"
 recordPageSlug = "{{ :slug }}"
@@ -11,8 +11,9 @@ limit = 9
 pageSlug = "{{ :page }}"
 orderBy = "name"
 orderByDirection = "ASC"
-==
 
+[viewBag]
+==
 {% for record in TypeTours.items %}
 <div class="item lazy" style="background-image: url(&quot;{{ record.preview_image.getPath }}&quot;);"
   data-bg="url({{ record.preview_image.getPath }})" data-was-processed="true">
@@ -23,7 +24,7 @@ orderByDirection = "ASC"
           <h2>{{ record.name }}</h2>
           <h3>{{ record.description }}</h3>
           <div class="button_wrapper">
-            <a href="{{GroupTours.property('recordPage') ? GroupTours.property('recordPage')|page({(GroupTours.paramName('recordPageSlug')):(record.slug)})}}"
+            <a href="{{TypeTours.property('recordPage') ? TypeTours.property('recordPage')|page({(TypeTours.paramName('recordPageSlug')):(record.slug)})}}"
               class="cstm_button"><i class="fa fa-eye"></i>
               view tours</a>
           </div>
@@ -38,7 +39,3 @@ orderByDirection = "ASC"
 <script>
   $('#front_slider .item.lazy').first().addClass('active');
 </script>
-
-
-
-

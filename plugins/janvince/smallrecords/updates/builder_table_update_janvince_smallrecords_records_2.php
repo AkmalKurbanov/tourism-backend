@@ -31,12 +31,15 @@ class BuilderTableUpdateJanvinceSmallrecordsRecords2 extends Migration
             $table->integer('created_by')->default(null)->change();
             $table->integer('updated_by')->default(null)->change();
             $table->dateTime('date1')->default(null)->change();
+            $table->dateTime('date2')->default(null)->change();
             $table->dateTime('schedule_tours')->default(null)->change();
             $table->dateTime('faq')->default(null)->change();
             $table->dateTime('tour_cost')->default(null)->change();
             $table->dateTime('tour_duration')->default(null)->change();
             $table->dateTime('tour_status')->default(null)->change();
             $table->dateTime('itinerary_desc')->default(null)->change();
+            $table->dateTime('sights_editor')->default(null)->change();
+            $table->dateTime('sights_map')->default(null)->change();
             $table->dateTime('itinerary_map')->default(null)->change();
         });
     }
@@ -67,12 +70,15 @@ class BuilderTableUpdateJanvinceSmallrecordsRecords2 extends Migration
             $table->integer('created_by')->default(NULL)->change();
             $table->integer('updated_by')->default(NULL)->change();
             $table->dateTime('date1')->default('NULL')->change();
+            $table->dateTime('date2')->default('NULL')->change();
             $table->dateTime('schedule_tours')->default('NULL')->change();
             $table->dateTime('faq')->default('NULL')->change();
             $table->dateTime('tour_cost')->default('NULL')->change();
             $table->dateTime('tour_duration')->default('NULL')->change();
             $table->dateTime('tour_status')->default('NULL')->change();
             $table->dateTime('itinerary_desc')->default('NULL')->change();
+            $table->dateTime('sights_editor')->default('NULL')->change();
+            $table->dateTime('sights_map')->default('NULL')->change();
             $table->dateTime('itinerary_map')->default('NULL')->change();
         });
     }

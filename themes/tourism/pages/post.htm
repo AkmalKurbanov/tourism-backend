@@ -17,6 +17,8 @@ recaptcha_theme = "light"
 recaptcha_type = "image"
 recaptcha_size = "normal"
 emails_date_format = "Y-m-d"
+
+[siteSearchInclude]
 ==
 {% set post = blogPost.post %}
 
@@ -30,9 +32,9 @@ emails_date_format = "Y-m-d"
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
-          <p id="breadcrumbs"><span><span><a href="https://kyrgyzstan-tourism.com/">Home</a> / <span><a
-                    href="https://kyrgyzstan-tourism.com/blog/">Blog</a> / <span class="breadcrumb_last"
-                    aria-current="page">Wildlife photography expedition in the Tien-Shan
+          <p id="breadcrumbs"><span><span><a href="/">Home</a> / <span><a
+                    href="/blog/">Blog</a> / <span class="breadcrumb_last"
+                    aria-current="page">{{ post.title }}
                     mountains.</span></span></span></span></p>
           <div class="line_helper" style="background: rgba(255,255,255,.3)"></div>
         </div>
@@ -59,12 +61,14 @@ emails_date_format = "Y-m-d"
         <p><span style="font-weight: 400;">
 
             {{post.content_html | raw }}
+            
 
           </span></p>
         <p><em>{{ post.user.first_name}} {{ post.user.last_name}}.</em></p>
         <p><em>&nbsp;{{post.published_at}}</em></p>
         
-        
+        <script src="https://yastatic.net/share2/share.js"></script>
+<div class="ya-share2" data-curtain data-size="s" data-shape="round" data-services="vkontakte,facebook,odnoklassniki,telegram,twitter,viber,whatsapp"></div>
       </div>
 
       <div class="row">

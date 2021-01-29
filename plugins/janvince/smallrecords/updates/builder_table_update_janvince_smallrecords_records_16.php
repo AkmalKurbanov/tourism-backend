@@ -20,6 +20,8 @@ class BuilderTableUpdateJanvinceSmallrecordsRecords16 extends Migration
         Schema::table('janvince_smallrecords_records', function($table)
         {
             $table->dropColumn('itinerary_desc');
+            $table->dropColumn('sights_editor');
+            $table->dropColumn('sights_map');
             $table->dropColumn('itinerary_map');
             $table->text('content_blocks')->change();
         });

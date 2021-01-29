@@ -7,33 +7,12 @@ code = "menu"
 
 [fontAwesomeCssLink]
 ==
+
 {variable name="tagline" label="Tagline" tab="Header" type="text"}{/variable}
 <!DOCTYPE html>
 <html>
 
 <head>
-  {% partial 'site/head_styles_index_page/style1' %}
-  <link href="{{ 'assets/javascript/plugins/w3-total-cache/pub/js/lazyload.min.js'|theme }}" rel="stylesheet">
-
-  {% partial 'site/head_styles_index_page/style2' %}
-  {% partial 'site/head_scripts_index_page/script1' %}
-  {% partial 'site/head_scripts_index_page/script2' %}
-
-  {% partial 'site/head_styles_index_page/style3' %}
-
-  <link href="{{ 'assets/css/6d2d0.css'|theme }}" rel="stylesheet">
-  <link rel='stylesheet' id='font-style-css'
-    href='https://fonts.googleapis.com/css?family=Lato%3A400%2C700%2C900&#038;subset=latin-ext&#038;ver=5.3.2'
-    type='text/css' media='all' />
-  <link rel='stylesheet' id='font-style-2-css'
-    href='https://fonts.googleapis.com/css?family=Noto+Serif%3A400%2C700&#038;ver=5.3.2' type='text/css' media='all' />
-  <link href="{{ 'assets/css/113f9.css'|theme }}" rel="stylesheet">
-  {% partial 'site/head_styles_index_page/style4' %}
-
-  {% partial 'site/head_scripts_index_page/script3' %}
-  {% partial 'site/head_scripts_index_page/script4' %}
-  {% partial 'site/head_styles_index_page/style5' %}
-
   <meta charset="utf-8">
   <title>{{this.theme.site_name}} - {{ this.page.title }}</title>
   <meta name="description" content="{{ this.page.meta_description }}">
@@ -43,26 +22,18 @@ code = "menu"
   <meta name="generator" content="OctoberCMS">
   <link rel="icon" type="image/png" href="{{ 'assets/images/october.png'|theme }}">
 
-  {% partial 'site/head_styles_index_page/style6' %}
-  {% partial 'site/head_scripts_index_page/script5' %}
+<link href="{{ 'assets/css/6d2d0.css'|theme }}" rel="stylesheet">
+ <link href="{{ 'assets/css/113f9.css'|theme }}" rel="stylesheet">
+   
+  <link rel='stylesheet' id='font-style-css'
+    href='https://fonts.googleapis.com/css?family=Lato%3A400%2C700%2C900&#038;subset=latin-ext&#038;ver=5.3.2'
+    type='text/css' media='all' />
+  <link rel='stylesheet' id='font-style-2-css'
+    href='https://fonts.googleapis.com/css?family=Noto+Serif%3A400%2C700&#038;ver=5.3.2' type='text/css' media='all' />
+    <script src="{{ 'assets/javascript/c6d25.js'|theme }}"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
   {% styles %}
-  	<style>
-  	  #map {
-  	    height: 100%;
-  	  }
-
-  	  /* Optional: Makes the sample page fill the window. */
-  	  html,
-  	  body {
-  	    height: 100%;
-  	    margin: 0;
-  	    padding: 0;
-  	  }
-  	</style>
-
-  
 </head>
-
 <body>
 
   <!-- Google Tag Manager (noscript) -->
@@ -204,13 +175,9 @@ code = "menu"
   </footer>
 
   <!-- Scripts -->
-  <!-- <script src="{{ 'assets/vendor/jquery.js'|theme }}"></script>
-    <script src="{{ 'assets/vendor/bootstrap.js'|theme }}"></script>
-    <script src="{{ 'assets/javascript/app.js'|theme }}"></script> -->
-  {% partial 'site/head_scripts_index_page/script6' %}
-  {% partial 'site/head_styles_index_page/style7' %}
-  {% partial 'site/head_scripts_index_page/script7' %}
 
+ <script src="{{ 'assets/javascript/e0855.js'|theme }}"></script>
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
   {% framework extras %}
   {% scripts %}
 

@@ -267,3 +267,99 @@
 3.10.29:
     - 'Updated table janvince_smallrecords_sights'
     - builder_table_update_janvince_smallrecords_sights.php
+3.10.30:
+    - 'Updated table janvince_smallrecords_records'
+    - builder_table_update_janvince_smallrecords_records_27.php
+3.10.31:
+    - 'Updated table janvince_smallrecords_records'
+    - builder_table_update_janvince_smallrecords_records_28.php
+3.10.32:
+    - 'Updated table janvince_smallrecords_records'
+    - builder_table_update_janvince_smallrecords_records_29.php
+3.10.33:
+    - 'Updated table janvince_smallrecords_records'
+    - builder_table_update_janvince_smallrecords_records_30.php
+3.10.34:
+    - 'Updated table janvince_smallrecords_records'
+    - builder_table_update_janvince_smallrecords_records_31.php
+3.10.35:
+    - 'Updated table janvince_smallrecords_records'
+    - builder_table_update_janvince_smallrecords_records_32.php
+3.10.36:
+    - 'Updated table janvince_smallrecords_records'
+    - builder_table_update_janvince_smallrecords_records_33.php
+3.10.37:
+    - 'Updated table janvince_smallrecords_records'
+    - builder_table_update_janvince_smallrecords_records_34.php
+3.10.38:
+    - 'Updated table janvince_smallrecords_records'
+    - builder_table_update_janvince_smallrecords_records_35.php
+3.10.39:
+    - 'Updated table janvince_smallrecords_records'
+    - builder_table_update_janvince_smallrecords_records_36.php
+3.10.40:
+    - 'Updated table janvince_smallrecords_records'
+    - builder_table_update_janvince_smallrecords_records_37.php
+3.10.41:
+    - 'Updated table janvince_smallrecords_records'
+    - builder_table_update_janvince_smallrecords_records_38.php
+3.10.42:
+    - 'Updated table janvince_smallrecords_records'
+    - builder_table_update_janvince_smallrecords_records_39.php
+3.10.43:
+    - 'Updated table janvince_smallrecords_records'
+    - builder_table_update_janvince_smallrecords_records_40.php
+3.10.44:
+    - 'Drop table janvince_smallrecords_sights'
+    - builder_table_delete_janvince_smallrecords_sights.php
+3.10.45:
+    - 'Updated table janvince_smallrecords_records'
+    - builder_table_update_janvince_smallrecords_records_41.php
+3.10.46:
+    - 'Updated table janvince_smallrecords_records'
+    - builder_table_update_janvince_smallrecords_records_42.php
+3.10.47:
+    - 'Updated table janvince_smallrecords_records'
+    - builder_table_update_janvince_smallrecords_records_43.php
+3.10.48:
+    - 'Updated table janvince_smallrecords_records'
+    - builder_table_update_janvince_smallrecords_records_44.php
+3.10.49:
+    - 'Updated table janvince_smallrecords_records'
+    - builder_table_update_janvince_smallrecords_records_45.php
+3.10.50:
+    - 'Updated table janvince_smallrecords_records'
+    - builder_table_update_janvince_smallrecords_records_46.php
+3.10.51:
+    - 'Updated table janvince_smallrecords_records'
+    - builder_table_update_janvince_smallrecords_records_47.php
+3.10.52:
+    - 'Updated table janvince_smallrecords_records'
+    - builder_table_update_janvince_smallrecords_records_48.php
+3.10.53:
+    - 'Updated table janvince_smallrecords_records'
+    - builder_table_update_janvince_smallrecords_records_49.php
+3.10.54:
+    - 'Updated table janvince_smallrecords_records'
+    - builder_table_update_janvince_smallrecords_records_50.php
+3.10.55:
+    - 'Updated table janvince_smallrecords_records'
+    - builder_table_update_janvince_smallrecords_records_51.php
+3.10.56:
+    - 'Updated table janvince_smallrecords_records'
+    - builder_table_update_janvince_smallrecords_records_52.php
+3.10.57:
+    - 'Updated table janvince_smallrecords_records'
+    - builder_table_update_janvince_smallrecords_records_53.php
+3.10.58:
+    - 'Updated table janvince_smallrecords_records'
+    - builder_table_update_janvince_smallrecords_records_54.php
+3.10.59:
+    - 'Updated table janvince_smallrecords_records'
+    - builder_table_update_janvince_smallrecords_records_55.php
+3.10.60:
+    - 'Updated table janvince_smallrecords_records'
+    - builder_table_update_janvince_smallrecords_records_56.php
+3.10.61:
+    - 'Updated table janvince_smallrecords_records'
+    - builder_table_update_janvince_smallrecords_records_57.php

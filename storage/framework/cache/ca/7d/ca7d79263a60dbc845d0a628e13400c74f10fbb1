@@ -1,0 +1,77 @@
+1611924013a:1:{s:9:"menu.yaml";a:7:{s:8:"fileName";s:9:"menu.yaml";s:7:"content";s:1584:"items:
+    -
+        title: Home
+        nesting: null
+        type: cms-page
+        url: null
+        code: ''
+        reference: home
+        cmsPage: null
+        replace: null
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Tours
+        nesting: null
+        type: cms-page
+        url: null
+        code: ''
+        reference: tours
+        cmsPage: null
+        replace: null
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Group tours'
+        nesting: null
+        type: cms-page
+        url: null
+        code: ''
+        reference: group-tours
+        cmsPage: null
+        replace: null
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Blog
+        nesting: null
+        type: cms-page
+        url: null
+        code: ''
+        reference: blog
+        cmsPage: null
+        replace: null
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Kyrgyzstan
+        nesting: 1
+        type: static-page
+        code: ''
+        reference: kyrgyzstan
+        replace: 0
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: About
+        nesting: 1
+        type: static-page
+        code: ''
+        reference: about
+        replace: 0
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+name: menu
+";s:5:"mtime";i:1611565749;s:6:"markup";N;s:4:"code";N;s:4:"name";N;s:5:"items";a:0:{}}}

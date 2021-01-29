@@ -1,0 +1,105 @@
+1611924013a:1:{s:15:"site/footer.htm";a:7:{s:8:"fileName";s:15:"site/footer.htm";s:7:"content";s:1362:"[viewBag]
+
+[fontAwesomeCssLink]
+==
+<div class="container">
+  <div class="row">
+
+    <div class="col-sm-4">
+      <a href="https://kyrgyzstan-tourism.com">
+        <img src="{{this.theme.logo.path}}" alt="">
+      </a>
+      <div class="social">
+
+
+
+        {% for item in this.theme.social %}
+        <a href="{{item.url}}" target="_blank"><i class="{{item.awesome_icon}}"></i></a>
+        {%endfor%}
+
+
+
+
+      </div>
+    </div>
+
+    <div class="col-sm-8">
+      <h2>Contacts</h2>
+      <div class="row">
+
+        <div class="col-sm-6">
+          <p class="phone">
+            <phone><a href="tel:{{this.theme.phone2}}">{{this.theme.phone2}}</a></phone>
+          </p>
+          <p class="phone">
+            <phone><a href="tel:{{this.theme.phone3}}">{{this.theme.phone3}}</a></phone>
+          </p>
+          <p><a href="mailto:{{this.theme.user_email}}">{{this.theme.user_email}}</a></p>
+        </div>
+        <div class="col-sm-6">
+          <p>{{this.theme.info}}</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<div class="line_helper" style="background: #959da7;"></div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6">
+      <p>{{this.theme.copyright}}</p>
+    </div>
+    <div class="col-xs-6 text-right"><a href="#">{{this.theme.termsUse}}</a></div>
+  </div>
+</div>";s:5:"mtime";i:1611049407;s:6:"markup";s:1323:"<div class="container">
+  <div class="row">
+
+    <div class="col-sm-4">
+      <a href="https://kyrgyzstan-tourism.com">
+        <img src="{{this.theme.logo.path}}" alt="">
+      </a>
+      <div class="social">
+
+
+
+        {% for item in this.theme.social %}
+        <a href="{{item.url}}" target="_blank"><i class="{{item.awesome_icon}}"></i></a>
+        {%endfor%}
+
+
+
+
+      </div>
+    </div>
+
+    <div class="col-sm-8">
+      <h2>Contacts</h2>
+      <div class="row">
+
+        <div class="col-sm-6">
+          <p class="phone">
+            <phone><a href="tel:{{this.theme.phone2}}">{{this.theme.phone2}}</a></phone>
+          </p>
+          <p class="phone">
+            <phone><a href="tel:{{this.theme.phone3}}">{{this.theme.phone3}}</a></phone>
+          </p>
+          <p><a href="mailto:{{this.theme.user_email}}">{{this.theme.user_email}}</a></p>
+        </div>
+        <div class="col-sm-6">
+          <p>{{this.theme.info}}</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<div class="line_helper" style="background: #959da7;"></div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6">
+      <p>{{this.theme.copyright}}</p>
+    </div>
+    <div class="col-xs-6 text-right"><a href="#">{{this.theme.termsUse}}</a></div>
+  </div>
+</div>";s:4:"code";N;s:7:"viewBag";a:0:{}s:18:"fontAwesomeCssLink";a:0:{}}}

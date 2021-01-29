@@ -10,6 +10,8 @@ limit = 10
 pageSlug = "{{ :page }}"
 orderBy = "name"
 orderByDirection = "ASC"
+
+[viewBag]
 ==
 {% for record in GroupTours.items %}
 
@@ -21,7 +23,7 @@ orderByDirection = "ASC"
 
     <span class="img_wrapper">
 
-      <span class="img lazy" style="background-image: url({{ record.preview_image.getPath }});" data-bg="url({{ record.preview_image.getPath }}" data-was-processed="true"></span>
+      <span class="img lazy" style="background-image: url({{ record.preview_image.getPath }});"></span>
 
       <span class="price-round group_price">
         <span class="inner">${{ record.tour_cost }}  US</span>

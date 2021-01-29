@@ -2,10 +2,4 @@ static-pages:
     about:
         about-about-us-2: {  }
         about-about-us: {  }
-    kyrgyzstan:
-        kyrgyzstan-projects: {  }
-        kyrgyzstan-getting-around: {  }
-        kyrgyzstan-permits: {  }
-        kyrgyzstan-inspiration-visiting-kyrgyzstan: {  }
-        kyrgyzstan-photo-gallery: {  }
-        kyrgyzstan-about-kyrgyzstan: {  }
+    kyrgyzstan: {  }

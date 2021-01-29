@@ -10,12 +10,15 @@ class BuilderTableUpdateJanvinceSmallrecordsRecords extends Migration
         Schema::table('janvince_smallrecords_records', function($table)
         {
             $table->dateTime('date1')->nullable();
+            $table->dateTime('date2')->nullable();
             $table->dateTime('schedule_tours')->nullable();
             $table->dateTime('faq')->nullable();
             $table->dateTime('tour_cost')->nullable();
             $table->dateTime('tour_duration')->nullable();
             $table->dateTime('tour_status')->nullable();
             $table->dateTime('itinerary_desc')->nullable();
+            $table->dateTime('sights_editor')->nullable();
+            $table->dateTime('sights_map')->nullable();
             $table->dateTime('itinerary_map')->nullable();
             $table->integer('category_id')->default(null)->change();
             $table->string('name', 191)->default(null)->change();
@@ -46,12 +49,15 @@ class BuilderTableUpdateJanvinceSmallrecordsRecords extends Migration
         Schema::table('janvince_smallrecords_records', function($table)
         {
             $table->dropColumn('date1');
+            $table->dropColumn('date2');
             $table->dropColumn('schedule_tours');
             $table->dropColumn('faq');
             $table->dropColumn('tour_cost');
             $table->text('tour_duration');
             $table->text('tour_status');
             $table->text('itinerary_desc');
+            $table->text('sights_editor');
+            $table->text('sights_map');
             $table->text('itinerary_map');
             $table->integer('category_id')->default(NULL)->change();
             $table->string('name', 191)->default('NULL')->change();

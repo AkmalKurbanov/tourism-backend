@@ -49,7 +49,7 @@
   <div class="row">
 
     <div class="col-sm-3">
-      <a href="https://kyrgyzstan-tourism.com/" class="logo">
+      <a href="/" class="logo">
         <img src="{{this.theme.logo.path}}" alt="">
       </a>
     </div>
@@ -72,65 +72,13 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="https://kyrgyzstan-tourism.com/">Home</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tours <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="https://kyrgyzstan-tourism.com/tours/type/bike-tours/">Bike
-                    tours</a></li>
-                <li><a href="https://kyrgyzstan-tourism.com/tours/type/culture-tours/">Culture
-                    tours</a></li>
-                <li><a href="https://kyrgyzstan-tourism.com/tours/type/experience-tours/">Experience
-                    tours</a></li>
-                <li><a href="https://kyrgyzstan-tourism.com/tours/type/horseback-tours-in-kyrgyzstan/">Horseback
-                    tours</a></li>
-                <li><a href="https://kyrgyzstan-tourism.com/tours/type/multi-active-tours/">Multi-active
-                    tours</a></li>
-                <li><a href="https://kyrgyzstan-tourism.com/tours/type/jeep-tours-in-kyrgyzstan/">Off
-                    road tours</a></li>
-                <li><a href="https://kyrgyzstan-tourism.com/tours/type/photo-tours/">Photo
-                    tours</a></li>
-                <li><a href="https://kyrgyzstan-tourism.com/tours/type/trekking-kyrgyzstan/">Trekking</a>
-                </li>
-                <li><a href="https://kyrgyzstan-tourism.com/tours/type/winter-tours/">Winter
-                    tours</a></li>
-              </ul>
-            </li>
-            <li><a href="/group-tours/">Group tours</a></li>
-            <li><a href="https://kyrgyzstan-tourism.com/blog/">Blog</a></li>
-            <li id="menu-item-4622"
-              class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-4622 dropdown">
-              <a title="Kyrgyzstan" href="#" data-toggle="dropdown" class="dropdown-toggle"
-                aria-haspopup="true">Kyrgyzstan <span class="caret"></span></a>
-              <ul role="menu" class=" dropdown-menu">
-                <li id="menu-item-4623" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4623">
-                  <a title="About Kyrgyzstan" href="https://kyrgyzstan-tourism.com/kyrgyzstan-travel-guide/">About
-                    Kyrgyzstan</a></li>
-                <li id="menu-item-5599" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5599">
-                  <a title="Projects" href="https://kyrgyz-tourism.kg/">Projects</a></li>
-                <li id="menu-item-4675" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4675">
-                  <a title="Getting around" href="https://kyrgyzstan-tourism.com/travel/">Getting around</a></li>
-                <li id="menu-item-4941" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4941">
-                  <a title="Permits" href="https://kyrgyzstan-tourism.com/get-permits/">Permits</a></li>
-                <li id="menu-item-5086" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5086">
-                  <a title="Inspiration for visiting Kyrgyzstan"
-                    href="https://kyrgyzstan-tourism.com/video-gallery/">Inspiration for
-                    visiting Kyrgyzstan</a></li>
-                <li id="menu-item-4658" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4658">
-                  <a title="Photo gallery" href="/galleries">Photo gallery</a></li>
-              </ul>
-            </li>
-            <li id="menu-item-4631"
-              class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4631 dropdown">
-              <a title="About" href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true">About
-                <span class="caret"></span></a>
-              <ul role="menu" class=" dropdown-menu">
-                <li id="menu-item-4649" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4649">
-                  <a title="About us" href="https://kyrgyzstan-tourism.com/kyrgyz-tours/">About us</a></li>
-                <li id="menu-item-4652" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4652">
-                  <a title="Contact us" href="https://kyrgyzstan-tourism.com/contact-us/">Contact us</a></li>
-              </ul>
-            </li>
+                {% if staticMenu.menuItems %}
+   
+    
+        {% partial staticMenu ~ "::items" items=staticMenu.menuItems %}
+   
+{% endif %}
+              
           </ul>
         </div><!-- /.navbar-collapse -->
       </nav>

@@ -1,0 +1,111 @@
+title = "Reviews-detail"
+url = "/reviews-detail/:slug"
+layout = "static-layout"
+is_hidden = 0
+
+[recordDetail ReviewsDetail]
+activeOnly = 0
+recordSlug = "{{ :slug }}"
+areaSlug = 0
+categorySlug = "{{ :category }}"
+useMainCategory = 1
+categoryPage = 0
+categoryPageSlug = "{{ :category }}"
+
+[records Reviews]
+activeOnly = 0
+areaSlug = 0
+categorySlug = "otzyvy"
+useMainCategory = 1
+useMultiCategories = 0
+tagSlug = "{{ :tag }}"
+recordPage = "reviews-detail"
+recordPageSlug = "{{ :slug }}"
+allowLimit = 1
+limit = 1
+pageSlug = "{{ :slug }}"
+orderBy = "name"
+orderByDirection = "ASC"
+==
+<div id="top" class="small_top lazy" style="background-image: url(&quot;https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Contact_Us-3.jpg&quot;);" data-bg="url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Contact_Us-3.jpg)" data-was-processed="true">
+
+    <div class="breadcrumb_wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <p id="breadcrumbs"><span><span><a href="/">Home</a> / <span><a href="/reviews">Reviews</a> / <span class="breadcrumb_last" aria-current="page">{{ ReviewsDetail.recordDetail.name }}</span></span></span></span></p>       
+                    <div class="line_helper" style="background: rgba(255,255,255,.3)"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="desc">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h1 id="single_tour_title">{{ ReviewsDetail.recordDetail.name }}</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+<div class="row">
+<div class="col-sm-9">
+<div id="content">
+                                    <h3 class="work">{{ ReviewsDetail.recordDetail.review_author_status }}</h3>
+
+                                
+                        <p><em>
+                            {{ ReviewsDetail.recordDetail.review | raw}}
+                        </em></p>
+
+                
+
+
+            </div>
+             {% for record in Reviews.items %}
+        <div class="s_review">
+          <div class="row">
+            <div class="col-sm-3">
+              <img alt="review" src="{{ record.preview_image.getPath }}"
+               
+                class="img-responsive lazyload">
+            </div>
+            <div class="col-sm-9">
+              <h4 class="name">{{record.name}}</h4>
+              <h5 class="work">{{record.review_author_status}} </h5>
+
+              <div class="excerpt">
+                <p>
+                  <p>“Kyrgyzstan is great country to discover! High mountains with endless trails
+                    to explore by foot or on a horseback. Nothing [&hellip;]</p>
+                </p>
+                <div class="more">
+                  <a href="{{Reviews.property('recordPage') ? Reviews.property('recordPage')|page({(Reviews.paramName('recordPageSlug')):(record.slug)})}}">Read more
+                    ...</a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+{% endfor %}
+</div>
+   <div class="col-sm-3">
+
+
+      <div id="sidebar" style="margin-top: 50px;">
+
+
+
+        {% partial 'site/sidebar_without_date' %}
+
+
+
+      </div>
+     
+    </div>
+</div>
+</div>

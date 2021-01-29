@@ -1,0 +1,749 @@
+1611924062a:1:{s:8:"home.htm";a:14:{s:8:"fileName";s:8:"home.htm";s:7:"content";s:9241:"title = "Home"
+url = "/"
+layout = "static-layout"
+is_hidden = 0
+
+[recordDetail TourDetail]
+activeOnly = 0
+recordSlug = "{{ :slug }}"
+areaSlug = 0
+categorySlug = "{{ :gruppovye-tury }}"
+useMainCategory = 1
+categoryPage = 0
+categoryPageSlug = "{{ :category }}"
+
+[genericForm]
+messages_success = "Ваша форма была успешно отправлена!"
+messages_errors = "В вашей заявке содержатся ошибки."
+inline_errors = "disabled"
+sanitize_data = "disabled"
+anonymize_ip = "disabled"
+recaptcha_theme = "light"
+recaptcha_type = "image"
+recaptcha_size = "normal"
+emails_date_format = "Y-m-d"
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 1
+noPostsMessage = "Записей не найдено"
+sortOrder = "published_at desc"
+categoryPage = "blog"
+postPage = "post"
+
+[siteSearchInclude]
+
+[records Reviews]
+activeOnly = 0
+areaSlug = 0
+categorySlug = "otzyvy"
+useMainCategory = 1
+useMultiCategories = 0
+tagSlug = "{{ :tag }}"
+recordPage = "reviews-detail"
+recordPageSlug = "{{ :slug }}"
+allowLimit = 1
+limit = 2
+pageSlug = "{{ :slug }}"
+orderBy = "name"
+orderByDirection = "ASC"
+==
+{% component 'records' %}
+
+
+<div id="front_slider" class="carousel slide" data-ride="carousel">
+
+
+  <ol class="carousel-indicators">
+    <li data-target="#front_slider" data-slide-to="7" class=""></li>
+    <li data-target="#front_slider" data-slide-to="8" class=""></li>
+  </ol>
+
+
+
+  <div class="carousel-inner">
+
+    {% partial 'site/main_slider' %}
+
+  </div>
+
+  <a class="left carousel-control hidden-xs" href="#front_slider" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control hidden-xs" href="#front_slider" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+
+</div>
+<div id="about">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-sm-12">
+
+
+
+
+
+        <div class="hm-about">
+
+          <p>
+            <img style="float: left; margin-right: 35px; margin-top: 30px;" src="{{this.theme.introduction_logo.path}}"
+              alt="">
+          </p>
+
+          <p>{{this.theme.introduction_text | raw}}</p>
+<style>
+.hm-about{background:#fff;padding:50px;border-bottom:4px solid #005271;margin-bottom:30px}.main-h{font-size:50px!important}.sub-h{font-weight:bold;font-size:22px;margin-top:-6px;color:#fff;text-shadow:0 2px 2px rgba(0,0,0,.3)}
+</style>
+        </div>
+        <p>&nbsp;</p>
+      </div>
+
+
+
+    </div>
+
+  </div>
+</div>
+</div>
+
+<div id="group_tours">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+
+
+
+
+
+
+        <h2 class="with_line"><a href="https://kyrgyzstan-tourism.com/group-tours/">GROUP TOURS 2021</a>
+        </h2>
+
+
+        <div class="tour_slider" id="discounts_slider_wrapper" data-count="3">
+
+
+          <button class='btn btn-default leftRs slider_arrow' data-slider="discounts_slider"><i
+              class="fa fa-chevron-left"></i></button>
+
+
+          <div class="resCarousel" data-items="1,2,3,3" data-slide="1" id="discounts_slider">
+
+            <div class="resCarousel-inner">
+
+
+
+
+
+
+              {% partial 'site/group_tours' %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+
+          </div>
+
+
+          <button class='btn btn-default rightRs slider_arrow' data-slider="discounts_slider"><i
+              class="fa fa-chevron-right"></i></button>
+
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h2 class="with_line text-center">TOUR TYPE</h2>
+    </div>
+  </div>
+  <div class="row">
+
+
+
+    {% partial 'site/type_tours' %}
+
+
+
+
+
+
+
+
+  </div>
+</div>
+
+<div class="lazy" id="most_popular_tours" style=""
+  data-bg="url(https://kyrgyzstan-tourism.com/wp-content/themes/native/img/about_bg.jpg)">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+
+        <h2 class="with_line">MOST POPULAR KYRGYZSTAN TOURS</h2>
+
+        <div class="tour_slider" id="most_popular_slider_wrapper" data-count="21">
+
+
+          <button class='btn btn-default leftRs slider_arrow' data-slider="most_popular_slider"><i
+              class="fa fa-chevron-left"></i></button>
+
+
+          <div class="resCarousel" data-items="1,2,3,3" data-slide="1" id="most_popular_slider">
+
+            <div class="resCarousel-inner">
+
+
+
+              {% partial 'site/popular_tours' %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+
+          </div>
+
+
+          <button class='btn btn-default rightRs slider_arrow' data-slider="most_popular_slider"><i
+              class="fa fa-chevron-right"></i></button>
+
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="discounts">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+
+        <h2 class="with_line">DEALS AND DISCOUNTS</h2>
+
+        <div class="tour_slider" id="discounts_slider_wrapper" data-count="5">
+
+
+          <button class='btn btn-default leftRs slider_arrow' data-slider="discounts_slider"><i
+              class="fa fa-chevron-left"></i></button>
+
+
+          <div class="resCarousel" data-items="1,2,3,4" data-slide="1" id="discounts_slider">
+
+            <div class="resCarousel-inner">
+
+
+              {% partial 'site/discount_tours' %}
+
+
+
+
+
+
+
+
+            </div>
+
+          </div>
+
+
+          <button class='btn btn-default rightRs slider_arrow' data-slider="discounts_slider"><i
+              class="fa fa-chevron-right"></i></button>
+
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="blog_and_review">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-sm-6">
+        <h2 class="with_line with_big_line text-center">LATEST POST</h2>
+
+  {% set posts = blogPosts.posts %}
+   {% for post in posts %}
+        <div class="latest_post">
+          <a href="{{ post.url }}"
+            class="img_link">
+            {% for image in post.featured_images|slice(0,1) %}
+            <span class="img lazy" style="background-image: url('{{image.path}}');"></span>
+             {% endfor %}
+          </a>
+
+        </div>
+        <div class="excerpt latest_post_excerpt">
+          <h4><a
+              href="{{ post.url }}">{{ post.title }}</a></h4>
+          <div class="text-center">
+            <p>{{post.excerpt}}</p>
+          </div>
+          <div class="text-center">
+            <a href="{{ post.url }}"
+              class="cstm_button round lblue">Read more <i class="fa fa-long-arrow-right"></i></a>
+          </div>
+        </div>
+
+{% endfor %}
+
+      </div>
+
+      <div class="col-sm-6">
+        <h2 class="with_line with_big_line text-center">REVIEWS</h2>
+
+ {% for record in Reviews.items %}
+        <div class="s_review">
+          <div class="row">
+            <div class="col-sm-3">
+              <img alt="review" src="{{ record.preview_image.getPath }}"
+               
+                class="img-responsive lazyload">
+            </div>
+            <div class="col-sm-9">
+              <h4 class="name">{{record.name}}</h4>
+              <h5 class="work">{{record.review_author_status}} </h5>
+
+              <div class="excerpt">
+                <p>
+                  <p><em>{{ str_words(record.review, 20) }}</em></p>
+                </p>
+                <div class="more">
+                  <a href="{{Reviews.property('recordPage') ? Reviews.property('recordPage')|page({(Reviews.paramName('recordPageSlug')):(record.slug)})}}">Read more
+                    ...</a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+{% endfor %}
+
+      </div>
+
+    </div>
+  </div>
+</div>
+<div class="lazy" id="contact_block" style="background-image: url(https://kyrgyzstan-tourism.com/wp-content/themes/native/img/contact_bg.webp)">
+  <div class="shadow"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4 col-sm-offset-4">
+        <h2 class="text-center with_line with_big_line">Contact with us</h2>
+
+        <div class="screen-reader-response" role="alert" aria-live="polite"></div>
+
+        <form data-request="{{ HomPageForm }}::onFormSubmit">
+
+          {{ form_token() }}
+
+          <div id="{{ HomPageForm }}_forms_flash"></div>
+
+          <div class="form-group">
+            <input type="text" id="name" name="name" class="form-control" placeholder="Your name" require>
+          </div>
+
+          <div class="form-group">
+            <input type="text" id="email" name="email" class="form-control" placeholder="Your email" require>
+          </div>
+
+
+
+          <div class="form-group">
+            <textarea id="message" name="message" class="form-control" cols="40" rows="5" placeholder="Your message"
+              require></textarea>
+          </div>
+
+          <button id="simpleContactSubmitButton" type="submit" class="btn btn-default cstm_button submit">send</button>
+
+        </form>
+
+
+
+      </div>
+    </div>
+  </div>
+</div>
+</div>";s:5:"mtime";i:1611923455;s:6:"markup";s:8065:"{% component 'records' %}
+
+
+<div id="front_slider" class="carousel slide" data-ride="carousel">
+
+
+  <ol class="carousel-indicators">
+    <li data-target="#front_slider" data-slide-to="7" class=""></li>
+    <li data-target="#front_slider" data-slide-to="8" class=""></li>
+  </ol>
+
+
+
+  <div class="carousel-inner">
+
+    {% partial 'site/main_slider' %}
+
+  </div>
+
+  <a class="left carousel-control hidden-xs" href="#front_slider" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control hidden-xs" href="#front_slider" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+
+</div>
+<div id="about">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-sm-12">
+
+
+
+
+
+        <div class="hm-about">
+
+          <p>
+            <img style="float: left; margin-right: 35px; margin-top: 30px;" src="{{this.theme.introduction_logo.path}}"
+              alt="">
+          </p>
+
+          <p>{{this.theme.introduction_text | raw}}</p>
+<style>
+.hm-about{background:#fff;padding:50px;border-bottom:4px solid #005271;margin-bottom:30px}.main-h{font-size:50px!important}.sub-h{font-weight:bold;font-size:22px;margin-top:-6px;color:#fff;text-shadow:0 2px 2px rgba(0,0,0,.3)}
+</style>
+        </div>
+        <p>&nbsp;</p>
+      </div>
+
+
+
+    </div>
+
+  </div>
+</div>
+</div>
+
+<div id="group_tours">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+
+
+
+
+
+
+        <h2 class="with_line"><a href="https://kyrgyzstan-tourism.com/group-tours/">GROUP TOURS 2021</a>
+        </h2>
+
+
+        <div class="tour_slider" id="discounts_slider_wrapper" data-count="3">
+
+
+          <button class='btn btn-default leftRs slider_arrow' data-slider="discounts_slider"><i
+              class="fa fa-chevron-left"></i></button>
+
+
+          <div class="resCarousel" data-items="1,2,3,3" data-slide="1" id="discounts_slider">
+
+            <div class="resCarousel-inner">
+
+
+
+
+
+
+              {% partial 'site/group_tours' %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+
+          </div>
+
+
+          <button class='btn btn-default rightRs slider_arrow' data-slider="discounts_slider"><i
+              class="fa fa-chevron-right"></i></button>
+
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h2 class="with_line text-center">TOUR TYPE</h2>
+    </div>
+  </div>
+  <div class="row">
+
+
+
+    {% partial 'site/type_tours' %}
+
+
+
+
+
+
+
+
+  </div>
+</div>
+
+<div class="lazy" id="most_popular_tours" style=""
+  data-bg="url(https://kyrgyzstan-tourism.com/wp-content/themes/native/img/about_bg.jpg)">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+
+        <h2 class="with_line">MOST POPULAR KYRGYZSTAN TOURS</h2>
+
+        <div class="tour_slider" id="most_popular_slider_wrapper" data-count="21">
+
+
+          <button class='btn btn-default leftRs slider_arrow' data-slider="most_popular_slider"><i
+              class="fa fa-chevron-left"></i></button>
+
+
+          <div class="resCarousel" data-items="1,2,3,3" data-slide="1" id="most_popular_slider">
+
+            <div class="resCarousel-inner">
+
+
+
+              {% partial 'site/popular_tours' %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+
+          </div>
+
+
+          <button class='btn btn-default rightRs slider_arrow' data-slider="most_popular_slider"><i
+              class="fa fa-chevron-right"></i></button>
+
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="discounts">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+
+        <h2 class="with_line">DEALS AND DISCOUNTS</h2>
+
+        <div class="tour_slider" id="discounts_slider_wrapper" data-count="5">
+
+
+          <button class='btn btn-default leftRs slider_arrow' data-slider="discounts_slider"><i
+              class="fa fa-chevron-left"></i></button>
+
+
+          <div class="resCarousel" data-items="1,2,3,4" data-slide="1" id="discounts_slider">
+
+            <div class="resCarousel-inner">
+
+
+              {% partial 'site/discount_tours' %}
+
+
+
+
+
+
+
+
+            </div>
+
+          </div>
+
+
+          <button class='btn btn-default rightRs slider_arrow' data-slider="discounts_slider"><i
+              class="fa fa-chevron-right"></i></button>
+
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="blog_and_review">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-sm-6">
+        <h2 class="with_line with_big_line text-center">LATEST POST</h2>
+
+  {% set posts = blogPosts.posts %}
+   {% for post in posts %}
+        <div class="latest_post">
+          <a href="{{ post.url }}"
+            class="img_link">
+            {% for image in post.featured_images|slice(0,1) %}
+            <span class="img lazy" style="background-image: url('{{image.path}}');"></span>
+             {% endfor %}
+          </a>
+
+        </div>
+        <div class="excerpt latest_post_excerpt">
+          <h4><a
+              href="{{ post.url }}">{{ post.title }}</a></h4>
+          <div class="text-center">
+            <p>{{post.excerpt}}</p>
+          </div>
+          <div class="text-center">
+            <a href="{{ post.url }}"
+              class="cstm_button round lblue">Read more <i class="fa fa-long-arrow-right"></i></a>
+          </div>
+        </div>
+
+{% endfor %}
+
+      </div>
+
+      <div class="col-sm-6">
+        <h2 class="with_line with_big_line text-center">REVIEWS</h2>
+
+ {% for record in Reviews.items %}
+        <div class="s_review">
+          <div class="row">
+            <div class="col-sm-3">
+              <img alt="review" src="{{ record.preview_image.getPath }}"
+               
+                class="img-responsive lazyload">
+            </div>
+            <div class="col-sm-9">
+              <h4 class="name">{{record.name}}</h4>
+              <h5 class="work">{{record.review_author_status}} </h5>
+
+              <div class="excerpt">
+                <p>
+                  <p><em>{{ str_words(record.review, 20) }}</em></p>
+                </p>
+                <div class="more">
+                  <a href="{{Reviews.property('recordPage') ? Reviews.property('recordPage')|page({(Reviews.paramName('recordPageSlug')):(record.slug)})}}">Read more
+                    ...</a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+{% endfor %}
+
+      </div>
+
+    </div>
+  </div>
+</div>
+<div class="lazy" id="contact_block" style="background-image: url(https://kyrgyzstan-tourism.com/wp-content/themes/native/img/contact_bg.webp)">
+  <div class="shadow"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4 col-sm-offset-4">
+        <h2 class="text-center with_line with_big_line">Contact with us</h2>
+
+        <div class="screen-reader-response" role="alert" aria-live="polite"></div>
+
+        <form data-request="{{ HomPageForm }}::onFormSubmit">
+
+          {{ form_token() }}
+
+          <div id="{{ HomPageForm }}_forms_flash"></div>
+
+          <div class="form-group">
+            <input type="text" id="name" name="name" class="form-control" placeholder="Your name" require>
+          </div>
+
+          <div class="form-group">
+            <input type="text" id="email" name="email" class="form-control" placeholder="Your email" require>
+          </div>
+
+
+
+          <div class="form-group">
+            <textarea id="message" name="message" class="form-control" cols="40" rows="5" placeholder="Your message"
+              require></textarea>
+          </div>
+
+          <button id="simpleContactSubmitButton" type="submit" class="btn btn-default cstm_button submit">send</button>
+
+        </form>
+
+
+
+      </div>
+    </div>
+  </div>
+</div>
+</div>";s:4:"code";N;s:5:"title";s:4:"Home";s:3:"url";s:1:"/";s:6:"layout";s:13:"static-layout";s:9:"is_hidden";s:1:"0";s:23:"recordDetail TourDetail";a:7:{s:10:"activeOnly";s:1:"0";s:10:"recordSlug";s:11:"{{ :slug }}";s:8:"areaSlug";s:1:"0";s:12:"categorySlug";s:21:"{{ :gruppovye-tury }}";s:15:"useMainCategory";s:1:"1";s:12:"categoryPage";s:1:"0";s:16:"categoryPageSlug";s:15:"{{ :category }}";}s:11:"genericForm";a:9:{s:16:"messages_success";s:65:"Ваша форма была успешно отправлена!";s:15:"messages_errors";s:61:"В вашей заявке содержатся ошибки.";s:13:"inline_errors";s:8:"disabled";s:13:"sanitize_data";s:8:"disabled";s:12:"anonymize_ip";s:8:"disabled";s:15:"recaptcha_theme";s:5:"light";s:14:"recaptcha_type";s:5:"image";s:14:"recaptcha_size";s:6:"normal";s:18:"emails_date_format";s:5:"Y-m-d";}s:9:"blogPosts";a:6:{s:10:"pageNumber";s:11:"{{ :page }}";s:12:"postsPerPage";s:1:"1";s:14:"noPostsMessage";s:34:"Записей не найдено";s:9:"sortOrder";s:17:"published_at desc";s:12:"categoryPage";s:4:"blog";s:8:"postPage";s:4:"post";}s:17:"siteSearchInclude";a:0:{}s:15:"records Reviews";a:13:{s:10:"activeOnly";s:1:"0";s:8:"areaSlug";s:1:"0";s:12:"categorySlug";s:6:"otzyvy";s:15:"useMainCategory";s:1:"1";s:18:"useMultiCategories";s:1:"0";s:7:"tagSlug";s:10:"{{ :tag }}";s:10:"recordPage";s:14:"reviews-detail";s:14:"recordPageSlug";s:11:"{{ :slug }}";s:10:"allowLimit";s:1:"1";s:5:"limit";s:1:"2";s:8:"pageSlug";s:11:"{{ :slug }}";s:7:"orderBy";s:4:"name";s:16:"orderByDirection";s:3:"ASC";}}}

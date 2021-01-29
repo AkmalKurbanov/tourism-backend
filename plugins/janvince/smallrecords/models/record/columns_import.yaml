@@ -33,6 +33,18 @@ columns:
         label: 'janvince.smallrecords::lang.common.columns.date1'
         type: datetime
 
+    date2:
+        label: 'janvince.smallrecords::lang.common.columns.date2'
+        type: datetime
+
+    review_author_status:
+        label: 'janvince.smallrecords::lang.common.columns.review_author_status'
+        type: text
+
+    review:
+        label: 'janvince.smallrecords::lang.common.columns.review'
+        type: text
+
     schedule_tours:
         label: 'janvince.smallrecords::lang.common.columns.schedule_tours'
         type: text
@@ -55,6 +67,14 @@ columns:
 
     itinerary_desc:
         label: 'janvince.smallrecords::lang.common.columns.itinerary_desc'
+        type: text
+    
+    sights_editor:
+        label: 'janvince.smallrecords::lang.common.columns.sights_editor'
+        type: text
+
+    sights_map:
+        label: 'janvince.smallrecords::lang.common.columns.sights_map'
         type: text
 
     itinerary_map:

@@ -1,0 +1,65 @@
+1611924013a:1:{s:20:"site/main_slider.htm";a:7:{s:8:"fileName";s:20:"site/main_slider.htm";s:7:"content";s:1203:"[records TypeTours]
+activeOnly = 0
+areaSlug = 0
+categorySlug = "tury"
+useMainCategory = 1
+useMultiCategories = 0
+tagSlug = "{{ :tag }}"
+recordPage = "type-tours"
+recordPageSlug = "{{ :slug }}"
+limit = 9
+pageSlug = "{{ :page }}"
+orderBy = "name"
+orderByDirection = "ASC"
+
+[viewBag]
+==
+{% for record in TypeTours.items %}
+<div class="item lazy" style="background-image: url(&quot;{{ record.preview_image.getPath }}&quot;);"
+  data-bg="url({{ record.preview_image.getPath }})" data-was-processed="true">
+  <div class="carousel-caption">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <h2>{{ record.name }}</h2>
+          <h3>{{ record.description }}</h3>
+          <div class="button_wrapper">
+            <a href="{{TypeTours.property('recordPage') ? TypeTours.property('recordPage')|page({(TypeTours.paramName('recordPageSlug')):(record.slug)})}}"
+              class="cstm_button"><i class="fa fa-eye"></i>
+              view tours</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+
+
+<script>
+  $('#front_slider .item.lazy').first().addClass('active');
+</script>";s:5:"mtime";i:1611578403;s:6:"markup";s:903:"{% for record in TypeTours.items %}
+<div class="item lazy" style="background-image: url(&quot;{{ record.preview_image.getPath }}&quot;);"
+  data-bg="url({{ record.preview_image.getPath }})" data-was-processed="true">
+  <div class="carousel-caption">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <h2>{{ record.name }}</h2>
+          <h3>{{ record.description }}</h3>
+          <div class="button_wrapper">
+            <a href="{{TypeTours.property('recordPage') ? TypeTours.property('recordPage')|page({(TypeTours.paramName('recordPageSlug')):(record.slug)})}}"
+              class="cstm_button"><i class="fa fa-eye"></i>
+              view tours</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+
+
+<script>
+  $('#front_slider .item.lazy').first().addClass('active');
+</script>";s:4:"code";N;s:17:"records TypeTours";a:12:{s:10:"activeOnly";s:1:"0";s:8:"areaSlug";s:1:"0";s:12:"categorySlug";s:4:"tury";s:15:"useMainCategory";s:1:"1";s:18:"useMultiCategories";s:1:"0";s:7:"tagSlug";s:10:"{{ :tag }}";s:10:"recordPage";s:10:"type-tours";s:14:"recordPageSlug";s:11:"{{ :slug }}";s:5:"limit";s:1:"9";s:8:"pageSlug";s:11:"{{ :page }}";s:7:"orderBy";s:4:"name";s:16:"orderByDirection";s:3:"ASC";}s:7:"viewBag";a:0:{}}}

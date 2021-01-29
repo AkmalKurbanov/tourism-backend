@@ -1,0 +1,74 @@
+title = "Sights"
+url = "/sights/:slug"
+layout = "static-layout"
+is_hidden = 0
+
+[recordDetail SightsDetail]
+activeOnly = 0
+recordSlug = "{{ :slug }}"
+areaSlug = 0
+categorySlug = "sights"
+useMainCategory = 0
+useMultiCategories = 1
+categoryPage = 0
+categoryPageSlug = "{{ :category }}"
+
+[siteSearchInclude]
+==
+<div id="top" class="small_top lazy"
+  style="background-image: url(&quot;{{ SightsDetail.recordDetail.preview_image.getPath }}&quot;);"
+  data-bg="url({{ SightsDetail.recordDetail.preview_image.getPath }})" data-was-processed="true">
+
+  <div class="breadcrumb_wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <p id="breadcrumbs"><span><span><a href="/">Home</a> / <span><a
+                    href="https://kyrgyzstan-tourism.com/sights/">Sights</a> / <span class="breadcrumb_last"
+                    aria-current="page">{{ SightsDetail.recordDetail.name }}</span></span></span></span></p>
+          <div class="line_helper" style="background: rgba(255,255,255,.3)"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="desc">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 text-center">
+          <h1 id="single_tour_title">{{ SightsDetail.recordDetail.name }}</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-sm-9">
+      <div id="content">
+
+        {{ SightsDetail.recordDetail.sights_editor | raw }}
+        <iframe src="{{ SightsDetail.recordDetail.sights_map }}" width="100%" height="480"></iframe>
+
+      </div>
+
+
+    </div>
+
+
+    <div class="col-sm-3">
+      <div class="sidebar_wrapper">
+
+        <div id="sidebar">
+
+
+          {% partial 'site/sidebar_without_date' %}
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

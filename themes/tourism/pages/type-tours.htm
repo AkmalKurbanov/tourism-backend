@@ -7,18 +7,18 @@ is_hidden = 0
 activeOnly = 0
 recordSlug = "{{ :slug }}"
 areaSlug = 0
-categorySlug = "vid-tura"
-useMainCategory = 0
-useMultiCategories = 1
+categorySlug = "tury"
+useMainCategory = 1
+useMultiCategories = 0
 categoryPage = 0
 categoryPageSlug = "{{ :category }}"
 
 [records Tours]
 activeOnly = 0
 areaSlug = 0
-categorySlug = "{{ :category }}"
-useMainCategory = 1
-useMultiCategories = 1
+categorySlug = "{{ : slug }}"
+useMainCategory = 0
+useMultiCategories = 0
 tagSlug = "{{ :tag }}"
 recordPage = "tour-detail"
 recordPageSlug = "{{ :slug }}"
@@ -38,14 +38,15 @@ recaptcha_type = "image"
 recaptcha_size = "normal"
 emails_date_format = "Y-m-d"
 
+[siteSearchInclude]
 ==
-<div id="top" class="small_top lazy" style="" data-bg="url({{TypeToursDetail.recordDetail.preview_image.getPath }})">
+<div id="top" class="small_top lazy" style="background-image: url({{TypeToursDetail.recordDetail.preview_image.getPath }})">
 
   <div class="breadcrumb_wrapper">
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
-          <p id="breadcrumbs"><span><span><a href="https://kyrgyzstan-tourism.com/">Home</a> / <span
+          <p id="breadcrumbs"><span><span><a href="/">Home</a> / <a href="/tours/default">Tours</a> / <span
                   class="breadcrumb_last"
                   aria-current="page">{{ TypeToursDetail.recordDetail.name }}</span></span></span></p>
           <div class="line_helper" style="background: rgba(255,255,255,.3)"></div>
@@ -82,12 +83,13 @@ emails_date_format = "Y-m-d"
         <div class="row">
 
           {% for record in Tours.items %}
+          
           <div class="col-sm-4">
             <div class="item item_tour with_border auto_height ">
               <a
                 href="{{Tours.property('recordPage') ? Tours.property('recordPage')|page({(Tours.paramName('recordPageSlug')):(record.slug)})}}">
                 <span class="img_wrapper">
-                  <span class="img lazy" style="" data-bg="url({{ record.preview_image.getPath }})"></span>
+                  <span class="img lazy" style="background-image: url({{ record.preview_image.getPath }})"></span>
 
                 </span>
                 <div class="desc">

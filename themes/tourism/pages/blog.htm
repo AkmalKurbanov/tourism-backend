@@ -21,6 +21,8 @@ recaptcha_theme = "light"
 recaptcha_type = "image"
 recaptcha_size = "normal"
 emails_date_format = "Y-m-d"
+
+[siteSearchInclude]
 ==
 <body>
 
@@ -55,22 +57,20 @@ emails_date_format = "Y-m-d"
 
 
 
-  <script>
-    $(window).load(function () {
-      $("#wpcf7-f198-o2 input[type=submit]").first().attr("onclick", "ga('send','event','НижняяФорма','send')");
-      $("#wpcf7-f198-o1 input[type=submit]").first().attr("onclick", "ga('send','event','Верхняяформа','send')");
-    });
-  </script>
+
 
   <div id="top" class="small_top lazy"
     style="background-image: url(&quot;https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Sunset_1920.jpg&quot;);"
     data-bg="url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Sunset_1920.jpg)" data-was-processed="true">
 
+
+
+
     <div class="breadcrumb_wrapper">
       <div class="container">
         <div class="row">
           <div class="col-sm-12">
-            <p id="breadcrumbs"><span><span><a href="https://kyrgyzstan-tourism.com/">Home</a> / <span
+            <p id="breadcrumbs"><span><span><a href="/">Home</a> / <span
                     class="breadcrumb_last" aria-current="page">Blog</span></span></span></p>
             <div class="line_helper" style="background: rgba(255,255,255,.3)"></div>
           </div>
@@ -116,8 +116,7 @@ emails_date_format = "Y-m-d"
                   <span class="img_wrapper">
 
                     {% for image in post.featured_images|slice(0,1) %}
-                    <span class="img lazy" style="background-image: url(&quot;{{image.path}}&quot;);"
-                      data-bg="url({{image.path}})" data-was-processed="true"></span>
+                    <span class="img lazy" style="background-image: url(&quot;{{image.path}}&quot;);"></span>
                     {% endfor %}
 
                   </span>
@@ -166,17 +165,3 @@ emails_date_format = "Y-m-d"
 
     </div>
   </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-

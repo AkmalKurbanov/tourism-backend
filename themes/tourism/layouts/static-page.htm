@@ -7,8 +7,7 @@ default = 0
 [staticMenu]
 code = "menu"
 
-[genericForm TourForm]
-group = "Форма внутренней страницы"
+[genericForm]
 messages_success = "Ваша форма была успешно отправлена!"
 messages_errors = "В вашей заявке содержатся ошибки."
 inline_errors = "disabled"
@@ -20,32 +19,12 @@ recaptcha_size = "normal"
 emails_date_format = "Y-m-d"
 ==
 {variable name="tagline" label="Tagline" tab="Header" type="text"}{/variable}
+
+
 <!DOCTYPE html>
 <html>
 
 <head>
-  {% partial 'site/head_styles_index_page/style1' %}
-  <link href="{{ 'assets/javascript/plugins/w3-total-cache/pub/js/lazyload.min.js'|theme }}" rel="stylesheet">
-
-  {% partial 'site/head_styles_index_page/style2' %}
-  {% partial 'site/head_scripts_index_page/script1' %}
-  {% partial 'site/head_scripts_index_page/script2' %}
-
-  {% partial 'site/head_styles_index_page/style3' %}
-
-  <link href="{{ 'assets/css/6d2d0.css'|theme }}" rel="stylesheet">
-  <link rel='stylesheet' id='font-style-css'
-    href='https://fonts.googleapis.com/css?family=Lato%3A400%2C700%2C900&#038;subset=latin-ext&#038;ver=5.3.2'
-    type='text/css' media='all' />
-  <link rel='stylesheet' id='font-style-2-css'
-    href='https://fonts.googleapis.com/css?family=Noto+Serif%3A400%2C700&#038;ver=5.3.2' type='text/css' media='all' />
-  <link href="{{ 'assets/css/113f9.css'|theme }}" rel="stylesheet">
-  {% partial 'site/head_styles_index_page/style4' %}
-
-  {% partial 'site/head_scripts_index_page/script3' %}
-  {% partial 'site/head_scripts_index_page/script4' %}
-  {% partial 'site/head_styles_index_page/style5' %}
-
   <meta charset="utf-8">
   <title>{{this.theme.site_name}} - {{ this.page.title }}</title>
   <meta name="description" content="{{ this.page.meta_description }}">
@@ -55,23 +34,17 @@ emails_date_format = "Y-m-d"
   <meta name="generator" content="OctoberCMS">
   <link rel="icon" type="image/png" href="{{ 'assets/images/october.png'|theme }}">
 
-  {% partial 'site/head_styles_index_page/style6' %}
-  {% partial 'site/head_scripts_index_page/script5' %}
+<link href="{{ 'assets/css/6d2d0.css'|theme }}" rel="stylesheet">
+ <link href="{{ 'assets/css/113f9.css'|theme }}" rel="stylesheet">
+   
+  <link rel='stylesheet' id='font-style-css'
+    href='https://fonts.googleapis.com/css?family=Lato%3A400%2C700%2C900&#038;subset=latin-ext&#038;ver=5.3.2'
+    type='text/css' media='all' />
+  <link rel='stylesheet' id='font-style-2-css'
+    href='https://fonts.googleapis.com/css?family=Noto+Serif%3A400%2C700&#038;ver=5.3.2' type='text/css' media='all' />
+    <script src="{{ 'assets/javascript/c6d25.js'|theme }}"></script>
+
   {% styles %}
-  <style>
-    #map {
-      height: 100%;
-    }
-
-    /* Optional: Makes the sample page fill the window. */
-    html,
-    body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
-  </style>
-
 </head>
 
 <body>
@@ -133,7 +106,7 @@ emails_date_format = "Y-m-d"
       <div class="row">
 
         <div class="col-sm-3">
-          <a href="https://kyrgyzstan-tourism.com/" class="logo">
+          <a href="/" class="logo">
             <img src="{{this.theme.logo.path}}" alt="">
           </a>
         </div>
@@ -205,6 +178,7 @@ emails_date_format = "Y-m-d"
     style="background-image: url(&quot;https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Sunset_1920.jpg&quot;);"
     data-bg="url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Sunset_1920.jpg)" data-was-processed="true">
 
+
     <div class="breadcrumb_wrapper">
       <div class="container">
         <div class="row">
@@ -249,7 +223,7 @@ emails_date_format = "Y-m-d"
 
           <div id="sidebar">
 
-            {% partial 'site/sidebar' %}
+            {% partial 'site/sidebar_without_date' %}
 
           </div>
         </div>
@@ -264,14 +238,9 @@ emails_date_format = "Y-m-d"
     {% partial 'site/footer' %}
   </footer>
 
-  <!-- Scripts -->
-  <!-- <script src="{{ 'assets/vendor/jquery.js'|theme }}"></script>
-    <script src="{{ 'assets/vendor/bootstrap.js'|theme }}"></script>
-    <script src="{{ 'assets/javascript/app.js'|theme }}"></script> -->
-  {% partial 'site/head_scripts_index_page/script6' %}
-  {% partial 'site/head_styles_index_page/style7' %}
-  {% partial 'site/head_scripts_index_page/script7' %}
+ <!-- Scripts -->
 
+ <script src="{{ 'assets/javascript/e0855.js'|theme }}"></script>
   {% framework extras %}
   {% scripts %}
 

@@ -6,7 +6,7 @@ is_hidden = 0
 [records AllTours]
 activeOnly = 0
 favouriteOnly = 0
-areaSlug = "tury"
+areaSlug = 0
 categorySlug = "tury"
 useMainCategory = 0
 useMultiCategories = 1
@@ -31,9 +31,11 @@ recaptcha_type = "image"
 recaptcha_size = "normal"
 emails_date_format = "Y-m-d"
 
+[siteSearchInclude]
+
+[siteSearchInclude siteSearchInclude2]
 ==
-<div class="small_top lazy" id="top" style=""
-  data-bg="url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Sunset_1920.jpg)">
+{% component 'siteSearchInclude' %}<div class="small_top lazy" id="top" style="background-image: url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Sunset_1920.jpg)">
 
 
 
@@ -46,8 +48,7 @@ emails_date_format = "Y-m-d"
             <span><span>
                 <a href="https://kyrgyzstan-tourism.com/">Home</a> /
                 <span>
-                  <a href="https://kyrgyzstan-tourism.com/group-tours/">Group Tours 2021</a> /<span
-                    class="breadcrumb_last" aria-current="page">{{ TourDetail.recordDetail.name }}</span>
+                  <span class="breadcrumb_last" aria-current="page">Tours</span>
                 </span>
               </span>
             </span></p>
@@ -61,7 +62,7 @@ emails_date_format = "Y-m-d"
     <div class="container">
       <div class="row">
         <div class="col-sm-12 text-center">
-          <h1 id="single_tour_title">{{this.page.title}}</h1>
+          <h1 id="single_tour_title">All tours</h1>
         </div>
       </div>
     </div>
@@ -88,7 +89,7 @@ emails_date_format = "Y-m-d"
               <a
                 href="{{AllTours.property('recordPage') ? AllTours.property('recordPage')|page({(AllTours.paramName('recordPageSlug')):(record.slug)})}}">
                 <span class="img_wrapper">
-                  <span class="img lazy" style="" data-bg="url({{ record.preview_image.getPath }})"></span>
+                  <span class="img lazy" style="background-image: url({{ record.preview_image.getPath }})"></span>
 
                 </span>
                 <div class="desc">

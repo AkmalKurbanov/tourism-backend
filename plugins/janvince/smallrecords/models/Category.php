@@ -69,4 +69,8 @@ class Category extends Model
         return $query->where('active', '=', true);
     }
 
+    public function getCategory(){
+        return $this->lists('name', 'id');
+    }
+
 }

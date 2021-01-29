@@ -3735,7 +3735,8 @@ h6 {
 }
 
 p {
-  margin: 0 0 10px
+  margin: 0 0 10px;
+  font-style: normal;
 }
 
 .lead {

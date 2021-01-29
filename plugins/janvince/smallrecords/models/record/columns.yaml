@@ -72,6 +72,11 @@ columns:
         type: date
         sortable: true
         invisible: true
+    date2:
+        label: 'janvince.smallrecords::lang.common.columns.date2'
+        type: date
+        sortable: true
+        invisible: true
     schedule_tours:
         label: 'janvince.smallrecords::lang.common.columns.schedule_tours'
         type: text
@@ -94,6 +99,16 @@ columns:
         invisible: true
     itinerary_desc:
         label: 'janvince.smallrecords::lang.common.columns.itinerary_desc'
+        type: text
+        sortable: true
+        invisible: true
+    sights_editor:
+        label: 'janvince.smallrecords::lang.common.columns.sights_editor'
+        type: text
+        sortable: true
+        invisible: true
+    sights_map:
+        label: 'janvince.smallrecords::lang.common.columns.sights_map'
         type: text
         sortable: true
         invisible: true
