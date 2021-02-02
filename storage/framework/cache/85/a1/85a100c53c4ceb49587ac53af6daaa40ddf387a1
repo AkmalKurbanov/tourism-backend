@@ -1,0 +1,167 @@
+1612281157a:1:{s:11:"gallery.htm";a:12:{s:8:"fileName";s:11:"gallery.htm";s:7:"content";s:2556:"title = "gallery"
+url = "/gallery/:slug"
+layout = "static-layout"
+is_hidden = 0
+
+[recordDetail]
+activeOnly = 0
+recordSlug = "{{ :slug }}"
+areaSlug = 0
+categorySlug = "{{ :category }}"
+useMainCategory = 1
+categoryPage = "category"
+categoryPageSlug = "{{ :category }}"
+
+[genericForm]
+messages_success = "Ваша форма была успешно отправлена!"
+messages_errors = "В вашей заявке содержатся ошибки."
+inline_errors = "disabled"
+sanitize_data = "disabled"
+anonymize_ip = "disabled"
+recaptcha_theme = "light"
+recaptcha_type = "image"
+recaptcha_size = "normal"
+emails_date_format = "Y-m-d"
+
+[siteSearchInclude]
+==
+
+
+
+  <div id="top" class="small_top lazy"
+    style="background-image: url({{ recordDetail.preview_image.getPath | resize(1920, false, { mode: 'crop', quality: '80', extension: 'jpg' })}});">
+
+
+    <div class="breadcrumb_wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <p id="breadcrumbs"><span><span><a href="/">Home</a> / <a href="/photo-gallery">Photo gallery</a> / <span
+                    class="breadcrumb_last"
+                    aria-current="page">{{recordDetail.name}}</span></span></span></p>
+            <div class="line_helper" style="background: rgba(255,255,255,.3)"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="desc">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 text-center">
+            <h1 id="single_tour_title">{{recordDetail.name}}</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="row">
+
+      <div class="col-sm-9">
+        <div id="content" class="">
+
+          <div class="custom_gallery justified-gallery" style="height: 1287px;" lg-uid="lg0">
+            {% for image in recordDetail.images %}
+            <a data-fancybox="gallery" href="{{image.path}}" class="jg-entry"
+              style="width: 129px; height: 128.5px; top: 6px; left: 6px; opacity: 1;">
+              <img class="ls-is-cached lazyloaded" src="{{image.path}}" alt="">
+            </a>
+            {%endfor%}
+        
+
+          </div>
+
+        </div>
+
+
+
+
+
+
+
+      </div>
+
+      <div class="col-sm-3">
+        <div class="sidebar_wrapper">
+
+          <div id="sidebar">
+
+            {% partial 'site/sidebar_without_date' %}
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>";s:5:"mtime";i:1612274167;s:6:"markup";s:1860:"<div id="top" class="small_top lazy"
+    style="background-image: url({{ recordDetail.preview_image.getPath | resize(1920, false, { mode: 'crop', quality: '80', extension: 'jpg' })}});">
+
+
+    <div class="breadcrumb_wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <p id="breadcrumbs"><span><span><a href="/">Home</a> / <a href="/photo-gallery">Photo gallery</a> / <span
+                    class="breadcrumb_last"
+                    aria-current="page">{{recordDetail.name}}</span></span></span></p>
+            <div class="line_helper" style="background: rgba(255,255,255,.3)"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="desc">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 text-center">
+            <h1 id="single_tour_title">{{recordDetail.name}}</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="row">
+
+      <div class="col-sm-9">
+        <div id="content" class="">
+
+          <div class="custom_gallery justified-gallery" style="height: 1287px;" lg-uid="lg0">
+            {% for image in recordDetail.images %}
+            <a data-fancybox="gallery" href="{{image.path}}" class="jg-entry"
+              style="width: 129px; height: 128.5px; top: 6px; left: 6px; opacity: 1;">
+              <img class="ls-is-cached lazyloaded" src="{{image.path}}" alt="">
+            </a>
+            {%endfor%}
+        
+
+          </div>
+
+        </div>
+
+
+
+
+
+
+
+      </div>
+
+      <div class="col-sm-3">
+        <div class="sidebar_wrapper">
+
+          <div id="sidebar">
+
+            {% partial 'site/sidebar_without_date' %}
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>";s:4:"code";N;s:5:"title";s:7:"gallery";s:3:"url";s:14:"/gallery/:slug";s:6:"layout";s:13:"static-layout";s:9:"is_hidden";s:1:"0";s:12:"recordDetail";a:7:{s:10:"activeOnly";s:1:"0";s:10:"recordSlug";s:11:"{{ :slug }}";s:8:"areaSlug";s:1:"0";s:12:"categorySlug";s:15:"{{ :category }}";s:15:"useMainCategory";s:1:"1";s:12:"categoryPage";s:8:"category";s:16:"categoryPageSlug";s:15:"{{ :category }}";}s:11:"genericForm";a:9:{s:16:"messages_success";s:65:"Ваша форма была успешно отправлена!";s:15:"messages_errors";s:61:"В вашей заявке содержатся ошибки.";s:13:"inline_errors";s:8:"disabled";s:13:"sanitize_data";s:8:"disabled";s:12:"anonymize_ip";s:8:"disabled";s:15:"recaptcha_theme";s:5:"light";s:14:"recaptcha_type";s:5:"image";s:14:"recaptcha_size";s:6:"normal";s:18:"emails_date_format";s:5:"Y-m-d";}s:17:"siteSearchInclude";a:0:{}}}

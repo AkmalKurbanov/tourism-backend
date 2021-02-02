@@ -1,30 +1,26 @@
-[records TypeTours]
-activeOnly = 0
-areaSlug = 0
-categorySlug = "tury"
-useMainCategory = 1
-useMultiCategories = 0
-tagSlug = "{{ :tag }}"
-recordPage = "type-tours"
-recordPageSlug = "{{ :slug }}"
-limit = 9
-pageSlug = "{{ :page }}"
-orderBy = "name"
-orderByDirection = "ASC"
-
 [viewBag]
+
+[categories]
+activeOnly = 0
+parentCategorySlug = "tury"
+areaSlug = 0
+categoriesPage = "type-tours"
+categoriesPageSlug = "{{ :category }}"
+categoryPage = "type-tours"
+categoryPageSlug = "{{ :category }}"
+limit = 10
 ==
-{% for record in TypeTours.items %}
-<div class="item lazy" style="background-image: url(&quot;{{ record.preview_image.getPath }}&quot;);"
-  data-bg="url({{ record.preview_image.getPath }})" data-was-processed="true">
+{% for category in categories.items %}
+<div class="item lazy"
+  style="background-image: url(&quot;{{ category.preview_image.getPath | resize(1920, false, { mode: 'crop', quality: '80', extension: 'jpg' }) }}&quot;);">
   <div class="carousel-caption">
     <div class="container">
       <div class="row">
         <div class="col-md-8 col-md-offset-2">
-          <h2>{{ record.name }}</h2>
-          <h3>{{ record.description }}</h3>
+          <h2>{{ category.name }}</h2>
+          <h3>{{ category.description }}</h3>
           <div class="button_wrapper">
-            <a href="{{TypeTours.property('recordPage') ? TypeTours.property('recordPage')|page({(TypeTours.paramName('recordPageSlug')):(record.slug)})}}"
+            <a href="{{categories.property('categoriesPage') ? categories.property('categoriesPage')|page({(categories.paramName('categoriesPageSlug')):(category.slug)})}}"
               class="cstm_button"><i class="fa fa-eye"></i>
               view tours</a>
           </div>

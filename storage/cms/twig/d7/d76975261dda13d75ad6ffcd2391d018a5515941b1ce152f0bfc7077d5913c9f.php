@@ -30,13 +30,13 @@ class __TwigTemplate_258a5af0eab41cd20c62be38dc59f6116ef607e6ecf4c658a6bc38ea497
         ];
         $this->sandbox = $this->env->getExtension('\Twig\Extension\SandboxExtension');
         $tags = array("for" => 1);
-        $filters = array("page" => 6, "escape" => 8);
+        $filters = array("page" => 6, "resize" => 9, "escape" => 13);
         $functions = array();
 
         try {
             $this->sandbox->checkSecurity(
                 ['for'],
-                ['page', 'escape'],
+                ['page', 'resize', 'escape'],
                 []
             );
         } catch (SecurityError $e) {
@@ -60,37 +60,39 @@ class __TwigTemplate_258a5af0eab41cd20c62be38dc59f6116ef607e6ecf4c658a6bc38ea497
         $macros = $this->macros;
         // line 1
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["TypeTours"] ?? null), "items", [], "any", false, false, true, 1));
-        foreach ($context['_seq'] as $context["_key"] => $context["record"]) {
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["categories"] ?? null), "items", [], "any", false, false, true, 1));
+        foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
             // line 2
             echo "
- <div class=\"col-sm-4\">
-   <div class=\"item item_tour with_border auto_height tour_type\">
-     <a
-       href=\"";
+<div class=\"col-sm-4\">
+  <div class=\"item item_tour with_border auto_height tour_type\">
+    <a
+      href=\"";
             // line 6
-            echo ((twig_get_attribute($this->env, $this->source, ($context["TypeTours"] ?? null), "property", [0 => "recordPage"], "method", false, false, true, 6)) ? ($this->extensions['Cms\Twig\Extension']->pageFilter($this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["TypeTours"] ?? null), "property", [0 => "recordPage"], "method", false, false, true, 6), 6, $this->source), [twig_get_attribute($this->env, $this->source, ($context["TypeTours"] ?? null), "paramName", [0 => "recordPageSlug"], "method", false, false, true, 6) => twig_get_attribute($this->env, $this->source, $context["record"], "slug", [], "any", false, false, true, 6)])) : (""));
+            echo ((twig_get_attribute($this->env, $this->source, ($context["categories"] ?? null), "property", [0 => "categoriesPage"], "method", false, false, true, 6)) ? ($this->extensions['Cms\Twig\Extension']->pageFilter($this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["categories"] ?? null), "property", [0 => "categoriesPage"], "method", false, false, true, 6), 6, $this->source), [twig_get_attribute($this->env, $this->source, ($context["categories"] ?? null), "paramName", [0 => "categoriesPageSlug"], "method", false, false, true, 6) => twig_get_attribute($this->env, $this->source, $context["category"], "slug", [], "any", false, false, true, 6)])) : (""));
             echo "\">
-       <span class=\"img_wrapper\">
-             <span class=\"img lazy\" style=\"background-image: url(";
-            // line 8
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["record"], "preview_image", [], "any", false, false, true, 8), "getPath", [], "any", false, false, true, 8), 8, $this->source), "html", null, true);
+      <span class=\"img_wrapper\">
+            <span class=\"img lazy\"
+              style=\"background-image: url(";
+            // line 9
+            echo call_user_func_array($this->env->getFilter('resize')->getCallable(), [$this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["category"], "preview_image", [], "any", false, false, true, 9), "getPath", [], "any", false, false, true, 9), 9, $this->source), 360, false, ["mode" => "crop", "quality" => "80", "extension" => "jpg"]]);
             echo ")\"></span>
-       </span>
-       <div class=\"desc\">
-         <h3>";
-            // line 11
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "name", [], "any", false, false, true, 11), 11, $this->source), "html", null, true);
+      </span>
+      
+      <div class=\"desc\">
+        <h3>";
+            // line 13
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["category"], "name", [], "any", false, false, true, 13), 13, $this->source), "html", null, true);
             echo "</h3>
-       </div>
-     </a>
-   </div>
- </div>
+      </div>
+    </a>
+  </div>
+</div>
 
  ";
         }
         $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['record'], $context['_parent'], $context['loop']);
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['category'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
     }
 
@@ -106,26 +108,28 @@ class __TwigTemplate_258a5af0eab41cd20c62be38dc59f6116ef607e6ecf4c658a6bc38ea497
 
     public function getDebugInfo()
     {
-        return array (  83 => 11,  77 => 8,  72 => 6,  66 => 2,  62 => 1,);
+        return array (  85 => 13,  78 => 9,  72 => 6,  66 => 2,  62 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{% for record in TypeTours.items %}
+        return new Source("{% for category in categories.items %}
 
- <div class=\"col-sm-4\">
-   <div class=\"item item_tour with_border auto_height tour_type\">
-     <a
-       href=\"{{TypeTours.property('recordPage') ? TypeTours.property('recordPage')|page({(TypeTours.paramName('recordPageSlug')):(record.slug)})}}\">
-       <span class=\"img_wrapper\">
-             <span class=\"img lazy\" style=\"background-image: url({{ record.preview_image.getPath }})\"></span>
-       </span>
-       <div class=\"desc\">
-         <h3>{{ record.name }}</h3>
-       </div>
-     </a>
-   </div>
- </div>
+<div class=\"col-sm-4\">
+  <div class=\"item item_tour with_border auto_height tour_type\">
+    <a
+      href=\"{{categories.property('categoriesPage') ? categories.property('categoriesPage')|page({(categories.paramName('categoriesPageSlug')):(category.slug)})}}\">
+      <span class=\"img_wrapper\">
+            <span class=\"img lazy\"
+              style=\"background-image: url({{ category.preview_image.getPath | resize(360, false, { mode: 'crop', quality: '80', extension: 'jpg' })}})\"></span>
+      </span>
+      
+      <div class=\"desc\">
+        <h3>{{ category.name }}</h3>
+      </div>
+    </a>
+  </div>
+</div>
 
  {% endfor %}", "C:\\work\\OpenServer\\domains\\tourism.loc/themes/tourism/partials/site/type_tours.htm", "");
     }

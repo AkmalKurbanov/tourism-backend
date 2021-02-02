@@ -1,49 +1,49 @@
-1611924013a:1:{s:19:"site/type_tours.htm";a:7:{s:8:"fileName";s:19:"site/type_tours.htm";s:7:"content";s:877:"[viewBag]
+1612275942a:1:{s:19:"site/type_tours.htm";a:7:{s:8:"fileName";s:19:"site/type_tours.htm";s:7:"content";s:922:"[viewBag]
 
-[records TypeTours]
+[categories]
 activeOnly = 0
+parentCategorySlug = "tury"
 areaSlug = 0
-categorySlug = "tury"
-useMainCategory = 1
-useMultiCategories = 0
-tagSlug = "{{ :tag }}"
-recordPage = "type-tours"
-recordPageSlug = "{{ :slug }}"
-limit = 9
-pageSlug = "{{ :page }}"
-orderBy = "name"
-orderByDirection = "ASC"
+categoriesPage = "type-tours"
+categoriesPageSlug = "{{ :category }}"
+categoryPage = "type-tours"
+categoryPageSlug = "{{ :category }}"
+limit = 10
 ==
-{% for record in TypeTours.items %}
+{% for category in categories.items %}
 
- <div class="col-sm-4">
-   <div class="item item_tour with_border auto_height tour_type">
-     <a
-       href="{{TypeTours.property('recordPage') ? TypeTours.property('recordPage')|page({(TypeTours.paramName('recordPageSlug')):(record.slug)})}}">
-       <span class="img_wrapper">
-             <span class="img lazy" style="background-image: url({{ record.preview_image.getPath }})"></span>
-       </span>
-       <div class="desc">
-         <h3>{{ record.name }}</h3>
-       </div>
-     </a>
-   </div>
- </div>
+<div class="col-sm-4">
+  <div class="item item_tour with_border auto_height tour_type">
+    <a
+      href="{{categories.property('categoriesPage') ? categories.property('categoriesPage')|page({(categories.paramName('categoriesPageSlug')):(category.slug)})}}">
+      <span class="img_wrapper">
+            <span class="img lazy"
+              style="background-image: url({{ category.preview_image.getPath | resize(360, false, { mode: 'crop', quality: '80', extension: 'jpg' })}})"></span>
+      </span>
+      
+      <div class="desc">
+        <h3>{{ category.name }}</h3>
+      </div>
+    </a>
+  </div>
+</div>
 
- {% endfor %}";s:5:"mtime";i:1611836500;s:6:"markup";s:577:"{% for record in TypeTours.items %}
+ {% endfor %}";s:5:"mtime";i:1612000864;s:6:"markup";s:682:"{% for category in categories.items %}
 
- <div class="col-sm-4">
-   <div class="item item_tour with_border auto_height tour_type">
-     <a
-       href="{{TypeTours.property('recordPage') ? TypeTours.property('recordPage')|page({(TypeTours.paramName('recordPageSlug')):(record.slug)})}}">
-       <span class="img_wrapper">
-             <span class="img lazy" style="background-image: url({{ record.preview_image.getPath }})"></span>
-       </span>
-       <div class="desc">
-         <h3>{{ record.name }}</h3>
-       </div>
-     </a>
-   </div>
- </div>
+<div class="col-sm-4">
+  <div class="item item_tour with_border auto_height tour_type">
+    <a
+      href="{{categories.property('categoriesPage') ? categories.property('categoriesPage')|page({(categories.paramName('categoriesPageSlug')):(category.slug)})}}">
+      <span class="img_wrapper">
+            <span class="img lazy"
+              style="background-image: url({{ category.preview_image.getPath | resize(360, false, { mode: 'crop', quality: '80', extension: 'jpg' })}})"></span>
+      </span>
+      
+      <div class="desc">
+        <h3>{{ category.name }}</h3>
+      </div>
+    </a>
+  </div>
+</div>
 
- {% endfor %}";s:4:"code";N;s:7:"viewBag";a:0:{}s:17:"records TypeTours";a:12:{s:10:"activeOnly";s:1:"0";s:8:"areaSlug";s:1:"0";s:12:"categorySlug";s:4:"tury";s:15:"useMainCategory";s:1:"1";s:18:"useMultiCategories";s:1:"0";s:7:"tagSlug";s:10:"{{ :tag }}";s:10:"recordPage";s:10:"type-tours";s:14:"recordPageSlug";s:11:"{{ :slug }}";s:5:"limit";s:1:"9";s:8:"pageSlug";s:11:"{{ :page }}";s:7:"orderBy";s:4:"name";s:16:"orderByDirection";s:3:"ASC";}}}
+ {% endfor %}";s:4:"code";N;s:7:"viewBag";a:0:{}s:10:"categories";a:8:{s:10:"activeOnly";s:1:"0";s:18:"parentCategorySlug";s:4:"tury";s:8:"areaSlug";s:1:"0";s:14:"categoriesPage";s:10:"type-tours";s:18:"categoriesPageSlug";s:15:"{{ :category }}";s:12:"categoryPage";s:10:"type-tours";s:16:"categoryPageSlug";s:15:"{{ :category }}";s:5:"limit";s:2:"10";}}}

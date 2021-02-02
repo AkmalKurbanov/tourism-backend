@@ -29,14 +29,14 @@ class __TwigTemplate_15ee090b1f3fc79c9ad9e503b458303de3072f98415b15022ab842164dc
         $this->blocks = [
         ];
         $this->sandbox = $this->env->getExtension('\Twig\Extension\SandboxExtension');
-        $tags = array("set" => 82, "for" => 87, "partial" => 139);
-        $filters = array("escape" => 65, "slice" => 97);
+        $tags = array("set" => 62, "for" => 67, "partial" => 120);
+        $filters = array("resize" => 23, "media" => 23, "escape" => 45, "slice" => 77);
         $functions = array();
 
         try {
             $this->sandbox->checkSecurity(
                 ['set', 'for', 'partial'],
-                ['escape', 'slice'],
+                ['resize', 'media', 'escape', 'slice'],
                 []
             );
         } catch (SecurityError $e) {
@@ -75,28 +75,16 @@ class __TwigTemplate_15ee090b1f3fc79c9ad9e503b458303de3072f98415b15022ab842164dc
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal -->
 
-  <div class=\"modal fade in\" id=\"modal_search\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\"
-    aria-hidden=\"true\">
-    <div class=\"modal-dialog\">
-      <div class=\"modal-content\">
-        <div id=\"search_form\">
-          <form role=\"search\" method=\"get\" id=\"searchform\" action=\"https://kyrgyzstan-tourism.com/\">
-            <input type=\"text\" value=\"\" name=\"s\" id=\"s\">
-            <button type=\"submit\" id=\"search_button\"><i class=\"fa fa-search\"></i></button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
 
 
 
-
-  
 
   <div id=\"top\" class=\"small_top lazy\"
-    style=\"background-image: url(&quot;https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Sunset_1920.jpg&quot;);\"
-    data-bg=\"url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Sunset_1920.jpg)\" data-was-processed=\"true\">
+    style=\"background-image:
+    url(";
+        // line 23
+        echo call_user_func_array($this->env->getFilter('resize')->getCallable(), [$this->extensions['System\Twig\Extension']->mediaFilter($this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, true, 23), "banner_blog_banner", [], "any", false, false, true, 23), 23, $this->source)), 1920, false, ["mode" => "crop", "quality" => "80", "extension" => "jpg"]]);
+        echo ");\">
 
 
 
@@ -119,8 +107,8 @@ class __TwigTemplate_15ee090b1f3fc79c9ad9e503b458303de3072f98415b15022ab842164dc
           <div class=\"col-sm-12 text-center\">
             <h1 id=\"single_tour_title\">
              ";
-        // line 65
-        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, true, 65), "title", [], "any", false, false, true, 65), 65, $this->source), "html", null, true);
+        // line 45
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, true, 45), "title", [], "any", false, false, true, 45), 45, $this->source), "html", null, true);
         echo "
             </h1>
           </div>
@@ -139,19 +127,19 @@ class __TwigTemplate_15ee090b1f3fc79c9ad9e503b458303de3072f98415b15022ab842164dc
 
           <div class=\"row\" style=\"display: flex; flex-wrap: wrap; justify-content: center;\">
             ";
-        // line 82
-        $context["posts"] = twig_get_attribute($this->env, $this->source, ($context["blogPosts"] ?? null), "posts", [], "any", false, false, true, 82);
-        // line 83
+        // line 62
+        $context["posts"] = twig_get_attribute($this->env, $this->source, ($context["blogPosts"] ?? null), "posts", [], "any", false, false, true, 62);
+        // line 63
         echo "
 
 
 
             ";
-        // line 87
+        // line 67
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["posts"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
-            // line 88
+            // line 68
             echo "
 
 
@@ -159,36 +147,38 @@ class __TwigTemplate_15ee090b1f3fc79c9ad9e503b458303de3072f98415b15022ab842164dc
 
               <div class=\"item item_tour with_border archive_item auto_height blog_item blog_item_new\">
                 <a href=\"";
-            // line 94
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["post"], "url", [], "any", false, false, true, 94), 94, $this->source), "html", null, true);
+            // line 74
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["post"], "url", [], "any", false, false, true, 74), 74, $this->source), "html", null, true);
             echo "\">
                   <span class=\"img_wrapper\">
 
                     ";
-            // line 97
+            // line 77
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(twig_slice($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "featured_images", [], "any", false, false, true, 97), 0, 1));
+            $context['_seq'] = twig_ensure_traversable(twig_slice($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "featured_images", [], "any", false, false, true, 77), 0, 1));
             foreach ($context['_seq'] as $context["_key"] => $context["image"]) {
-                // line 98
-                echo "                    <span class=\"img lazy\" style=\"background-image: url(&quot;";
-                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["image"], "path", [], "any", false, false, true, 98), 98, $this->source), "html", null, true);
+                // line 78
+                echo "                    <span class=\"img lazy\"
+                      style=\"background-image: url(&quot;";
+                // line 79
+                echo call_user_func_array($this->env->getFilter('resize')->getCallable(), [$this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["image"], "path", [], "any", false, false, true, 79), 79, $this->source), 410, false, ["mode" => "crop", "quality" => "80", "extension" => "jpg"]]);
                 echo "&quot;);\"></span>
                     ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['image'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 100
+            // line 81
             echo "
                   </span>
                   <div class=\"desc\">
                     <h3>";
-            // line 103
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["post"], "title", [], "any", false, false, true, 103), 103, $this->source), "html", null, true);
+            // line 84
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["post"], "title", [], "any", false, false, true, 84), 84, $this->source), "html", null, true);
             echo "</h3>
                     <p class=\"excerpt\">";
-            // line 104
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["post"], "excerpt", [], "any", false, false, true, 104), 104, $this->source), "html", null, true);
+            // line 85
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["post"], "excerpt", [], "any", false, false, true, 85), 85, $this->source), "html", null, true);
             echo "</p>
                     <p class=\"r_more\">Read more &gt;</p>
                   </div>
@@ -202,7 +192,7 @@ class __TwigTemplate_15ee090b1f3fc79c9ad9e503b458303de3072f98415b15022ab842164dc
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['post'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 113
+        // line 94
         echo "
 
 
@@ -230,11 +220,11 @@ class __TwigTemplate_15ee090b1f3fc79c9ad9e503b458303de3072f98415b15022ab842164dc
 
 
             ";
-        // line 139
+        // line 120
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/sidebar_without_date"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 140
+        // line 121
         echo "
           </div>
         </div>
@@ -256,7 +246,7 @@ class __TwigTemplate_15ee090b1f3fc79c9ad9e503b458303de3072f98415b15022ab842164dc
 
     public function getDebugInfo()
     {
-        return array (  243 => 140,  239 => 139,  211 => 113,  196 => 104,  192 => 103,  187 => 100,  178 => 98,  174 => 97,  168 => 94,  160 => 88,  156 => 87,  150 => 83,  148 => 82,  128 => 65,  62 => 1,);
+        return array (  228 => 121,  224 => 120,  196 => 94,  181 => 85,  177 => 84,  172 => 81,  164 => 79,  161 => 78,  157 => 77,  151 => 74,  143 => 68,  139 => 67,  133 => 63,  131 => 62,  111 => 45,  86 => 23,  62 => 1,);
     }
 
     public function getSourceContext()
@@ -277,33 +267,13 @@ class __TwigTemplate_15ee090b1f3fc79c9ad9e503b458303de3072f98415b15022ab842164dc
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal -->
 
-  <div class=\"modal fade in\" id=\"modal_search\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\"
-    aria-hidden=\"true\">
-    <div class=\"modal-dialog\">
-      <div class=\"modal-content\">
-        <div id=\"search_form\">
-          <form role=\"search\" method=\"get\" id=\"searchform\" action=\"https://kyrgyzstan-tourism.com/\">
-            <input type=\"text\" value=\"\" name=\"s\" id=\"s\">
-            <button type=\"submit\" id=\"search_button\"><i class=\"fa fa-search\"></i></button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
 
 
 
-
-  <script>
-    \$(window).load(function () {
-      \$(\"#wpcf7-f198-o2 input[type=submit]\").first().attr(\"onclick\", \"ga('send','event','НижняяФорма','send')\");
-      \$(\"#wpcf7-f198-o1 input[type=submit]\").first().attr(\"onclick\", \"ga('send','event','Верхняяформа','send')\");
-    });
-  </script>
 
   <div id=\"top\" class=\"small_top lazy\"
-    style=\"background-image: url(&quot;https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Sunset_1920.jpg&quot;);\"
-    data-bg=\"url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Sunset_1920.jpg)\" data-was-processed=\"true\">
+    style=\"background-image:
+    url({{ this.page.banner_blog_banner|media | resize(1920, false, { mode: 'crop', quality: '80', extension: 'jpg' }) }});\">
 
 
 
@@ -358,7 +328,8 @@ class __TwigTemplate_15ee090b1f3fc79c9ad9e503b458303de3072f98415b15022ab842164dc
                   <span class=\"img_wrapper\">
 
                     {% for image in post.featured_images|slice(0,1) %}
-                    <span class=\"img lazy\" style=\"background-image: url(&quot;{{image.path}}&quot;);\"></span>
+                    <span class=\"img lazy\"
+                      style=\"background-image: url(&quot;{{image.path | resize(410, false, { mode: 'crop', quality: '80', extension: 'jpg' })}}&quot;);\"></span>
                     {% endfor %}
 
                   </span>

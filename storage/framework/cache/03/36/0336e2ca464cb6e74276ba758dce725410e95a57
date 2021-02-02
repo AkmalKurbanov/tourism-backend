@@ -1,4 +1,4 @@
-1611924013a:1:{s:23:"site/discount_tours.htm";a:7:{s:8:"fileName";s:23:"site/discount_tours.htm";s:7:"content";s:1164:"[records DealsAndDiscounts]
+1612275942a:1:{s:23:"site/discount_tours.htm";a:7:{s:8:"fileName";s:23:"site/discount_tours.htm";s:7:"content";s:1244:"[records DealsAndDiscounts]
 activeOnly = 0
 areaSlug = "tury"
 categorySlug = "predlozheniya-i-skidki"
@@ -19,7 +19,8 @@ orderByDirection = "ASC"
   <a
     href="{{DealsAndDiscounts.property('recordPage') ? DealsAndDiscounts.property('recordPage')|page({(DealsAndDiscounts.paramName('recordPageSlug')):(record.slug)})}}">
     <span class="img_wrapper">
-      <span class="img lazy" style="background-image: url({{ record.preview_image.getPath }})"></span>
+      <span class="img lazy"
+        style="background-image: url({{ record.preview_image.getPath | resize(240, false, { mode: 'crop', quality: '80', extension: 'jpg' })}})"></span>
 
       <span class="price-round">
         <span class="inner">from <br />$ {{ record.tour_cost }} US
@@ -39,12 +40,13 @@ orderByDirection = "ASC"
     </p>
   </a>
 </div>
-{% endfor %}";s:5:"mtime";i:1611836496;s:6:"markup";s:831:"{% for record in DealsAndDiscounts.items %}
+{% endfor %}";s:5:"mtime";i:1612000864;s:6:"markup";s:911:"{% for record in DealsAndDiscounts.items %}
 <div class="item item_tour with_border  ">
   <a
     href="{{DealsAndDiscounts.property('recordPage') ? DealsAndDiscounts.property('recordPage')|page({(DealsAndDiscounts.paramName('recordPageSlug')):(record.slug)})}}">
     <span class="img_wrapper">
-      <span class="img lazy" style="background-image: url({{ record.preview_image.getPath }})"></span>
+      <span class="img lazy"
+        style="background-image: url({{ record.preview_image.getPath | resize(240, false, { mode: 'crop', quality: '80', extension: 'jpg' })}})"></span>
 
       <span class="price-round">
         <span class="inner">from <br />$ {{ record.tour_cost }} US

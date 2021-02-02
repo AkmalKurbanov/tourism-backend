@@ -29,14 +29,14 @@ class __TwigTemplate_61fd4557dc6e3037616f53c4985c8d84b9ed2326f2e4d32f636d06c9126
         $this->blocks = [
         ];
         $this->sandbox = $this->env->getExtension('\Twig\Extension\SandboxExtension');
-        $tags = array("component" => 1, "for" => 47, "partial" => 106);
-        $filters = array("page" => 53, "escape" => 55);
+        $tags = array("for" => 47, "partial" => 107);
+        $filters = array("resize" => 1, "media" => 1, "page" => 53, "escape" => 60);
         $functions = array();
 
         try {
             $this->sandbox->checkSecurity(
-                ['component', 'for', 'partial'],
-                ['page', 'escape'],
+                ['for', 'partial'],
+                ['resize', 'media', 'page', 'escape'],
                 []
             );
         } catch (SecurityError $e) {
@@ -59,10 +59,9 @@ class __TwigTemplate_61fd4557dc6e3037616f53c4985c8d84b9ed2326f2e4d32f636d06c9126
     {
         $macros = $this->macros;
         // line 1
-        $context['__cms_component_params'] = [];
-        echo $this->env->getExtension('Cms\Twig\Extension')->componentFunction("siteSearchInclude"        , $context['__cms_component_params']        );
-        unset($context['__cms_component_params']);
-        echo "<div class=\"small_top lazy\" id=\"top\" style=\"background-image: url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Sunset_1920.jpg)\">
+        echo "<div class=\"small_top lazy\" id=\"top\" style=\"background-image: url(";
+        echo call_user_func_array($this->env->getFilter('resize')->getCallable(), [$this->extensions['System\Twig\Extension']->mediaFilter($this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, true, 1), "toursbanner_ToursBanner", [], "any", false, false, true, 1), 1, $this->source)), 1920, false, ["mode" => "crop", "quality" => "80", "extension" => "jpg"]]);
+        echo ")\">
 
 
 
@@ -124,25 +123,26 @@ class __TwigTemplate_61fd4557dc6e3037616f53c4985c8d84b9ed2326f2e4d32f636d06c9126
             echo ((twig_get_attribute($this->env, $this->source, ($context["AllTours"] ?? null), "property", [0 => "recordPage"], "method", false, false, true, 53)) ? ($this->extensions['Cms\Twig\Extension']->pageFilter($this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["AllTours"] ?? null), "property", [0 => "recordPage"], "method", false, false, true, 53), 53, $this->source), [twig_get_attribute($this->env, $this->source, ($context["AllTours"] ?? null), "paramName", [0 => "recordPageSlug"], "method", false, false, true, 53) => twig_get_attribute($this->env, $this->source, $context["record"], "slug", [], "any", false, false, true, 53)])) : (""));
             echo "\">
                 <span class=\"img_wrapper\">
-                  <span class=\"img lazy\" style=\"background-image: url(";
-            // line 55
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["record"], "preview_image", [], "any", false, false, true, 55), "getPath", [], "any", false, false, true, 55), 55, $this->source), "html", null, true);
+                  <span class=\"img lazy\"
+                    style=\"background-image: url(";
+            // line 56
+            echo call_user_func_array($this->env->getFilter('resize')->getCallable(), [$this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["record"], "preview_image", [], "any", false, false, true, 56), "getPath", [], "any", false, false, true, 56), 56, $this->source), 265, false, ["mode" => "crop", "quality" => "80", "extension" => "jpg"]]);
             echo ")\"></span>
 
                 </span>
                 <div class=\"desc\">
                   <h3>";
-            // line 59
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "name", [], "any", false, false, true, 59), 59, $this->source), "html", null, true);
+            // line 60
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "name", [], "any", false, false, true, 60), 60, $this->source), "html", null, true);
             echo "</h3>
                   <p class=\"excerpt\">";
-            // line 60
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "description", [], "any", false, false, true, 60), 60, $this->source), "html", null, true);
+            // line 61
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "description", [], "any", false, false, true, 61), 61, $this->source), "html", null, true);
             echo "</p>
                 </div>
                 <p class=\"duration\"><i class=\"fa fa-clock-o\"></i> ";
-            // line 62
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "tour_duration", [], "any", false, false, true, 62), 62, $this->source), "html", null, true);
+            // line 63
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "tour_duration", [], "any", false, false, true, 63), 63, $this->source), "html", null, true);
             echo " days</p>
               </a>
             </div>
@@ -155,7 +155,7 @@ class __TwigTemplate_61fd4557dc6e3037616f53c4985c8d84b9ed2326f2e4d32f636d06c9126
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['record'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 70
+        // line 71
         echo "
 
 
@@ -193,11 +193,11 @@ class __TwigTemplate_61fd4557dc6e3037616f53c4985c8d84b9ed2326f2e4d32f636d06c9126
 
 
           ";
-        // line 106
+        // line 107
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/sidebar_without_date"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 107
+        // line 108
         echo "
         </div>
       </div>
@@ -219,12 +219,12 @@ class __TwigTemplate_61fd4557dc6e3037616f53c4985c8d84b9ed2326f2e4d32f636d06c9126
 
     public function getDebugInfo()
     {
-        return array (  201 => 107,  197 => 106,  159 => 70,  145 => 62,  140 => 60,  136 => 59,  129 => 55,  124 => 53,  117 => 48,  113 => 47,  62 => 1,);
+        return array (  201 => 108,  197 => 107,  159 => 71,  145 => 63,  140 => 61,  136 => 60,  129 => 56,  123 => 53,  116 => 48,  112 => 47,  62 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{% component 'siteSearchInclude' %}<div class=\"small_top lazy\" id=\"top\" style=\"background-image: url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Sunset_1920.jpg)\">
+        return new Source("<div class=\"small_top lazy\" id=\"top\" style=\"background-image: url({{ this.page.toursbanner_ToursBanner | media | resize(1920, false, { mode: 'crop', quality: '80', extension: 'jpg' })}})\">
 
 
 
@@ -278,7 +278,8 @@ class __TwigTemplate_61fd4557dc6e3037616f53c4985c8d84b9ed2326f2e4d32f636d06c9126
               <a
                 href=\"{{AllTours.property('recordPage') ? AllTours.property('recordPage')|page({(AllTours.paramName('recordPageSlug')):(record.slug)})}}\">
                 <span class=\"img_wrapper\">
-                  <span class=\"img lazy\" style=\"background-image: url({{ record.preview_image.getPath }})\"></span>
+                  <span class=\"img lazy\"
+                    style=\"background-image: url({{ record.preview_image.getPath | resize(265, false, { mode: 'crop', quality: '80', extension: 'jpg' })}})\"></span>
 
                 </span>
                 <div class=\"desc\">

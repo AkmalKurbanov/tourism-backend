@@ -1,9 +1,10 @@
-1611923730a:1:{s:20:"about-about-us-2.htm";a:7:{s:8:"fileName";s:20:"about-about-us-2.htm";s:7:"content";s:1821:"[viewBag]
+1612281157a:1:{s:20:"about-about-us-2.htm";a:7:{s:8:"fileName";s:20:"about-about-us-2.htm";s:7:"content";s:1895:"[viewBag]
 title = "About us"
 url = "/about/about-us"
 layout = "static-page"
 is_hidden = 0
 navigation_hidden = 0
+banner = "/how-to-prepare-for-a-hot-air-balloon-ride-in-cappadocia-.jpg"
 ==
 <h2>Our Story</h2>
 
@@ -25,7 +26,7 @@ navigation_hidden = 0
 
 <p>Kyrgyz Tourism is a traditional Kyrgyz hospitality!</p>
 
-<p>The miracles of nature and culture are waiting for you. Experience Kyrgyzstan with us and we will provide you with authentic Kyrgyz hospitality!</p>";s:5:"mtime";i:1611681076;s:6:"markup";s:1699:"<h2>Our Story</h2>
+<p>The miracles of nature and culture are waiting for you. Experience Kyrgyzstan with us and we will provide you with authentic Kyrgyz hospitality!</p>";s:5:"mtime";i:1612002877;s:6:"markup";s:1699:"<h2>Our Story</h2>
 
 <p>Kyrgyz Tourism is a travel company providing tours in Kyrgyzstan and Central Asia.</p>
 
@@ -45,7 +46,7 @@ navigation_hidden = 0
 
 <p>Kyrgyz Tourism is a traditional Kyrgyz hospitality!</p>
 
-<p>The miracles of nature and culture are waiting for you. Experience Kyrgyzstan with us and we will provide you with authentic Kyrgyz hospitality!</p>";s:4:"code";N;s:7:"viewBag";a:5:{s:5:"title";s:8:"About us";s:3:"url";s:15:"/about/about-us";s:6:"layout";s:11:"static-page";s:9:"is_hidden";s:1:"0";s:17:"navigation_hidden";s:1:"0";}s:12:"parsedMarkup";s:1699:"<h2>Our Story</h2>
+<p>The miracles of nature and culture are waiting for you. Experience Kyrgyzstan with us and we will provide you with authentic Kyrgyz hospitality!</p>";s:4:"code";N;s:7:"viewBag";a:6:{s:5:"title";s:8:"About us";s:3:"url";s:15:"/about/about-us";s:6:"layout";s:11:"static-page";s:9:"is_hidden";s:1:"0";s:17:"navigation_hidden";s:1:"0";s:6:"banner";s:61:"/how-to-prepare-for-a-hot-air-balloon-ride-in-cappadocia-.jpg";}s:12:"parsedMarkup";s:1699:"<h2>Our Story</h2>
 
 <p>Kyrgyz Tourism is a travel company providing tours in Kyrgyzstan and Central Asia.</p>
 

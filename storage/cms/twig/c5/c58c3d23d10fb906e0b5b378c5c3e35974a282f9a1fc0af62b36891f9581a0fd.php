@@ -30,14 +30,14 @@ class __TwigTemplate_c13c4701383d46991344217454cc51c7fdb031622d40d1bdf777e839c6b
         ];
         $this->sandbox = $this->env->getExtension('\Twig\Extension\SandboxExtension');
         $tags = array("for" => 39, "partial" => 74);
-        $filters = array("escape" => 7, "raw" => 32, "page" => 57);
-        $functions = array();
+        $filters = array("resize" => 1, "media" => 1, "escape" => 7, "raw" => 32, "page" => 57);
+        $functions = array("str_words" => 54);
 
         try {
             $this->sandbox->checkSecurity(
                 ['for', 'partial'],
-                ['escape', 'raw', 'page'],
-                []
+                ['resize', 'media', 'escape', 'raw', 'page'],
+                ['str_words']
             );
         } catch (SecurityError $e) {
             $e->setSourceContext($this->source);
@@ -59,7 +59,9 @@ class __TwigTemplate_c13c4701383d46991344217454cc51c7fdb031622d40d1bdf777e839c6b
     {
         $macros = $this->macros;
         // line 1
-        echo "<div id=\"top\" class=\"small_top lazy\" style=\"background-image: url(&quot;https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Contact_Us-3.jpg&quot;);\" data-bg=\"url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Contact_Us-3.jpg)\" data-was-processed=\"true\">
+        echo "<div id=\"top\" class=\"small_top lazy\" style=\"background-image: url(";
+        echo call_user_func_array($this->env->getFilter('resize')->getCallable(), [$this->extensions['System\Twig\Extension']->mediaFilter($this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, true, 1), "reviewsdetailbanner_ReviewsDetailBanner", [], "any", false, false, true, 1), 1, $this->source)), 1920, false, ["mode" => "crop", "quality" => "80", "extension" => "jpg"]]);
+        echo ");\">
 
     <div class=\"breadcrumb_wrapper\">
         <div class=\"container\">
@@ -98,12 +100,12 @@ class __TwigTemplate_c13c4701383d46991344217454cc51c7fdb031622d40d1bdf777e839c6b
         echo "</h3>
 
                                 
-                        <p><em>
+                        <p>
                             ";
         // line 32
         echo $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["ReviewsDetail"] ?? null), "recordDetail", [], "any", false, false, true, 32), "review", [], "any", false, false, true, 32), 32, $this->source);
         echo "
-                        </em></p>
+                        </p>
 
                 
 
@@ -118,27 +120,30 @@ class __TwigTemplate_c13c4701383d46991344217454cc51c7fdb031622d40d1bdf777e839c6b
             echo "        <div class=\"s_review\">
           <div class=\"row\">
             <div class=\"col-sm-3\">
-              <img alt=\"review\" src=\"";
-            // line 43
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["record"], "preview_image", [], "any", false, false, true, 43), "getPath", [], "any", false, false, true, 43), 43, $this->source), "html", null, true);
+              <img alt=\"review\"
+                src=\"";
+            // line 44
+            echo call_user_func_array($this->env->getFilter('resize')->getCallable(), [$this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["record"], "preview_image", [], "any", false, false, true, 44), "getPath", [], "any", false, false, true, 44), 44, $this->source), 190, false, ["mode" => "crop", "quality" => "80", "extension" => "jpg"]]);
             echo "\"
                
                 class=\"img-responsive lazyload\">
             </div>
             <div class=\"col-sm-9\">
               <h4 class=\"name\">";
-            // line 48
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "name", [], "any", false, false, true, 48), 48, $this->source), "html", null, true);
+            // line 49
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "name", [], "any", false, false, true, 49), 49, $this->source), "html", null, true);
             echo "</h4>
               <h5 class=\"work\">";
-            // line 49
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "review_author_status", [], "any", false, false, true, 49), 49, $this->source), "html", null, true);
+            // line 50
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "review_author_status", [], "any", false, false, true, 50), 50, $this->source), "html", null, true);
             echo " </h5>
 
               <div class=\"excerpt\">
                 <p>
-                  <p>“Kyrgyzstan is great country to discover! High mountains with endless trails
-                    to explore by foot or on a horseback. Nothing [&hellip;]</p>
+                  <p>";
+            // line 54
+            echo call_user_func_array($this->env->getFunction('str_words')->getCallable(), ["words", $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "review", [], "any", false, false, true, 54), 54, $this->source), 20]);
+            echo "</p>
                 </p>
                 <div class=\"more\">
                   <a href=\"";
@@ -194,12 +199,12 @@ class __TwigTemplate_c13c4701383d46991344217454cc51c7fdb031622d40d1bdf777e839c6b
 
     public function getDebugInfo()
     {
-        return array (  175 => 75,  171 => 74,  161 => 66,  146 => 57,  135 => 49,  131 => 48,  123 => 43,  118 => 40,  114 => 39,  104 => 32,  97 => 28,  84 => 18,  70 => 7,  62 => 1,);
+        return array (  180 => 75,  176 => 74,  166 => 66,  151 => 57,  145 => 54,  138 => 50,  134 => 49,  126 => 44,  120 => 40,  116 => 39,  106 => 32,  99 => 28,  86 => 18,  72 => 7,  62 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("<div id=\"top\" class=\"small_top lazy\" style=\"background-image: url(&quot;https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Contact_Us-3.jpg&quot;);\" data-bg=\"url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Contact_Us-3.jpg)\" data-was-processed=\"true\">
+        return new Source("<div id=\"top\" class=\"small_top lazy\" style=\"background-image: url({{ this.page.reviewsdetailbanner_ReviewsDetailBanner | media | resize(1920, false, { mode: 'crop', quality: '80', extension: 'jpg' })}});\">
 
     <div class=\"breadcrumb_wrapper\">
         <div class=\"container\">
@@ -229,9 +234,9 @@ class __TwigTemplate_c13c4701383d46991344217454cc51c7fdb031622d40d1bdf777e839c6b
                                     <h3 class=\"work\">{{ ReviewsDetail.recordDetail.review_author_status }}</h3>
 
                                 
-                        <p><em>
+                        <p>
                             {{ ReviewsDetail.recordDetail.review | raw}}
-                        </em></p>
+                        </p>
 
                 
 
@@ -241,7 +246,8 @@ class __TwigTemplate_c13c4701383d46991344217454cc51c7fdb031622d40d1bdf777e839c6b
         <div class=\"s_review\">
           <div class=\"row\">
             <div class=\"col-sm-3\">
-              <img alt=\"review\" src=\"{{ record.preview_image.getPath }}\"
+              <img alt=\"review\"
+                src=\"{{ record.preview_image.getPath | resize(190, false, { mode: 'crop', quality: '80', extension: 'jpg' })}}\"
                
                 class=\"img-responsive lazyload\">
             </div>
@@ -251,8 +257,7 @@ class __TwigTemplate_c13c4701383d46991344217454cc51c7fdb031622d40d1bdf777e839c6b
 
               <div class=\"excerpt\">
                 <p>
-                  <p>“Kyrgyzstan is great country to discover! High mountains with endless trails
-                    to explore by foot or on a horseback. Nothing [&hellip;]</p>
+                  <p>{{ str_words(record.review, 20) }}</p>
                 </p>
                 <div class=\"more\">
                   <a href=\"{{Reviews.property('recordPage') ? Reviews.property('recordPage')|page({(Reviews.paramName('recordPageSlug')):(record.slug)})}}\">Read more

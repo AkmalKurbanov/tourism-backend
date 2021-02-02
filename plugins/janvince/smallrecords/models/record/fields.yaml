@@ -76,10 +76,13 @@ tabs:
         tour_status:
             label: 'Статус тура'
             options:
-                'Имеется в наличии': 'Имеется в наличии'
-                'Не имеется в наличии': 'Не имеется в наличии'
+                'Имеется в наличии yes': 'Имеется в наличии'
+                'Не имеется в наличии no': 'Не имеется в наличи'
             span: auto
+            cssClass: ''
             hidden: 0
+            attributes: {  }
+            containerAttributes: {  }
             type: radio
             tab: 'janvince.smallrecords::lang.common.tabs.info'
         area:
@@ -133,8 +136,8 @@ tabs:
                     status_tour:
                         label: 'Статус тура'
                         options:
-                            'Имеется в наличии': 'Имеется в наличии'
-                            'Не имеется в наличии': 'Не имеется в наличии'
+                            'Имеется в наличии yes': 'Имеется в наличии'
+                            'Не имеется в наличии no': 'Не имеется в наличии'
                         span: auto
                         type: radio
                     cost_tour:

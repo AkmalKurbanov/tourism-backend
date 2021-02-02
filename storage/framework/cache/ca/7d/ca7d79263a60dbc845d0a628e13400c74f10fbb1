@@ -1,4 +1,4 @@
-1611924013a:1:{s:9:"menu.yaml";a:7:{s:8:"fileName";s:9:"menu.yaml";s:7:"content";s:1584:"items:
+1612281157a:1:{s:9:"menu.yaml";a:7:{s:8:"fileName";s:9:"menu.yaml";s:7:"content";s:1957:"items:
     -
         title: Home
         nesting: null
@@ -55,23 +55,37 @@
         title: Kyrgyzstan
         nesting: 1
         type: static-page
+        url: null
         code: ''
         reference: kyrgyzstan
+        cmsPage: null
         replace: 0
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
+        items:
+            -
+                title: 'Photo gallery'
+                type: cms-page
+                code: ''
+                reference: photo-gallery
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
     -
         title: About
         nesting: 1
         type: static-page
+        url: null
         code: ''
         reference: about
+        cmsPage: null
         replace: 0
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
 name: menu
-";s:5:"mtime";i:1611565749;s:6:"markup";N;s:4:"code";N;s:4:"name";N;s:5:"items";a:0:{}}}
+";s:5:"mtime";i:1612270757;s:6:"markup";N;s:4:"code";N;s:4:"name";N;s:5:"items";a:0:{}}}

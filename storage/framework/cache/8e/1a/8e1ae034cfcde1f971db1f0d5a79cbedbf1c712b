@@ -1,0 +1,519 @@
+1612275254a:1:{s:12:"category.htm";a:11:{s:8:"fileName";s:12:"category.htm";s:7:"content";s:7425:"title = "Category"
+url = "/category/:category"
+layout = "static-layout"
+is_hidden = 0
+
+[categoryDetail]
+activeOnly = 0
+categorySlug = "{{ :category }}"
+areaSlug = 0
+activeRecordsOnly = 0
+recordPage = 0
+
+[records]
+activeOnly = 0
+areaSlug = 0
+categorySlug = "{{ :category }}"
+useMainCategory = 1
+useMultiCategories = 0
+tagSlug = "{{ :tag }}"
+recordPage = "category"
+recordPageSlug = "{{ :record }}"
+limit = 10
+pageSlug = "{{ :page }}"
+orderBy = "name"
+orderByDirection = "ASC"
+==
+<div id="top" class="small_top lazy" style="background-image: url({{categoryDetail.preview_image.getPath }})">
+  <div class="breadcrumb_wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <p id="breadcrumbs"><span><span><a href="/">Home</a> / <a href="/tours/default">Tours</a> / <span
+                  class="breadcrumb_last"
+                  aria-current="page">{{ categoryDetail.name }}</span></span></span></p>
+          <div class="line_helper" style="background: rgba(255,255,255,.3)"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="desc">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 text-center">
+          <h1 id="single_tour_title">{{ categoryDetail.name }}</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9">
+
+      <div id="archive_content">
+
+        <div id="content" class="tax-content">
+
+          {{categoryDetail.itinerary_desc | raw}}
+
+         
+        </div>
+
+
+        <div class="row">
+        
+
+        
+        {% component 'categoryDetail' %}
+        
+
+
+        <div class="container {{ cssClass }}">
+
+    <div class="row">
+
+        <div class="col-xs-12">
+
+            <h1>Records</h1>
+
+        </div>
+
+        <div class="col-xs-12 col-sm-6">
+
+            <ul class="list-group">
+                
+                <li class="list-group-item">Records from list: <strong>{{records.getProperties.areaSlug ? records.getProperties.areaSlug : 'Not set'}}</strong></li>
+
+                {% if records.property('categorySlug') %}
+                    <li class="list-group-item">Records filtered by category: <strong>{{records.property('categorySlug')}}</strong></li>
+                {% endif %}
+
+                {% if records.property('areaSlug') %}
+                    <li class="list-group-item">Records filtered by category used as: <strong>{{records.property('useMultiCategories') ? 'Secondary categories' : 'Main category'}}</strong></li>
+                {% endif %}
+
+                <li class="list-group-item">Ordered by: <strong>{{records.getProperties.orderBy}} ({{records.getProperties.orderByDirection}})</strong></li>
+
+            </ul>
+
+        </div>
+
+        <div class="col-xs-12">
+
+            <h3>Records details</h3>
+
+            <table class="table table-bordered table-striped table-hover">
+
+                <tr>
+                
+                    <th>Preview image</th>
+                    <th>Name</th>
+                    <th>List</th>
+                    <th>Main category</th>
+                    <th>Secondary categories</th>
+                    <th>Tags</th>
+                    <th>Attributes</th>
+                
+                </tr>
+
+                {% for record in records.items %}
+
+                    <tr>
+
+                        <th width="150">
+                            {% if record.preview_image %}
+                                <img class="thumbnail" alt="{{ record.name }}" src="{{ record.preview_image.getPath }}" width="100%" />
+                            {% elseif record.preview_image_media %}
+                                <img class="thumbnail" alt="{{ record.name }}" src="{{ record.preview_image_media|media }}" width="100%" />
+                            {% endif %}            
+                        </th>
+
+                        <td>
+                            <a href="{{records.property('recordPage') ? records.property('recordPage')|page({(records.paramName('recordPageSlug')):(record.slug)})}}">
+                                {{ record.name }}
+                            </a>
+                        </td>
+
+                        <td>
+                            {{ record.area.name }}
+                        </td>
+
+                        <td>
+                            {{ record.category.name }}
+                        </td>
+
+                        <td>
+                            {% if record.categories|length %}
+
+                            <ul>
+
+                                {% for category in record.categories %}
+
+                                    <li>{{ category.name }}</li>
+
+                                {% endfor %}
+
+                            </ul>
+
+                            {% endif %}
+                        </td>
+
+                        <td>
+                            {% if record.tags|length %}
+
+                            <ul>
+
+                                {% for tag in record.tags %}
+
+                                    <li>{{ tag.name }}</li>
+
+                                {% endfor %}
+
+                            </ul>
+
+                            {% endif %}
+                        </td>
+
+                        <td>
+                            {% if record.attributes|length %}
+
+                            <ul>
+
+                                {% for attribute in record.attributes %}
+
+                                    <li>{{ attribute.name }}:{{ attribute.value }}</li>
+
+                                {% endfor %}
+
+                            </ul>
+
+                            {% endif %}
+                        </td>
+
+                    </tr>
+
+                {% endfor %}
+
+            </table>
+
+            {% if records.property('allowLimit') %}
+            
+                <div>
+
+                    {{ records.items.render|raw }}
+                
+                </div>      
+            
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+          {% for record in Tours.items %}
+          
+          <div class="col-sm-4">
+            <div class="item item_tour with_border auto_height ">
+              <a
+                href="{{Tours.property('recordPage') ? Tours.property('recordPage')|page({(Tours.paramName('recordPageSlug')):(record.slug)})}}">
+                <span class="img_wrapper">
+                  <span class="img lazy" style="background-image: url({{ record.preview_image.getPath }})"></span>
+
+                </span>
+                <div class="desc">
+                  <h3>{{record.name}}</h3>
+                  <p class="excerpt">{{record.description}}</p>
+                </div>
+                <p class="duration"><i class="fa fa-clock-o"></i>
+                  {{ record.tour_duration }} days</p>
+              </a>
+            </div>
+
+          </div>
+          {% endfor %}
+
+        </div>
+
+
+
+
+
+
+
+
+        <div id="pagin_wrapper">
+
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-sm-3">
+      <div class="sidebar_wrapper">
+
+        <div id="sidebar">
+
+
+          {% partial 'site/sidebar_without_date' %}
+
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>";s:5:"mtime";i:1611937296;s:6:"markup";s:6921:"<div id="top" class="small_top lazy" style="background-image: url({{categoryDetail.preview_image.getPath }})">
+  <div class="breadcrumb_wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <p id="breadcrumbs"><span><span><a href="/">Home</a> / <a href="/tours/default">Tours</a> / <span
+                  class="breadcrumb_last"
+                  aria-current="page">{{ categoryDetail.name }}</span></span></span></p>
+          <div class="line_helper" style="background: rgba(255,255,255,.3)"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="desc">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 text-center">
+          <h1 id="single_tour_title">{{ categoryDetail.name }}</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9">
+
+      <div id="archive_content">
+
+        <div id="content" class="tax-content">
+
+          {{categoryDetail.itinerary_desc | raw}}
+
+         
+        </div>
+
+
+        <div class="row">
+        
+
+        
+        {% component 'categoryDetail' %}
+        
+
+
+        <div class="container {{ cssClass }}">
+
+    <div class="row">
+
+        <div class="col-xs-12">
+
+            <h1>Records</h1>
+
+        </div>
+
+        <div class="col-xs-12 col-sm-6">
+
+            <ul class="list-group">
+                
+                <li class="list-group-item">Records from list: <strong>{{records.getProperties.areaSlug ? records.getProperties.areaSlug : 'Not set'}}</strong></li>
+
+                {% if records.property('categorySlug') %}
+                    <li class="list-group-item">Records filtered by category: <strong>{{records.property('categorySlug')}}</strong></li>
+                {% endif %}
+
+                {% if records.property('areaSlug') %}
+                    <li class="list-group-item">Records filtered by category used as: <strong>{{records.property('useMultiCategories') ? 'Secondary categories' : 'Main category'}}</strong></li>
+                {% endif %}
+
+                <li class="list-group-item">Ordered by: <strong>{{records.getProperties.orderBy}} ({{records.getProperties.orderByDirection}})</strong></li>
+
+            </ul>
+
+        </div>
+
+        <div class="col-xs-12">
+
+            <h3>Records details</h3>
+
+            <table class="table table-bordered table-striped table-hover">
+
+                <tr>
+                
+                    <th>Preview image</th>
+                    <th>Name</th>
+                    <th>List</th>
+                    <th>Main category</th>
+                    <th>Secondary categories</th>
+                    <th>Tags</th>
+                    <th>Attributes</th>
+                
+                </tr>
+
+                {% for record in records.items %}
+
+                    <tr>
+
+                        <th width="150">
+                            {% if record.preview_image %}
+                                <img class="thumbnail" alt="{{ record.name }}" src="{{ record.preview_image.getPath }}" width="100%" />
+                            {% elseif record.preview_image_media %}
+                                <img class="thumbnail" alt="{{ record.name }}" src="{{ record.preview_image_media|media }}" width="100%" />
+                            {% endif %}            
+                        </th>
+
+                        <td>
+                            <a href="{{records.property('recordPage') ? records.property('recordPage')|page({(records.paramName('recordPageSlug')):(record.slug)})}}">
+                                {{ record.name }}
+                            </a>
+                        </td>
+
+                        <td>
+                            {{ record.area.name }}
+                        </td>
+
+                        <td>
+                            {{ record.category.name }}
+                        </td>
+
+                        <td>
+                            {% if record.categories|length %}
+
+                            <ul>
+
+                                {% for category in record.categories %}
+
+                                    <li>{{ category.name }}</li>
+
+                                {% endfor %}
+
+                            </ul>
+
+                            {% endif %}
+                        </td>
+
+                        <td>
+                            {% if record.tags|length %}
+
+                            <ul>
+
+                                {% for tag in record.tags %}
+
+                                    <li>{{ tag.name }}</li>
+
+                                {% endfor %}
+
+                            </ul>
+
+                            {% endif %}
+                        </td>
+
+                        <td>
+                            {% if record.attributes|length %}
+
+                            <ul>
+
+                                {% for attribute in record.attributes %}
+
+                                    <li>{{ attribute.name }}:{{ attribute.value }}</li>
+
+                                {% endfor %}
+
+                            </ul>
+
+                            {% endif %}
+                        </td>
+
+                    </tr>
+
+                {% endfor %}
+
+            </table>
+
+            {% if records.property('allowLimit') %}
+            
+                <div>
+
+                    {{ records.items.render|raw }}
+                
+                </div>      
+            
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+          {% for record in Tours.items %}
+          
+          <div class="col-sm-4">
+            <div class="item item_tour with_border auto_height ">
+              <a
+                href="{{Tours.property('recordPage') ? Tours.property('recordPage')|page({(Tours.paramName('recordPageSlug')):(record.slug)})}}">
+                <span class="img_wrapper">
+                  <span class="img lazy" style="background-image: url({{ record.preview_image.getPath }})"></span>
+
+                </span>
+                <div class="desc">
+                  <h3>{{record.name}}</h3>
+                  <p class="excerpt">{{record.description}}</p>
+                </div>
+                <p class="duration"><i class="fa fa-clock-o"></i>
+                  {{ record.tour_duration }} days</p>
+              </a>
+            </div>
+
+          </div>
+          {% endfor %}
+
+        </div>
+
+
+
+
+
+
+
+
+        <div id="pagin_wrapper">
+
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-sm-3">
+      <div class="sidebar_wrapper">
+
+        <div id="sidebar">
+
+
+          {% partial 'site/sidebar_without_date' %}
+
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>";s:4:"code";N;s:5:"title";s:8:"Category";s:3:"url";s:19:"/category/:category";s:6:"layout";s:13:"static-layout";s:9:"is_hidden";s:1:"0";s:14:"categoryDetail";a:5:{s:10:"activeOnly";s:1:"0";s:12:"categorySlug";s:15:"{{ :category }}";s:8:"areaSlug";s:1:"0";s:17:"activeRecordsOnly";s:1:"0";s:10:"recordPage";s:1:"0";}s:7:"records";a:12:{s:10:"activeOnly";s:1:"0";s:8:"areaSlug";s:1:"0";s:12:"categorySlug";s:15:"{{ :category }}";s:15:"useMainCategory";s:1:"1";s:18:"useMultiCategories";s:1:"0";s:7:"tagSlug";s:10:"{{ :tag }}";s:10:"recordPage";s:8:"category";s:14:"recordPageSlug";s:13:"{{ :record }}";s:5:"limit";s:2:"10";s:8:"pageSlug";s:11:"{{ :page }}";s:7:"orderBy";s:4:"name";s:16:"orderByDirection";s:3:"ASC";}}}

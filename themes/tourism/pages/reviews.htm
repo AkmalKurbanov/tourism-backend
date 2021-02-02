@@ -2,4 +2,114 @@ title = "Reviews"
 url = "/reviews"
 layout = "static-layout"
 is_hidden = 0
+reviewsbanner_reviewsBanner = "/uploaded-files/1611314993687.jpeg"
+
+[records Reviews]
+activeOnly = 0
+areaSlug = 0
+categorySlug = "otzyvy"
+useMainCategory = 1
+useMultiCategories = 0
+tagSlug = "{{ :tag }}"
+recordPage = "reviews-detail"
+recordPageSlug = "{{ :slug }}"
+allowLimit = 1
+limit = 0
+pageSlug = "{{ :slug }}"
+orderBy = "name"
+orderByDirection = "ASC"
+
+[siteSearchInclude]
 ==
+<div id="top" class="small_top lazy"
+  style="background-image: url({{ this.page.reviewsbanner_reviewsBanner | media | resize(1920, false, { mode: 'crop', quality: '80', extension: 'jpg' })}});">
+
+  <div class="breadcrumb_wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <p id="breadcrumbs"><span><span><a href="/">Home</a> / <span> <span
+                    class="breadcrumb_last"
+                    aria-current="page">Reviews</span></span></span></span></p>
+          <div class="line_helper" style="background: rgba(255,255,255,.3)"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="desc">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 text-center">
+          <h1 id="single_tour_title">Reviews - Archive</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+<div class="col-sm-9">
+
+  <div id="archive_content" class="">
+
+
+
+ {% for record in Reviews.items %}
+    <div class="row">
+
+      <div class="s_review">
+        <div class="row">
+          <div class="col-sm-2">
+            <img alt="review"
+              src="{{ record.preview_image.getPath | resize(120, false, { mode: 'crop', quality: '80', extension: 'jpg' })}}"
+              class="img-responsive lazyload">
+          </div>
+          <div class="col-sm-10">
+            <h4 class="name">{{record.name}}</h4>
+            <h5 class="work">{{record.review_author_status}}</h5>
+
+            <div class="excerpt">
+              <p></p>
+              <p><em>{{ str_words(record.review, 20) }}</em></p>
+              <p></p>
+              <div class="more">
+            <a
+              href="{{Reviews.property('recordPage') ? Reviews.property('recordPage')|page({(Reviews.paramName('recordPageSlug')):(record.slug)})}}">Read
+              more
+              ...</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+{% endfor %}
+
+
+    <div id="pagin_wrapper">
+
+
+    </div>
+  </div>
+
+
+</div>
+
+    <div class="col-sm-3">
+
+
+      <div id="sidebar" style="margin-top: 50px;">
+
+
+
+        {% partial 'site/sidebar_without_date' %}
+
+
+
+      </div>
+
+    </div>
+  </div>
+</div>

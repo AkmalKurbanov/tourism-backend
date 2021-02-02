@@ -1,4 +1,4 @@
-1611924013a:1:{s:10:"search.htm";a:10:{s:8:"fileName";s:10:"search.htm";s:7:"content";s:415:"title = "Search"
+1612281157a:1:{s:10:"search.htm";a:10:{s:8:"fileName";s:10:"search.htm";s:7:"content";s:419:"title = "Search"
 url = "/search"
 layout = "static-layout"
 is_hidden = 0
@@ -9,7 +9,7 @@ showProviderBadge = 1
 noResultsMessage = "Your search returned no results."
 visitPageMessage = "Visit page"
 ==
-<div class="search-sesult container" style="height: 100vh; padding: 30px 0;">
+<div class="search-sesult container" style="min-height: 100vh; padding: 30px 0;">
 
 
 {% component 'searchResults' %}
@@ -24,7 +24,7 @@ visitPageMessage = "Visit page"
 <br>
 <br>
 <br>
-</div>";s:5:"mtime";i:1611852358;s:6:"markup";s:184:"<div class="search-sesult container" style="height: 100vh; padding: 30px 0;">
+</div>";s:5:"mtime";i:1612006677;s:6:"markup";s:188:"<div class="search-sesult container" style="min-height: 100vh; padding: 30px 0;">
 
 
 {% component 'searchResults' %}

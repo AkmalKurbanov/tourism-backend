@@ -1,4 +1,4 @@
-1611924083a:1:{s:8:"post.htm";a:12:{s:8:"fileName";s:8:"post.htm";s:7:"content";s:2463:"title = "Post"
+1612281157a:1:{s:8:"post.htm";a:12:{s:8:"fileName";s:8:"post.htm";s:7:"content";s:2477:"title = "Post"
 url = "/post/:slug"
 layout = "static-layout"
 is_hidden = 0
@@ -25,8 +25,8 @@ emails_date_format = "Y-m-d"
 
 
 <div id="top" class="small_top lazy" {% for image in post.featured_images %}
-  style="background-image: url(&quot;{{ image.path }}&quot;);" data-bg="url({{ image.path }})"
-  data-was-processed="true">
+  style="background-image:
+  url(&quot;{{ image.path | resize(1920, false, { mode: 'crop', quality: '80', extension: 'jpg' })}}&quot;);">
   {% endfor %}
   <div class="breadcrumb_wrapper">
     <div class="container">
@@ -89,13 +89,13 @@ emails_date_format = "Y-m-d"
 
   </div>
 
-</div>";s:5:"mtime";i:1611923478;s:6:"markup";s:1918:"{% set post = blogPost.post %}
+</div>";s:5:"mtime";i:1612274463;s:6:"markup";s:1932:"{% set post = blogPost.post %}
 
 
 
 <div id="top" class="small_top lazy" {% for image in post.featured_images %}
-  style="background-image: url(&quot;{{ image.path }}&quot;);" data-bg="url({{ image.path }})"
-  data-was-processed="true">
+  style="background-image:
+  url(&quot;{{ image.path | resize(1920, false, { mode: 'crop', quality: '80', extension: 'jpg' })}}&quot;);">
   {% endfor %}
   <div class="breadcrumb_wrapper">
     <div class="container">

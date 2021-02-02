@@ -1,7 +1,8 @@
-1611923871a:1:{s:15:"group-tours.htm";a:13:{s:8:"fileName";s:15:"group-tours.htm";s:7:"content";s:8252:"title = "Group-tours"
+1612281294a:1:{s:15:"group-tours.htm";a:15:{s:8:"fileName";s:15:"group-tours.htm";s:7:"content";s:9047:"title = "Group-tours"
 url = "/group-tours"
 layout = "group-tours"
 is_hidden = 0
+grouptoursbanner_groupToursBanner = "/how-to-prepare-for-a-hot-air-balloon-ride-in-cappadocia-.jpg"
 
 [recordDetail TourDetail]
 activeOnly = 0
@@ -37,23 +38,37 @@ recaptcha_size = "normal"
 emails_date_format = "Y-m-d"
 
 [siteSearchInclude]
+
+[genericForm BottomForm]
+messages_success = "Ваша форма была успешно отправлена!"
+messages_errors = "В вашей заявке содержатся ошибки."
+inline_errors = "disabled"
+sanitize_data = "disabled"
+anonymize_ip = "disabled"
+recaptcha_theme = "light"
+recaptcha_type = "image"
+recaptcha_size = "normal"
+emails_date_format = "Y-m-d"
 ==
 <style>
   #sidebar h4,
-  #sidebar .form-group select {
+  #book_tour h4,
+  #sidebar .form-group select,
+  #book_tour .form-group select {
     display: none;
   }
 </style>
 <div id="top" class="lazy small_top"
-  style="background-image: url('https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Sunset_1920.jpg')">
+  style="background-image:
+    url({{ this.page.grouptoursbanner_groupToursBanner |media | resize(1920, false, { mode: 'crop', quality: '80', extension: 'jpg' })}});">
 
 
   <div class="breadcrumb_wrapper">
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
-          <p id="breadcrumbs"><span><span><a href="/">Home</a> / <span
-                  class="breadcrumb_last" aria-current="page">{{this.page.title}}</span></span></span></p>
+          <p id="breadcrumbs"><span><span><a href="/">Home</a> / <span class="breadcrumb_last"
+                  aria-current="page">{{this.page.title}}</span></span></span></p>
           <div class="line_helper" style="background: rgba(255,255,255,.3)"></div>
         </div>
       </div>
@@ -110,13 +125,13 @@ emails_date_format = "Y-m-d"
                       <tr>
                         <td>
                           <p>
-                            {{record.date}}
+                            {{record.date1}}
                           </p>
                         </td>
 
                         <td>
                           <p>
-                            {{record.date1}}
+                            {{record.date2}}
                           </p>
                         </td>
                         <td>
@@ -180,11 +195,11 @@ emails_date_format = "Y-m-d"
           <div class="col-sm-12">
             <div id="content">
               <h2>Book tour</h2>
-              <form data-request="{{ genericForm }}::onFormSubmit" class="">
+              <form data-request="{{ BottomForm }}::onFormSubmit" class="">
 
                 {{ form_token() }}
 
-                <div id="{{ genericForm }}_forms_flash"></div>
+                <div id="{{ BottomForm }}_forms_flash"></div>
 
                 <div class="form-group">
                   <input type="hidden" id="tourName" name="tour name" class="form-control" value="{{ record.name }}">
@@ -271,22 +286,33 @@ emails_date_format = "Y-m-d"
       $(".available_departure_select option[value='" + text + "']").attr('selected', 'selected');
     });
   });
-</script>";s:5:"mtime";i:1611921365;s:6:"markup";s:7267:"<style>
+
+  $('.available').addClass(ssdfd);
+  
+  $("table td p").each(function (index) {
+    var ser = $(this).text();
+    var ssdfd = ser.split(" ").pop();
+    $(this).addClass(ssdfd);
+  });
+</script>";s:5:"mtime";i:1612280694;s:6:"markup";s:7569:"<style>
   #sidebar h4,
-  #sidebar .form-group select {
+  #book_tour h4,
+  #sidebar .form-group select,
+  #book_tour .form-group select {
     display: none;
   }
 </style>
 <div id="top" class="lazy small_top"
-  style="background-image: url('https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Sunset_1920.jpg')">
+  style="background-image:
+    url({{ this.page.grouptoursbanner_groupToursBanner |media | resize(1920, false, { mode: 'crop', quality: '80', extension: 'jpg' })}});">
 
 
   <div class="breadcrumb_wrapper">
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
-          <p id="breadcrumbs"><span><span><a href="/">Home</a> / <span
-                  class="breadcrumb_last" aria-current="page">{{this.page.title}}</span></span></span></p>
+          <p id="breadcrumbs"><span><span><a href="/">Home</a> / <span class="breadcrumb_last"
+                  aria-current="page">{{this.page.title}}</span></span></span></p>
           <div class="line_helper" style="background: rgba(255,255,255,.3)"></div>
         </div>
       </div>
@@ -343,13 +369,13 @@ emails_date_format = "Y-m-d"
                       <tr>
                         <td>
                           <p>
-                            {{record.date}}
+                            {{record.date1}}
                           </p>
                         </td>
 
                         <td>
                           <p>
-                            {{record.date1}}
+                            {{record.date2}}
                           </p>
                         </td>
                         <td>
@@ -413,11 +439,11 @@ emails_date_format = "Y-m-d"
           <div class="col-sm-12">
             <div id="content">
               <h2>Book tour</h2>
-              <form data-request="{{ genericForm }}::onFormSubmit" class="">
+              <form data-request="{{ BottomForm }}::onFormSubmit" class="">
 
                 {{ form_token() }}
 
-                <div id="{{ genericForm }}_forms_flash"></div>
+                <div id="{{ BottomForm }}_forms_flash"></div>
 
                 <div class="form-group">
                   <input type="hidden" id="tourName" name="tour name" class="form-control" value="{{ record.name }}">
@@ -504,4 +530,12 @@ emails_date_format = "Y-m-d"
       $(".available_departure_select option[value='" + text + "']").attr('selected', 'selected');
     });
   });
-</script>";s:4:"code";N;s:5:"title";s:11:"Group-tours";s:3:"url";s:12:"/group-tours";s:6:"layout";s:11:"group-tours";s:9:"is_hidden";s:1:"0";s:23:"recordDetail TourDetail";a:7:{s:10:"activeOnly";s:1:"0";s:10:"recordSlug";s:11:"{{ :slug }}";s:8:"areaSlug";s:4:"tury";s:12:"categorySlug";s:21:"{{ :gruppovye-tury }}";s:15:"useMainCategory";s:1:"1";s:12:"categoryPage";s:1:"0";s:16:"categoryPageSlug";s:15:"{{ :category }}";}s:18:"records GroupTours";a:11:{s:10:"activeOnly";s:1:"0";s:8:"areaSlug";s:1:"0";s:12:"categorySlug";s:14:"gruppovye-tury";s:18:"useMultiCategories";s:1:"1";s:7:"tagSlug";s:10:"{{ :tag }}";s:10:"recordPage";s:18:"group-tours-detail";s:14:"recordPageSlug";s:11:"{{ :slug }}";s:5:"limit";s:2:"10";s:8:"pageSlug";s:11:"{{ :page }}";s:7:"orderBy";s:4:"name";s:16:"orderByDirection";s:3:"ASC";}s:11:"genericForm";a:9:{s:16:"messages_success";s:65:"Ваша форма была успешно отправлена!";s:15:"messages_errors";s:61:"В вашей заявке содержатся ошибки.";s:13:"inline_errors";s:8:"disabled";s:13:"sanitize_data";s:8:"disabled";s:12:"anonymize_ip";s:8:"disabled";s:15:"recaptcha_theme";s:5:"light";s:14:"recaptcha_type";s:5:"image";s:14:"recaptcha_size";s:6:"normal";s:18:"emails_date_format";s:5:"Y-m-d";}s:17:"siteSearchInclude";a:0:{}}}
+
+  $('.available').addClass(ssdfd);
+  
+  $("table td p").each(function (index) {
+    var ser = $(this).text();
+    var ssdfd = ser.split(" ").pop();
+    $(this).addClass(ssdfd);
+  });
+</script>";s:4:"code";N;s:5:"title";s:11:"Group-tours";s:3:"url";s:12:"/group-tours";s:6:"layout";s:11:"group-tours";s:9:"is_hidden";s:1:"0";s:33:"grouptoursbanner_groupToursBanner";s:61:"/how-to-prepare-for-a-hot-air-balloon-ride-in-cappadocia-.jpg";s:23:"recordDetail TourDetail";a:7:{s:10:"activeOnly";s:1:"0";s:10:"recordSlug";s:11:"{{ :slug }}";s:8:"areaSlug";s:4:"tury";s:12:"categorySlug";s:21:"{{ :gruppovye-tury }}";s:15:"useMainCategory";s:1:"1";s:12:"categoryPage";s:1:"0";s:16:"categoryPageSlug";s:15:"{{ :category }}";}s:18:"records GroupTours";a:11:{s:10:"activeOnly";s:1:"0";s:8:"areaSlug";s:1:"0";s:12:"categorySlug";s:14:"gruppovye-tury";s:18:"useMultiCategories";s:1:"1";s:7:"tagSlug";s:10:"{{ :tag }}";s:10:"recordPage";s:18:"group-tours-detail";s:14:"recordPageSlug";s:11:"{{ :slug }}";s:5:"limit";s:2:"10";s:8:"pageSlug";s:11:"{{ :page }}";s:7:"orderBy";s:4:"name";s:16:"orderByDirection";s:3:"ASC";}s:11:"genericForm";a:9:{s:16:"messages_success";s:65:"Ваша форма была успешно отправлена!";s:15:"messages_errors";s:61:"В вашей заявке содержатся ошибки.";s:13:"inline_errors";s:8:"disabled";s:13:"sanitize_data";s:8:"disabled";s:12:"anonymize_ip";s:8:"disabled";s:15:"recaptcha_theme";s:5:"light";s:14:"recaptcha_type";s:5:"image";s:14:"recaptcha_size";s:6:"normal";s:18:"emails_date_format";s:5:"Y-m-d";}s:17:"siteSearchInclude";a:0:{}s:22:"genericForm BottomForm";a:9:{s:16:"messages_success";s:65:"Ваша форма была успешно отправлена!";s:15:"messages_errors";s:61:"В вашей заявке содержатся ошибки.";s:13:"inline_errors";s:8:"disabled";s:13:"sanitize_data";s:8:"disabled";s:12:"anonymize_ip";s:8:"disabled";s:15:"recaptcha_theme";s:5:"light";s:14:"recaptcha_type";s:5:"image";s:14:"recaptcha_size";s:6:"normal";s:18:"emails_date_format";s:5:"Y-m-d";}}}

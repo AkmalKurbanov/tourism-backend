@@ -30,13 +30,13 @@ class __TwigTemplate_735032eedfd6056c28ab8035241eb0eec01f8785e42e2d733e5c38d31cb
         ];
         $this->sandbox = $this->env->getExtension('\Twig\Extension\SandboxExtension');
         $tags = array("for" => 1);
-        $filters = array("page" => 5, "escape" => 7);
+        $filters = array("page" => 5, "resize" => 8, "escape" => 11);
         $functions = array();
 
         try {
             $this->sandbox->checkSecurity(
                 ['for'],
-                ['page', 'escape'],
+                ['page', 'resize', 'escape'],
                 []
             );
         } catch (SecurityError $e) {
@@ -71,15 +71,16 @@ class __TwigTemplate_735032eedfd6056c28ab8035241eb0eec01f8785e42e2d733e5c38d31cb
             echo ((twig_get_attribute($this->env, $this->source, ($context["PopularTours"] ?? null), "property", [0 => "recordPage"], "method", false, false, true, 5)) ? ($this->extensions['Cms\Twig\Extension']->pageFilter($this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["PopularTours"] ?? null), "property", [0 => "recordPage"], "method", false, false, true, 5), 5, $this->source), [twig_get_attribute($this->env, $this->source, ($context["PopularTours"] ?? null), "paramName", [0 => "recordPageSlug"], "method", false, false, true, 5) => twig_get_attribute($this->env, $this->source, $context["record"], "slug", [], "any", false, false, true, 5)])) : (""));
             echo "\">
     <span class=\"img_wrapper\">
-      <span class=\"img lazy\" style=\"background-image: url(";
-            // line 7
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["record"], "preview_image", [], "any", false, false, true, 7), "getPath", [], "any", false, false, true, 7), 7, $this->source), "html", null, true);
+      <span class=\"img lazy\"
+        style=\"background-image: url(";
+            // line 8
+            echo call_user_func_array($this->env->getFilter('resize')->getCallable(), [$this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["record"], "preview_image", [], "any", false, false, true, 8), "getPath", [], "any", false, false, true, 8), 8, $this->source), 330, false, ["mode" => "crop", "quality" => "80", "extension" => "jpg"]]);
             echo ")\"></span>
 
       <span class=\"price-round\">
         <span class=\"inner\">from <br />\$";
-            // line 10
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "tour_cost", [], "any", false, false, true, 10), 10, $this->source), "html", null, true);
+            // line 11
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "tour_cost", [], "any", false, false, true, 11), 11, $this->source), "html", null, true);
             echo "</span>
       </span>
 
@@ -87,18 +88,18 @@ class __TwigTemplate_735032eedfd6056c28ab8035241eb0eec01f8785e42e2d733e5c38d31cb
     </span>
     <div class=\"desc\">
       <h3> ";
-            // line 16
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "name", [], "any", false, false, true, 16), 16, $this->source), "html", null, true);
+            // line 17
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "name", [], "any", false, false, true, 17), 17, $this->source), "html", null, true);
             echo "</h3>
       <p class=\"excerpt\">";
-            // line 17
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "description", [], "any", false, false, true, 17), 17, $this->source), "html", null, true);
+            // line 18
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "description", [], "any", false, false, true, 18), 18, $this->source), "html", null, true);
             echo "</p>
     </div>
     <p class=\"duration\"><i class=\"fa fa-clock-o\"></i>
       ";
-            // line 20
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "tour_duration", [], "any", false, false, true, 20), 20, $this->source), "html", null, true);
+            // line 21
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "tour_duration", [], "any", false, false, true, 21), 21, $this->source), "html", null, true);
             echo " days</p>
   </a>
 </div>
@@ -122,7 +123,7 @@ class __TwigTemplate_735032eedfd6056c28ab8035241eb0eec01f8785e42e2d733e5c38d31cb
 
     public function getDebugInfo()
     {
-        return array (  101 => 20,  95 => 17,  91 => 16,  82 => 10,  76 => 7,  71 => 5,  66 => 2,  62 => 1,);
+        return array (  102 => 21,  96 => 18,  92 => 17,  83 => 11,  77 => 8,  71 => 5,  66 => 2,  62 => 1,);
     }
 
     public function getSourceContext()
@@ -133,7 +134,8 @@ class __TwigTemplate_735032eedfd6056c28ab8035241eb0eec01f8785e42e2d733e5c38d31cb
   <a
     href=\"{{PopularTours.property('recordPage') ? PopularTours.property('recordPage')|page({(PopularTours.paramName('recordPageSlug')):(record.slug)})}}\">
     <span class=\"img_wrapper\">
-      <span class=\"img lazy\" style=\"background-image: url({{ record.preview_image.getPath }})\"></span>
+      <span class=\"img lazy\"
+        style=\"background-image: url({{ record.preview_image.getPath | resize(330, false, { mode: 'crop', quality: '80', extension: 'jpg' })}})\"></span>
 
       <span class=\"price-round\">
         <span class=\"inner\">from <br />\${{ record.tour_cost }}</span>

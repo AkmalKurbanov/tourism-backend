@@ -1,7 +1,8 @@
 title = "Tours"
-url = "/tours/:slug"
+url = "/tours/"
 layout = "static-layout"
 is_hidden = 0
+toursbanner_ToursBanner = "/uploaded-files/deal3.jpg"
 
 [records AllTours]
 activeOnly = 0
@@ -32,10 +33,9 @@ recaptcha_size = "normal"
 emails_date_format = "Y-m-d"
 
 [siteSearchInclude]
-
-[siteSearchInclude siteSearchInclude2]
 ==
-{% component 'siteSearchInclude' %}<div class="small_top lazy" id="top" style="background-image: url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Sunset_1920.jpg)">
+
+<div class="small_top lazy" id="top" style="background-image: url({{ this.page.toursbanner_ToursBanner | media | resize(1920, false, { mode: 'crop', quality: '80', extension: 'jpg' })}})">
 
 
 
@@ -89,7 +89,8 @@ emails_date_format = "Y-m-d"
               <a
                 href="{{AllTours.property('recordPage') ? AllTours.property('recordPage')|page({(AllTours.paramName('recordPageSlug')):(record.slug)})}}">
                 <span class="img_wrapper">
-                  <span class="img lazy" style="background-image: url({{ record.preview_image.getPath }})"></span>
+                  <span class="img lazy"
+                    style="background-image: url({{ record.preview_image.getPath | resize(265, false, { mode: 'crop', quality: '80', extension: 'jpg' })}})"></span>
 
                 </span>
                 <div class="desc">

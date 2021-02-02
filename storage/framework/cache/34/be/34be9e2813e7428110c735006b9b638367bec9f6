@@ -1,4 +1,4 @@
-1611923730a:1:{s:22:"group-tours-detail.htm";a:14:{s:8:"fileName";s:22:"group-tours-detail.htm";s:7:"content";s:20760:"title = "Group-tours-detail"
+1612281157a:1:{s:22:"group-tours-detail.htm";a:14:{s:8:"fileName";s:22:"group-tours-detail.htm";s:7:"content";s:20942:"title = "Group-tours-detail"
 url = "/group-tours-detail/:slug"
 layout = "group-tours"
 is_hidden = 0
@@ -20,7 +20,8 @@ useMultiCategories = 1
 tagSlug = "{{ :tag }}"
 recordPage = "group-tours-detail"
 recordPageSlug = "{{ :slug }}"
-limit = 10
+allowLimit = 1
+limit = 3
 pageSlug = "{{ :page }}"
 orderBy = "name"
 orderByDirection = "ASC"
@@ -49,7 +50,8 @@ emails_date_format = "Y-m-d"
 
 [siteSearchInclude]
 ==
-<div id="top" class="lazy" style="background-image: url({{ TourDetail.recordDetail.preview_image.getPath }})">
+<div id="top" class="lazy"
+  style="background-image: url({{ TourDetail.recordDetail.preview_image.getPath | resize(1920, false, { mode: 'crop', quality: '80', extension: 'jpg' })}})">
 
   <div class="breadcrumb_wrapper">
     <div class="container">
@@ -555,7 +557,8 @@ emails_date_format = "Y-m-d"
               <a
                 href="{{GroupTours.property('recordPage') ? GroupTours.property('recordPage')|page({(GroupTours.paramName('recordPageSlug')):(record.slug)})}}">
                 <span class="img_wrapper">
-                  <span class="img lazy" style="background-image: url(&quot;{{ record.preview_image.getPath }}&quot;);"
+                  <span class="img lazy"
+                    style="background-image: url(&quot;{{ record.preview_image.getPath | resize(265, false, { mode: 'crop', quality: '80', extension: 'jpg' })}}&quot;);"
                     data-bg="url({{ record.preview_image.getPath }})" data-was-processed="true"></span>
 
                   <span class="price-round group_price">
@@ -656,7 +659,8 @@ emails_date_format = "Y-m-d"
       $(".available_departure_select option[value='" + text + "']").attr('selected', 'selected');
     });
   });
-</script>";s:5:"mtime";i:1611851481;s:6:"markup";s:19368:"<div id="top" class="lazy" style="background-image: url({{ TourDetail.recordDetail.preview_image.getPath }})">
+</script>";s:5:"mtime";i:1612274430;s:6:"markup";s:19535:"<div id="top" class="lazy"
+  style="background-image: url({{ TourDetail.recordDetail.preview_image.getPath | resize(1920, false, { mode: 'crop', quality: '80', extension: 'jpg' })}})">
 
   <div class="breadcrumb_wrapper">
     <div class="container">
@@ -1162,7 +1166,8 @@ emails_date_format = "Y-m-d"
               <a
                 href="{{GroupTours.property('recordPage') ? GroupTours.property('recordPage')|page({(GroupTours.paramName('recordPageSlug')):(record.slug)})}}">
                 <span class="img_wrapper">
-                  <span class="img lazy" style="background-image: url(&quot;{{ record.preview_image.getPath }}&quot;);"
+                  <span class="img lazy"
+                    style="background-image: url(&quot;{{ record.preview_image.getPath | resize(265, false, { mode: 'crop', quality: '80', extension: 'jpg' })}}&quot;);"
                     data-bg="url({{ record.preview_image.getPath }})" data-was-processed="true"></span>
 
                   <span class="price-round group_price">
@@ -1263,4 +1268,4 @@ emails_date_format = "Y-m-d"
       $(".available_departure_select option[value='" + text + "']").attr('selected', 'selected');
     });
   });
-</script>";s:4:"code";N;s:5:"title";s:18:"Group-tours-detail";s:3:"url";s:25:"/group-tours-detail/:slug";s:6:"layout";s:11:"group-tours";s:9:"is_hidden";s:1:"0";s:23:"recordDetail TourDetail";a:7:{s:10:"activeOnly";s:1:"0";s:10:"recordSlug";s:11:"{{ :slug }}";s:8:"areaSlug";s:1:"0";s:12:"categorySlug";s:21:"{{ :gruppovye-tury }}";s:15:"useMainCategory";s:1:"1";s:12:"categoryPage";s:1:"0";s:16:"categoryPageSlug";s:15:"{{ :category }}";}s:18:"records GroupTours";a:11:{s:10:"activeOnly";s:1:"0";s:8:"areaSlug";s:1:"0";s:12:"categorySlug";s:14:"gruppovye-tury";s:18:"useMultiCategories";s:1:"1";s:7:"tagSlug";s:10:"{{ :tag }}";s:10:"recordPage";s:18:"group-tours-detail";s:14:"recordPageSlug";s:11:"{{ :slug }}";s:5:"limit";s:2:"10";s:8:"pageSlug";s:11:"{{ :page }}";s:7:"orderBy";s:4:"name";s:16:"orderByDirection";s:3:"ASC";}s:11:"genericForm";a:9:{s:16:"messages_success";s:65:"Ваша форма была успешно отправлена!";s:15:"messages_errors";s:61:"В вашей заявке содержатся ошибки.";s:13:"inline_errors";s:8:"disabled";s:13:"sanitize_data";s:8:"disabled";s:12:"anonymize_ip";s:8:"disabled";s:15:"recaptcha_theme";s:5:"light";s:14:"recaptcha_type";s:5:"image";s:14:"recaptcha_size";s:6:"normal";s:18:"emails_date_format";s:5:"Y-m-d";}s:22:"genericForm BottomForm";a:9:{s:16:"messages_success";s:65:"Ваша форма была успешно отправлена!";s:15:"messages_errors";s:61:"В вашей заявке содержатся ошибки.";s:13:"inline_errors";s:8:"disabled";s:13:"sanitize_data";s:8:"disabled";s:12:"anonymize_ip";s:8:"disabled";s:15:"recaptcha_theme";s:5:"light";s:14:"recaptcha_type";s:5:"image";s:14:"recaptcha_size";s:6:"normal";s:18:"emails_date_format";s:5:"Y-m-d";}s:17:"siteSearchInclude";a:0:{}}}
+</script>";s:4:"code";N;s:5:"title";s:18:"Group-tours-detail";s:3:"url";s:25:"/group-tours-detail/:slug";s:6:"layout";s:11:"group-tours";s:9:"is_hidden";s:1:"0";s:23:"recordDetail TourDetail";a:7:{s:10:"activeOnly";s:1:"0";s:10:"recordSlug";s:11:"{{ :slug }}";s:8:"areaSlug";s:1:"0";s:12:"categorySlug";s:21:"{{ :gruppovye-tury }}";s:15:"useMainCategory";s:1:"1";s:12:"categoryPage";s:1:"0";s:16:"categoryPageSlug";s:15:"{{ :category }}";}s:18:"records GroupTours";a:12:{s:10:"activeOnly";s:1:"0";s:8:"areaSlug";s:1:"0";s:12:"categorySlug";s:14:"gruppovye-tury";s:18:"useMultiCategories";s:1:"1";s:7:"tagSlug";s:10:"{{ :tag }}";s:10:"recordPage";s:18:"group-tours-detail";s:14:"recordPageSlug";s:11:"{{ :slug }}";s:10:"allowLimit";s:1:"1";s:5:"limit";s:1:"3";s:8:"pageSlug";s:11:"{{ :page }}";s:7:"orderBy";s:4:"name";s:16:"orderByDirection";s:3:"ASC";}s:11:"genericForm";a:9:{s:16:"messages_success";s:65:"Ваша форма была успешно отправлена!";s:15:"messages_errors";s:61:"В вашей заявке содержатся ошибки.";s:13:"inline_errors";s:8:"disabled";s:13:"sanitize_data";s:8:"disabled";s:12:"anonymize_ip";s:8:"disabled";s:15:"recaptcha_theme";s:5:"light";s:14:"recaptcha_type";s:5:"image";s:14:"recaptcha_size";s:6:"normal";s:18:"emails_date_format";s:5:"Y-m-d";}s:22:"genericForm BottomForm";a:9:{s:16:"messages_success";s:65:"Ваша форма была успешно отправлена!";s:15:"messages_errors";s:61:"В вашей заявке содержатся ошибки.";s:13:"inline_errors";s:8:"disabled";s:13:"sanitize_data";s:8:"disabled";s:12:"anonymize_ip";s:8:"disabled";s:15:"recaptcha_theme";s:5:"light";s:14:"recaptcha_type";s:5:"image";s:14:"recaptcha_size";s:6:"normal";s:18:"emails_date_format";s:5:"Y-m-d";}s:17:"siteSearchInclude";a:0:{}}}

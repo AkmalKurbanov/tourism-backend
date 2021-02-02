@@ -1,0 +1,99 @@
+title = "gallery"
+url = "/gallery/:slug"
+layout = "static-layout"
+is_hidden = 0
+
+[recordDetail]
+activeOnly = 0
+recordSlug = "{{ :slug }}"
+areaSlug = 0
+categorySlug = "{{ :category }}"
+useMainCategory = 1
+categoryPage = "category"
+categoryPageSlug = "{{ :category }}"
+
+[genericForm]
+messages_success = "Ваша форма была успешно отправлена!"
+messages_errors = "В вашей заявке содержатся ошибки."
+inline_errors = "disabled"
+sanitize_data = "disabled"
+anonymize_ip = "disabled"
+recaptcha_theme = "light"
+recaptcha_type = "image"
+recaptcha_size = "normal"
+emails_date_format = "Y-m-d"
+
+[siteSearchInclude]
+==
+
+
+
+  <div id="top" class="small_top lazy"
+    style="background-image: url({{ recordDetail.preview_image.getPath | resize(1920, false, { mode: 'crop', quality: '80', extension: 'jpg' })}});">
+
+
+    <div class="breadcrumb_wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <p id="breadcrumbs"><span><span><a href="/">Home</a> / <a href="/photo-gallery">Photo gallery</a> / <span
+                    class="breadcrumb_last"
+                    aria-current="page">{{recordDetail.name}}</span></span></span></p>
+            <div class="line_helper" style="background: rgba(255,255,255,.3)"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="desc">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 text-center">
+            <h1 id="single_tour_title">{{recordDetail.name}}</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="row">
+
+      <div class="col-sm-9">
+        <div id="content" class="">
+
+          <div class="custom_gallery justified-gallery" style="height: 1287px;" lg-uid="lg0">
+            {% for image in recordDetail.images %}
+            <a data-fancybox="gallery" href="{{image.path}}" class="jg-entry"
+              style="width: 129px; height: 128.5px; top: 6px; left: 6px; opacity: 1;">
+              <img class="ls-is-cached lazyloaded" src="{{image.path}}" alt="">
+            </a>
+            {%endfor%}
+        
+
+          </div>
+
+        </div>
+
+
+
+
+
+
+
+      </div>
+
+      <div class="col-sm-3">
+        <div class="sidebar_wrapper">
+
+          <div id="sidebar">
+
+            {% partial 'site/sidebar_without_date' %}
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>

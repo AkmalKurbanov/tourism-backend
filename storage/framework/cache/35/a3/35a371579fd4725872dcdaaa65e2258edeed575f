@@ -1,4 +1,4 @@
-1611924013a:1:{s:20:"site/group_tours.htm";a:7:{s:8:"fileName";s:20:"site/group_tours.htm";s:7:"content";s:1118:"[records GroupTours]
+1612275942a:1:{s:20:"site/group_tours.htm";a:7:{s:8:"fileName";s:20:"site/group_tours.htm";s:7:"content";s:1198:"[records GroupTours]
 activeOnly = 0
 areaSlug = 0
 categorySlug = "gruppovye-tury"
@@ -23,7 +23,8 @@ orderByDirection = "ASC"
 
     <span class="img_wrapper">
 
-      <span class="img lazy" style="background-image: url({{ record.preview_image.getPath }});"></span>
+      <span class="img lazy"
+        style="background-image: url({{ record.preview_image.getPath | resize(330, false, { mode: 'crop', quality: '80', extension: 'jpg' })}});"></span>
 
       <span class="price-round group_price">
         <span class="inner">${{ record.tour_cost }}  US</span>
@@ -44,7 +45,7 @@ orderByDirection = "ASC"
 </div>
 
      
-{% endfor %}";s:5:"mtime";i:1611836268;s:6:"markup";s:819:"{% for record in GroupTours.items %}
+{% endfor %}";s:5:"mtime";i:1612271530;s:6:"markup";s:899:"{% for record in GroupTours.items %}
 
  
 
@@ -54,7 +55,8 @@ orderByDirection = "ASC"
 
     <span class="img_wrapper">
 
-      <span class="img lazy" style="background-image: url({{ record.preview_image.getPath }});"></span>
+      <span class="img lazy"
+        style="background-image: url({{ record.preview_image.getPath | resize(330, false, { mode: 'crop', quality: '80', extension: 'jpg' })}});"></span>
 
       <span class="price-round group_price">
         <span class="inner">${{ record.tour_cost }}  US</span>

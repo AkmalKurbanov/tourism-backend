@@ -30,13 +30,13 @@ class __TwigTemplate_8e8c467279c36543e6d89b99bedd5c338df3660098c651ef570ca32fef0
         ];
         $this->sandbox = $this->env->getExtension('\Twig\Extension\SandboxExtension');
         $tags = array("set" => 1, "for" => 5, "partial" => 62);
-        $filters = array("escape" => 6, "raw" => 41);
+        $filters = array("resize" => 7, "escape" => 15, "raw" => 41);
         $functions = array();
 
         try {
             $this->sandbox->checkSecurity(
                 ['set', 'for', 'partial'],
-                ['escape', 'raw'],
+                ['resize', 'escape', 'raw'],
                 []
             );
         } catch (SecurityError $e) {
@@ -70,12 +70,11 @@ class __TwigTemplate_8e8c467279c36543e6d89b99bedd5c338df3660098c651ef570ca32fef0
         $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["post"] ?? null), "featured_images", [], "any", false, false, true, 5));
         foreach ($context['_seq'] as $context["_key"] => $context["image"]) {
             // line 6
-            echo "  style=\"background-image: url(&quot;";
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["image"], "path", [], "any", false, false, true, 6), 6, $this->source), "html", null, true);
-            echo "&quot;);\" data-bg=\"url(";
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["image"], "path", [], "any", false, false, true, 6), 6, $this->source), "html", null, true);
-            echo ")\"
-  data-was-processed=\"true\">
+            echo "  style=\"background-image:
+  url(&quot;";
+            // line 7
+            echo call_user_func_array($this->env->getFilter('resize')->getCallable(), [$this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["image"], "path", [], "any", false, false, true, 7), 7, $this->source), 1920, false, ["mode" => "crop", "quality" => "80", "extension" => "jpg"]]);
+            echo "&quot;);\">
   ";
         }
         $_parent = $context['_parent'];
@@ -180,7 +179,7 @@ class __TwigTemplate_8e8c467279c36543e6d89b99bedd5c338df3660098c651ef570ca32fef0
 
     public function getDebugInfo()
     {
-        return array (  161 => 63,  157 => 62,  138 => 46,  132 => 45,  125 => 41,  108 => 27,  93 => 15,  85 => 9,  73 => 6,  69 => 5,  64 => 2,  62 => 1,);
+        return array (  160 => 63,  156 => 62,  137 => 46,  131 => 45,  124 => 41,  107 => 27,  92 => 15,  84 => 9,  76 => 7,  73 => 6,  69 => 5,  64 => 2,  62 => 1,);
     }
 
     public function getSourceContext()
@@ -190,8 +189,8 @@ class __TwigTemplate_8e8c467279c36543e6d89b99bedd5c338df3660098c651ef570ca32fef0
 
 
 <div id=\"top\" class=\"small_top lazy\" {% for image in post.featured_images %}
-  style=\"background-image: url(&quot;{{ image.path }}&quot;);\" data-bg=\"url({{ image.path }})\"
-  data-was-processed=\"true\">
+  style=\"background-image:
+  url(&quot;{{ image.path | resize(1920, false, { mode: 'crop', quality: '80', extension: 'jpg' })}}&quot;);\">
   {% endfor %}
   <div class=\"breadcrumb_wrapper\">
     <div class=\"container\">

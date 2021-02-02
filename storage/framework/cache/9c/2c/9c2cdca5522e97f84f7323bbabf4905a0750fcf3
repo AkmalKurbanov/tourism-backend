@@ -1,4 +1,4 @@
-1611923607a:1:{s:29:"site/sidebar_without_date.htm";a:8:{s:8:"fileName";s:29:"site/sidebar_without_date.htm";s:7:"content";s:3198:"[viewBag]
+1612275877a:1:{s:29:"site/sidebar_without_date.htm";a:8:{s:8:"fileName";s:29:"site/sidebar_without_date.htm";s:7:"content";s:3282:"[viewBag]
 
 [records PopularTours]
 activeOnly = 0
@@ -111,7 +111,8 @@ orderByDirection = "ASC"
     <a
       href="{{PopularTours.property('recordPage') ? PopularTours.property('recordPage')|page({(PopularTours.paramName('recordPageSlug')):(record.slug)})}}">
       <span class="img_wrapper">
-          <span class="img lazy" style="background-image: url({{ record.preview_image.getPath }})"></span>
+          <span class="img lazy"
+            style="background-image: url({{ record.preview_image.getPath | resize(265, false, { mode: 'crop', quality: '80', extension: 'jpg' })}})"></span>
 
       </span>
       <div class="desc">
@@ -127,7 +128,7 @@ orderByDirection = "ASC"
   {% endfor %}
 
 
-</div>";s:5:"mtime";i:1611837148;s:6:"markup";s:2642:"<div class="tags tags_light">
+</div>";s:5:"mtime";i:1612000864;s:6:"markup";s:2726:"<div class="tags tags_light">
   <h3>Sights</h3>
   <div class="line_helper" style="background: #e9e9e9"></div>
   <ul class="list-unstyled sdb_ul">
@@ -212,7 +213,8 @@ orderByDirection = "ASC"
     <a
       href="{{PopularTours.property('recordPage') ? PopularTours.property('recordPage')|page({(PopularTours.paramName('recordPageSlug')):(record.slug)})}}">
       <span class="img_wrapper">
-          <span class="img lazy" style="background-image: url({{ record.preview_image.getPath }})"></span>
+          <span class="img lazy"
+            style="background-image: url({{ record.preview_image.getPath | resize(265, false, { mode: 'crop', quality: '80', extension: 'jpg' })}})"></span>
 
       </span>
       <div class="desc">

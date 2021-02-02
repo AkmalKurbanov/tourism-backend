@@ -2,6 +2,10 @@ title = "Blog"
 url = "/blog"
 layout = "static-layout"
 is_hidden = 0
+banner_blog_banner = "/btq3MWGxjKZFzuASimEuCb0PyvKuHAy1eHEmSWtF5fQ.jpg"
+
+[viewBag]
+banner[0][banner] = "banner"
 
 [blogPosts]
 pageNumber = "{{ :page }}"
@@ -40,28 +44,13 @@ emails_date_format = "Y-m-d"
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal -->
 
-  <div class="modal fade in" id="modal_search" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div id="search_form">
-          <form role="search" method="get" id="searchform" action="https://kyrgyzstan-tourism.com/">
-            <input type="text" value="" name="s" id="s">
-            <button type="submit" id="search_button"><i class="fa fa-search"></i></button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
 
 
 
 
   <div id="top" class="small_top lazy"
-    style="background-image: url(&quot;https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Sunset_1920.jpg&quot;);"
-    data-bg="url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Sunset_1920.jpg)" data-was-processed="true">
+    style="background-image:
+    url({{ this.page.banner_blog_banner|media | resize(1920, false, { mode: 'crop', quality: '80', extension: 'jpg' }) }});">
 
 
 
@@ -116,7 +105,8 @@ emails_date_format = "Y-m-d"
                   <span class="img_wrapper">
 
                     {% for image in post.featured_images|slice(0,1) %}
-                    <span class="img lazy" style="background-image: url(&quot;{{image.path}}&quot;);"></span>
+                    <span class="img lazy"
+                      style="background-image: url(&quot;{{image.path | resize(410, false, { mode: 'crop', quality: '80', extension: 'jpg' })}}&quot;);"></span>
                     {% endfor %}
 
                   </span>

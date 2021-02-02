@@ -55,19 +55,33 @@ items:
         title: Kyrgyzstan
         nesting: 1
         type: static-page
+        url: null
         code: ''
         reference: kyrgyzstan
+        cmsPage: null
         replace: 0
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
+        items:
+            -
+                title: 'Photo gallery'
+                type: cms-page
+                code: ''
+                reference: photo-gallery
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
     -
         title: About
         nesting: 1
         type: static-page
+        url: null
         code: ''
         reference: about
+        cmsPage: null
         replace: 0
         viewBag:
             isHidden: '0'

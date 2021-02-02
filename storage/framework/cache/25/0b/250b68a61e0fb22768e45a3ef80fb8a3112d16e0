@@ -1,4 +1,4 @@
-1611921931a:1:{s:15:"group-tours.htm";a:8:{s:8:"fileName";s:15:"group-tours.htm";s:7:"content";s:5413:"[staticPage]
+1612281157a:1:{s:15:"group-tours.htm";a:8:{s:8:"fileName";s:15:"group-tours.htm";s:7:"content";s:5334:"[staticPage]
 useContent = 1
 default = 0
 
@@ -7,7 +7,6 @@ code = "menu"
 
 [fontAwesomeCssLink]
 ==
-{variable name="tagline" label="Tagline" tab="Header" type="text"}{/variable}
 <!DOCTYPE html>
 <html>
 
@@ -182,8 +181,7 @@ code = "menu"
 
 </body>
 
-</html>";s:5:"mtime";i:1611839883;s:6:"markup";s:5311:"{variable name="tagline" label="Tagline" tab="Header" type="text"}{/variable}
-<!DOCTYPE html>
+</html>";s:5:"mtime";i:1612159528;s:6:"markup";s:5232:"<!DOCTYPE html>
 <html>
 
 <head>

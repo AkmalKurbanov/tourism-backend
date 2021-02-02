@@ -111,7 +111,8 @@ orderByDirection = "ASC"
     <a
       href="{{PopularTours.property('recordPage') ? PopularTours.property('recordPage')|page({(PopularTours.paramName('recordPageSlug')):(record.slug)})}}">
       <span class="img_wrapper">
-          <span class="img lazy" style="background-image: url({{ record.preview_image.getPath }})"></span>
+          <span class="img lazy"
+            style="background-image: url({{ record.preview_image.getPath | resize(265, false, { mode: 'crop', quality: '80', extension: 'jpg' })}})"></span>
 
       </span>
       <div class="desc">

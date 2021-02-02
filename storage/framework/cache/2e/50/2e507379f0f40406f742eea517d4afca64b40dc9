@@ -1,4 +1,4 @@
-1611924013a:1:{s:17:"static-layout.htm";a:8:{s:8:"fileName";s:17:"static-layout.htm";s:7:"content";s:5066:"[fontAwesomeCssLink]
+1612275868a:1:{s:17:"static-layout.htm";a:8:{s:8:"fileName";s:17:"static-layout.htm";s:7:"content";s:5064:"[fontAwesomeCssLink]
 
 [staticPage]
 useContent = 1
@@ -7,7 +7,6 @@ default = 0
 [staticMenu]
 code = "menu"
 ==
-
 
 <!DOCTYPE html>
 <html>
@@ -179,7 +178,7 @@ display: none;
 
 </body>
 
-</html>";s:5:"mtime";i:1611923278;s:6:"markup";s:4960:"<!DOCTYPE html>
+</html>";s:5:"mtime";i:1612003292;s:6:"markup";s:4960:"<!DOCTYPE html>
 <html>
 
 <head>

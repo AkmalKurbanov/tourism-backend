@@ -1,0 +1,120 @@
+title = "Photo-gallery"
+url = "/photo-gallery"
+layout = "static-layout"
+is_hidden = 0
+gallerybanner_galleryBanner = "/uploaded-files/Grouptour-NorhtSouth.jpg"
+
+[records]
+activeOnly = 0
+areaSlug = "galereya"
+categorySlug = "{{ :category }}"
+tagSlug = "{{ :tag }}"
+recordPage = "gallery"
+recordPageSlug = "{{ :slug }}"
+limit = 10
+pageSlug = "{{ :page }}"
+orderBy = "name"
+orderByDirection = "ASC"
+
+[genericForm]
+messages_success = "Ваша форма была успешно отправлена!"
+messages_errors = "В вашей заявке содержатся ошибки."
+inline_errors = "disabled"
+sanitize_data = "disabled"
+anonymize_ip = "disabled"
+recaptcha_theme = "light"
+recaptcha_type = "image"
+recaptcha_size = "normal"
+emails_date_format = "Y-m-d"
+
+[siteSearchInclude]
+==
+<div id="top" class="small_top lazy"
+    style="background-image: url(&quot;{{ this.page.gallerybanner_galleryBanner|media | resize(1920, false, { mode: 'crop', quality: '80', extension: 'jpg' })}}&quot;);">
+
+
+    <div class="breadcrumb_wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <p id="breadcrumbs"><span><span><a href="/">Home</a> / <span class="breadcrumb_last"
+                    aria-current="page">{{this.page.title}}</span></span></span></p>
+            <div class="line_helper" style="background: rgba(255,255,255,.3)"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="desc">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 text-center">
+            <h1 id="single_tour_title">Galleries - Archive</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="row">
+
+      <div class="col-sm-9">
+        <div id="archive_content" class="">
+
+
+          <div class="row">
+
+            {% for record in records.items %}
+            <div class="col-sm-4">
+
+              <div class="item item_tour with_border archive_item auto_height blog_item gallery_item">
+                <a href="{{records.property('recordPage') ? records.property('recordPage')|page({(records.paramName('recordPageSlug')):(record.slug)})}}">
+                  <span class="img_wrapper">
+                    <span class="img lazy"
+                      style="background-image: url({{ record.preview_image.getPath | resize(265, false, { mode: 'crop', quality: '80', extension: 'jpg' })}});"></span>
+
+                  </span>
+                  <div class="desc">
+                    <h3>{{record.name}}</h3>
+                    <p class="r_more">View more &gt;</p>
+                  </div>
+                </a>
+              </div>
+
+
+            </div>
+            
+            {% endfor %}
+
+          </div>
+
+
+          <div id="pagin_wrapper">
+
+
+          </div>
+        </div>
+
+
+
+
+
+
+
+      </div>
+
+      <div class="col-sm-3">
+        <div class="sidebar_wrapper">
+
+          <div id="sidebar">
+
+            {% partial 'site/sidebar_without_date' %}
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>

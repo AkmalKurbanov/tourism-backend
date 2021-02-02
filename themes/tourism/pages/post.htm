@@ -25,8 +25,8 @@ emails_date_format = "Y-m-d"
 
 
 <div id="top" class="small_top lazy" {% for image in post.featured_images %}
-  style="background-image: url(&quot;{{ image.path }}&quot;);" data-bg="url({{ image.path }})"
-  data-was-processed="true">
+  style="background-image:
+  url(&quot;{{ image.path | resize(1920, false, { mode: 'crop', quality: '80', extension: 'jpg' })}}&quot;);">
   {% endfor %}
   <div class="breadcrumb_wrapper">
     <div class="container">

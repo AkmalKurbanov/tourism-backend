@@ -59,7 +59,7 @@ class __TwigTemplate_2fc4c56e59dda79bdee0d0f0b31b61765688286854d3dcf3dad6c9d47ee
     {
         $macros = $this->macros;
         // line 1
-        echo "<div class=\"search-sesult container\" style=\"height: 100vh; padding: 30px 0;\">
+        echo "<div class=\"search-sesult container\" style=\"min-height: 100vh; padding: 30px 0;\">
 
 
 ";
@@ -99,7 +99,7 @@ class __TwigTemplate_2fc4c56e59dda79bdee0d0f0b31b61765688286854d3dcf3dad6c9d47ee
 
     public function getSourceContext()
     {
-        return new Source("<div class=\"search-sesult container\" style=\"height: 100vh; padding: 30px 0;\">
+        return new Source("<div class=\"search-sesult container\" style=\"min-height: 100vh; padding: 30px 0;\">
 
 
 {% component 'searchResults' %}

@@ -30,13 +30,13 @@ class __TwigTemplate_6eb78d4b6d500484045bc6569c67ad4886e5236c5ecd3f7b4389eafceec
         ];
         $this->sandbox = $this->env->getExtension('\Twig\Extension\SandboxExtension');
         $tags = array("for" => 5);
-        $filters = array("page" => 8, "escape" => 8);
+        $filters = array("page" => 8, "escape" => 8, "resize" => 87);
         $functions = array("form_token" => 38);
 
         try {
             $this->sandbox->checkSecurity(
                 ['for'],
-                ['page', 'escape'],
+                ['page', 'escape', 'resize'],
                 ['form_token']
             );
         } catch (SecurityError $e) {
@@ -186,26 +186,27 @@ class __TwigTemplate_6eb78d4b6d500484045bc6569c67ad4886e5236c5ecd3f7b4389eafceec
             echo ((twig_get_attribute($this->env, $this->source, ($context["PopularTours"] ?? null), "property", [0 => "recordPage"], "method", false, false, true, 84)) ? ($this->extensions['Cms\Twig\Extension']->pageFilter($this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["PopularTours"] ?? null), "property", [0 => "recordPage"], "method", false, false, true, 84), 84, $this->source), [twig_get_attribute($this->env, $this->source, ($context["PopularTours"] ?? null), "paramName", [0 => "recordPageSlug"], "method", false, false, true, 84) => twig_get_attribute($this->env, $this->source, $context["record"], "slug", [], "any", false, false, true, 84)])) : (""));
             echo "\">
       <span class=\"img_wrapper\">
-          <span class=\"img lazy\" style=\"background-image: url(";
-            // line 86
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["record"], "preview_image", [], "any", false, false, true, 86), "getPath", [], "any", false, false, true, 86), 86, $this->source), "html", null, true);
+          <span class=\"img lazy\"
+            style=\"background-image: url(";
+            // line 87
+            echo call_user_func_array($this->env->getFilter('resize')->getCallable(), [$this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["record"], "preview_image", [], "any", false, false, true, 87), "getPath", [], "any", false, false, true, 87), 87, $this->source), 265, false, ["mode" => "crop", "quality" => "80", "extension" => "jpg"]]);
             echo ")\"></span>
 
       </span>
       <div class=\"desc\">
         <h3>";
-            // line 90
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "name", [], "any", false, false, true, 90), 90, $this->source), "html", null, true);
+            // line 91
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "name", [], "any", false, false, true, 91), 91, $this->source), "html", null, true);
             echo "</h3>
         <p class=\"excerpt\">";
-            // line 91
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "description", [], "any", false, false, true, 91), 91, $this->source), "html", null, true);
+            // line 92
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "description", [], "any", false, false, true, 92), 92, $this->source), "html", null, true);
             echo "</p>
       </div>
       <p class=\"duration\"><i class=\"fa fa-clock-o\"></i>
         ";
-            // line 94
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "tour_duration", [], "any", false, false, true, 94), 94, $this->source), "html", null, true);
+            // line 95
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "tour_duration", [], "any", false, false, true, 95), 95, $this->source), "html", null, true);
             echo "
         days</p>
     </a>
@@ -216,7 +217,7 @@ class __TwigTemplate_6eb78d4b6d500484045bc6569c67ad4886e5236c5ecd3f7b4389eafceec
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['record'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 100
+        // line 101
         echo "
 
 </div>";
@@ -234,7 +235,7 @@ class __TwigTemplate_6eb78d4b6d500484045bc6569c67ad4886e5236c5ecd3f7b4389eafceec
 
     public function getDebugInfo()
     {
-        return array (  220 => 100,  208 => 94,  202 => 91,  198 => 90,  191 => 86,  186 => 84,  181 => 81,  177 => 80,  138 => 48,  130 => 43,  124 => 40,  119 => 38,  114 => 36,  88 => 12,  76 => 8,  72 => 6,  68 => 5,  62 => 1,);
+        return array (  221 => 101,  209 => 95,  203 => 92,  199 => 91,  192 => 87,  186 => 84,  181 => 81,  177 => 80,  138 => 48,  130 => 43,  124 => 40,  119 => 38,  114 => 36,  88 => 12,  76 => 8,  72 => 6,  68 => 5,  62 => 1,);
     }
 
     public function getSourceContext()
@@ -324,7 +325,8 @@ class __TwigTemplate_6eb78d4b6d500484045bc6569c67ad4886e5236c5ecd3f7b4389eafceec
     <a
       href=\"{{PopularTours.property('recordPage') ? PopularTours.property('recordPage')|page({(PopularTours.paramName('recordPageSlug')):(record.slug)})}}\">
       <span class=\"img_wrapper\">
-          <span class=\"img lazy\" style=\"background-image: url({{ record.preview_image.getPath }})\"></span>
+          <span class=\"img lazy\"
+            style=\"background-image: url({{ record.preview_image.getPath | resize(265, false, { mode: 'crop', quality: '80', extension: 'jpg' })}})\"></span>
 
       </span>
       <div class=\"desc\">

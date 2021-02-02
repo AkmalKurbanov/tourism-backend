@@ -1,31 +1,44 @@
-1611924013a:1:{s:10:"sights.htm";a:11:{s:8:"fileName";s:10:"sights.htm";s:7:"content";s:1900:"title = "Sights"
-url = "/sights/:slug"
+1612281157a:1:{s:10:"sights.htm";a:13:{s:8:"fileName";s:10:"sights.htm";s:7:"content";s:3062:"title = "Sights"
+url = "/sights"
 layout = "static-layout"
 is_hidden = 0
+sightsbanner_sightsBanner = "/uploaded-files/deal2.jpg"
 
-[recordDetail SightsDetail]
+[records Sights]
 activeOnly = 0
-recordSlug = "{{ :slug }}"
 areaSlug = 0
 categorySlug = "sights"
-useMainCategory = 0
 useMultiCategories = 1
-categoryPage = 0
-categoryPageSlug = "{{ :category }}"
+tagSlug = "{{ :tag }}"
+recordPage = "sights-detail"
+recordPageSlug = "{{ :slug }}"
+limit = 10
+pageSlug = "{{ :page }}"
+orderBy = "name"
+orderByDirection = "ASC"
+
+[genericForm]
+messages_success = "Ваша форма была успешно отправлена!"
+messages_errors = "В вашей заявке содержатся ошибки."
+inline_errors = "disabled"
+sanitize_data = "disabled"
+anonymize_ip = "disabled"
+recaptcha_theme = "light"
+recaptcha_type = "image"
+recaptcha_size = "normal"
+emails_date_format = "Y-m-d"
 
 [siteSearchInclude]
 ==
 <div id="top" class="small_top lazy"
-  style="background-image: url(&quot;{{ SightsDetail.recordDetail.preview_image.getPath }}&quot;);"
-  data-bg="url({{ SightsDetail.recordDetail.preview_image.getPath }})" data-was-processed="true">
+  style="background-image: url({{ this.page.sightsbanner_sightsBanner | media | resize(1920, false, { mode: 'crop', quality: '80', extension: 'jpg' }) }});">
 
   <div class="breadcrumb_wrapper">
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
-          <p id="breadcrumbs"><span><span><a href="/">Home</a> / <span><a
-                    href="https://kyrgyzstan-tourism.com/sights/">Sights</a> / <span class="breadcrumb_last"
-                    aria-current="page">{{ SightsDetail.recordDetail.name }}</span></span></span></span></p>
+          <p id="breadcrumbs"><span><span><a href="/">Home</a> / <span class="breadcrumb_last"
+                  aria-current="page">Sights</span></span></span></span></p>
           <div class="line_helper" style="background: rgba(255,255,255,.3)"></div>
         </div>
       </div>
@@ -36,7 +49,7 @@ categoryPageSlug = "{{ :category }}"
     <div class="container">
       <div class="row">
         <div class="col-sm-12 text-center">
-          <h1 id="single_tour_title">{{ SightsDetail.recordDetail.name }}</h1>
+          <h1 id="single_tour_title">Sights - Archive</h1>
         </div>
       </div>
     </div>
@@ -47,13 +60,35 @@ categoryPageSlug = "{{ :category }}"
   <div class="row">
 
     <div class="col-sm-9">
-      <div id="content">
+      <div id="archive_content">
+      <div class="row">
+        {% for record in Sights.items %}
+        <div class="col-sm-4">
 
-        {{ SightsDetail.recordDetail.sights_editor | raw }}
-        <iframe src="{{ SightsDetail.recordDetail.sights_map }}" width="100%" height="480"></iframe>
+          <div class="item item_tour with_border archive_item auto_height blog_item">
+            <a
+              href="{{Sights.property('recordPage') ? Sights.property('recordPage')|page({(Sights.paramName('recordPageSlug')):(record.slug)})}}">
+              <span class="img_wrapper">
+                <span class="img lazy"
+                  style="background-image:
+                  url({{ record.preview_image.getPath | resize(330, false, { mode: 'crop', quality: '80', extension: 'jpg' })}});"></span>
 
+              </span>
+              <div class="desc">
+                <h3>{{record.name}}</h3>
+                <p class="excerpt"></p>
+                <p>{{ str_words(record.sights_editor, 20) }}</p>
+                <p></p>
+                <p class="r_more">Read more &gt;</p>
+              </div>
+            </a>
+          </div>
+
+
+        </div>
+        {% endfor %}
+        </div>
       </div>
-
 
     </div>
 
@@ -71,17 +106,15 @@ categoryPageSlug = "{{ :category }}"
     </div>
 
   </div>
-</div>";s:5:"mtime";i:1611851478;s:6:"markup";s:1576:"<div id="top" class="small_top lazy"
-  style="background-image: url(&quot;{{ SightsDetail.recordDetail.preview_image.getPath }}&quot;);"
-  data-bg="url({{ SightsDetail.recordDetail.preview_image.getPath }})" data-was-processed="true">
+</div>";s:5:"mtime";i:1612274627;s:6:"markup";s:2254:"<div id="top" class="small_top lazy"
+  style="background-image: url({{ this.page.sightsbanner_sightsBanner | media | resize(1920, false, { mode: 'crop', quality: '80', extension: 'jpg' }) }});">
 
   <div class="breadcrumb_wrapper">
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
-          <p id="breadcrumbs"><span><span><a href="/">Home</a> / <span><a
-                    href="https://kyrgyzstan-tourism.com/sights/">Sights</a> / <span class="breadcrumb_last"
-                    aria-current="page">{{ SightsDetail.recordDetail.name }}</span></span></span></span></p>
+          <p id="breadcrumbs"><span><span><a href="/">Home</a> / <span class="breadcrumb_last"
+                  aria-current="page">Sights</span></span></span></span></p>
           <div class="line_helper" style="background: rgba(255,255,255,.3)"></div>
         </div>
       </div>
@@ -92,7 +125,7 @@ categoryPageSlug = "{{ :category }}"
     <div class="container">
       <div class="row">
         <div class="col-sm-12 text-center">
-          <h1 id="single_tour_title">{{ SightsDetail.recordDetail.name }}</h1>
+          <h1 id="single_tour_title">Sights - Archive</h1>
         </div>
       </div>
     </div>
@@ -103,13 +136,35 @@ categoryPageSlug = "{{ :category }}"
   <div class="row">
 
     <div class="col-sm-9">
-      <div id="content">
+      <div id="archive_content">
+      <div class="row">
+        {% for record in Sights.items %}
+        <div class="col-sm-4">
 
-        {{ SightsDetail.recordDetail.sights_editor | raw }}
-        <iframe src="{{ SightsDetail.recordDetail.sights_map }}" width="100%" height="480"></iframe>
+          <div class="item item_tour with_border archive_item auto_height blog_item">
+            <a
+              href="{{Sights.property('recordPage') ? Sights.property('recordPage')|page({(Sights.paramName('recordPageSlug')):(record.slug)})}}">
+              <span class="img_wrapper">
+                <span class="img lazy"
+                  style="background-image:
+                  url({{ record.preview_image.getPath | resize(330, false, { mode: 'crop', quality: '80', extension: 'jpg' })}});"></span>
 
+              </span>
+              <div class="desc">
+                <h3>{{record.name}}</h3>
+                <p class="excerpt"></p>
+                <p>{{ str_words(record.sights_editor, 20) }}</p>
+                <p></p>
+                <p class="r_more">Read more &gt;</p>
+              </div>
+            </a>
+          </div>
+
+
+        </div>
+        {% endfor %}
+        </div>
       </div>
-
 
     </div>
 
@@ -127,4 +182,4 @@ categoryPageSlug = "{{ :category }}"
     </div>
 
   </div>
-</div>";s:4:"code";N;s:5:"title";s:6:"Sights";s:3:"url";s:13:"/sights/:slug";s:6:"layout";s:13:"static-layout";s:9:"is_hidden";s:1:"0";s:25:"recordDetail SightsDetail";a:8:{s:10:"activeOnly";s:1:"0";s:10:"recordSlug";s:11:"{{ :slug }}";s:8:"areaSlug";s:1:"0";s:12:"categorySlug";s:6:"sights";s:15:"useMainCategory";s:1:"0";s:18:"useMultiCategories";s:1:"1";s:12:"categoryPage";s:1:"0";s:16:"categoryPageSlug";s:15:"{{ :category }}";}s:17:"siteSearchInclude";a:0:{}}}
+</div>";s:4:"code";N;s:5:"title";s:6:"Sights";s:3:"url";s:7:"/sights";s:6:"layout";s:13:"static-layout";s:9:"is_hidden";s:1:"0";s:25:"sightsbanner_sightsBanner";s:25:"/uploaded-files/deal2.jpg";s:14:"records Sights";a:11:{s:10:"activeOnly";s:1:"0";s:8:"areaSlug";s:1:"0";s:12:"categorySlug";s:6:"sights";s:18:"useMultiCategories";s:1:"1";s:7:"tagSlug";s:10:"{{ :tag }}";s:10:"recordPage";s:13:"sights-detail";s:14:"recordPageSlug";s:11:"{{ :slug }}";s:5:"limit";s:2:"10";s:8:"pageSlug";s:11:"{{ :page }}";s:7:"orderBy";s:4:"name";s:16:"orderByDirection";s:3:"ASC";}s:11:"genericForm";a:9:{s:16:"messages_success";s:65:"Ваша форма была успешно отправлена!";s:15:"messages_errors";s:61:"В вашей заявке содержатся ошибки.";s:13:"inline_errors";s:8:"disabled";s:13:"sanitize_data";s:8:"disabled";s:12:"anonymize_ip";s:8:"disabled";s:15:"recaptcha_theme";s:5:"light";s:14:"recaptcha_type";s:5:"image";s:14:"recaptcha_size";s:6:"normal";s:18:"emails_date_format";s:5:"Y-m-d";}s:17:"siteSearchInclude";a:0:{}}}

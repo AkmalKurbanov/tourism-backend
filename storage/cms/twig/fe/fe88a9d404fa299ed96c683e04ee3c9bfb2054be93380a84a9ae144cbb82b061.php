@@ -30,13 +30,13 @@ class __TwigTemplate_491906ad9e4f2fd49636c1449fae6e4f86e0b09619ffc412f290b5f2ac9
         ];
         $this->sandbox = $this->env->getExtension('\Twig\Extension\SandboxExtension');
         $tags = array("for" => 1);
-        $filters = array("page" => 7, "escape" => 11);
+        $filters = array("page" => 7, "resize" => 12, "escape" => 15);
         $functions = array();
 
         try {
             $this->sandbox->checkSecurity(
                 ['for'],
-                ['page', 'escape'],
+                ['page', 'resize', 'escape'],
                 []
             );
         } catch (SecurityError $e) {
@@ -75,15 +75,16 @@ class __TwigTemplate_491906ad9e4f2fd49636c1449fae6e4f86e0b09619ffc412f290b5f2ac9
 
     <span class=\"img_wrapper\">
 
-      <span class=\"img lazy\" style=\"background-image: url(";
-            // line 11
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["record"], "preview_image", [], "any", false, false, true, 11), "getPath", [], "any", false, false, true, 11), 11, $this->source), "html", null, true);
+      <span class=\"img lazy\"
+        style=\"background-image: url(";
+            // line 12
+            echo call_user_func_array($this->env->getFilter('resize')->getCallable(), [$this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["record"], "preview_image", [], "any", false, false, true, 12), "getPath", [], "any", false, false, true, 12), 12, $this->source), 330, false, ["mode" => "crop", "quality" => "80", "extension" => "jpg"]]);
             echo ");\"></span>
 
       <span class=\"price-round group_price\">
         <span class=\"inner\">\$";
-            // line 14
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "tour_cost", [], "any", false, false, true, 14), 14, $this->source), "html", null, true);
+            // line 15
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "tour_cost", [], "any", false, false, true, 15), 15, $this->source), "html", null, true);
             echo "  US</span>
         
 </span>
@@ -91,20 +92,20 @@ class __TwigTemplate_491906ad9e4f2fd49636c1449fae6e4f86e0b09619ffc412f290b5f2ac9
     </span>
     <div class=\"desc\">
       <h3>";
-            // line 20
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "name", [], "any", false, false, true, 20), 20, $this->source), "html", null, true);
+            // line 21
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "name", [], "any", false, false, true, 21), 21, $this->source), "html", null, true);
             echo " </h3> 
         
       <p class=\"excerpt\">";
-            // line 22
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "description", [], "any", false, false, true, 22), 22, $this->source), "html", null, true);
+            // line 23
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "description", [], "any", false, false, true, 23), 23, $this->source), "html", null, true);
             echo "</p>
     </div>
     <p class=\"duration\">
       <i class=\"fa fa-clock-o\"></i>
       ";
-            // line 26
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "tour_duration", [], "any", false, false, true, 26), 26, $this->source), "html", null, true);
+            // line 27
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "tour_duration", [], "any", false, false, true, 27), 27, $this->source), "html", null, true);
             echo "
       days</p>
   </a>
@@ -130,7 +131,7 @@ class __TwigTemplate_491906ad9e4f2fd49636c1449fae6e4f86e0b09619ffc412f290b5f2ac9
 
     public function getDebugInfo()
     {
-        return array (  107 => 26,  100 => 22,  95 => 20,  86 => 14,  80 => 11,  73 => 7,  66 => 2,  62 => 1,);
+        return array (  108 => 27,  101 => 23,  96 => 21,  87 => 15,  81 => 12,  73 => 7,  66 => 2,  62 => 1,);
     }
 
     public function getSourceContext()
@@ -145,7 +146,8 @@ class __TwigTemplate_491906ad9e4f2fd49636c1449fae6e4f86e0b09619ffc412f290b5f2ac9
 
     <span class=\"img_wrapper\">
 
-      <span class=\"img lazy\" style=\"background-image: url({{ record.preview_image.getPath }});\"></span>
+      <span class=\"img lazy\"
+        style=\"background-image: url({{ record.preview_image.getPath | resize(330, false, { mode: 'crop', quality: '80', extension: 'jpg' })}});\"></span>
 
       <span class=\"price-round group_price\">
         <span class=\"inner\">\${{ record.tour_cost }}  US</span>

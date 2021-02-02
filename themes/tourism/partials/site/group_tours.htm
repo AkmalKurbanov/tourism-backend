@@ -23,7 +23,8 @@ orderByDirection = "ASC"
 
     <span class="img_wrapper">
 
-      <span class="img lazy" style="background-image: url({{ record.preview_image.getPath }});"></span>
+      <span class="img lazy"
+        style="background-image: url({{ record.preview_image.getPath | resize(330, false, { mode: 'crop', quality: '80', extension: 'jpg' })}});"></span>
 
       <span class="price-round group_price">
         <span class="inner">${{ record.tour_cost }}  US</span>

@@ -1,9 +1,10 @@
-1611923730a:1:{s:18:"about-about-us.htm";a:7:{s:8:"fileName";s:18:"about-about-us.htm";s:7:"content";s:455:"[viewBag]
+1612281157a:1:{s:18:"about-about-us.htm";a:7:{s:8:"fileName";s:18:"about-about-us.htm";s:7:"content";s:516:"[viewBag]
 title = "Contact us"
 url = "/about/contact-us"
 layout = "static-page"
 is_hidden = 0
 navigation_hidden = 0
+banner = "/btq3MWGxjKZFzuASimEuCb0PyvKuHAy1eHEmSWtF5fQ.jpg"
 ==
 <p>+996 706 363738</p>
 
@@ -17,7 +18,7 @@ navigation_hidden = 0
 
 <p>
 	<iframe src="https://www.google.com/maps/d/embed?mid=1P0yvST23UWGTA_xowr71ztkJYKTbVNst" width="640" height="480"></iframe>
-</p>";s:5:"mtime";i:1611654600;s:6:"markup";s:329:"<p>+996 706 363738</p>
+</p>";s:5:"mtime";i:1612002930;s:6:"markup";s:329:"<p>+996 706 363738</p>
 
 <p>+996 777 970779</p>
 
@@ -29,7 +30,7 @@ navigation_hidden = 0
 
 <p>
 	<iframe src="https://www.google.com/maps/d/embed?mid=1P0yvST23UWGTA_xowr71ztkJYKTbVNst" width="640" height="480"></iframe>
-</p>";s:4:"code";N;s:7:"viewBag";a:5:{s:5:"title";s:10:"Contact us";s:3:"url";s:17:"/about/contact-us";s:6:"layout";s:11:"static-page";s:9:"is_hidden";s:1:"0";s:17:"navigation_hidden";s:1:"0";}s:12:"parsedMarkup";s:329:"<p>+996 706 363738</p>
+</p>";s:4:"code";N;s:7:"viewBag";a:6:{s:5:"title";s:10:"Contact us";s:3:"url";s:17:"/about/contact-us";s:6:"layout";s:11:"static-page";s:9:"is_hidden";s:1:"0";s:17:"navigation_hidden";s:1:"0";s:6:"banner";s:48:"/btq3MWGxjKZFzuASimEuCb0PyvKuHAy1eHEmSWtF5fQ.jpg";}s:12:"parsedMarkup";s:329:"<p>+996 706 363738</p>
 
 <p>+996 777 970779</p>
 

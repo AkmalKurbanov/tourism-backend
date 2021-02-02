@@ -19,7 +19,7 @@ areaSlug = 0
 categorySlug = "sights"
 useMultiCategories = 1
 tagSlug = "{{ :tag }}"
-recordPage = "sights"
+recordPage = "sights-detail"
 recordPageSlug = "{{ :slug }}"
 limit = 10
 pageSlug = "{{ :page }}"
@@ -34,7 +34,7 @@ orderByDirection = "ASC"
 
   {% for record in Sights.items %}
 
-    <li><a href="{{Sights.property('recordPage') ? Sights.property('recordPage')|page({(Sights.paramName('recordPageSlug')):(record.slug)})}}">{{record.name}}</a></li>
+        <li><a href="{{Sights.property('recordPage') ? Sights.property('recordPage')|page({(Sights.paramName('recordPageSlug')):(record.slug)})}}">{{record.name}}</a></li>
 
   {% endfor %}
    
@@ -133,7 +133,8 @@ orderByDirection = "ASC"
     <a
       href="{{PopularTours.property('recordPage') ? PopularTours.property('recordPage')|page({(PopularTours.paramName('recordPageSlug')):(record.slug)})}}">
       <span class="img_wrapper">
-        <span class="img lazy" style="background-image: url({{ record.preview_image.getPath }})"></span>
+        <span class="img lazy"
+          style="background-image: url({{ record.preview_image.getPath | resize(265, false, { mode: 'crop', quality: '80', extension: 'jpg' })}})"></span>
 
       </span>
       <div class="desc">

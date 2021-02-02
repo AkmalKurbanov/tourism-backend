@@ -1,4 +1,4 @@
-1611924062a:1:{s:8:"home.htm";a:14:{s:8:"fileName";s:8:"home.htm";s:7:"content";s:9241:"title = "Home"
+1612281157a:1:{s:8:"home.htm";a:14:{s:8:"fileName";s:8:"home.htm";s:7:"content";s:9412:"title = "Home"
 url = "/"
 layout = "static-layout"
 is_hidden = 0
@@ -31,8 +31,6 @@ sortOrder = "published_at desc"
 categoryPage = "blog"
 postPage = "post"
 
-[siteSearchInclude]
-
 [records Reviews]
 activeOnly = 0
 areaSlug = 0
@@ -47,6 +45,8 @@ limit = 2
 pageSlug = "{{ :slug }}"
 orderBy = "name"
 orderByDirection = "ASC"
+
+[siteSearchInclude]
 ==
 {% component 'records' %}
 
@@ -301,7 +301,8 @@ orderByDirection = "ASC"
           <a href="{{ post.url }}"
             class="img_link">
             {% for image in post.featured_images|slice(0,1) %}
-            <span class="img lazy" style="background-image: url('{{image.path}}');"></span>
+            <span class="img lazy"
+              style="background-image: url('{{image.path | resize(555, false, { mode: 'crop', quality: '80', extension: 'jpg' })}}');"></span>
              {% endfor %}
           </a>
 
@@ -314,7 +315,7 @@ orderByDirection = "ASC"
           </div>
           <div class="text-center">
             <a href="{{ post.url }}"
-              class="cstm_button round lblue">Read more <i class="fa fa-long-arrow-right"></i></a>
+              class="cstm_button round lblue">Read more <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
 
@@ -329,7 +330,8 @@ orderByDirection = "ASC"
         <div class="s_review">
           <div class="row">
             <div class="col-sm-3">
-              <img alt="review" src="{{ record.preview_image.getPath }}"
+              <img alt="review"
+                src="{{ record.preview_image.getPath | resize(104, false, { mode: 'crop', quality: '80', extension: 'jpg' })}}"
                
                 class="img-responsive lazyload">
             </div>
@@ -366,11 +368,11 @@ orderByDirection = "ASC"
 
         <div class="screen-reader-response" role="alert" aria-live="polite"></div>
 
-        <form data-request="{{ HomPageForm }}::onFormSubmit">
+        <form data-request="{{ genericForm }}::onFormSubmit">
 
           {{ form_token() }}
 
-          <div id="{{ HomPageForm }}_forms_flash"></div>
+          <div id="{{ genericForm }}_forms_flash"></div>
 
           <div class="form-group">
             <input type="text" id="name" name="name" class="form-control" placeholder="Your name" require>
@@ -397,7 +399,7 @@ orderByDirection = "ASC"
     </div>
   </div>
 </div>
-</div>";s:5:"mtime";i:1611923455;s:6:"markup";s:8065:"{% component 'records' %}
+</div>";s:5:"mtime";i:1612275341;s:6:"markup";s:8236:"{% component 'records' %}
 
 
 <div id="front_slider" class="carousel slide" data-ride="carousel">
@@ -650,7 +652,8 @@ orderByDirection = "ASC"
           <a href="{{ post.url }}"
             class="img_link">
             {% for image in post.featured_images|slice(0,1) %}
-            <span class="img lazy" style="background-image: url('{{image.path}}');"></span>
+            <span class="img lazy"
+              style="background-image: url('{{image.path | resize(555, false, { mode: 'crop', quality: '80', extension: 'jpg' })}}');"></span>
              {% endfor %}
           </a>
 
@@ -663,7 +666,7 @@ orderByDirection = "ASC"
           </div>
           <div class="text-center">
             <a href="{{ post.url }}"
-              class="cstm_button round lblue">Read more <i class="fa fa-long-arrow-right"></i></a>
+              class="cstm_button round lblue">Read more <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
 
@@ -678,7 +681,8 @@ orderByDirection = "ASC"
         <div class="s_review">
           <div class="row">
             <div class="col-sm-3">
-              <img alt="review" src="{{ record.preview_image.getPath }}"
+              <img alt="review"
+                src="{{ record.preview_image.getPath | resize(104, false, { mode: 'crop', quality: '80', extension: 'jpg' })}}"
                
                 class="img-responsive lazyload">
             </div>
@@ -715,11 +719,11 @@ orderByDirection = "ASC"
 
         <div class="screen-reader-response" role="alert" aria-live="polite"></div>
 
-        <form data-request="{{ HomPageForm }}::onFormSubmit">
+        <form data-request="{{ genericForm }}::onFormSubmit">
 
           {{ form_token() }}
 
-          <div id="{{ HomPageForm }}_forms_flash"></div>
+          <div id="{{ genericForm }}_forms_flash"></div>
 
           <div class="form-group">
             <input type="text" id="name" name="name" class="form-control" placeholder="Your name" require>
@@ -746,4 +750,4 @@ orderByDirection = "ASC"
     </div>
   </div>
 </div>
-</div>";s:4:"code";N;s:5:"title";s:4:"Home";s:3:"url";s:1:"/";s:6:"layout";s:13:"static-layout";s:9:"is_hidden";s:1:"0";s:23:"recordDetail TourDetail";a:7:{s:10:"activeOnly";s:1:"0";s:10:"recordSlug";s:11:"{{ :slug }}";s:8:"areaSlug";s:1:"0";s:12:"categorySlug";s:21:"{{ :gruppovye-tury }}";s:15:"useMainCategory";s:1:"1";s:12:"categoryPage";s:1:"0";s:16:"categoryPageSlug";s:15:"{{ :category }}";}s:11:"genericForm";a:9:{s:16:"messages_success";s:65:"Ваша форма была успешно отправлена!";s:15:"messages_errors";s:61:"В вашей заявке содержатся ошибки.";s:13:"inline_errors";s:8:"disabled";s:13:"sanitize_data";s:8:"disabled";s:12:"anonymize_ip";s:8:"disabled";s:15:"recaptcha_theme";s:5:"light";s:14:"recaptcha_type";s:5:"image";s:14:"recaptcha_size";s:6:"normal";s:18:"emails_date_format";s:5:"Y-m-d";}s:9:"blogPosts";a:6:{s:10:"pageNumber";s:11:"{{ :page }}";s:12:"postsPerPage";s:1:"1";s:14:"noPostsMessage";s:34:"Записей не найдено";s:9:"sortOrder";s:17:"published_at desc";s:12:"categoryPage";s:4:"blog";s:8:"postPage";s:4:"post";}s:17:"siteSearchInclude";a:0:{}s:15:"records Reviews";a:13:{s:10:"activeOnly";s:1:"0";s:8:"areaSlug";s:1:"0";s:12:"categorySlug";s:6:"otzyvy";s:15:"useMainCategory";s:1:"1";s:18:"useMultiCategories";s:1:"0";s:7:"tagSlug";s:10:"{{ :tag }}";s:10:"recordPage";s:14:"reviews-detail";s:14:"recordPageSlug";s:11:"{{ :slug }}";s:10:"allowLimit";s:1:"1";s:5:"limit";s:1:"2";s:8:"pageSlug";s:11:"{{ :slug }}";s:7:"orderBy";s:4:"name";s:16:"orderByDirection";s:3:"ASC";}}}
+</div>";s:4:"code";N;s:5:"title";s:4:"Home";s:3:"url";s:1:"/";s:6:"layout";s:13:"static-layout";s:9:"is_hidden";s:1:"0";s:23:"recordDetail TourDetail";a:7:{s:10:"activeOnly";s:1:"0";s:10:"recordSlug";s:11:"{{ :slug }}";s:8:"areaSlug";s:1:"0";s:12:"categorySlug";s:21:"{{ :gruppovye-tury }}";s:15:"useMainCategory";s:1:"1";s:12:"categoryPage";s:1:"0";s:16:"categoryPageSlug";s:15:"{{ :category }}";}s:11:"genericForm";a:9:{s:16:"messages_success";s:65:"Ваша форма была успешно отправлена!";s:15:"messages_errors";s:61:"В вашей заявке содержатся ошибки.";s:13:"inline_errors";s:8:"disabled";s:13:"sanitize_data";s:8:"disabled";s:12:"anonymize_ip";s:8:"disabled";s:15:"recaptcha_theme";s:5:"light";s:14:"recaptcha_type";s:5:"image";s:14:"recaptcha_size";s:6:"normal";s:18:"emails_date_format";s:5:"Y-m-d";}s:9:"blogPosts";a:6:{s:10:"pageNumber";s:11:"{{ :page }}";s:12:"postsPerPage";s:1:"1";s:14:"noPostsMessage";s:34:"Записей не найдено";s:9:"sortOrder";s:17:"published_at desc";s:12:"categoryPage";s:4:"blog";s:8:"postPage";s:4:"post";}s:15:"records Reviews";a:13:{s:10:"activeOnly";s:1:"0";s:8:"areaSlug";s:1:"0";s:12:"categorySlug";s:6:"otzyvy";s:15:"useMainCategory";s:1:"1";s:18:"useMultiCategories";s:1:"0";s:7:"tagSlug";s:10:"{{ :tag }}";s:10:"recordPage";s:14:"reviews-detail";s:14:"recordPageSlug";s:11:"{{ :slug }}";s:10:"allowLimit";s:1:"1";s:5:"limit";s:1:"2";s:8:"pageSlug";s:11:"{{ :slug }}";s:7:"orderBy";s:4:"name";s:16:"orderByDirection";s:3:"ASC";}s:17:"siteSearchInclude";a:0:{}}}

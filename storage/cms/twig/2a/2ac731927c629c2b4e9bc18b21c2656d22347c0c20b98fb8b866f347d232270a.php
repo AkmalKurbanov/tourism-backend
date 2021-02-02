@@ -30,13 +30,13 @@ class __TwigTemplate_2551e8953e505151923f9f0ed06570f94524cceb36799f9e77346b80986
         ];
         $this->sandbox = $this->env->getExtension('\Twig\Extension\SandboxExtension');
         $tags = array("for" => 7);
-        $filters = array("page" => 9, "escape" => 9);
+        $filters = array("page" => 9, "escape" => 9, "resize" => 109);
         $functions = array("form_token" => 39);
 
         try {
             $this->sandbox->checkSecurity(
                 ['for'],
-                ['page', 'escape'],
+                ['page', 'escape', 'resize'],
                 ['form_token']
             );
         } catch (SecurityError $e) {
@@ -72,7 +72,7 @@ class __TwigTemplate_2551e8953e505151923f9f0ed06570f94524cceb36799f9e77346b80986
         foreach ($context['_seq'] as $context["_key"] => $context["record"]) {
             // line 8
             echo "
-    <li><a href=\"";
+        <li><a href=\"";
             // line 9
             echo ((twig_get_attribute($this->env, $this->source, ($context["Sights"] ?? null), "property", [0 => "recordPage"], "method", false, false, true, 9)) ? ($this->extensions['Cms\Twig\Extension']->pageFilter($this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["Sights"] ?? null), "property", [0 => "recordPage"], "method", false, false, true, 9), 9, $this->source), [twig_get_attribute($this->env, $this->source, ($context["Sights"] ?? null), "paramName", [0 => "recordPageSlug"], "method", false, false, true, 9) => twig_get_attribute($this->env, $this->source, $context["record"], "slug", [], "any", false, false, true, 9)])) : (""));
             echo "\">";
@@ -228,26 +228,27 @@ class __TwigTemplate_2551e8953e505151923f9f0ed06570f94524cceb36799f9e77346b80986
             echo ((twig_get_attribute($this->env, $this->source, ($context["PopularTours"] ?? null), "property", [0 => "recordPage"], "method", false, false, true, 106)) ? ($this->extensions['Cms\Twig\Extension']->pageFilter($this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["PopularTours"] ?? null), "property", [0 => "recordPage"], "method", false, false, true, 106), 106, $this->source), [twig_get_attribute($this->env, $this->source, ($context["PopularTours"] ?? null), "paramName", [0 => "recordPageSlug"], "method", false, false, true, 106) => twig_get_attribute($this->env, $this->source, $context["record"], "slug", [], "any", false, false, true, 106)])) : (""));
             echo "\">
       <span class=\"img_wrapper\">
-        <span class=\"img lazy\" style=\"background-image: url(";
-            // line 108
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["record"], "preview_image", [], "any", false, false, true, 108), "getPath", [], "any", false, false, true, 108), 108, $this->source), "html", null, true);
+        <span class=\"img lazy\"
+          style=\"background-image: url(";
+            // line 109
+            echo call_user_func_array($this->env->getFilter('resize')->getCallable(), [$this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["record"], "preview_image", [], "any", false, false, true, 109), "getPath", [], "any", false, false, true, 109), 109, $this->source), 265, false, ["mode" => "crop", "quality" => "80", "extension" => "jpg"]]);
             echo ")\"></span>
 
       </span>
       <div class=\"desc\">
         <h3>";
-            // line 112
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "name", [], "any", false, false, true, 112), 112, $this->source), "html", null, true);
+            // line 113
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "name", [], "any", false, false, true, 113), 113, $this->source), "html", null, true);
             echo "</h3>
         <p class=\"excerpt\">";
-            // line 113
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "description", [], "any", false, false, true, 113), 113, $this->source), "html", null, true);
+            // line 114
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "description", [], "any", false, false, true, 114), 114, $this->source), "html", null, true);
             echo "</p>
       </div>
       <p class=\"duration\"><i class=\"fa fa-clock-o\"></i>
         ";
-            // line 116
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "tour_duration", [], "any", false, false, true, 116), 116, $this->source), "html", null, true);
+            // line 117
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "tour_duration", [], "any", false, false, true, 117), 117, $this->source), "html", null, true);
             echo "
         days</p>
     </a>
@@ -258,7 +259,7 @@ class __TwigTemplate_2551e8953e505151923f9f0ed06570f94524cceb36799f9e77346b80986
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['record'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 122
+        // line 123
         echo "
 
 </div>";
@@ -276,7 +277,7 @@ class __TwigTemplate_2551e8953e505151923f9f0ed06570f94524cceb36799f9e77346b80986
 
     public function getDebugInfo()
     {
-        return array (  262 => 122,  250 => 116,  244 => 113,  240 => 112,  233 => 108,  228 => 106,  223 => 103,  219 => 102,  182 => 67,  170 => 64,  166 => 63,  161 => 61,  157 => 60,  138 => 48,  131 => 44,  125 => 41,  120 => 39,  115 => 37,  88 => 12,  77 => 9,  74 => 8,  70 => 7,  62 => 1,);
+        return array (  263 => 123,  251 => 117,  245 => 114,  241 => 113,  234 => 109,  228 => 106,  223 => 103,  219 => 102,  182 => 67,  170 => 64,  166 => 63,  161 => 61,  157 => 60,  138 => 48,  131 => 44,  125 => 41,  120 => 39,  115 => 37,  88 => 12,  77 => 9,  74 => 8,  70 => 7,  62 => 1,);
     }
 
     public function getSourceContext()
@@ -289,7 +290,7 @@ class __TwigTemplate_2551e8953e505151923f9f0ed06570f94524cceb36799f9e77346b80986
 
   {% for record in Sights.items %}
 
-    <li><a href=\"{{Sights.property('recordPage') ? Sights.property('recordPage')|page({(Sights.paramName('recordPageSlug')):(record.slug)})}}\">{{record.name}}</a></li>
+        <li><a href=\"{{Sights.property('recordPage') ? Sights.property('recordPage')|page({(Sights.paramName('recordPageSlug')):(record.slug)})}}\">{{record.name}}</a></li>
 
   {% endfor %}
    
@@ -388,7 +389,8 @@ class __TwigTemplate_2551e8953e505151923f9f0ed06570f94524cceb36799f9e77346b80986
     <a
       href=\"{{PopularTours.property('recordPage') ? PopularTours.property('recordPage')|page({(PopularTours.paramName('recordPageSlug')):(record.slug)})}}\">
       <span class=\"img_wrapper\">
-        <span class=\"img lazy\" style=\"background-image: url({{ record.preview_image.getPath }})\"></span>
+        <span class=\"img lazy\"
+          style=\"background-image: url({{ record.preview_image.getPath | resize(265, false, { mode: 'crop', quality: '80', extension: 'jpg' })}})\"></span>
 
       </span>
       <div class=\"desc\">

@@ -1,5 +1,206 @@
-1611924013a:1:{s:11:"reviews.htm";a:9:{s:8:"fileName";s:11:"reviews.htm";s:7:"content";s:80:"title = "Reviews"
+1612281157a:1:{s:11:"reviews.htm";a:12:{s:8:"fileName";s:11:"reviews.htm";s:7:"content";s:2812:"title = "Reviews"
 url = "/reviews"
 layout = "static-layout"
 is_hidden = 0
-==";s:5:"mtime";i:1611920590;s:6:"markup";s:0:"";s:4:"code";N;s:5:"title";s:7:"Reviews";s:3:"url";s:8:"/reviews";s:6:"layout";s:13:"static-layout";s:9:"is_hidden";s:1:"0";}}
+reviewsbanner_reviewsBanner = "/uploaded-files/1611314993687.jpeg"
+
+[records Reviews]
+activeOnly = 0
+areaSlug = 0
+categorySlug = "otzyvy"
+useMainCategory = 1
+useMultiCategories = 0
+tagSlug = "{{ :tag }}"
+recordPage = "reviews-detail"
+recordPageSlug = "{{ :slug }}"
+allowLimit = 1
+limit = 0
+pageSlug = "{{ :slug }}"
+orderBy = "name"
+orderByDirection = "ASC"
+
+[siteSearchInclude]
+==
+<div id="top" class="small_top lazy"
+  style="background-image: url({{ this.page.reviewsbanner_reviewsBanner | media | resize(1920, false, { mode: 'crop', quality: '80', extension: 'jpg' })}});">
+
+  <div class="breadcrumb_wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <p id="breadcrumbs"><span><span><a href="/">Home</a> / <span> <span
+                    class="breadcrumb_last"
+                    aria-current="page">Reviews</span></span></span></span></p>
+          <div class="line_helper" style="background: rgba(255,255,255,.3)"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="desc">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 text-center">
+          <h1 id="single_tour_title">Reviews - Archive</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+<div class="col-sm-9">
+
+  <div id="archive_content" class="">
+
+
+
+ {% for record in Reviews.items %}
+    <div class="row">
+
+      <div class="s_review">
+        <div class="row">
+          <div class="col-sm-2">
+            <img alt="review"
+              src="{{ record.preview_image.getPath | resize(120, false, { mode: 'crop', quality: '80', extension: 'jpg' })}}"
+              class="img-responsive lazyload">
+          </div>
+          <div class="col-sm-10">
+            <h4 class="name">{{record.name}}</h4>
+            <h5 class="work">{{record.review_author_status}}</h5>
+
+            <div class="excerpt">
+              <p></p>
+              <p><em>{{ str_words(record.review, 20) }}</em></p>
+              <p></p>
+              <div class="more">
+            <a
+              href="{{Reviews.property('recordPage') ? Reviews.property('recordPage')|page({(Reviews.paramName('recordPageSlug')):(record.slug)})}}">Read
+              more
+              ...</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+{% endfor %}
+
+
+    <div id="pagin_wrapper">
+
+
+    </div>
+  </div>
+
+
+</div>
+
+    <div class="col-sm-3">
+
+
+      <div id="sidebar" style="margin-top: 50px;">
+
+
+
+        {% partial 'site/sidebar_without_date' %}
+
+
+
+      </div>
+
+    </div>
+  </div>
+</div>";s:5:"mtime";i:1612274477;s:6:"markup";s:2334:"<div id="top" class="small_top lazy"
+  style="background-image: url({{ this.page.reviewsbanner_reviewsBanner | media | resize(1920, false, { mode: 'crop', quality: '80', extension: 'jpg' })}});">
+
+  <div class="breadcrumb_wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <p id="breadcrumbs"><span><span><a href="/">Home</a> / <span> <span
+                    class="breadcrumb_last"
+                    aria-current="page">Reviews</span></span></span></span></p>
+          <div class="line_helper" style="background: rgba(255,255,255,.3)"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="desc">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 text-center">
+          <h1 id="single_tour_title">Reviews - Archive</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+<div class="col-sm-9">
+
+  <div id="archive_content" class="">
+
+
+
+ {% for record in Reviews.items %}
+    <div class="row">
+
+      <div class="s_review">
+        <div class="row">
+          <div class="col-sm-2">
+            <img alt="review"
+              src="{{ record.preview_image.getPath | resize(120, false, { mode: 'crop', quality: '80', extension: 'jpg' })}}"
+              class="img-responsive lazyload">
+          </div>
+          <div class="col-sm-10">
+            <h4 class="name">{{record.name}}</h4>
+            <h5 class="work">{{record.review_author_status}}</h5>
+
+            <div class="excerpt">
+              <p></p>
+              <p><em>{{ str_words(record.review, 20) }}</em></p>
+              <p></p>
+              <div class="more">
+            <a
+              href="{{Reviews.property('recordPage') ? Reviews.property('recordPage')|page({(Reviews.paramName('recordPageSlug')):(record.slug)})}}">Read
+              more
+              ...</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+{% endfor %}
+
+
+    <div id="pagin_wrapper">
+
+
+    </div>
+  </div>
+
+
+</div>
+
+    <div class="col-sm-3">
+
+
+      <div id="sidebar" style="margin-top: 50px;">
+
+
+
+        {% partial 'site/sidebar_without_date' %}
+
+
+
+      </div>
+
+    </div>
+  </div>
+</div>";s:4:"code";N;s:5:"title";s:7:"Reviews";s:3:"url";s:8:"/reviews";s:6:"layout";s:13:"static-layout";s:9:"is_hidden";s:1:"0";s:27:"reviewsbanner_reviewsBanner";s:34:"/uploaded-files/1611314993687.jpeg";s:15:"records Reviews";a:13:{s:10:"activeOnly";s:1:"0";s:8:"areaSlug";s:1:"0";s:12:"categorySlug";s:6:"otzyvy";s:15:"useMainCategory";s:1:"1";s:18:"useMultiCategories";s:1:"0";s:7:"tagSlug";s:10:"{{ :tag }}";s:10:"recordPage";s:14:"reviews-detail";s:14:"recordPageSlug";s:11:"{{ :slug }}";s:10:"allowLimit";s:1:"1";s:5:"limit";s:1:"0";s:8:"pageSlug";s:11:"{{ :slug }}";s:7:"orderBy";s:4:"name";s:16:"orderByDirection";s:3:"ASC";}s:17:"siteSearchInclude";a:0:{}}}

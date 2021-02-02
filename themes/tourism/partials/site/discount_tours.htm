@@ -19,7 +19,8 @@ orderByDirection = "ASC"
   <a
     href="{{DealsAndDiscounts.property('recordPage') ? DealsAndDiscounts.property('recordPage')|page({(DealsAndDiscounts.paramName('recordPageSlug')):(record.slug)})}}">
     <span class="img_wrapper">
-      <span class="img lazy" style="background-image: url({{ record.preview_image.getPath }})"></span>
+      <span class="img lazy"
+        style="background-image: url({{ record.preview_image.getPath | resize(240, false, { mode: 'crop', quality: '80', extension: 'jpg' })}})"></span>
 
       <span class="price-round">
         <span class="inner">from <br />$ {{ record.tour_cost }} US

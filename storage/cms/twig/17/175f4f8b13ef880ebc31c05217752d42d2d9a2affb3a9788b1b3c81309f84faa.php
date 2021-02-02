@@ -29,8 +29,8 @@ class __TwigTemplate_628529c93a5c938c2ee424260a704b3d0764297b2c445c4bbb692dfec5f
         $this->blocks = [
         ];
         $this->sandbox = $this->env->getExtension('\Twig\Extension\SandboxExtension');
-        $tags = array("styles" => 25, "partial" => 35, "for" => 62, "if" => 111, "page" => 155, "framework" => 171, "scripts" => 172);
-        $filters = array("escape" => 7, "theme" => 13);
+        $tags = array("styles" => 24, "partial" => 34, "for" => 61, "if" => 110, "page" => 154, "framework" => 170, "scripts" => 171);
+        $filters = array("escape" => 6, "theme" => 12);
         $functions = array();
 
         try {
@@ -59,40 +59,39 @@ class __TwigTemplate_628529c93a5c938c2ee424260a704b3d0764297b2c445c4bbb692dfec5f
     {
         $macros = $this->macros;
         // line 1
-        echo "
-<!DOCTYPE html>
+        echo "<!DOCTYPE html>
 <html>
 
 <head>
   <meta charset=\"utf-8\">
   <title>";
-        // line 7
-        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 7), "site_name", [], "any", false, false, true, 7), 7, $this->source), "html", null, true);
+        // line 6
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 6), "site_name", [], "any", false, false, true, 6), 6, $this->source), "html", null, true);
         echo " - ";
-        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, true, 7), "title", [], "any", false, false, true, 7), 7, $this->source), "html", null, true);
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, true, 6), "title", [], "any", false, false, true, 6), 6, $this->source), "html", null, true);
         echo "</title>
   <meta name=\"description\" content=\"";
-        // line 8
-        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, true, 8), "meta_description", [], "any", false, false, true, 8), 8, $this->source), "html", null, true);
+        // line 7
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, true, 7), "meta_description", [], "any", false, false, true, 7), 7, $this->source), "html", null, true);
         echo "\">
   <meta name=\"title\" content=\"";
-        // line 9
-        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, true, 9), "meta_title", [], "any", false, false, true, 9), 9, $this->source), "html", null, true);
+        // line 8
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, true, 8), "meta_title", [], "any", false, false, true, 8), 8, $this->source), "html", null, true);
         echo "\">
   <meta name=\"author\" content=\"OctoberCMS\">
   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
   <meta name=\"generator\" content=\"OctoberCMS\">
   <link rel=\"icon\" type=\"image/png\" href=\"";
-        // line 13
+        // line 12
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/images/october.png");
         echo "\">
 
 <link href=\"";
-        // line 15
+        // line 14
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/css/6d2d0.css");
         echo "\" rel=\"stylesheet\">
  <link href=\"";
-        // line 16
+        // line 15
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/css/113f9.css");
         echo "\" rel=\"stylesheet\">
    
@@ -102,15 +101,15 @@ class __TwigTemplate_628529c93a5c938c2ee424260a704b3d0764297b2c445c4bbb692dfec5f
   <link rel='stylesheet' id='font-style-2-css'
     href='https://fonts.googleapis.com/css?family=Noto+Serif%3A400%2C700&#038;ver=5.3.2' type='text/css' media='all' />
     <script src=\"";
-        // line 23
+        // line 22
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/javascript/c6d25.js");
         echo "\"></script>
     <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css\" />
   ";
-        // line 25
+        // line 24
         echo $this->env->getExtension('Cms\Twig\Extension')->assetsFunction('css');
         echo $this->env->getExtension('Cms\Twig\Extension')->displayBlock('styles');
-        // line 26
+        // line 25
         echo "</head>
 <body>
 
@@ -121,11 +120,11 @@ class __TwigTemplate_628529c93a5c938c2ee424260a704b3d0764297b2c445c4bbb692dfec5f
   <!-- End Google Tag Manager (noscript) -->
 
   ";
-        // line 35
+        // line 34
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/modal_window"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 36
+        // line 35
         echo "
   <!-- Header -->
   <header id=\"header\">
@@ -138,10 +137,10 @@ class __TwigTemplate_628529c93a5c938c2ee424260a704b3d0764297b2c445c4bbb692dfec5f
 
 
             <phone><a href=\"tel:";
-        // line 47
-        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 47), "phone1", [], "any", false, false, true, 47), 47, $this->source), "html", null, true);
+        // line 46
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 46), "phone1", [], "any", false, false, true, 46), 46, $this->source), "html", null, true);
         echo "\">";
-        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 47), "phone1", [], "any", false, false, true, 47), 47, $this->source), "html", null, true);
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 46), "phone1", [], "any", false, false, true, 46), 46, $this->source), "html", null, true);
         echo "</a></phone>
 
 
@@ -158,22 +157,22 @@ class __TwigTemplate_628529c93a5c938c2ee424260a704b3d0764297b2c445c4bbb692dfec5f
 
           <div class=\"social\">
             ";
-        // line 62
+        // line 61
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 62), "social", [], "any", false, false, true, 62));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 61), "social", [], "any", false, false, true, 61));
         foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-            // line 63
+            // line 62
             echo "            <a href=\"";
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "url", [], "any", false, false, true, 63), 63, $this->source), "html", null, true);
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "url", [], "any", false, false, true, 62), 62, $this->source), "html", null, true);
             echo "\" target=\"_blank\"><i class=\"";
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "awesome_icon", [], "any", false, false, true, 63), 63, $this->source), "html", null, true);
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["item"], "awesome_icon", [], "any", false, false, true, 62), 62, $this->source), "html", null, true);
             echo "\"></i></a>
             ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 65
+        // line 64
         echo "
 
           </div>
@@ -197,8 +196,8 @@ class __TwigTemplate_628529c93a5c938c2ee424260a704b3d0764297b2c445c4bbb692dfec5f
         <div class=\"col-sm-3\">
           <a href=\"/\" class=\"logo\">
             <img src=\"";
-        // line 87
-        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 87), "logo", [], "any", false, false, true, 87), "path", [], "any", false, false, true, 87), 87, $this->source), "html", null, true);
+        // line 86
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 86), "logo", [], "any", false, false, true, 86), "path", [], "any", false, false, true, 86), 86, $this->source), "html", null, true);
         echo "\" alt=\"\">
           </a>
         </div>
@@ -224,22 +223,22 @@ class __TwigTemplate_628529c93a5c938c2ee424260a704b3d0764297b2c445c4bbb692dfec5f
 
 
                 ";
-        // line 111
-        if (twig_get_attribute($this->env, $this->source, ($context["staticMenu"] ?? null), "menuItems", [], "any", false, false, true, 111)) {
-            // line 112
+        // line 110
+        if (twig_get_attribute($this->env, $this->source, ($context["staticMenu"] ?? null), "menuItems", [], "any", false, false, true, 110)) {
+            // line 111
             echo "
 
                 ";
-            // line 114
+            // line 113
             $context['__cms_partial_params'] = [];
-            $context['__cms_partial_params']['items'] = twig_get_attribute($this->env, $this->source, ($context["staticMenu"] ?? null), "menuItems", [], "any", false, false, true, 114)            ;
+            $context['__cms_partial_params']['items'] = twig_get_attribute($this->env, $this->source, ($context["staticMenu"] ?? null), "menuItems", [], "any", false, false, true, 113)            ;
             echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction((($context["staticMenu"] ?? null) . "::items")            , $context['__cms_partial_params']            , true            );
             unset($context['__cms_partial_params']);
-            // line 115
+            // line 114
             echo "
                 ";
         }
-        // line 117
+        // line 116
         echo "
 
 
@@ -279,9 +278,9 @@ class __TwigTemplate_628529c93a5c938c2ee424260a704b3d0764297b2c445c4bbb692dfec5f
    
 
                     ";
-        // line 155
+        // line 154
         echo $this->env->getExtension('Cms\Twig\Extension')->pageFunction();
-        // line 156
+        // line 155
         echo "                    
            
 
@@ -291,22 +290,22 @@ class __TwigTemplate_628529c93a5c938c2ee424260a704b3d0764297b2c445c4bbb692dfec5f
   <!-- Footer -->
   <footer id=\"footer\">
     ";
-        // line 164
+        // line 163
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/footer"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 165
+        // line 164
         echo "  </footer>
 
   <!-- Scripts -->
 
  <script src=\"";
-        // line 169
+        // line 168
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/javascript/e0855.js");
         echo "\"></script>
 <script src=\"https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js\"></script>
   ";
-        // line 171
+        // line 170
         $_minify = System\Classes\CombineAssets::instance()->useMinify;
         if ($_minify) {
             echo '<script src="' . Request::getBasePath() . '/modules/system/assets/js/framework.combined-min.js"></script>'.PHP_EOL;
@@ -317,11 +316,11 @@ class __TwigTemplate_628529c93a5c938c2ee424260a704b3d0764297b2c445c4bbb692dfec5f
         }
         echo '<link rel="stylesheet" property="stylesheet" href="' . Request::getBasePath() .'/modules/system/assets/css/framework.extras'.($_minify ? '-min' : '').'.css">'.PHP_EOL;
         unset($_minify);
-        // line 172
+        // line 171
         echo "  ";
         echo $this->env->getExtension('Cms\Twig\Extension')->assetsFunction('js');
         echo $this->env->getExtension('Cms\Twig\Extension')->displayBlock('scripts');
-        // line 173
+        // line 172
         echo "
 </body>
 
@@ -340,13 +339,12 @@ class __TwigTemplate_628529c93a5c938c2ee424260a704b3d0764297b2c445c4bbb692dfec5f
 
     public function getDebugInfo()
     {
-        return array (  325 => 173,  321 => 172,  310 => 171,  305 => 169,  299 => 165,  295 => 164,  285 => 156,  283 => 155,  243 => 117,  239 => 115,  234 => 114,  230 => 112,  228 => 111,  201 => 87,  177 => 65,  166 => 63,  162 => 62,  142 => 47,  129 => 36,  125 => 35,  114 => 26,  111 => 25,  106 => 23,  96 => 16,  92 => 15,  87 => 13,  80 => 9,  76 => 8,  70 => 7,  62 => 1,);
+        return array (  324 => 172,  320 => 171,  309 => 170,  304 => 168,  298 => 164,  294 => 163,  284 => 155,  282 => 154,  242 => 116,  238 => 114,  233 => 113,  229 => 111,  227 => 110,  200 => 86,  176 => 64,  165 => 62,  161 => 61,  141 => 46,  128 => 35,  124 => 34,  113 => 25,  110 => 24,  105 => 22,  95 => 15,  91 => 14,  86 => 12,  79 => 8,  75 => 7,  69 => 6,  62 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("
-<!DOCTYPE html>
+        return new Source("<!DOCTYPE html>
 <html>
 
 <head>

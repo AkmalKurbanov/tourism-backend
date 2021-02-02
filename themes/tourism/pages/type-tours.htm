@@ -1,27 +1,25 @@
 title = "Type-tours"
-url = "/type-tours/:slug"
+url = "/type-tours/:category"
 layout = "static-layout"
 is_hidden = 0
 
-[recordDetail TypeToursDetail]
+[categoryDetail]
 activeOnly = 0
-recordSlug = "{{ :slug }}"
+categorySlug = "{{ :category }}"
 areaSlug = 0
-categorySlug = "tury"
+activeRecordsOnly = 0
+recordPage = 0
+recordPageSlug = "{{ :record }}"
+
+[records]
+activeOnly = 0
+areaSlug = 0
+categorySlug = "{{ :category }}"
 useMainCategory = 1
 useMultiCategories = 0
-categoryPage = 0
-categoryPageSlug = "{{ :category }}"
-
-[records Tours]
-activeOnly = 0
-areaSlug = 0
-categorySlug = "{{ : slug }}"
-useMainCategory = 0
-useMultiCategories = 0
 tagSlug = "{{ :tag }}"
-recordPage = "tour-detail"
-recordPageSlug = "{{ :slug }}"
+recordPage = "category"
+recordPageSlug = "{{ :record }}"
 limit = 10
 pageSlug = "{{ :page }}"
 orderBy = "name"
@@ -40,7 +38,7 @@ emails_date_format = "Y-m-d"
 
 [siteSearchInclude]
 ==
-<div id="top" class="small_top lazy" style="background-image: url({{TypeToursDetail.recordDetail.preview_image.getPath }})">
+<div id="top" class="small_top lazy" style="background-image: url({{categoryDetail.preview_image.getPath }})">
 
   <div class="breadcrumb_wrapper">
     <div class="container">
@@ -48,7 +46,7 @@ emails_date_format = "Y-m-d"
         <div class="col-sm-12">
           <p id="breadcrumbs"><span><span><a href="/">Home</a> / <a href="/tours/default">Tours</a> / <span
                   class="breadcrumb_last"
-                  aria-current="page">{{ TypeToursDetail.recordDetail.name }}</span></span></span></p>
+                  aria-current="page">{{ categoryDetail.name }}</span></span></span></p>
           <div class="line_helper" style="background: rgba(255,255,255,.3)"></div>
         </div>
       </div>
@@ -59,8 +57,8 @@ emails_date_format = "Y-m-d"
     <div class="container">
       <div class="row">
         <div class="col-sm-12 text-center">
-          <h1 id="single_tour_title">{{ TypeToursDetail.recordDetail.name }}</h1>
-        </div>
+          <h1 id="single_tour_title">{{ categoryDetail.name }}</h1>
+                  </div>
       </div>
     </div>
   </div>
@@ -74,20 +72,29 @@ emails_date_format = "Y-m-d"
 
         <div id="content" class="tax-content">
 
-          {{TypeToursDetail.recordDetail.itinerary_desc | raw}}
+          {{categoryDetail.content | raw}}
 
          
         </div>
 
 
         <div class="row">
+        
+        
+        
+        
 
-          {% for record in Tours.items %}
+
+
+
+
+
+          {% for record in records.items %}
           
           <div class="col-sm-4">
             <div class="item item_tour with_border auto_height ">
               <a
-                href="{{Tours.property('recordPage') ? Tours.property('recordPage')|page({(Tours.paramName('recordPageSlug')):(record.slug)})}}">
+                href="{{records.property('recordPage') ? records.property('recordPage')|page({(records.paramName('recordPageSlug')):(record.slug)})}}">
                 <span class="img_wrapper">
                   <span class="img lazy" style="background-image: url({{ record.preview_image.getPath }})"></span>
 

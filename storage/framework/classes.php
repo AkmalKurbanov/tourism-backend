@@ -277,4 +277,11 @@
   'OFFLINE\\SiteSearch\\Classes\\Providers\\VojtaSvobodaBrandsResultsProvider' => 'plugins\\offline\\sitesearch\\classes\\providers\\VojtaSvobodaBrandsResultsProvider.php',
   'OFFLINE\\SiteSearch\\Classes\\Providers\\GrakerPhotoAlbumsResultsProvider' => 'plugins\\offline\\sitesearch\\classes\\providers\\GrakerPhotoAlbumsResultsProvider.php',
   'OFFLINE\\SiteSearch\\Classes\\Result' => 'plugins\\offline\\sitesearch\\classes\\Result.php',
+  'toughdeveloper\\imageresizer\\Plugin' => 'plugins\\toughdeveloper\\imageresizer\\Plugin.php',
+  'ToughDeveloper\\ImageResizer\\Classes\\Image' => 'plugins\\toughdeveloper\\imageresizer\\classes\\Image.php',
+  'ToughDeveloper\\ImageResizer\\Models\\Settings' => 'plugins\\toughdeveloper\\imageresizer\\models\\Settings.php',
+  'shohabbos\\customfields\\Plugin' => 'plugins\\shohabbos\\customfields\\Plugin.php',
+  'shohabbos\\customfields\\Controllers\\groups' => 'plugins\\shohabbos\\customfields\\controllers\\groups.php',
+  'Shohabbos\\Customfields\\Models\\Group' => 'plugins\\shohabbos\\customfields\\models\\Group.php',
+  'Shohabbos\\Customfields\\Models\\Property' => 'plugins\\shohabbos\\customfields\\models\\Property.php',
 );

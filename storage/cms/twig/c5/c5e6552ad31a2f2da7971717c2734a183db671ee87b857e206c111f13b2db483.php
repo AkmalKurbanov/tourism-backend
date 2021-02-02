@@ -30,13 +30,13 @@ class __TwigTemplate_40e38ae4c2a19d43e43f620bcb7191afb393241d8038bb651c90091d05c
         ];
         $this->sandbox = $this->env->getExtension('\Twig\Extension\SandboxExtension');
         $tags = array("component" => 1, "partial" => 16, "set" => 248, "for" => 249);
-        $filters = array("escape" => 41, "raw" => 45, "slice" => 253, "page" => 295);
-        $functions = array("str_words" => 292, "form_token" => 321);
+        $filters = array("escape" => 41, "raw" => 45, "slice" => 253, "resize" => 255, "page" => 297);
+        $functions = array("str_words" => 294, "form_token" => 323);
 
         try {
             $this->sandbox->checkSecurity(
                 ['component', 'partial', 'set', 'for'],
-                ['escape', 'raw', 'slice', 'page'],
+                ['escape', 'raw', 'slice', 'resize', 'page'],
                 ['str_words', 'form_token']
             );
         } catch (SecurityError $e) {
@@ -361,38 +361,40 @@ class __TwigTemplate_40e38ae4c2a19d43e43f620bcb7191afb393241d8038bb651c90091d05c
             $context['_seq'] = twig_ensure_traversable(twig_slice($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "featured_images", [], "any", false, false, true, 253), 0, 1));
             foreach ($context['_seq'] as $context["_key"] => $context["image"]) {
                 // line 254
-                echo "            <span class=\"img lazy\" style=\"background-image: url('";
-                echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["image"], "path", [], "any", false, false, true, 254), 254, $this->source), "html", null, true);
+                echo "            <span class=\"img lazy\"
+              style=\"background-image: url('";
+                // line 255
+                echo call_user_func_array($this->env->getFilter('resize')->getCallable(), [$this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["image"], "path", [], "any", false, false, true, 255), 255, $this->source), 555, false, ["mode" => "crop", "quality" => "80", "extension" => "jpg"]]);
                 echo "');\"></span>
              ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['image'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 256
+            // line 257
             echo "          </a>
 
         </div>
         <div class=\"excerpt latest_post_excerpt\">
           <h4><a
               href=\"";
-            // line 261
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["post"], "url", [], "any", false, false, true, 261), 261, $this->source), "html", null, true);
+            // line 262
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["post"], "url", [], "any", false, false, true, 262), 262, $this->source), "html", null, true);
             echo "\">";
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["post"], "title", [], "any", false, false, true, 261), 261, $this->source), "html", null, true);
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["post"], "title", [], "any", false, false, true, 262), 262, $this->source), "html", null, true);
             echo "</a></h4>
           <div class=\"text-center\">
             <p>";
-            // line 263
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["post"], "excerpt", [], "any", false, false, true, 263), 263, $this->source), "html", null, true);
+            // line 264
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["post"], "excerpt", [], "any", false, false, true, 264), 264, $this->source), "html", null, true);
             echo "</p>
           </div>
           <div class=\"text-center\">
             <a href=\"";
-            // line 266
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["post"], "url", [], "any", false, false, true, 266), 266, $this->source), "html", null, true);
+            // line 267
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["post"], "url", [], "any", false, false, true, 267), 267, $this->source), "html", null, true);
             echo "\"
-              class=\"cstm_button round lblue\">Read more <i class=\"fa fa-long-arrow-right\"></i></a>
+              class=\"cstm_button round lblue\">Read more <i class=\"fas fa-arrow-right\"></i></a>
           </div>
         </div>
 
@@ -401,7 +403,7 @@ class __TwigTemplate_40e38ae4c2a19d43e43f620bcb7191afb393241d8038bb651c90091d05c
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['post'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 272
+        // line 273
         echo "
       </div>
 
@@ -409,42 +411,43 @@ class __TwigTemplate_40e38ae4c2a19d43e43f620bcb7191afb393241d8038bb651c90091d05c
         <h2 class=\"with_line with_big_line text-center\">REVIEWS</h2>
 
  ";
-        // line 278
+        // line 279
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["Reviews"] ?? null), "items", [], "any", false, false, true, 278));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["Reviews"] ?? null), "items", [], "any", false, false, true, 279));
         foreach ($context['_seq'] as $context["_key"] => $context["record"]) {
-            // line 279
+            // line 280
             echo "        <div class=\"s_review\">
           <div class=\"row\">
             <div class=\"col-sm-3\">
-              <img alt=\"review\" src=\"";
-            // line 282
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["record"], "preview_image", [], "any", false, false, true, 282), "getPath", [], "any", false, false, true, 282), 282, $this->source), "html", null, true);
+              <img alt=\"review\"
+                src=\"";
+            // line 284
+            echo call_user_func_array($this->env->getFilter('resize')->getCallable(), [$this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["record"], "preview_image", [], "any", false, false, true, 284), "getPath", [], "any", false, false, true, 284), 284, $this->source), 104, false, ["mode" => "crop", "quality" => "80", "extension" => "jpg"]]);
             echo "\"
                
                 class=\"img-responsive lazyload\">
             </div>
             <div class=\"col-sm-9\">
               <h4 class=\"name\">";
-            // line 287
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "name", [], "any", false, false, true, 287), 287, $this->source), "html", null, true);
+            // line 289
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "name", [], "any", false, false, true, 289), 289, $this->source), "html", null, true);
             echo "</h4>
               <h5 class=\"work\">";
-            // line 288
-            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "review_author_status", [], "any", false, false, true, 288), 288, $this->source), "html", null, true);
+            // line 290
+            echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "review_author_status", [], "any", false, false, true, 290), 290, $this->source), "html", null, true);
             echo " </h5>
 
               <div class=\"excerpt\">
                 <p>
                   <p><em>";
-            // line 292
-            echo call_user_func_array($this->env->getFunction('str_words')->getCallable(), ["words", $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "review", [], "any", false, false, true, 292), 292, $this->source), 20]);
+            // line 294
+            echo call_user_func_array($this->env->getFunction('str_words')->getCallable(), ["words", $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, $context["record"], "review", [], "any", false, false, true, 294), 294, $this->source), 20]);
             echo "</em></p>
                 </p>
                 <div class=\"more\">
                   <a href=\"";
-            // line 295
-            echo ((twig_get_attribute($this->env, $this->source, ($context["Reviews"] ?? null), "property", [0 => "recordPage"], "method", false, false, true, 295)) ? ($this->extensions['Cms\Twig\Extension']->pageFilter($this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["Reviews"] ?? null), "property", [0 => "recordPage"], "method", false, false, true, 295), 295, $this->source), [twig_get_attribute($this->env, $this->source, ($context["Reviews"] ?? null), "paramName", [0 => "recordPageSlug"], "method", false, false, true, 295) => twig_get_attribute($this->env, $this->source, $context["record"], "slug", [], "any", false, false, true, 295)])) : (""));
+            // line 297
+            echo ((twig_get_attribute($this->env, $this->source, ($context["Reviews"] ?? null), "property", [0 => "recordPage"], "method", false, false, true, 297)) ? ($this->extensions['Cms\Twig\Extension']->pageFilter($this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["Reviews"] ?? null), "property", [0 => "recordPage"], "method", false, false, true, 297), 297, $this->source), [twig_get_attribute($this->env, $this->source, ($context["Reviews"] ?? null), "paramName", [0 => "recordPageSlug"], "method", false, false, true, 297) => twig_get_attribute($this->env, $this->source, $context["record"], "slug", [], "any", false, false, true, 297)])) : (""));
             echo "\">Read more
                     ...</a>
                 </div>
@@ -458,7 +461,7 @@ class __TwigTemplate_40e38ae4c2a19d43e43f620bcb7191afb393241d8038bb651c90091d05c
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['record'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 304
+        // line 306
         echo "
       </div>
 
@@ -475,18 +478,18 @@ class __TwigTemplate_40e38ae4c2a19d43e43f620bcb7191afb393241d8038bb651c90091d05c
         <div class=\"screen-reader-response\" role=\"alert\" aria-live=\"polite\"></div>
 
         <form data-request=\"";
-        // line 319
-        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(($context["HomPageForm"] ?? null), 319, $this->source), "html", null, true);
+        // line 321
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(($context["genericForm"] ?? null), 321, $this->source), "html", null, true);
         echo "::onFormSubmit\">
 
           ";
-        // line 321
+        // line 323
         echo call_user_func_array($this->env->getFunction('form_token')->getCallable(), ["token"]);
         echo "
 
           <div id=\"";
-        // line 323
-        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(($context["HomPageForm"] ?? null), 323, $this->source), "html", null, true);
+        // line 325
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(($context["genericForm"] ?? null), 325, $this->source), "html", null, true);
         echo "_forms_flash\"></div>
 
           <div class=\"form-group\">
@@ -529,7 +532,7 @@ class __TwigTemplate_40e38ae4c2a19d43e43f620bcb7191afb393241d8038bb651c90091d05c
 
     public function getDebugInfo()
     {
-        return array (  489 => 323,  484 => 321,  479 => 319,  462 => 304,  447 => 295,  441 => 292,  434 => 288,  430 => 287,  422 => 282,  417 => 279,  413 => 278,  405 => 272,  393 => 266,  387 => 263,  380 => 261,  373 => 256,  364 => 254,  360 => 253,  355 => 251,  352 => 250,  347 => 249,  345 => 248,  311 => 216,  307 => 215,  256 => 166,  252 => 165,  218 => 133,  214 => 132,  172 => 92,  168 => 91,  119 => 45,  112 => 41,  86 => 17,  82 => 16,  66 => 2,  62 => 1,);
+        return array (  492 => 325,  487 => 323,  482 => 321,  465 => 306,  450 => 297,  444 => 294,  437 => 290,  433 => 289,  425 => 284,  419 => 280,  415 => 279,  407 => 273,  395 => 267,  389 => 264,  382 => 262,  375 => 257,  367 => 255,  364 => 254,  360 => 253,  355 => 251,  352 => 250,  347 => 249,  345 => 248,  311 => 216,  307 => 215,  256 => 166,  252 => 165,  218 => 133,  214 => 132,  172 => 92,  168 => 91,  119 => 45,  112 => 41,  86 => 17,  82 => 16,  66 => 2,  62 => 1,);
     }
 
     public function getSourceContext()
@@ -787,7 +790,8 @@ class __TwigTemplate_40e38ae4c2a19d43e43f620bcb7191afb393241d8038bb651c90091d05c
           <a href=\"{{ post.url }}\"
             class=\"img_link\">
             {% for image in post.featured_images|slice(0,1) %}
-            <span class=\"img lazy\" style=\"background-image: url('{{image.path}}');\"></span>
+            <span class=\"img lazy\"
+              style=\"background-image: url('{{image.path | resize(555, false, { mode: 'crop', quality: '80', extension: 'jpg' })}}');\"></span>
              {% endfor %}
           </a>
 
@@ -800,7 +804,7 @@ class __TwigTemplate_40e38ae4c2a19d43e43f620bcb7191afb393241d8038bb651c90091d05c
           </div>
           <div class=\"text-center\">
             <a href=\"{{ post.url }}\"
-              class=\"cstm_button round lblue\">Read more <i class=\"fa fa-long-arrow-right\"></i></a>
+              class=\"cstm_button round lblue\">Read more <i class=\"fas fa-arrow-right\"></i></a>
           </div>
         </div>
 
@@ -815,7 +819,8 @@ class __TwigTemplate_40e38ae4c2a19d43e43f620bcb7191afb393241d8038bb651c90091d05c
         <div class=\"s_review\">
           <div class=\"row\">
             <div class=\"col-sm-3\">
-              <img alt=\"review\" src=\"{{ record.preview_image.getPath }}\"
+              <img alt=\"review\"
+                src=\"{{ record.preview_image.getPath | resize(104, false, { mode: 'crop', quality: '80', extension: 'jpg' })}}\"
                
                 class=\"img-responsive lazyload\">
             </div>
@@ -852,11 +857,11 @@ class __TwigTemplate_40e38ae4c2a19d43e43f620bcb7191afb393241d8038bb651c90091d05c
 
         <div class=\"screen-reader-response\" role=\"alert\" aria-live=\"polite\"></div>
 
-        <form data-request=\"{{ HomPageForm }}::onFormSubmit\">
+        <form data-request=\"{{ genericForm }}::onFormSubmit\">
 
           {{ form_token() }}
 
-          <div id=\"{{ HomPageForm }}_forms_flash\"></div>
+          <div id=\"{{ genericForm }}_forms_flash\"></div>
 
           <div class=\"form-group\">
             <input type=\"text\" id=\"name\" name=\"name\" class=\"form-control\" placeholder=\"Your name\" require>

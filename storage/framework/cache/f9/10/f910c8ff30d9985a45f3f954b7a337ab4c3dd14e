@@ -1,7 +1,8 @@
-1611924121a:1:{s:18:"reviews-detail.htm";a:11:{s:8:"fileName";s:18:"reviews-detail.htm";s:7:"content";s:3451:"title = "Reviews-detail"
+1612281157a:1:{s:18:"reviews-detail.htm";a:13:{s:8:"fileName";s:18:"reviews-detail.htm";s:7:"content";s:3435:"title = "Reviews-detail"
 url = "/reviews-detail/:slug"
 layout = "static-layout"
 is_hidden = 0
+reviewsdetailbanner_ReviewsDetailBanner = "/uploaded-files/deal4.jpg"
 
 [recordDetail ReviewsDetail]
 activeOnly = 0
@@ -26,8 +27,10 @@ limit = 1
 pageSlug = "{{ :slug }}"
 orderBy = "name"
 orderByDirection = "ASC"
+
+[siteSearchInclude]
 ==
-<div id="top" class="small_top lazy" style="background-image: url(&quot;https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Contact_Us-3.jpg&quot;);" data-bg="url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Contact_Us-3.jpg)" data-was-processed="true">
+<div id="top" class="small_top lazy" style="background-image: url({{ this.page.reviewsdetailbanner_ReviewsDetailBanner | media | resize(1920, false, { mode: 'crop', quality: '80', extension: 'jpg' })}});">
 
     <div class="breadcrumb_wrapper">
         <div class="container">
@@ -57,9 +60,9 @@ orderByDirection = "ASC"
                                     <h3 class="work">{{ ReviewsDetail.recordDetail.review_author_status }}</h3>
 
                                 
-                        <p><em>
+                        <p>
                             {{ ReviewsDetail.recordDetail.review | raw}}
-                        </em></p>
+                        </p>
 
                 
 
@@ -69,7 +72,8 @@ orderByDirection = "ASC"
         <div class="s_review">
           <div class="row">
             <div class="col-sm-3">
-              <img alt="review" src="{{ record.preview_image.getPath }}"
+              <img alt="review"
+                src="{{ record.preview_image.getPath | resize(190, false, { mode: 'crop', quality: '80', extension: 'jpg' })}}"
                
                 class="img-responsive lazyload">
             </div>
@@ -79,8 +83,7 @@ orderByDirection = "ASC"
 
               <div class="excerpt">
                 <p>
-                  <p>“Kyrgyzstan is great country to discover! High mountains with endless trails
-                    to explore by foot or on a horseback. Nothing [&hellip;]</p>
+                  <p>{{ str_words(record.review, 20) }}</p>
                 </p>
                 <div class="more">
                   <a href="{{Reviews.property('recordPage') ? Reviews.property('recordPage')|page({(Reviews.paramName('recordPageSlug')):(record.slug)})}}">Read more
@@ -108,7 +111,7 @@ orderByDirection = "ASC"
      
     </div>
 </div>
-</div>";s:5:"mtime";i:1611923511;s:6:"markup";s:2843:"<div id="top" class="small_top lazy" style="background-image: url(&quot;https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Contact_Us-3.jpg&quot;);" data-bg="url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Contact_Us-3.jpg)" data-was-processed="true">
+</div>";s:5:"mtime";i:1612274471;s:6:"markup";s:2733:"<div id="top" class="small_top lazy" style="background-image: url({{ this.page.reviewsdetailbanner_ReviewsDetailBanner | media | resize(1920, false, { mode: 'crop', quality: '80', extension: 'jpg' })}});">
 
     <div class="breadcrumb_wrapper">
         <div class="container">
@@ -138,9 +141,9 @@ orderByDirection = "ASC"
                                     <h3 class="work">{{ ReviewsDetail.recordDetail.review_author_status }}</h3>
 
                                 
-                        <p><em>
+                        <p>
                             {{ ReviewsDetail.recordDetail.review | raw}}
-                        </em></p>
+                        </p>
 
                 
 
@@ -150,7 +153,8 @@ orderByDirection = "ASC"
         <div class="s_review">
           <div class="row">
             <div class="col-sm-3">
-              <img alt="review" src="{{ record.preview_image.getPath }}"
+              <img alt="review"
+                src="{{ record.preview_image.getPath | resize(190, false, { mode: 'crop', quality: '80', extension: 'jpg' })}}"
                
                 class="img-responsive lazyload">
             </div>
@@ -160,8 +164,7 @@ orderByDirection = "ASC"
 
               <div class="excerpt">
                 <p>
-                  <p>“Kyrgyzstan is great country to discover! High mountains with endless trails
-                    to explore by foot or on a horseback. Nothing [&hellip;]</p>
+                  <p>{{ str_words(record.review, 20) }}</p>
                 </p>
                 <div class="more">
                   <a href="{{Reviews.property('recordPage') ? Reviews.property('recordPage')|page({(Reviews.paramName('recordPageSlug')):(record.slug)})}}">Read more
@@ -189,4 +192,4 @@ orderByDirection = "ASC"
      
     </div>
 </div>
-</div>";s:4:"code";N;s:5:"title";s:14:"Reviews-detail";s:3:"url";s:21:"/reviews-detail/:slug";s:6:"layout";s:13:"static-layout";s:9:"is_hidden";s:1:"0";s:26:"recordDetail ReviewsDetail";a:7:{s:10:"activeOnly";s:1:"0";s:10:"recordSlug";s:11:"{{ :slug }}";s:8:"areaSlug";s:1:"0";s:12:"categorySlug";s:15:"{{ :category }}";s:15:"useMainCategory";s:1:"1";s:12:"categoryPage";s:1:"0";s:16:"categoryPageSlug";s:15:"{{ :category }}";}s:15:"records Reviews";a:13:{s:10:"activeOnly";s:1:"0";s:8:"areaSlug";s:1:"0";s:12:"categorySlug";s:6:"otzyvy";s:15:"useMainCategory";s:1:"1";s:18:"useMultiCategories";s:1:"0";s:7:"tagSlug";s:10:"{{ :tag }}";s:10:"recordPage";s:14:"reviews-detail";s:14:"recordPageSlug";s:11:"{{ :slug }}";s:10:"allowLimit";s:1:"1";s:5:"limit";s:1:"1";s:8:"pageSlug";s:11:"{{ :slug }}";s:7:"orderBy";s:4:"name";s:16:"orderByDirection";s:3:"ASC";}}}
+</div>";s:4:"code";N;s:5:"title";s:14:"Reviews-detail";s:3:"url";s:21:"/reviews-detail/:slug";s:6:"layout";s:13:"static-layout";s:9:"is_hidden";s:1:"0";s:39:"reviewsdetailbanner_ReviewsDetailBanner";s:25:"/uploaded-files/deal4.jpg";s:26:"recordDetail ReviewsDetail";a:7:{s:10:"activeOnly";s:1:"0";s:10:"recordSlug";s:11:"{{ :slug }}";s:8:"areaSlug";s:1:"0";s:12:"categorySlug";s:15:"{{ :category }}";s:15:"useMainCategory";s:1:"1";s:12:"categoryPage";s:1:"0";s:16:"categoryPageSlug";s:15:"{{ :category }}";}s:15:"records Reviews";a:13:{s:10:"activeOnly";s:1:"0";s:8:"areaSlug";s:1:"0";s:12:"categorySlug";s:6:"otzyvy";s:15:"useMainCategory";s:1:"1";s:18:"useMultiCategories";s:1:"0";s:7:"tagSlug";s:10:"{{ :tag }}";s:10:"recordPage";s:14:"reviews-detail";s:14:"recordPageSlug";s:11:"{{ :slug }}";s:10:"allowLimit";s:1:"1";s:5:"limit";s:1:"1";s:8:"pageSlug";s:11:"{{ :slug }}";s:7:"orderBy";s:4:"name";s:16:"orderByDirection";s:3:"ASC";}s:17:"siteSearchInclude";a:0:{}}}

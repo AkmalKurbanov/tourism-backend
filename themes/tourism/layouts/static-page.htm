@@ -19,7 +19,7 @@ recaptcha_size = "normal"
 emails_date_format = "Y-m-d"
 ==
 {variable name="tagline" label="Tagline" tab="Header" type="text"}{/variable}
-
+{variable name="banner" label="Banner" tab="Header" type="mediafinder" mode="image"}{/variable}
 
 <!DOCTYPE html>
 <html>
@@ -175,15 +175,14 @@ emails_date_format = "Y-m-d"
 
 
   <div id="top" class="small_top lazy"
-    style="background-image: url(&quot;https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Sunset_1920.jpg&quot;);"
-    data-bg="url(https://kyrgyzstan-tourism.com/wp-content/uploads/2019/03/Sunset_1920.jpg)" data-was-processed="true">
+    style="background-image: url(&quot;{{ banner|media | resize(1920, false, { mode: 'crop', quality: '80', extension: 'jpg' })}}&quot;);">
 
 
     <div class="breadcrumb_wrapper">
       <div class="container">
         <div class="row">
           <div class="col-sm-12">
-            <p id="breadcrumbs"><span><span><a href="https://kyrgyzstan-tourism.com/">Home</a> / <span
+            <p id="breadcrumbs"><span><span><a href="/">Home</a> / <span
                     class="breadcrumb_last" aria-current="page">{{this.page.title}}</span></span></span></p>
             <div class="line_helper" style="background: rgba(255,255,255,.3)"></div>
           </div>

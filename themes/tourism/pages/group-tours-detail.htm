@@ -20,7 +20,8 @@ useMultiCategories = 1
 tagSlug = "{{ :tag }}"
 recordPage = "group-tours-detail"
 recordPageSlug = "{{ :slug }}"
-limit = 10
+allowLimit = 1
+limit = 3
 pageSlug = "{{ :page }}"
 orderBy = "name"
 orderByDirection = "ASC"
@@ -49,7 +50,8 @@ emails_date_format = "Y-m-d"
 
 [siteSearchInclude]
 ==
-<div id="top" class="lazy" style="background-image: url({{ TourDetail.recordDetail.preview_image.getPath }})">
+<div id="top" class="lazy"
+  style="background-image: url({{ TourDetail.recordDetail.preview_image.getPath | resize(1920, false, { mode: 'crop', quality: '80', extension: 'jpg' })}})">
 
   <div class="breadcrumb_wrapper">
     <div class="container">
@@ -555,7 +557,8 @@ emails_date_format = "Y-m-d"
               <a
                 href="{{GroupTours.property('recordPage') ? GroupTours.property('recordPage')|page({(GroupTours.paramName('recordPageSlug')):(record.slug)})}}">
                 <span class="img_wrapper">
-                  <span class="img lazy" style="background-image: url(&quot;{{ record.preview_image.getPath }}&quot;);"
+                  <span class="img lazy"
+                    style="background-image: url(&quot;{{ record.preview_image.getPath | resize(265, false, { mode: 'crop', quality: '80', extension: 'jpg' })}}&quot;);"
                     data-bg="url({{ record.preview_image.getPath }})" data-was-processed="true"></span>
 
                   <span class="price-round group_price">

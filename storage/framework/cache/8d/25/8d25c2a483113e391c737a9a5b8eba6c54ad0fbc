@@ -1,4 +1,4 @@
-1611923559a:1:{s:16:"site/sidebar.htm";a:8:{s:8:"fileName";s:16:"site/sidebar.htm";s:7:"content";s:3710:"[viewBag]
+1612281157a:1:{s:16:"site/sidebar.htm";a:8:{s:8:"fileName";s:16:"site/sidebar.htm";s:7:"content";s:3803:"[viewBag]
 
 [records PopularTours]
 activeOnly = 0
@@ -19,7 +19,7 @@ areaSlug = 0
 categorySlug = "sights"
 useMultiCategories = 1
 tagSlug = "{{ :tag }}"
-recordPage = "sights"
+recordPage = "sights-detail"
 recordPageSlug = "{{ :slug }}"
 limit = 10
 pageSlug = "{{ :page }}"
@@ -34,7 +34,7 @@ orderByDirection = "ASC"
 
   {% for record in Sights.items %}
 
-    <li><a href="{{Sights.property('recordPage') ? Sights.property('recordPage')|page({(Sights.paramName('recordPageSlug')):(record.slug)})}}">{{record.name}}</a></li>
+        <li><a href="{{Sights.property('recordPage') ? Sights.property('recordPage')|page({(Sights.paramName('recordPageSlug')):(record.slug)})}}">{{record.name}}</a></li>
 
   {% endfor %}
    
@@ -133,7 +133,8 @@ orderByDirection = "ASC"
     <a
       href="{{PopularTours.property('recordPage') ? PopularTours.property('recordPage')|page({(PopularTours.paramName('recordPageSlug')):(record.slug)})}}">
       <span class="img_wrapper">
-        <span class="img lazy" style="background-image: url({{ record.preview_image.getPath }})"></span>
+        <span class="img lazy"
+          style="background-image: url({{ record.preview_image.getPath | resize(265, false, { mode: 'crop', quality: '80', extension: 'jpg' })}})"></span>
 
       </span>
       <div class="desc">
@@ -149,7 +150,7 @@ orderByDirection = "ASC"
   {% endfor %}
 
 
-</div>";s:5:"mtime";i:1611837118;s:6:"markup";s:3154:"<div class="tags tags_light">
+</div>";s:5:"mtime";i:1612194562;s:6:"markup";s:3240:"<div class="tags tags_light">
   <h3>Sights</h3>
   <div class="line_helper" style="background: #e9e9e9"></div>
   <ul class="list-unstyled sdb_ul">
@@ -157,7 +158,7 @@ orderByDirection = "ASC"
 
   {% for record in Sights.items %}
 
-    <li><a href="{{Sights.property('recordPage') ? Sights.property('recordPage')|page({(Sights.paramName('recordPageSlug')):(record.slug)})}}">{{record.name}}</a></li>
+        <li><a href="{{Sights.property('recordPage') ? Sights.property('recordPage')|page({(Sights.paramName('recordPageSlug')):(record.slug)})}}">{{record.name}}</a></li>
 
   {% endfor %}
    
@@ -256,7 +257,8 @@ orderByDirection = "ASC"
     <a
       href="{{PopularTours.property('recordPage') ? PopularTours.property('recordPage')|page({(PopularTours.paramName('recordPageSlug')):(record.slug)})}}">
       <span class="img_wrapper">
-        <span class="img lazy" style="background-image: url({{ record.preview_image.getPath }})"></span>
+        <span class="img lazy"
+          style="background-image: url({{ record.preview_image.getPath | resize(265, false, { mode: 'crop', quality: '80', extension: 'jpg' })}})"></span>
 
       </span>
       <div class="desc">
@@ -272,4 +274,4 @@ orderByDirection = "ASC"
   {% endfor %}
 
 
-</div>";s:4:"code";N;s:7:"viewBag";a:0:{}s:20:"records PopularTours";a:11:{s:10:"activeOnly";s:1:"0";s:8:"areaSlug";s:1:"0";s:12:"categorySlug";s:16:"populyarnye-tury";s:18:"useMultiCategories";s:1:"1";s:7:"tagSlug";s:10:"{{ :tag }}";s:10:"recordPage";s:11:"tour-detail";s:14:"recordPageSlug";s:11:"{{ :slug }}";s:5:"limit";s:2:"10";s:8:"pageSlug";s:11:"{{ :page }}";s:7:"orderBy";s:4:"name";s:16:"orderByDirection";s:3:"ASC";}s:14:"records Sights";a:11:{s:10:"activeOnly";s:1:"0";s:8:"areaSlug";s:1:"0";s:12:"categorySlug";s:6:"sights";s:18:"useMultiCategories";s:1:"1";s:7:"tagSlug";s:10:"{{ :tag }}";s:10:"recordPage";s:6:"sights";s:14:"recordPageSlug";s:11:"{{ :slug }}";s:5:"limit";s:2:"10";s:8:"pageSlug";s:11:"{{ :page }}";s:7:"orderBy";s:4:"name";s:16:"orderByDirection";s:3:"ASC";}}}
+</div>";s:4:"code";N;s:7:"viewBag";a:0:{}s:20:"records PopularTours";a:11:{s:10:"activeOnly";s:1:"0";s:8:"areaSlug";s:1:"0";s:12:"categorySlug";s:16:"populyarnye-tury";s:18:"useMultiCategories";s:1:"1";s:7:"tagSlug";s:10:"{{ :tag }}";s:10:"recordPage";s:11:"tour-detail";s:14:"recordPageSlug";s:11:"{{ :slug }}";s:5:"limit";s:2:"10";s:8:"pageSlug";s:11:"{{ :page }}";s:7:"orderBy";s:4:"name";s:16:"orderByDirection";s:3:"ASC";}s:14:"records Sights";a:11:{s:10:"activeOnly";s:1:"0";s:8:"areaSlug";s:1:"0";s:12:"categorySlug";s:6:"sights";s:18:"useMultiCategories";s:1:"1";s:7:"tagSlug";s:10:"{{ :tag }}";s:10:"recordPage";s:13:"sights-detail";s:14:"recordPageSlug";s:11:"{{ :slug }}";s:5:"limit";s:2:"10";s:8:"pageSlug";s:11:"{{ :page }}";s:7:"orderBy";s:4:"name";s:16:"orderByDirection";s:3:"ASC";}}}

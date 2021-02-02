@@ -1,0 +1,141 @@
+1612281157a:1:{s:17:"sights-detail.htm";a:12:{s:8:"fileName";s:17:"sights-detail.htm";s:7:"content";s:2241:"title = "Sights-detail"
+url = "/sights-detail/:slug"
+layout = "static-layout"
+is_hidden = 0
+
+[recordDetail SightsDetail]
+activeOnly = 0
+recordSlug = "{{ :slug }}"
+areaSlug = 0
+categorySlug = "sights"
+useMainCategory = 0
+useMultiCategories = 1
+categoryPage = 0
+categoryPageSlug = "{{ :category }}"
+
+[genericForm]
+messages_success = "Ваша форма была успешно отправлена!"
+messages_errors = "В вашей заявке содержатся ошибки."
+inline_errors = "disabled"
+sanitize_data = "disabled"
+anonymize_ip = "disabled"
+recaptcha_theme = "light"
+recaptcha_type = "image"
+recaptcha_size = "normal"
+emails_date_format = "Y-m-d"
+
+[siteSearchInclude]
+==
+<div id="top" class="small_top lazy"
+  style="background-image:
+  url(&quot;{{ SightsDetail.recordDetail.preview_image.getPath | resize(1920, false, { mode: 'crop', quality: '80', extension: 'jpg' })}}&quot;);">
+
+  <div class="breadcrumb_wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <p id="breadcrumbs"><span><span><a href="/">Home</a> / <span><a
+                    href="/sights">Sights</a> / <span class="breadcrumb_last"
+                    aria-current="page">{{ SightsDetail.recordDetail.name }}</span></span></span></span></p>
+          <div class="line_helper" style="background: rgba(255,255,255,.3)"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="desc">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 text-center">
+          <h1 id="single_tour_title">{{ SightsDetail.recordDetail.name }}</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-sm-9">
+      <div id="content">
+
+        {{ SightsDetail.recordDetail.sights_editor | raw }}
+        <iframe src="{{ SightsDetail.recordDetail.sights_map }}" width="100%" height="480"></iframe>
+
+      </div>
+
+
+    </div>
+
+
+    <div class="col-sm-3">
+      <div class="sidebar_wrapper">
+
+        <div id="sidebar">
+
+
+          {% partial 'site/sidebar_without_date' %}
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>";s:5:"mtime";i:1612274617;s:6:"markup";s:1522:"<div id="top" class="small_top lazy"
+  style="background-image:
+  url(&quot;{{ SightsDetail.recordDetail.preview_image.getPath | resize(1920, false, { mode: 'crop', quality: '80', extension: 'jpg' })}}&quot;);">
+
+  <div class="breadcrumb_wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <p id="breadcrumbs"><span><span><a href="/">Home</a> / <span><a
+                    href="/sights">Sights</a> / <span class="breadcrumb_last"
+                    aria-current="page">{{ SightsDetail.recordDetail.name }}</span></span></span></span></p>
+          <div class="line_helper" style="background: rgba(255,255,255,.3)"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="desc">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 text-center">
+          <h1 id="single_tour_title">{{ SightsDetail.recordDetail.name }}</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-sm-9">
+      <div id="content">
+
+        {{ SightsDetail.recordDetail.sights_editor | raw }}
+        <iframe src="{{ SightsDetail.recordDetail.sights_map }}" width="100%" height="480"></iframe>
+
+      </div>
+
+
+    </div>
+
+
+    <div class="col-sm-3">
+      <div class="sidebar_wrapper">
+
+        <div id="sidebar">
+
+
+          {% partial 'site/sidebar_without_date' %}
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>";s:4:"code";N;s:5:"title";s:13:"Sights-detail";s:3:"url";s:20:"/sights-detail/:slug";s:6:"layout";s:13:"static-layout";s:9:"is_hidden";s:1:"0";s:25:"recordDetail SightsDetail";a:8:{s:10:"activeOnly";s:1:"0";s:10:"recordSlug";s:11:"{{ :slug }}";s:8:"areaSlug";s:1:"0";s:12:"categorySlug";s:6:"sights";s:15:"useMainCategory";s:1:"0";s:18:"useMultiCategories";s:1:"1";s:12:"categoryPage";s:1:"0";s:16:"categoryPageSlug";s:15:"{{ :category }}";}s:11:"genericForm";a:9:{s:16:"messages_success";s:65:"Ваша форма была успешно отправлена!";s:15:"messages_errors";s:61:"В вашей заявке содержатся ошибки.";s:13:"inline_errors";s:8:"disabled";s:13:"sanitize_data";s:8:"disabled";s:12:"anonymize_ip";s:8:"disabled";s:15:"recaptcha_theme";s:5:"light";s:14:"recaptcha_type";s:5:"image";s:14:"recaptcha_size";s:6:"normal";s:18:"emails_date_format";s:5:"Y-m-d";}s:17:"siteSearchInclude";a:0:{}}}

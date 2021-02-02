@@ -14747,8 +14747,13 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
     width: 50% !important;
   }
 }
+
 @media (max-width: 460px) {
   #archive_content .row .col-sm-4 {
     width: 100% !important;
   }
+}
+
+em {
+  font-style: normal;
 }
