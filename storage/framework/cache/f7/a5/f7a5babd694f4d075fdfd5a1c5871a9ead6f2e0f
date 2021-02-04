@@ -1,4 +1,4 @@
-1612281157a:1:{s:14:"type-tours.htm";a:13:{s:8:"fileName";s:14:"type-tours.htm";s:7:"content";s:3368:"title = "Type-tours"
+1612450840a:1:{s:14:"type-tours.htm";a:13:{s:8:"fileName";s:14:"type-tours.htm";s:7:"content";s:3351:"title = "Type-tours"
 url = "/type-tours/:category"
 layout = "static-layout"
 is_hidden = 0
@@ -18,7 +18,7 @@ categorySlug = "{{ :category }}"
 useMainCategory = 1
 useMultiCategories = 0
 tagSlug = "{{ :tag }}"
-recordPage = "category"
+recordPage = 0
 recordPageSlug = "{{ :record }}"
 limit = 10
 pageSlug = "{{ :page }}"
@@ -44,7 +44,7 @@ emails_date_format = "Y-m-d"
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
-          <p id="breadcrumbs"><span><span><a href="/">Home</a> / <a href="/tours/default">Tours</a> / <span
+          <p id="breadcrumbs"><span><span><a href="/">Home</a> / <a href="/tours">Tours</a> / <span
                   class="breadcrumb_last"
                   aria-current="page">{{ categoryDetail.name }}</span></span></span></p>
           <div class="line_helper" style="background: rgba(255,255,255,.3)"></div>
@@ -142,13 +142,13 @@ emails_date_format = "Y-m-d"
     </div>
 
   </div>
-</div>";s:5:"mtime";i:1612274794;s:6:"markup";s:2422:"<div id="top" class="small_top lazy" style="background-image: url({{categoryDetail.preview_image.getPath }})">
+</div>";s:5:"mtime";i:1612359938;s:6:"markup";s:2414:"<div id="top" class="small_top lazy" style="background-image: url({{categoryDetail.preview_image.getPath }})">
 
   <div class="breadcrumb_wrapper">
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
-          <p id="breadcrumbs"><span><span><a href="/">Home</a> / <a href="/tours/default">Tours</a> / <span
+          <p id="breadcrumbs"><span><span><a href="/">Home</a> / <a href="/tours">Tours</a> / <span
                   class="breadcrumb_last"
                   aria-current="page">{{ categoryDetail.name }}</span></span></span></p>
           <div class="line_helper" style="background: rgba(255,255,255,.3)"></div>
@@ -246,4 +246,4 @@ emails_date_format = "Y-m-d"
     </div>
 
   </div>
-</div>";s:4:"code";N;s:5:"title";s:10:"Type-tours";s:3:"url";s:21:"/type-tours/:category";s:6:"layout";s:13:"static-layout";s:9:"is_hidden";s:1:"0";s:14:"categoryDetail";a:6:{s:10:"activeOnly";s:1:"0";s:12:"categorySlug";s:15:"{{ :category }}";s:8:"areaSlug";s:1:"0";s:17:"activeRecordsOnly";s:1:"0";s:10:"recordPage";s:1:"0";s:14:"recordPageSlug";s:13:"{{ :record }}";}s:7:"records";a:12:{s:10:"activeOnly";s:1:"0";s:8:"areaSlug";s:1:"0";s:12:"categorySlug";s:15:"{{ :category }}";s:15:"useMainCategory";s:1:"1";s:18:"useMultiCategories";s:1:"0";s:7:"tagSlug";s:10:"{{ :tag }}";s:10:"recordPage";s:8:"category";s:14:"recordPageSlug";s:13:"{{ :record }}";s:5:"limit";s:2:"10";s:8:"pageSlug";s:11:"{{ :page }}";s:7:"orderBy";s:4:"name";s:16:"orderByDirection";s:3:"ASC";}s:11:"genericForm";a:9:{s:16:"messages_success";s:65:"Ваша форма была успешно отправлена!";s:15:"messages_errors";s:61:"В вашей заявке содержатся ошибки.";s:13:"inline_errors";s:8:"disabled";s:13:"sanitize_data";s:8:"disabled";s:12:"anonymize_ip";s:8:"disabled";s:15:"recaptcha_theme";s:5:"light";s:14:"recaptcha_type";s:5:"image";s:14:"recaptcha_size";s:6:"normal";s:18:"emails_date_format";s:5:"Y-m-d";}s:17:"siteSearchInclude";a:0:{}}}
+</div>";s:4:"code";N;s:5:"title";s:10:"Type-tours";s:3:"url";s:21:"/type-tours/:category";s:6:"layout";s:13:"static-layout";s:9:"is_hidden";s:1:"0";s:14:"categoryDetail";a:6:{s:10:"activeOnly";s:1:"0";s:12:"categorySlug";s:15:"{{ :category }}";s:8:"areaSlug";s:1:"0";s:17:"activeRecordsOnly";s:1:"0";s:10:"recordPage";s:1:"0";s:14:"recordPageSlug";s:13:"{{ :record }}";}s:7:"records";a:12:{s:10:"activeOnly";s:1:"0";s:8:"areaSlug";s:1:"0";s:12:"categorySlug";s:15:"{{ :category }}";s:15:"useMainCategory";s:1:"1";s:18:"useMultiCategories";s:1:"0";s:7:"tagSlug";s:10:"{{ :tag }}";s:10:"recordPage";s:1:"0";s:14:"recordPageSlug";s:13:"{{ :record }}";s:5:"limit";s:2:"10";s:8:"pageSlug";s:11:"{{ :page }}";s:7:"orderBy";s:4:"name";s:16:"orderByDirection";s:3:"ASC";}s:11:"genericForm";a:9:{s:16:"messages_success";s:65:"Ваша форма была успешно отправлена!";s:15:"messages_errors";s:61:"В вашей заявке содержатся ошибки.";s:13:"inline_errors";s:8:"disabled";s:13:"sanitize_data";s:8:"disabled";s:12:"anonymize_ip";s:8:"disabled";s:15:"recaptcha_theme";s:5:"light";s:14:"recaptcha_type";s:5:"image";s:14:"recaptcha_size";s:6:"normal";s:18:"emails_date_format";s:5:"Y-m-d";}s:17:"siteSearchInclude";a:0:{}}}

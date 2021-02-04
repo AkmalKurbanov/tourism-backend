@@ -1,4 +1,4 @@
-1612281157a:1:{s:15:"tour-detail.htm";a:14:{s:8:"fileName";s:15:"tour-detail.htm";s:7:"content";s:18920:"title = "Tour-detail"
+1612451100a:1:{s:15:"tour-detail.htm";a:14:{s:8:"fileName";s:15:"tour-detail.htm";s:7:"content";s:20227:"title = "Tour-detail"
 url = "/tour-detail/:slug"
 layout = "static-layout"
 is_hidden = 0
@@ -51,6 +51,13 @@ emails_date_format = "Y-m-d"
 
 [siteSearchInclude]
 ==
+
+<style>
+  .cstm_button.group_archive_book_button.disabled {
+    opacity: .7;
+    pointer-events: none;
+  }
+</style>
 <div class="lazy" id="top"
   style="background-image: url({{ TourDetail.recordDetail.preview_image.getPath | resize(1920, false, { mode: 'crop', quality: '80', extension: 'jpg' })}})">
 
@@ -62,8 +69,8 @@ emails_date_format = "Y-m-d"
             <span><span>
                 <a href="/">Home</a> /
                 <span>
-                  <a href="/tours/default">Tours</a> /<span
-                    class="breadcrumb_last" aria-current="page">{{ TourDetail.recordDetail.name }}</span>
+                  <a href="/tours">Tours</a> /<span class="breadcrumb_last"
+                    aria-current="page">{{ TourDetail.recordDetail.name }}</span>
                 </span>
               </span>
             </span></p>
@@ -181,14 +188,14 @@ emails_date_format = "Y-m-d"
 
                     <tr>
                       <td>
-                        <p>
-                          {{TourDetail.recordDetail.date}}
+                        <p class="dateDeparture">
+                          {{TourDetail.recordDetail.date1 | date('d-m-Y')}}
                         </p>
                       </td>
 
                       <td>
                         <p>
-                          {{TourDetail.recordDetail.date1}}
+                          {{TourDetail.recordDetail.date2 | date('d-m-Y')}}
                         </p>
                       </td>
                       <td>
@@ -198,8 +205,7 @@ emails_date_format = "Y-m-d"
                         <p>${{TourDetail.recordDetail.tour_cost}} US</p>
                       </td>
                       <td>
-                        <button class="cstm_button group_archive_book_button"
-                          id="{{TourDetail.recordDetail.date}}">Book</button>
+                        <button class="cstm_button group_archive_book_button">Book</button>
                       </td>
                     </tr>
 
@@ -208,13 +214,13 @@ emails_date_format = "Y-m-d"
                     {% for schedule in recordDetail.schedule_tours %}
                     <tr>
                       <td>
-                        <p>
-                          {{schedule.tour_dateDeparture}}
+                        <p class="dateDeparture">
+                          {{schedule.tour_dateDeparture | date('d-m-Y')}}
                         </p>
                       </td>
                       <td>
                         <p>
-                          {{schedule.tour_dateEnd}}
+                          {{schedule.tour_dateEnd | date('d-m-Y')}}
                         </p>
                       </td>
                       <td>
@@ -224,7 +230,7 @@ emails_date_format = "Y-m-d"
                         <p>${{ schedule.cost_tour }} US</p>
                       </td>
                       <td>
-                        <button class="cstm_button group_archive_book_button" id="{{schedule.tour_dateDeparture}}">
+                        <button class="cstm_button group_archive_book_button">
                           Book</button>
                       </td>
                     </tr>
@@ -255,9 +261,8 @@ emails_date_format = "Y-m-d"
 
               <div class="custom_gallery justified-gallery"
                 style="height: 724px; display:flex; flex-direction: row; flex-wrap: wrap;" lg-uid="lg0">
-
                 {% for image in recordDetail.images %}
-                <a href="{{image.path}}" class="jg-entry"
+                <a data-fancybox="gallery" href="{{image.path}}" class="jg-entry"
                   style="width: 129px; height: 128.5px; top: 6px; left: 6px; opacity: 1;">
                   <img class="ls-is-cached lazyloaded" src="{{image.path}}" alt="">
                 </a>
@@ -347,14 +352,14 @@ emails_date_format = "Y-m-d"
 
                   <tr>
                     <td>
-                      <p>
-                        {{TourDetail.recordDetail.date}}
+                      <p class="dateDeparture">
+                        {{TourDetail.recordDetail.dat1 | date('d-m-Y')}}
                       </p>
                     </td>
 
                     <td>
                       <p>
-                        {{TourDetail.recordDetail.date1}}
+                        {{TourDetail.recordDetail.date2 | date('d-m-Y')}}
                       </p>
                     </td>
                     <td>
@@ -364,8 +369,7 @@ emails_date_format = "Y-m-d"
                       <p>${{TourDetail.recordDetail.tour_cost}} US</p>
                     </td>
                     <td>
-                      <button class="cstm_button group_archive_book_button"
-                        id="{{TourDetail.recordDetail.date}}">Book</button>
+                      <button class="cstm_button group_archive_book_button">Book</button>
                     </td>
                   </tr>
 
@@ -386,13 +390,13 @@ emails_date_format = "Y-m-d"
                   {% for schedule in recordDetail.schedule_tours %}
                   <tr>
                     <td>
-                      <p>
-                        {{schedule.tour_dateDeparture}}
+                      <p class="dateDeparture">
+                        {{schedule.tour_dateDeparture | date('d-m-Y')}}
                       </p>
                     </td>
                     <td>
                       <p>
-                        {{schedule.tour_dateEnd}}
+                        {{schedule.tour_dateEnd | date('d-m-Y')}}
                       </p>
                     </td>
                     <td>
@@ -402,8 +406,7 @@ emails_date_format = "Y-m-d"
                       <p>${{ schedule.cost_tour }} US</p>
                     </td>
                     <td>
-                      <button class="cstm_button group_archive_book_button"
-                        id="{{schedule.tour_dateDeparture}}">Book</button>
+                      <button class="cstm_button group_archive_book_button">Book</button>
                     </td>
                   </tr>
                   {% endfor %}
@@ -500,60 +503,48 @@ emails_date_format = "Y-m-d"
 
               <form data-request="{{ BottomForm }}::onFormSubmit">
 
-    {{ form_token() }}
+                {{ form_token() }}
 
-    <div id="{{ BottomForm }}_forms_flash"></div>
+                <div id="{{ BottomForm }}_forms_flash"></div>
 
-      <div class="form-group">
-        <input type="hidden" id="pageTitle" name="page title" class="form-control" value="{{this.page.title}}">
-      </div>
+                <div class="form-group">
+                  <input type="hidden" id="pageTitle" name="page title" class="form-control"
+                    value="{{this.page.title}}">
+                </div>
 
-      <div class="form-group">
-        <input type="hidden" id="tourName" name="tour name/ post name /" class="form-control" value="{{ TourDetail.recordDetail.name }} {{ post.title }} {{ TypeToursDetail.recordDetail.name }}">
-      </div>
+                <div class="form-group">
+                  <input type="hidden" id="tourName" name="tour name/ post name /" class="form-control"
+                    value="{{ TourDetail.recordDetail.name }} {{ post.title }} {{ TypeToursDetail.recordDetail.name }}">
+                </div>
 
-    <div class="form-group">
-      <input type="text" id="name" name="name" class="form-control" placeholder="Your name" required>
-    </div>
+                <div class="form-group">
+                  <input type="text" id="name" name="name" class="form-control" placeholder="Your name" required>
+                </div>
 
-    <h4>Departure</h4>
-    <div class="form-group">
+                <h4>Departure</h4>
+                <div class="form-group">
 
-      <select name="available_departure_select" class="available_departure_select">
+                  <select name="available_departure_select" class="available_departure_select"></select>
 
-        <option value="{{TourDetail.recordDetail.date}}">
-          {{TourDetail.recordDetail.date}}
-        </option>
-        {% for schedule in recordDetail.schedule_tours %}
-        <option value="{{schedule.tour_dateDeparture}}">{{schedule.tour_dateDeparture}}
-        </option>
-        {% endfor %}
+                </div>
 
-
+                <div class="form-group">
+                  <input type="text" id="email" name="email" class="form-control" placeholder="Your email" required>
+                </div>
 
 
 
+                <div class="form-group">
+                  <textarea id="message" name="message" class="form-control" cols="40" rows="5"
+                    placeholder="Your message" required></textarea>
+                </div>
 
-      </select>
+                <button id="simpleContactSubmitButton" type="submit"
+                  class="btn btn-default cstm_button submit">send</button>
 
-    </div>
+                <div class="wpcf7-response-output" role="alert" aria-hidden="true" style="opacity: 0;"></div>
 
-    <div class="form-group">
-      <input type="text" id="email" name="email" class="form-control" placeholder="Your email" required>
-    </div>
-
-
-
-    <div class="form-group">
-      <textarea id="message" name="message" class="form-control" cols="40" rows="5" placeholder="Your message"
-        required></textarea>
-    </div>
-
-    <button id="simpleContactSubmitButton" type="submit" class="btn btn-default cstm_button submit">send</button>
-
-    <div class="wpcf7-response-output" role="alert" aria-hidden="true" style="opacity: 0;"></div>
-
-  </form>
+              </form>
 
 
             </div>
@@ -610,10 +601,59 @@ emails_date_format = "Y-m-d"
 
 
       </div>
-     
+
     </div>
   </div>
-</div>";s:5:"mtime";i:1612274637;s:6:"markup";s:17526:"<div class="lazy" id="top"
+</div>
+
+
+<script>
+  $("table tr td").each(function (index) {
+    var str = $(this).find('.available').text().split(" ").pop();
+    $(this).find('.available').addClass(str);
+
+    var str1 = $(this).find('.available').text();
+    var lastIndex = str1.lastIndexOf(" ");
+    str1 = str1.substring(0, lastIndex);
+    $(this).find('.available').text('').append(str1);
+    if ($(this).find('.available').hasClass('not_available')) {
+      $(this).parent().remove();
+    }
+
+  });
+
+
+
+  var dateDeparture = [];
+  $(".dateDeparture").each(function (index) {
+    if ($(this).is(":visible")) {
+      dateDeparture.push($(this).text().replace(/\s+/g, ' ').trim());
+    }
+  });
+
+
+  $.each(dateDeparture, function () {
+    $('.available_departure_select').append(`<option value="${this}">` + this + '</option>');
+  });
+
+  $(".s_archive_group .table tbody").each(function (index) {
+    if ($(this).html().trim() === '') {
+      $(this).parents().eq(2).remove();
+    }
+  });
+
+  $(".s_archive_group .table tbody .available").each(function (index) {
+    if ($(this).html().trim() === '') {
+      $(this).parents().eq(1).remove();
+    }
+  });
+</script>";s:5:"mtime";i:1612450497;s:6:"markup";s:18831:"<style>
+  .cstm_button.group_archive_book_button.disabled {
+    opacity: .7;
+    pointer-events: none;
+  }
+</style>
+<div class="lazy" id="top"
   style="background-image: url({{ TourDetail.recordDetail.preview_image.getPath | resize(1920, false, { mode: 'crop', quality: '80', extension: 'jpg' })}})">
 
   <div class="breadcrumb_wrapper">
@@ -624,8 +664,8 @@ emails_date_format = "Y-m-d"
             <span><span>
                 <a href="/">Home</a> /
                 <span>
-                  <a href="/tours/default">Tours</a> /<span
-                    class="breadcrumb_last" aria-current="page">{{ TourDetail.recordDetail.name }}</span>
+                  <a href="/tours">Tours</a> /<span class="breadcrumb_last"
+                    aria-current="page">{{ TourDetail.recordDetail.name }}</span>
                 </span>
               </span>
             </span></p>
@@ -743,14 +783,14 @@ emails_date_format = "Y-m-d"
 
                     <tr>
                       <td>
-                        <p>
-                          {{TourDetail.recordDetail.date}}
+                        <p class="dateDeparture">
+                          {{TourDetail.recordDetail.date1 | date('d-m-Y')}}
                         </p>
                       </td>
 
                       <td>
                         <p>
-                          {{TourDetail.recordDetail.date1}}
+                          {{TourDetail.recordDetail.date2 | date('d-m-Y')}}
                         </p>
                       </td>
                       <td>
@@ -760,8 +800,7 @@ emails_date_format = "Y-m-d"
                         <p>${{TourDetail.recordDetail.tour_cost}} US</p>
                       </td>
                       <td>
-                        <button class="cstm_button group_archive_book_button"
-                          id="{{TourDetail.recordDetail.date}}">Book</button>
+                        <button class="cstm_button group_archive_book_button">Book</button>
                       </td>
                     </tr>
 
@@ -770,13 +809,13 @@ emails_date_format = "Y-m-d"
                     {% for schedule in recordDetail.schedule_tours %}
                     <tr>
                       <td>
-                        <p>
-                          {{schedule.tour_dateDeparture}}
+                        <p class="dateDeparture">
+                          {{schedule.tour_dateDeparture | date('d-m-Y')}}
                         </p>
                       </td>
                       <td>
                         <p>
-                          {{schedule.tour_dateEnd}}
+                          {{schedule.tour_dateEnd | date('d-m-Y')}}
                         </p>
                       </td>
                       <td>
@@ -786,7 +825,7 @@ emails_date_format = "Y-m-d"
                         <p>${{ schedule.cost_tour }} US</p>
                       </td>
                       <td>
-                        <button class="cstm_button group_archive_book_button" id="{{schedule.tour_dateDeparture}}">
+                        <button class="cstm_button group_archive_book_button">
                           Book</button>
                       </td>
                     </tr>
@@ -817,9 +856,8 @@ emails_date_format = "Y-m-d"
 
               <div class="custom_gallery justified-gallery"
                 style="height: 724px; display:flex; flex-direction: row; flex-wrap: wrap;" lg-uid="lg0">
-
                 {% for image in recordDetail.images %}
-                <a href="{{image.path}}" class="jg-entry"
+                <a data-fancybox="gallery" href="{{image.path}}" class="jg-entry"
                   style="width: 129px; height: 128.5px; top: 6px; left: 6px; opacity: 1;">
                   <img class="ls-is-cached lazyloaded" src="{{image.path}}" alt="">
                 </a>
@@ -909,14 +947,14 @@ emails_date_format = "Y-m-d"
 
                   <tr>
                     <td>
-                      <p>
-                        {{TourDetail.recordDetail.date}}
+                      <p class="dateDeparture">
+                        {{TourDetail.recordDetail.dat1 | date('d-m-Y')}}
                       </p>
                     </td>
 
                     <td>
                       <p>
-                        {{TourDetail.recordDetail.date1}}
+                        {{TourDetail.recordDetail.date2 | date('d-m-Y')}}
                       </p>
                     </td>
                     <td>
@@ -926,8 +964,7 @@ emails_date_format = "Y-m-d"
                       <p>${{TourDetail.recordDetail.tour_cost}} US</p>
                     </td>
                     <td>
-                      <button class="cstm_button group_archive_book_button"
-                        id="{{TourDetail.recordDetail.date}}">Book</button>
+                      <button class="cstm_button group_archive_book_button">Book</button>
                     </td>
                   </tr>
 
@@ -948,13 +985,13 @@ emails_date_format = "Y-m-d"
                   {% for schedule in recordDetail.schedule_tours %}
                   <tr>
                     <td>
-                      <p>
-                        {{schedule.tour_dateDeparture}}
+                      <p class="dateDeparture">
+                        {{schedule.tour_dateDeparture | date('d-m-Y')}}
                       </p>
                     </td>
                     <td>
                       <p>
-                        {{schedule.tour_dateEnd}}
+                        {{schedule.tour_dateEnd | date('d-m-Y')}}
                       </p>
                     </td>
                     <td>
@@ -964,8 +1001,7 @@ emails_date_format = "Y-m-d"
                       <p>${{ schedule.cost_tour }} US</p>
                     </td>
                     <td>
-                      <button class="cstm_button group_archive_book_button"
-                        id="{{schedule.tour_dateDeparture}}">Book</button>
+                      <button class="cstm_button group_archive_book_button">Book</button>
                     </td>
                   </tr>
                   {% endfor %}
@@ -1062,60 +1098,48 @@ emails_date_format = "Y-m-d"
 
               <form data-request="{{ BottomForm }}::onFormSubmit">
 
-    {{ form_token() }}
+                {{ form_token() }}
 
-    <div id="{{ BottomForm }}_forms_flash"></div>
+                <div id="{{ BottomForm }}_forms_flash"></div>
 
-      <div class="form-group">
-        <input type="hidden" id="pageTitle" name="page title" class="form-control" value="{{this.page.title}}">
-      </div>
+                <div class="form-group">
+                  <input type="hidden" id="pageTitle" name="page title" class="form-control"
+                    value="{{this.page.title}}">
+                </div>
 
-      <div class="form-group">
-        <input type="hidden" id="tourName" name="tour name/ post name /" class="form-control" value="{{ TourDetail.recordDetail.name }} {{ post.title }} {{ TypeToursDetail.recordDetail.name }}">
-      </div>
+                <div class="form-group">
+                  <input type="hidden" id="tourName" name="tour name/ post name /" class="form-control"
+                    value="{{ TourDetail.recordDetail.name }} {{ post.title }} {{ TypeToursDetail.recordDetail.name }}">
+                </div>
 
-    <div class="form-group">
-      <input type="text" id="name" name="name" class="form-control" placeholder="Your name" required>
-    </div>
+                <div class="form-group">
+                  <input type="text" id="name" name="name" class="form-control" placeholder="Your name" required>
+                </div>
 
-    <h4>Departure</h4>
-    <div class="form-group">
+                <h4>Departure</h4>
+                <div class="form-group">
 
-      <select name="available_departure_select" class="available_departure_select">
+                  <select name="available_departure_select" class="available_departure_select"></select>
 
-        <option value="{{TourDetail.recordDetail.date}}">
-          {{TourDetail.recordDetail.date}}
-        </option>
-        {% for schedule in recordDetail.schedule_tours %}
-        <option value="{{schedule.tour_dateDeparture}}">{{schedule.tour_dateDeparture}}
-        </option>
-        {% endfor %}
+                </div>
 
-
+                <div class="form-group">
+                  <input type="text" id="email" name="email" class="form-control" placeholder="Your email" required>
+                </div>
 
 
 
+                <div class="form-group">
+                  <textarea id="message" name="message" class="form-control" cols="40" rows="5"
+                    placeholder="Your message" required></textarea>
+                </div>
 
-      </select>
+                <button id="simpleContactSubmitButton" type="submit"
+                  class="btn btn-default cstm_button submit">send</button>
 
-    </div>
+                <div class="wpcf7-response-output" role="alert" aria-hidden="true" style="opacity: 0;"></div>
 
-    <div class="form-group">
-      <input type="text" id="email" name="email" class="form-control" placeholder="Your email" required>
-    </div>
-
-
-
-    <div class="form-group">
-      <textarea id="message" name="message" class="form-control" cols="40" rows="5" placeholder="Your message"
-        required></textarea>
-    </div>
-
-    <button id="simpleContactSubmitButton" type="submit" class="btn btn-default cstm_button submit">send</button>
-
-    <div class="wpcf7-response-output" role="alert" aria-hidden="true" style="opacity: 0;"></div>
-
-  </form>
+              </form>
 
 
             </div>
@@ -1172,7 +1196,50 @@ emails_date_format = "Y-m-d"
 
 
       </div>
-     
+
     </div>
   </div>
-</div>";s:4:"code";N;s:5:"title";s:11:"Tour-detail";s:3:"url";s:18:"/tour-detail/:slug";s:6:"layout";s:13:"static-layout";s:9:"is_hidden";s:1:"0";s:23:"recordDetail TourDetail";a:7:{s:10:"activeOnly";s:1:"0";s:10:"recordSlug";s:11:"{{ :slug }}";s:8:"areaSlug";s:1:"0";s:12:"categorySlug";s:21:"{{ :gruppovye-tury }}";s:15:"useMainCategory";s:1:"1";s:12:"categoryPage";s:1:"0";s:16:"categoryPageSlug";s:15:"{{ :category }}";}s:13:"records Tours";a:13:{s:10:"activeOnly";s:1:"0";s:8:"areaSlug";s:1:"0";s:12:"categorySlug";s:4:"tury";s:15:"useMainCategory";s:1:"0";s:18:"useMultiCategories";s:1:"1";s:7:"tagSlug";s:10:"{{ :tag }}";s:10:"recordPage";s:11:"tour-detail";s:14:"recordPageSlug";s:11:"{{ :slug }}";s:10:"allowLimit";s:1:"1";s:5:"limit";s:1:"3";s:8:"pageSlug";s:11:"{{ :page }}";s:7:"orderBy";s:4:"name";s:16:"orderByDirection";s:3:"ASC";}s:11:"genericForm";a:9:{s:16:"messages_success";s:65:"Ваша форма была успешно отправлена!";s:15:"messages_errors";s:61:"В вашей заявке содержатся ошибки.";s:13:"inline_errors";s:8:"disabled";s:13:"sanitize_data";s:8:"disabled";s:12:"anonymize_ip";s:8:"disabled";s:15:"recaptcha_theme";s:5:"light";s:14:"recaptcha_type";s:5:"image";s:14:"recaptcha_size";s:6:"normal";s:18:"emails_date_format";s:5:"Y-m-d";}s:22:"genericForm BottomForm";a:9:{s:16:"messages_success";s:65:"Ваша форма была успешно отправлена!";s:15:"messages_errors";s:61:"В вашей заявке содержатся ошибки.";s:13:"inline_errors";s:8:"disabled";s:13:"sanitize_data";s:8:"disabled";s:12:"anonymize_ip";s:8:"disabled";s:15:"recaptcha_theme";s:5:"light";s:14:"recaptcha_type";s:5:"image";s:14:"recaptcha_size";s:6:"normal";s:18:"emails_date_format";s:5:"Y-m-d";}s:17:"siteSearchInclude";a:0:{}}}
+</div>
+
+
+<script>
+  $("table tr td").each(function (index) {
+    var str = $(this).find('.available').text().split(" ").pop();
+    $(this).find('.available').addClass(str);
+
+    var str1 = $(this).find('.available').text();
+    var lastIndex = str1.lastIndexOf(" ");
+    str1 = str1.substring(0, lastIndex);
+    $(this).find('.available').text('').append(str1);
+    if ($(this).find('.available').hasClass('not_available')) {
+      $(this).parent().remove();
+    }
+
+  });
+
+
+
+  var dateDeparture = [];
+  $(".dateDeparture").each(function (index) {
+    if ($(this).is(":visible")) {
+      dateDeparture.push($(this).text().replace(/\s+/g, ' ').trim());
+    }
+  });
+
+
+  $.each(dateDeparture, function () {
+    $('.available_departure_select').append(`<option value="${this}">` + this + '</option>');
+  });
+
+  $(".s_archive_group .table tbody").each(function (index) {
+    if ($(this).html().trim() === '') {
+      $(this).parents().eq(2).remove();
+    }
+  });
+
+  $(".s_archive_group .table tbody .available").each(function (index) {
+    if ($(this).html().trim() === '') {
+      $(this).parents().eq(1).remove();
+    }
+  });
+</script>";s:4:"code";N;s:5:"title";s:11:"Tour-detail";s:3:"url";s:18:"/tour-detail/:slug";s:6:"layout";s:13:"static-layout";s:9:"is_hidden";s:1:"0";s:23:"recordDetail TourDetail";a:7:{s:10:"activeOnly";s:1:"0";s:10:"recordSlug";s:11:"{{ :slug }}";s:8:"areaSlug";s:1:"0";s:12:"categorySlug";s:21:"{{ :gruppovye-tury }}";s:15:"useMainCategory";s:1:"1";s:12:"categoryPage";s:1:"0";s:16:"categoryPageSlug";s:15:"{{ :category }}";}s:13:"records Tours";a:13:{s:10:"activeOnly";s:1:"0";s:8:"areaSlug";s:1:"0";s:12:"categorySlug";s:4:"tury";s:15:"useMainCategory";s:1:"0";s:18:"useMultiCategories";s:1:"1";s:7:"tagSlug";s:10:"{{ :tag }}";s:10:"recordPage";s:11:"tour-detail";s:14:"recordPageSlug";s:11:"{{ :slug }}";s:10:"allowLimit";s:1:"1";s:5:"limit";s:1:"3";s:8:"pageSlug";s:11:"{{ :page }}";s:7:"orderBy";s:4:"name";s:16:"orderByDirection";s:3:"ASC";}s:11:"genericForm";a:9:{s:16:"messages_success";s:65:"Ваша форма была успешно отправлена!";s:15:"messages_errors";s:61:"В вашей заявке содержатся ошибки.";s:13:"inline_errors";s:8:"disabled";s:13:"sanitize_data";s:8:"disabled";s:12:"anonymize_ip";s:8:"disabled";s:15:"recaptcha_theme";s:5:"light";s:14:"recaptcha_type";s:5:"image";s:14:"recaptcha_size";s:6:"normal";s:18:"emails_date_format";s:5:"Y-m-d";}s:22:"genericForm BottomForm";a:9:{s:16:"messages_success";s:65:"Ваша форма была успешно отправлена!";s:15:"messages_errors";s:61:"В вашей заявке содержатся ошибки.";s:13:"inline_errors";s:8:"disabled";s:13:"sanitize_data";s:8:"disabled";s:12:"anonymize_ip";s:8:"disabled";s:15:"recaptcha_theme";s:5:"light";s:14:"recaptcha_type";s:5:"image";s:14:"recaptcha_size";s:6:"normal";s:18:"emails_date_format";s:5:"Y-m-d";}s:17:"siteSearchInclude";a:0:{}}}

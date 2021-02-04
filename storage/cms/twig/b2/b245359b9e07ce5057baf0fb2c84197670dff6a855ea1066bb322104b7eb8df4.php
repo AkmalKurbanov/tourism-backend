@@ -29,14 +29,14 @@ class __TwigTemplate_61fd4557dc6e3037616f53c4985c8d84b9ed2326f2e4d32f636d06c9126
         $this->blocks = [
         ];
         $this->sandbox = $this->env->getExtension('\Twig\Extension\SandboxExtension');
-        $tags = array("for" => 47, "partial" => 107);
-        $filters = array("resize" => 1, "media" => 1, "page" => 53, "escape" => 60);
+        $tags = array("for" => 47, "partial" => 94);
+        $filters = array("resize" => 1, "media" => 1, "page" => 53, "escape" => 60, "raw" => 82);
         $functions = array();
 
         try {
             $this->sandbox->checkSecurity(
                 ['for', 'partial'],
-                ['resize', 'media', 'page', 'escape'],
+                ['resize', 'media', 'page', 'escape', 'raw'],
                 []
             );
         } catch (SecurityError $e) {
@@ -105,7 +105,7 @@ class __TwigTemplate_61fd4557dc6e3037616f53c4985c8d84b9ed2326f2e4d32f636d06c9126
 
 
         <div class=\"row\">
-
+            
 
           ";
         // line 47
@@ -113,7 +113,7 @@ class __TwigTemplate_61fd4557dc6e3037616f53c4985c8d84b9ed2326f2e4d32f636d06c9126
         $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["AllTours"] ?? null), "items", [], "any", false, false, true, 47));
         foreach ($context['_seq'] as $context["_key"] => $context["record"]) {
             // line 48
-            echo "
+            echo "          
           <div class=\"col-sm-4\">
 
             <div class=\"item item_tour with_border auto_height \">
@@ -149,7 +149,7 @@ class __TwigTemplate_61fd4557dc6e3037616f53c4985c8d84b9ed2326f2e4d32f636d06c9126
 
 
           </div>
-
+          
           ";
         }
         $_parent = $context['_parent'];
@@ -167,20 +167,10 @@ class __TwigTemplate_61fd4557dc6e3037616f53c4985c8d84b9ed2326f2e4d32f636d06c9126
 
       </div>
 
-
-
-
-      <div id=\"pagin_wrapper\">
-
-
-
-        <nav class=\"navigation pagination\" role=\"navigation\" aria-label=\" \">
-          <h2 class=\"screen-reader-text\"> </h2>
-          <div class=\"nav-links\"><span aria-current=\"page\" class=\"page-numbers current\">1</span>
-            <a class=\"page-numbers\" href=\"https://kyrgyzstan-tourism.com/tours/page/2/\">2</a>
-            <a class=\"next page-numbers\" href=\"https://kyrgyzstan-tourism.com/tours/page/2/\">Next »</a></div>
-        </nav>
-      </div>
+  ";
+        // line 82
+        echo $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, ($context["AllTours"] ?? null), "items", [], "any", false, false, true, 82), 82, $this->source);
+        echo "
     </div>
 
 
@@ -193,11 +183,11 @@ class __TwigTemplate_61fd4557dc6e3037616f53c4985c8d84b9ed2326f2e4d32f636d06c9126
 
 
           ";
-        // line 107
+        // line 94
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/sidebar_without_date"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 108
+        // line 95
         echo "
         </div>
       </div>
@@ -219,7 +209,7 @@ class __TwigTemplate_61fd4557dc6e3037616f53c4985c8d84b9ed2326f2e4d32f636d06c9126
 
     public function getDebugInfo()
     {
-        return array (  201 => 108,  197 => 107,  159 => 71,  145 => 63,  140 => 61,  136 => 60,  129 => 56,  123 => 53,  116 => 48,  112 => 47,  62 => 1,);
+        return array (  191 => 95,  187 => 94,  172 => 82,  159 => 71,  145 => 63,  140 => 61,  136 => 60,  129 => 56,  123 => 53,  116 => 48,  112 => 47,  62 => 1,);
     }
 
     public function getSourceContext()
@@ -268,10 +258,10 @@ class __TwigTemplate_61fd4557dc6e3037616f53c4985c8d84b9ed2326f2e4d32f636d06c9126
 
 
         <div class=\"row\">
-
+            
 
           {% for record in AllTours.items %}
-
+          
           <div class=\"col-sm-4\">
 
             <div class=\"item item_tour with_border auto_height \">
@@ -292,7 +282,7 @@ class __TwigTemplate_61fd4557dc6e3037616f53c4985c8d84b9ed2326f2e4d32f636d06c9126
 
 
           </div>
-
+          
           {% endfor %}
 
 
@@ -305,20 +295,7 @@ class __TwigTemplate_61fd4557dc6e3037616f53c4985c8d84b9ed2326f2e4d32f636d06c9126
 
       </div>
 
-
-
-
-      <div id=\"pagin_wrapper\">
-
-
-
-        <nav class=\"navigation pagination\" role=\"navigation\" aria-label=\" \">
-          <h2 class=\"screen-reader-text\"> </h2>
-          <div class=\"nav-links\"><span aria-current=\"page\" class=\"page-numbers current\">1</span>
-            <a class=\"page-numbers\" href=\"https://kyrgyzstan-tourism.com/tours/page/2/\">2</a>
-            <a class=\"next page-numbers\" href=\"https://kyrgyzstan-tourism.com/tours/page/2/\">Next »</a></div>
-        </nav>
-      </div>
+  {{ AllTours.items|raw }}
     </div>
 
 

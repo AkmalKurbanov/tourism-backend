@@ -1,4 +1,4 @@
-1612281157a:1:{s:17:"photo-gallery.htm";a:13:{s:8:"fileName";s:17:"photo-gallery.htm";s:7:"content";s:3194:"title = "Photo-gallery"
+1612450839a:1:{s:17:"photo-gallery.htm";a:13:{s:8:"fileName";s:17:"photo-gallery.htm";s:7:"content";s:3232:"title = "Photo-gallery"
 url = "/photo-gallery"
 layout = "static-layout"
 is_hidden = 0
@@ -11,7 +11,8 @@ categorySlug = "{{ :category }}"
 tagSlug = "{{ :tag }}"
 recordPage = "gallery"
 recordPageSlug = "{{ :slug }}"
-limit = 10
+allowLimit = 1
+limit = 6
 pageSlug = "{{ :page }}"
 orderBy = "name"
 orderByDirection = "ASC"
@@ -97,7 +98,7 @@ emails_date_format = "Y-m-d"
           </div>
         </div>
 
-
+{{ records.items|raw }}
 
 
 
@@ -117,7 +118,7 @@ emails_date_format = "Y-m-d"
       </div>
 
     </div>
-  </div>";s:5:"mtime";i:1612274458;s:6:"markup";s:2374:"<div id="top" class="small_top lazy"
+  </div>";s:5:"mtime";i:1612345839;s:6:"markup";s:2397:"<div id="top" class="small_top lazy"
     style="background-image: url(&quot;{{ this.page.gallerybanner_galleryBanner|media | resize(1920, false, { mode: 'crop', quality: '80', extension: 'jpg' })}}&quot;);">
 
 
@@ -185,7 +186,7 @@ emails_date_format = "Y-m-d"
           </div>
         </div>
 
-
+{{ records.items|raw }}
 
 
 
@@ -205,4 +206,4 @@ emails_date_format = "Y-m-d"
       </div>
 
     </div>
-  </div>";s:4:"code";N;s:5:"title";s:13:"Photo-gallery";s:3:"url";s:14:"/photo-gallery";s:6:"layout";s:13:"static-layout";s:9:"is_hidden";s:1:"0";s:27:"gallerybanner_galleryBanner";s:40:"/uploaded-files/Grouptour-NorhtSouth.jpg";s:7:"records";a:10:{s:10:"activeOnly";s:1:"0";s:8:"areaSlug";s:8:"galereya";s:12:"categorySlug";s:15:"{{ :category }}";s:7:"tagSlug";s:10:"{{ :tag }}";s:10:"recordPage";s:7:"gallery";s:14:"recordPageSlug";s:11:"{{ :slug }}";s:5:"limit";s:2:"10";s:8:"pageSlug";s:11:"{{ :page }}";s:7:"orderBy";s:4:"name";s:16:"orderByDirection";s:3:"ASC";}s:11:"genericForm";a:9:{s:16:"messages_success";s:65:"Ваша форма была успешно отправлена!";s:15:"messages_errors";s:61:"В вашей заявке содержатся ошибки.";s:13:"inline_errors";s:8:"disabled";s:13:"sanitize_data";s:8:"disabled";s:12:"anonymize_ip";s:8:"disabled";s:15:"recaptcha_theme";s:5:"light";s:14:"recaptcha_type";s:5:"image";s:14:"recaptcha_size";s:6:"normal";s:18:"emails_date_format";s:5:"Y-m-d";}s:17:"siteSearchInclude";a:0:{}}}
+  </div>";s:4:"code";N;s:5:"title";s:13:"Photo-gallery";s:3:"url";s:14:"/photo-gallery";s:6:"layout";s:13:"static-layout";s:9:"is_hidden";s:1:"0";s:27:"gallerybanner_galleryBanner";s:40:"/uploaded-files/Grouptour-NorhtSouth.jpg";s:7:"records";a:11:{s:10:"activeOnly";s:1:"0";s:8:"areaSlug";s:8:"galereya";s:12:"categorySlug";s:15:"{{ :category }}";s:7:"tagSlug";s:10:"{{ :tag }}";s:10:"recordPage";s:7:"gallery";s:14:"recordPageSlug";s:11:"{{ :slug }}";s:10:"allowLimit";s:1:"1";s:5:"limit";s:1:"6";s:8:"pageSlug";s:11:"{{ :page }}";s:7:"orderBy";s:4:"name";s:16:"orderByDirection";s:3:"ASC";}s:11:"genericForm";a:9:{s:16:"messages_success";s:65:"Ваша форма была успешно отправлена!";s:15:"messages_errors";s:61:"В вашей заявке содержатся ошибки.";s:13:"inline_errors";s:8:"disabled";s:13:"sanitize_data";s:8:"disabled";s:12:"anonymize_ip";s:8:"disabled";s:15:"recaptcha_theme";s:5:"light";s:14:"recaptcha_type";s:5:"image";s:14:"recaptcha_size";s:6:"normal";s:18:"emails_date_format";s:5:"Y-m-d";}s:17:"siteSearchInclude";a:0:{}}}

@@ -25,6 +25,88 @@ items:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
+        items:
+            -
+                title: 'Конные туры'
+                type: url
+                url: /type-tours/konnye-tury
+                code: ''
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: 'Внедорожные туры'
+                type: url
+                url: /type-tours/vnedorozhnye-tury
+                code: ''
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: 'Культурные туры'
+                type: url
+                url: /type-tours/kulturnye-tury
+                code: ''
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: 'Опытные туры'
+                type: url
+                url: /type-tours/opytnye-tury
+                code: ''
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: Фоторуры
+                type: url
+                url: /type-tours/fotorury
+                code: ''
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: Велотуры
+                type: url
+                url: /type-tours/velotury
+                code: ''
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: 'Зимние туры'
+                type: url
+                url: /type-tours/zimnie-tury
+                code: ''
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: 'Мультиактивные туры'
+                type: url
+                url: /multiaktivnye-tur
+                code: ''
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: Треккинг
+                type: url
+                url: /trekking
+                code: ''
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
     -
         title: 'Group tours'
         nesting: null
@@ -67,9 +149,13 @@ items:
         items:
             -
                 title: 'Photo gallery'
+                nesting: null
                 type: cms-page
+                url: null
                 code: ''
                 reference: photo-gallery
+                cmsPage: null
+                replace: null
                 viewBag:
                     isHidden: '0'
                     cssClass: ''

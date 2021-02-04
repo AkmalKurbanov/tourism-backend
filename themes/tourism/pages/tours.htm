@@ -1,5 +1,5 @@
 title = "Tours"
-url = "/tours/"
+url = "/tours"
 layout = "static-layout"
 is_hidden = 0
 toursbanner_ToursBanner = "/uploaded-files/deal3.jpg"
@@ -14,8 +14,8 @@ useMultiCategories = 1
 tagSlug = "{{ :tag }}"
 recordPage = "tour-detail"
 recordPageSlug = "{{ :slug }}"
-allowLimit = 0
-limit = 1
+allowLimit = 1
+limit = 6
 pageSlug = "{{ :page }}"
 orderBy = "name"
 orderByDirection = "ASC"
@@ -34,7 +34,6 @@ emails_date_format = "Y-m-d"
 
 [siteSearchInclude]
 ==
-
 <div class="small_top lazy" id="top" style="background-image: url({{ this.page.toursbanner_ToursBanner | media | resize(1920, false, { mode: 'crop', quality: '80', extension: 'jpg' })}})">
 
 
@@ -79,10 +78,10 @@ emails_date_format = "Y-m-d"
 
 
         <div class="row">
-
+            
 
           {% for record in AllTours.items %}
-
+          
           <div class="col-sm-4">
 
             <div class="item item_tour with_border auto_height ">
@@ -103,7 +102,7 @@ emails_date_format = "Y-m-d"
 
 
           </div>
-
+          
           {% endfor %}
 
 
@@ -116,20 +115,7 @@ emails_date_format = "Y-m-d"
 
       </div>
 
-
-
-
-      <div id="pagin_wrapper">
-
-
-
-        <nav class="navigation pagination" role="navigation" aria-label=" ">
-          <h2 class="screen-reader-text"> </h2>
-          <div class="nav-links"><span aria-current="page" class="page-numbers current">1</span>
-            <a class="page-numbers" href="https://kyrgyzstan-tourism.com/tours/page/2/">2</a>
-            <a class="next page-numbers" href="https://kyrgyzstan-tourism.com/tours/page/2/">Next »</a></div>
-        </nav>
-      </div>
+  {{ AllTours.items|raw }}
     </div>
 
 

@@ -1,23 +1,25 @@
+[viewBag]
+
 [records GroupTours]
 activeOnly = 0
 areaSlug = 0
 categorySlug = "gruppovye-tury"
+useMainCategory = 0
 useMultiCategories = 1
 tagSlug = "{{ :tag }}"
 recordPage = "group-tours-detail"
 recordPageSlug = "{{ :slug }}"
-limit = 10
+allowLimit = 0
+limit = 3
 pageSlug = "{{ :page }}"
 orderBy = "name"
 orderByDirection = "ASC"
-
-[viewBag]
 ==
 {% for record in GroupTours.items %}
 
  
 
-<div class="item item_tour with_border  ">
+<div class="item item_tour with_border swiper-slide">
   <a
     href="{{GroupTours.property('recordPage') ? GroupTours.property('recordPage')|page({(GroupTours.paramName('recordPageSlug')):(record.slug)})}}">
 

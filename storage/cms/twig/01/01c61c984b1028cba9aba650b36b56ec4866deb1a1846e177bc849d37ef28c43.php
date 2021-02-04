@@ -67,7 +67,7 @@ class __TwigTemplate_c8849e18bd91c5e06f34d6d3001be19fc92671042cddf1a3d71d8b71b33
     <div class=\"container\">
       <div class=\"row\">
         <div class=\"col-sm-12\">
-          <p id=\"breadcrumbs\"><span><span><a href=\"/\">Home</a> / <a href=\"/tours/default\">Tours</a> / <span
+          <p id=\"breadcrumbs\"><span><span><a href=\"/\">Home</a> / <a href=\"/tours\">Tours</a> / <span
                   class=\"breadcrumb_last\"
                   aria-current=\"page\">";
         // line 9
@@ -230,7 +230,7 @@ class __TwigTemplate_c8849e18bd91c5e06f34d6d3001be19fc92671042cddf1a3d71d8b71b33
     <div class=\"container\">
       <div class=\"row\">
         <div class=\"col-sm-12\">
-          <p id=\"breadcrumbs\"><span><span><a href=\"/\">Home</a> / <a href=\"/tours/default\">Tours</a> / <span
+          <p id=\"breadcrumbs\"><span><span><a href=\"/\">Home</a> / <a href=\"/tours\">Tours</a> / <span
                   class=\"breadcrumb_last\"
                   aria-current=\"page\">{{ categoryDetail.name }}</span></span></span></p>
           <div class=\"line_helper\" style=\"background: rgba(255,255,255,.3)\"></div>

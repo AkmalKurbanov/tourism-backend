@@ -39,13 +39,13 @@ form:
       imageHeight: 260
       imageWidth: 260
     introduction_logo:
-      label: Logo в блоке с краткой информацей
+      label: Logo в блоке с краткой информацией
       type: fileupload
       mode: image
       imageHeight: 260
       imageWidth: 260
     introduction_text:
-      label: Вступителный текс в блоке с краткой информацей
+      label: Вступителный текс в блоке с краткой информацией
       type: richeditor     
     social:
       type: repeater

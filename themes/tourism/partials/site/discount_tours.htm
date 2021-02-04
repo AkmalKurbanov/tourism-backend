@@ -15,7 +15,7 @@ orderByDirection = "ASC"
 [viewBag]
 ==
 {% for record in DealsAndDiscounts.items %}
-<div class="item item_tour with_border  ">
+<div class="item item_tour with_border swiper-slide">
   <a
     href="{{DealsAndDiscounts.property('recordPage') ? DealsAndDiscounts.property('recordPage')|page({(DealsAndDiscounts.paramName('recordPageSlug')):(record.slug)})}}">
     <span class="img_wrapper">
@@ -41,3 +41,5 @@ orderByDirection = "ASC"
   </a>
 </div>
 {% endfor %}
+
+

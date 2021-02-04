@@ -1,4 +1,4 @@
-1612281157a:1:{s:16:"site/sidebar.htm";a:8:{s:8:"fileName";s:16:"site/sidebar.htm";s:7:"content";s:3803:"[viewBag]
+1612450843a:1:{s:16:"site/sidebar.htm";a:8:{s:8:"fileName";s:16:"site/sidebar.htm";s:7:"content";s:3819:"[viewBag]
 
 [records PopularTours]
 activeOnly = 0
@@ -84,14 +84,14 @@ orderByDirection = "ASC"
     <div class="form-group">
 
       <select name="available_departure_select" class="available_departure_select">
-
-        <option value="{{TourDetail.recordDetail.date}}">
-          {{TourDetail.recordDetail.date}}
+sdfsd
+        <!-- <option value="{{TourDetail.recordDetail.date1}}">
+          {{TourDetail.recordDetail.date1}}
         </option>
         {% for schedule in recordDetail.schedule_tours %}
         <option value="{{schedule.tour_dateDeparture}}">{{schedule.tour_dateDeparture}}
         </option>
-        {% endfor %}
+        {% endfor %} -->
 
 
 
@@ -150,7 +150,7 @@ orderByDirection = "ASC"
   {% endfor %}
 
 
-</div>";s:5:"mtime";i:1612194562;s:6:"markup";s:3240:"<div class="tags tags_light">
+</div>";s:5:"mtime";i:1612443678;s:6:"markup";s:3256:"<div class="tags tags_light">
   <h3>Sights</h3>
   <div class="line_helper" style="background: #e9e9e9"></div>
   <ul class="list-unstyled sdb_ul">
@@ -208,14 +208,14 @@ orderByDirection = "ASC"
     <div class="form-group">
 
       <select name="available_departure_select" class="available_departure_select">
-
-        <option value="{{TourDetail.recordDetail.date}}">
-          {{TourDetail.recordDetail.date}}
+sdfsd
+        <!-- <option value="{{TourDetail.recordDetail.date1}}">
+          {{TourDetail.recordDetail.date1}}
         </option>
         {% for schedule in recordDetail.schedule_tours %}
         <option value="{{schedule.tour_dateDeparture}}">{{schedule.tour_dateDeparture}}
         </option>
-        {% endfor %}
+        {% endfor %} -->
 
 
 

@@ -432,8 +432,6 @@ textarea {
 
 .item_tour {
   position: relative;
-  padding-left: 15px;
-  padding-right: 15px;
   margin-bottom: 30px
 }
 
@@ -674,8 +672,8 @@ textarea {
 }
 
 .tour_slider .resCarousel {
-  padding-left: 30px;
-  padding-right: 30px
+  padding-left: 29px;
+  padding-right: 29px
 }
 
 .tour_slider .resCarousel .resCarousel-inner {

@@ -47,13 +47,15 @@ tabs:
             tab: 'janvince.smallrecords::lang.common.tabs.info'
         date1:
             label: 'Дата начала тура'
-            mode: datetime
+            mode: date
+            format: d-m-Y
             span: left
             type: datepicker
             tab: 'janvince.smallrecords::lang.common.tabs.info'
         date2:
             label: 'Дата завершения тура'
-            mode: datetime
+            mode: date
+            format: d-m-Y
             span: left
             type: datepicker
             tab: 'janvince.smallrecords::lang.common.tabs.info'
@@ -76,8 +78,8 @@ tabs:
         tour_status:
             label: 'Статус тура'
             options:
-                'Имеется в наличии yes': 'Имеется в наличии'
-                'Не имеется в наличии no': 'Не имеется в наличи'
+                'Имеется в наличии available': 'Имеется в наличии'
+                'Не имеется в наличии not_available': 'Не имеется в наличи'
             span: auto
             cssClass: ''
             hidden: 0
@@ -125,19 +127,21 @@ tabs:
                 fields:
                     tour_dateDeparture:
                         label: 'Дата начала тура'
-                        mode: datetime
+                        mode: date
+                        format: d-m-Y
                         span: auto
                         type: datepicker
                     tour_dateEnd:
                         label: 'Дата окончания тура'
-                        mode: datetime
+                        mode: date
+                        format: d-m-Y
                         span: auto
                         type: datepicker
                     status_tour:
                         label: 'Статус тура'
                         options:
-                            'Имеется в наличии yes': 'Имеется в наличии'
-                            'Не имеется в наличии no': 'Не имеется в наличии'
+                            'Имеется в наличии available': 'Имеется в наличии'
+                            'Не имеется в наличии not_available': 'Не имеется в наличии'
                         span: auto
                         type: radio
                     cost_tour:
@@ -187,3 +191,8 @@ tabs:
             nameFrom: name
             span: full
             tab: 'janvince.smallrecords::lang.common.tabs.secondary_categories'
+        tags:
+            type: relation
+            nameFrom: name
+            span: full
+            tab: 'janvince.smallrecords::lang.common.tabs.tags'

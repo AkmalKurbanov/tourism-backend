@@ -1,4 +1,4 @@
-1612281294a:1:{s:15:"group-tours.htm";a:15:{s:8:"fileName";s:15:"group-tours.htm";s:7:"content";s:9047:"title = "Group-tours"
+1612450839a:1:{s:15:"group-tours.htm";a:15:{s:8:"fileName";s:15:"group-tours.htm";s:7:"content";s:7671:"title = "Group-tours"
 url = "/group-tours"
 layout = "group-tours"
 is_hidden = 0
@@ -21,6 +21,7 @@ useMultiCategories = 1
 tagSlug = "{{ :tag }}"
 recordPage = "group-tours-detail"
 recordPageSlug = "{{ :slug }}"
+allowLimit = 0
 limit = 10
 pageSlug = "{{ :page }}"
 orderBy = "name"
@@ -95,7 +96,7 @@ emails_date_format = "Y-m-d"
 
 
         <div class="row">
-          <div class="col-sm-12">
+          <div class="col-sm-12" style="width: 100%">
             <div id="content" class="group_archive" style="font-family: inherit;">
 
 
@@ -124,14 +125,14 @@ emails_date_format = "Y-m-d"
 
                       <tr>
                         <td>
-                          <p>
-                            {{record.date1}}
+                          <p class="dateDeparture">
+                            {{record.date1 | date('d-m-Y')}}
                           </p>
                         </td>
 
                         <td>
                           <p>
-                            {{record.date2}}
+                            {{record.date2 | date('d-m-Y')}}
                           </p>
                         </td>
                         <td>
@@ -141,20 +142,21 @@ emails_date_format = "Y-m-d"
                           <p>${{record.tour_cost}} US</p>
                         </td>
                         <td>
-                          <button class="cstm_button group_archive_book_button" id="{{record.date}}">Book</button>
+                          <a href="{{GroupTours.property('recordPage') ? GroupTours.property('recordPage')|page({(GroupTours.paramName('recordPageSlug')):(record.slug)})}}"
+                            class="cstm_button group_archive_book_button">Book</a>
                         </td>
                       </tr>
 
                       {% for schedule in record.schedule_tours %}
                       <tr>
                         <td>
-                          <p>
-                            {{schedule.tour_dateDeparture}}
+                          <p class="dateDeparture">
+                            {{schedule.tour_dateDeparture | date('d-m-Y')}}
                           </p>
                         </td>
                         <td>
                           <p>
-                            {{schedule.tour_dateEnd}}
+                            {{schedule.tour_dateEnd | date('d-m-Y')}}
                           </p>
                         </td>
                         <td>
@@ -164,8 +166,8 @@ emails_date_format = "Y-m-d"
                           <p>${{ schedule.cost_tour }} US</p>
                         </td>
                         <td>
-                          <button class="cstm_button group_archive_book_button"
-                            id="{{schedule.tour_dateDeparture}}">Book</button>
+                          <a href="{{GroupTours.property('recordPage') ? GroupTours.property('recordPage')|page({(GroupTours.paramName('recordPageSlug')):(record.slug)})}}"
+                            class="cstm_button group_archive_book_button">Book</a>
                         </td>
                       </tr>
                       {% endfor %}
@@ -189,66 +191,6 @@ emails_date_format = "Y-m-d"
 
         </div>
       </div>
-
-      <div id="book_tour">
-        <div class="row">
-          <div class="col-sm-12">
-            <div id="content">
-              <h2>Book tour</h2>
-              <form data-request="{{ BottomForm }}::onFormSubmit" class="">
-
-                {{ form_token() }}
-
-                <div id="{{ BottomForm }}_forms_flash"></div>
-
-                <div class="form-group">
-                  <input type="hidden" id="tourName" name="tour name" class="form-control" value="{{ record.name }}">
-                </div>
-
-                <div class="form-group">
-                  <input type="text" id="name" name="name" class="form-control" placeholder="Your name" required>
-                </div>
-
-                <h4>Departure</h4>
-                <div class="form-group">
-
-                  <select name="available_departure_select" class="available_departure_select">
-                    {% for record in GroupTours.items %}
-                    <option value="{{record.date}}">
-                      {{record.date}}
-                    </option>
-                    {% for schedule in record.schedule_tours %}
-                    <option value="{{schedule.tour_dateDeparture}}">{{schedule.tour_dateDeparture}}
-                    </option>
-                    {% endfor %}
-                    {% endfor %}
-
-                  </select>
-
-                </div>
-
-                <div class="form-group">
-                  <input type="text" id="email" name="email" class="form-control" placeholder="Your email" required>
-                </div>
-
-
-
-                <div class="form-group">
-                  <textarea id="message" name="message" class="form-control" cols="40" rows="5"
-                    placeholder="Your message" required></textarea>
-                </div>
-
-                <button id="simpleContactSubmitButton" type="submit" class="btn btn-default cstm_button submit" style="background: #2cb1b6;
-                  border: 0; ">send</button>
-
-
-
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-
     </div>
     <div class="col-sm-3">
 
@@ -280,21 +222,34 @@ emails_date_format = "Y-m-d"
 
 
 <script>
-  $(document).ready(function () {
-    $(".dates_table_archive .group_archive_book_button").click(function () {
-      var text = $(this).attr('id');
-      $(".available_departure_select option[value='" + text + "']").attr('selected', 'selected');
-    });
+  $("table tr td").each(function (index) {
+    var str = $(this).find('.available').text().split(" ").pop();
+    $(this).find('.available').addClass(str);
+
+    var str1 = $(this).find('.available').text();
+    var lastIndex = str1.lastIndexOf(" ");
+    str1 = str1.substring(0, lastIndex);
+    $(this).find('.available').text('').append(str1);
+    if ($(this).find('.available').hasClass('not_available')) {
+      $(this).parent().remove();
+    }
   });
 
-  $('.available').addClass(ssdfd);
-  
-  $("table td p").each(function (index) {
-    var ser = $(this).text();
-    var ssdfd = ser.split(" ").pop();
-    $(this).addClass(ssdfd);
+
+
+
+  $(".s_archive_group .table tbody").each(function (index) {
+    if ($(this).html().trim() === '') {
+      $(this).parents().eq(2).remove();
+    }
   });
-</script>";s:5:"mtime";i:1612280694;s:6:"markup";s:7569:"<style>
+
+  $(".s_archive_group .table tbody .available").each(function (index) {
+    if ($(this).html().trim() === '') {
+      $(this).parents().eq(1).remove();
+    }
+  });
+</script>";s:5:"mtime";i:1612448820;s:6:"markup";s:6177:"<style>
   #sidebar h4,
   #book_tour h4,
   #sidebar .form-group select,
@@ -339,7 +294,7 @@ emails_date_format = "Y-m-d"
 
 
         <div class="row">
-          <div class="col-sm-12">
+          <div class="col-sm-12" style="width: 100%">
             <div id="content" class="group_archive" style="font-family: inherit;">
 
 
@@ -368,14 +323,14 @@ emails_date_format = "Y-m-d"
 
                       <tr>
                         <td>
-                          <p>
-                            {{record.date1}}
+                          <p class="dateDeparture">
+                            {{record.date1 | date('d-m-Y')}}
                           </p>
                         </td>
 
                         <td>
                           <p>
-                            {{record.date2}}
+                            {{record.date2 | date('d-m-Y')}}
                           </p>
                         </td>
                         <td>
@@ -385,20 +340,21 @@ emails_date_format = "Y-m-d"
                           <p>${{record.tour_cost}} US</p>
                         </td>
                         <td>
-                          <button class="cstm_button group_archive_book_button" id="{{record.date}}">Book</button>
+                          <a href="{{GroupTours.property('recordPage') ? GroupTours.property('recordPage')|page({(GroupTours.paramName('recordPageSlug')):(record.slug)})}}"
+                            class="cstm_button group_archive_book_button">Book</a>
                         </td>
                       </tr>
 
                       {% for schedule in record.schedule_tours %}
                       <tr>
                         <td>
-                          <p>
-                            {{schedule.tour_dateDeparture}}
+                          <p class="dateDeparture">
+                            {{schedule.tour_dateDeparture | date('d-m-Y')}}
                           </p>
                         </td>
                         <td>
                           <p>
-                            {{schedule.tour_dateEnd}}
+                            {{schedule.tour_dateEnd | date('d-m-Y')}}
                           </p>
                         </td>
                         <td>
@@ -408,8 +364,8 @@ emails_date_format = "Y-m-d"
                           <p>${{ schedule.cost_tour }} US</p>
                         </td>
                         <td>
-                          <button class="cstm_button group_archive_book_button"
-                            id="{{schedule.tour_dateDeparture}}">Book</button>
+                          <a href="{{GroupTours.property('recordPage') ? GroupTours.property('recordPage')|page({(GroupTours.paramName('recordPageSlug')):(record.slug)})}}"
+                            class="cstm_button group_archive_book_button">Book</a>
                         </td>
                       </tr>
                       {% endfor %}
@@ -433,66 +389,6 @@ emails_date_format = "Y-m-d"
 
         </div>
       </div>
-
-      <div id="book_tour">
-        <div class="row">
-          <div class="col-sm-12">
-            <div id="content">
-              <h2>Book tour</h2>
-              <form data-request="{{ BottomForm }}::onFormSubmit" class="">
-
-                {{ form_token() }}
-
-                <div id="{{ BottomForm }}_forms_flash"></div>
-
-                <div class="form-group">
-                  <input type="hidden" id="tourName" name="tour name" class="form-control" value="{{ record.name }}">
-                </div>
-
-                <div class="form-group">
-                  <input type="text" id="name" name="name" class="form-control" placeholder="Your name" required>
-                </div>
-
-                <h4>Departure</h4>
-                <div class="form-group">
-
-                  <select name="available_departure_select" class="available_departure_select">
-                    {% for record in GroupTours.items %}
-                    <option value="{{record.date}}">
-                      {{record.date}}
-                    </option>
-                    {% for schedule in record.schedule_tours %}
-                    <option value="{{schedule.tour_dateDeparture}}">{{schedule.tour_dateDeparture}}
-                    </option>
-                    {% endfor %}
-                    {% endfor %}
-
-                  </select>
-
-                </div>
-
-                <div class="form-group">
-                  <input type="text" id="email" name="email" class="form-control" placeholder="Your email" required>
-                </div>
-
-
-
-                <div class="form-group">
-                  <textarea id="message" name="message" class="form-control" cols="40" rows="5"
-                    placeholder="Your message" required></textarea>
-                </div>
-
-                <button id="simpleContactSubmitButton" type="submit" class="btn btn-default cstm_button submit" style="background: #2cb1b6;
-                  border: 0; ">send</button>
-
-
-
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-
     </div>
     <div class="col-sm-3">
 
@@ -524,18 +420,31 @@ emails_date_format = "Y-m-d"
 
 
 <script>
-  $(document).ready(function () {
-    $(".dates_table_archive .group_archive_book_button").click(function () {
-      var text = $(this).attr('id');
-      $(".available_departure_select option[value='" + text + "']").attr('selected', 'selected');
-    });
+  $("table tr td").each(function (index) {
+    var str = $(this).find('.available').text().split(" ").pop();
+    $(this).find('.available').addClass(str);
+
+    var str1 = $(this).find('.available').text();
+    var lastIndex = str1.lastIndexOf(" ");
+    str1 = str1.substring(0, lastIndex);
+    $(this).find('.available').text('').append(str1);
+    if ($(this).find('.available').hasClass('not_available')) {
+      $(this).parent().remove();
+    }
   });
 
-  $('.available').addClass(ssdfd);
-  
-  $("table td p").each(function (index) {
-    var ser = $(this).text();
-    var ssdfd = ser.split(" ").pop();
-    $(this).addClass(ssdfd);
+
+
+
+  $(".s_archive_group .table tbody").each(function (index) {
+    if ($(this).html().trim() === '') {
+      $(this).parents().eq(2).remove();
+    }
   });
-</script>";s:4:"code";N;s:5:"title";s:11:"Group-tours";s:3:"url";s:12:"/group-tours";s:6:"layout";s:11:"group-tours";s:9:"is_hidden";s:1:"0";s:33:"grouptoursbanner_groupToursBanner";s:61:"/how-to-prepare-for-a-hot-air-balloon-ride-in-cappadocia-.jpg";s:23:"recordDetail TourDetail";a:7:{s:10:"activeOnly";s:1:"0";s:10:"recordSlug";s:11:"{{ :slug }}";s:8:"areaSlug";s:4:"tury";s:12:"categorySlug";s:21:"{{ :gruppovye-tury }}";s:15:"useMainCategory";s:1:"1";s:12:"categoryPage";s:1:"0";s:16:"categoryPageSlug";s:15:"{{ :category }}";}s:18:"records GroupTours";a:11:{s:10:"activeOnly";s:1:"0";s:8:"areaSlug";s:1:"0";s:12:"categorySlug";s:14:"gruppovye-tury";s:18:"useMultiCategories";s:1:"1";s:7:"tagSlug";s:10:"{{ :tag }}";s:10:"recordPage";s:18:"group-tours-detail";s:14:"recordPageSlug";s:11:"{{ :slug }}";s:5:"limit";s:2:"10";s:8:"pageSlug";s:11:"{{ :page }}";s:7:"orderBy";s:4:"name";s:16:"orderByDirection";s:3:"ASC";}s:11:"genericForm";a:9:{s:16:"messages_success";s:65:"Ваша форма была успешно отправлена!";s:15:"messages_errors";s:61:"В вашей заявке содержатся ошибки.";s:13:"inline_errors";s:8:"disabled";s:13:"sanitize_data";s:8:"disabled";s:12:"anonymize_ip";s:8:"disabled";s:15:"recaptcha_theme";s:5:"light";s:14:"recaptcha_type";s:5:"image";s:14:"recaptcha_size";s:6:"normal";s:18:"emails_date_format";s:5:"Y-m-d";}s:17:"siteSearchInclude";a:0:{}s:22:"genericForm BottomForm";a:9:{s:16:"messages_success";s:65:"Ваша форма была успешно отправлена!";s:15:"messages_errors";s:61:"В вашей заявке содержатся ошибки.";s:13:"inline_errors";s:8:"disabled";s:13:"sanitize_data";s:8:"disabled";s:12:"anonymize_ip";s:8:"disabled";s:15:"recaptcha_theme";s:5:"light";s:14:"recaptcha_type";s:5:"image";s:14:"recaptcha_size";s:6:"normal";s:18:"emails_date_format";s:5:"Y-m-d";}}}
+
+  $(".s_archive_group .table tbody .available").each(function (index) {
+    if ($(this).html().trim() === '') {
+      $(this).parents().eq(1).remove();
+    }
+  });
+</script>";s:4:"code";N;s:5:"title";s:11:"Group-tours";s:3:"url";s:12:"/group-tours";s:6:"layout";s:11:"group-tours";s:9:"is_hidden";s:1:"0";s:33:"grouptoursbanner_groupToursBanner";s:61:"/how-to-prepare-for-a-hot-air-balloon-ride-in-cappadocia-.jpg";s:23:"recordDetail TourDetail";a:7:{s:10:"activeOnly";s:1:"0";s:10:"recordSlug";s:11:"{{ :slug }}";s:8:"areaSlug";s:4:"tury";s:12:"categorySlug";s:21:"{{ :gruppovye-tury }}";s:15:"useMainCategory";s:1:"1";s:12:"categoryPage";s:1:"0";s:16:"categoryPageSlug";s:15:"{{ :category }}";}s:18:"records GroupTours";a:12:{s:10:"activeOnly";s:1:"0";s:8:"areaSlug";s:1:"0";s:12:"categorySlug";s:14:"gruppovye-tury";s:18:"useMultiCategories";s:1:"1";s:7:"tagSlug";s:10:"{{ :tag }}";s:10:"recordPage";s:18:"group-tours-detail";s:14:"recordPageSlug";s:11:"{{ :slug }}";s:10:"allowLimit";s:1:"0";s:5:"limit";s:2:"10";s:8:"pageSlug";s:11:"{{ :page }}";s:7:"orderBy";s:4:"name";s:16:"orderByDirection";s:3:"ASC";}s:11:"genericForm";a:9:{s:16:"messages_success";s:65:"Ваша форма была успешно отправлена!";s:15:"messages_errors";s:61:"В вашей заявке содержатся ошибки.";s:13:"inline_errors";s:8:"disabled";s:13:"sanitize_data";s:8:"disabled";s:12:"anonymize_ip";s:8:"disabled";s:15:"recaptcha_theme";s:5:"light";s:14:"recaptcha_type";s:5:"image";s:14:"recaptcha_size";s:6:"normal";s:18:"emails_date_format";s:5:"Y-m-d";}s:17:"siteSearchInclude";a:0:{}s:22:"genericForm BottomForm";a:9:{s:16:"messages_success";s:65:"Ваша форма была успешно отправлена!";s:15:"messages_errors";s:61:"В вашей заявке содержатся ошибки.";s:13:"inline_errors";s:8:"disabled";s:13:"sanitize_data";s:8:"disabled";s:12:"anonymize_ip";s:8:"disabled";s:15:"recaptcha_theme";s:5:"light";s:14:"recaptcha_type";s:5:"image";s:14:"recaptcha_size";s:6:"normal";s:18:"emails_date_format";s:5:"Y-m-d";}}}

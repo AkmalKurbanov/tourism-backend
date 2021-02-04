@@ -12,19 +12,19 @@ useMainCategory = 1
 categoryPage = 0
 categoryPageSlug = "{{ :category }}"
 
-[records GroupTours]
+[records Tours]
 activeOnly = 0
 areaSlug = 0
-categorySlug = "gruppovye-tury"
+categorySlug = "tury"
 useMultiCategories = 1
 tagSlug = "{{ :tag }}"
-recordPage = "group-tours-detail"
+recordPage = "tour-detail"
 recordPageSlug = "{{ :slug }}"
 allowLimit = 1
 limit = 3
 pageSlug = "{{ :page }}"
 orderBy = "name"
-orderByDirection = "ASC"
+orderByDirection = "DESC"
 
 [genericForm]
 messages_success = "Ваша форма была успешно отправлена!"
@@ -49,6 +49,20 @@ recaptcha_size = "normal"
 emails_date_format = "Y-m-d"
 
 [siteSearchInclude]
+
+[records GroupTours]
+activeOnly = 0
+areaSlug = 0
+categorySlug = "gruppovye-tury"
+useMainCategory = 0
+useMultiCategories = 1
+tagSlug = "{{ :tag }}"
+recordPage = 0
+recordPageSlug = "{{ :record }}"
+limit = 10
+pageSlug = "{{ :page }}"
+orderBy = "name"
+orderByDirection = "ASC"
 ==
 <div id="top" class="lazy"
   style="background-image: url({{ TourDetail.recordDetail.preview_image.getPath | resize(1920, false, { mode: 'crop', quality: '80', extension: 'jpg' })}})">
@@ -58,7 +72,8 @@ emails_date_format = "Y-m-d"
       <div class="row">
         <div class="col-sm-12">
           <p id="breadcrumbs"><span><span><a href="/">Home</a> / <a href="/group-tours">Group tours</a> / <span
-                  class="breadcrumb_last" aria-current="page">{{ TourDetail.recordDetail.name }}</span></span></span></p>
+                  class="breadcrumb_last" aria-current="page">{{ TourDetail.recordDetail.name }}</span></span></span>
+          </p>
           <div class="line_helper" style="background: rgba(255,255,255,.3)"></div>
         </div>
       </div>
@@ -172,14 +187,14 @@ emails_date_format = "Y-m-d"
 
                     <tr>
                       <td>
-                        <p>
-                          {{TourDetail.recordDetail.date}}
+                        <p class="dateDeparture">
+                          {{TourDetail.recordDetail.date1 | date('d-m-Y')}}
                         </p>
                       </td>
 
                       <td>
                         <p>
-                          {{TourDetail.recordDetail.date1}}
+                          {{TourDetail.recordDetail.date2 | date('d-m-Y')}}
                         </p>
                       </td>
                       <td>
@@ -189,8 +204,7 @@ emails_date_format = "Y-m-d"
                         <p>${{TourDetail.recordDetail.tour_cost}} US</p>
                       </td>
                       <td>
-                        <button class="cstm_button group_archive_book_button"
-                          id="{{TourDetail.recordDetail.date}}">Book</button>
+                        <button class="cstm_button group_archive_book_button">Book</button>
                       </td>
                     </tr>
 
@@ -199,13 +213,13 @@ emails_date_format = "Y-m-d"
                     {% for schedule in recordDetail.schedule_tours %}
                     <tr>
                       <td>
-                        <p>
-                          {{schedule.tour_dateDeparture}}
+                        <p class="dateDeparture">
+                          {{schedule.tour_dateDeparture | date('d-m-Y')}}
                         </p>
                       </td>
                       <td>
                         <p>
-                          {{schedule.tour_dateEnd}}
+                          {{schedule.tour_dateEnd | date('d-m-Y')}}
                         </p>
                       </td>
                       <td>
@@ -215,7 +229,7 @@ emails_date_format = "Y-m-d"
                         <p>${{ schedule.cost_tour }} US</p>
                       </td>
                       <td>
-                        <button class="cstm_button group_archive_book_button" id="{{schedule.tour_dateDeparture}}">
+                        <button class="cstm_button group_archive_book_button">
                           Book</button>
                       </td>
                     </tr>
@@ -253,7 +267,7 @@ emails_date_format = "Y-m-d"
                   <img class="ls-is-cached lazyloaded" src="{{image.path}}" alt="">
                 </a>
                 {%endfor%}
-                
+
               </div>
             </div>
           </div>
@@ -339,14 +353,14 @@ emails_date_format = "Y-m-d"
 
                   <tr>
                     <td>
-                      <p>
-                        {{TourDetail.recordDetail.date}}
+                      <p class="dateDeparture">
+                        {{TourDetail.recordDetail.date1 | date('d-m-Y')}}
                       </p>
                     </td>
 
                     <td>
                       <p>
-                        {{TourDetail.recordDetail.date1}}
+                        {{TourDetail.recordDetail.date2 | date('d-m-Y')}}
                       </p>
                     </td>
                     <td>
@@ -356,8 +370,7 @@ emails_date_format = "Y-m-d"
                       <p>${{TourDetail.recordDetail.tour_cost}} US</p>
                     </td>
                     <td>
-                      <button class="cstm_button group_archive_book_button"
-                        id="{{TourDetail.recordDetail.date}}">Book</button>
+                      <button class="cstm_button group_archive_book_button">Book</button>
                     </td>
                   </tr>
 
@@ -378,13 +391,13 @@ emails_date_format = "Y-m-d"
                   {% for schedule in recordDetail.schedule_tours %}
                   <tr>
                     <td>
-                      <p>
-                        {{schedule.tour_dateDeparture}}
+                      <p class="dateDeparture">
+                        {{schedule.tour_dateDeparture | date('d-m-Y')}}
                       </p>
                     </td>
                     <td>
                       <p>
-                        {{schedule.tour_dateEnd}}
+                        {{schedule.tour_dateEnd | date('d-m-Y')}}
                       </p>
                     </td>
                     <td>
@@ -394,8 +407,7 @@ emails_date_format = "Y-m-d"
                       <p>${{ schedule.cost_tour }} US</p>
                     </td>
                     <td>
-                      <button class="cstm_button group_archive_book_button"
-                        id="{{schedule.tour_dateDeparture}}">Book</button>
+                      <button class="cstm_button group_archive_book_button">Book</button>
                     </td>
                   </tr>
                   {% endfor %}
@@ -432,12 +444,12 @@ emails_date_format = "Y-m-d"
                 <div class="panel-body">
                   <div class="custom_gallery justified-gallery" style="height: 724px;" lg-uid="lg1">
 
-                         {% for image in recordDetail.images %}
-                <a data-fancybox="gallery" href="{{image.path}}" class="jg-entry"
-                  style="width: 129px; height: 128.5px; top: 6px; left: 6px; opacity: 1;">
-                  <img class="ls-is-cached lazyloaded" src="{{image.path}}" alt="">
-                </a>
-                {%endfor%}
+                    {% for image in recordDetail.images %}
+                    <a data-fancybox="gallery" href="{{image.path}}" class="jg-entry"
+                      style="width: 129px; height: 128.5px; top: 6px; left: 6px; opacity: 1;">
+                      <img class="ls-is-cached lazyloaded" src="{{image.path}}" alt="">
+                    </a>
+                    {%endfor%}
 
                   </div>
 
@@ -480,7 +492,7 @@ emails_date_format = "Y-m-d"
         </div>
 
 
-     
+
 
       </div>
 
@@ -509,17 +521,7 @@ emails_date_format = "Y-m-d"
                 <h4>Departure</h4>
                 <div class="form-group">
 
-                  <select name="available_departure_select" class="available_departure_select">
-
-                    <option value="{{TourDetail.recordDetail.date}}">
-                      {{TourDetail.recordDetail.date}}
-                    </option>
-                    {% for schedule in recordDetail.schedule_tours %}
-                    <option value="{{schedule.tour_dateDeparture}}">{{schedule.tour_dateDeparture}}
-                    </option>
-                    {% endfor %}
-
-                  </select>
+                  <select name="available_departure_select" class="available_departure_select"></select>
 
                 </div>
 
@@ -551,11 +553,11 @@ emails_date_format = "Y-m-d"
         <div class="row">
 
 
-          {% for record in GroupTours.items %}
+          {% for record in Tours.items %}
           <div class="col-sm-4">
             <div class="item item_tour with_border auto_height ">
               <a
-                href="{{GroupTours.property('recordPage') ? GroupTours.property('recordPage')|page({(GroupTours.paramName('recordPageSlug')):(record.slug)})}}">
+                href="{{Tours.property('recordPage') ? Tours.property('recordPage')|page({(Tours.paramName('recordPageSlug')):(record.slug)})}}">
                 <span class="img_wrapper">
                   <span class="img lazy"
                     style="background-image: url(&quot;{{ record.preview_image.getPath | resize(265, false, { mode: 'crop', quality: '80', extension: 'jpg' })}}&quot;);"
@@ -653,10 +655,43 @@ emails_date_format = "Y-m-d"
 
 
 
-  $(document).ready(function () {
-    $(".dates_table_archive .group_archive_book_button").click(function () {
-      var text = $(this).attr('id');
-      $(".available_departure_select option[value='" + text + "']").attr('selected', 'selected');
-    });
+  $("table tr td").each(function (index) {
+    var str = $(this).find('.available').text().split(" ").pop();
+    $(this).find('.available').addClass(str);
+
+    var str1 = $(this).find('.available').text();
+    var lastIndex = str1.lastIndexOf(" ");
+    str1 = str1.substring(0, lastIndex);
+    $(this).find('.available').text('').append(str1);
+    if ($(this).find('.available').hasClass('not_available')) {
+      $(this).parent().remove();
+    }
+
+  });
+
+
+
+  var dateDeparture = [];
+  $(".dateDeparture").each(function (index) {
+    if ($(this).is(":visible")) {
+      dateDeparture.push($(this).text().replace(/\s+/g, ' ').trim());
+    }
+  });
+
+
+  $.each(dateDeparture, function () {
+    $('.available_departure_select').append(`<option value="${this}">` + this + '</option>');
+  });
+
+  $(".s_archive_group .table tbody").each(function (index) {
+    if ($(this).html().trim() === '') {
+      $(this).parents().eq(2).remove();
+    }
+  });
+
+  $(".s_archive_group .table tbody .available").each(function (index) {
+    if ($(this).html().trim() === '') {
+      $(this).parents().eq(1).remove();
+    }
   });
 </script>

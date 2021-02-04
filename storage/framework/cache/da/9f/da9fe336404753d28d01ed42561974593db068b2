@@ -1,5 +1,5 @@
-1612281157a:1:{s:9:"tours.htm";a:13:{s:8:"fileName";s:9:"tours.htm";s:7:"content";s:3803:"title = "Tours"
-url = "/tours/"
+1612450840a:1:{s:9:"tours.htm";a:13:{s:8:"fileName";s:9:"tours.htm";s:7:"content";s:3354:"title = "Tours"
+url = "/tours"
 layout = "static-layout"
 is_hidden = 0
 toursbanner_ToursBanner = "/uploaded-files/deal3.jpg"
@@ -14,8 +14,8 @@ useMultiCategories = 1
 tagSlug = "{{ :tag }}"
 recordPage = "tour-detail"
 recordPageSlug = "{{ :slug }}"
-allowLimit = 0
-limit = 1
+allowLimit = 1
+limit = 6
 pageSlug = "{{ :page }}"
 orderBy = "name"
 orderByDirection = "ASC"
@@ -34,7 +34,6 @@ emails_date_format = "Y-m-d"
 
 [siteSearchInclude]
 ==
-
 <div class="small_top lazy" id="top" style="background-image: url({{ this.page.toursbanner_ToursBanner | media | resize(1920, false, { mode: 'crop', quality: '80', extension: 'jpg' })}})">
 
 
@@ -79,10 +78,10 @@ emails_date_format = "Y-m-d"
 
 
         <div class="row">
-
+            
 
           {% for record in AllTours.items %}
-
+          
           <div class="col-sm-4">
 
             <div class="item item_tour with_border auto_height ">
@@ -103,7 +102,7 @@ emails_date_format = "Y-m-d"
 
 
           </div>
-
+          
           {% endfor %}
 
 
@@ -116,20 +115,7 @@ emails_date_format = "Y-m-d"
 
       </div>
 
-
-
-
-      <div id="pagin_wrapper">
-
-
-
-        <nav class="navigation pagination" role="navigation" aria-label=" ">
-          <h2 class="screen-reader-text"> </h2>
-          <div class="nav-links"><span aria-current="page" class="page-numbers current">1</span>
-            <a class="page-numbers" href="https://kyrgyzstan-tourism.com/tours/page/2/">2</a>
-            <a class="next page-numbers" href="https://kyrgyzstan-tourism.com/tours/page/2/">Next »</a></div>
-        </nav>
-      </div>
+  {{ AllTours.items|raw }}
     </div>
 
 
@@ -148,7 +134,7 @@ emails_date_format = "Y-m-d"
     </div>
   </div>
 </div>
-</div>";s:5:"mtime";i:1612274264;s:6:"markup";s:2920:"<div class="small_top lazy" id="top" style="background-image: url({{ this.page.toursbanner_ToursBanner | media | resize(1920, false, { mode: 'crop', quality: '80', extension: 'jpg' })}})">
+</div>";s:5:"mtime";i:1612360016;s:6:"markup";s:2474:"<div class="small_top lazy" id="top" style="background-image: url({{ this.page.toursbanner_ToursBanner | media | resize(1920, false, { mode: 'crop', quality: '80', extension: 'jpg' })}})">
 
 
 
@@ -192,10 +178,10 @@ emails_date_format = "Y-m-d"
 
 
         <div class="row">
-
+            
 
           {% for record in AllTours.items %}
-
+          
           <div class="col-sm-4">
 
             <div class="item item_tour with_border auto_height ">
@@ -216,7 +202,7 @@ emails_date_format = "Y-m-d"
 
 
           </div>
-
+          
           {% endfor %}
 
 
@@ -229,20 +215,7 @@ emails_date_format = "Y-m-d"
 
       </div>
 
-
-
-
-      <div id="pagin_wrapper">
-
-
-
-        <nav class="navigation pagination" role="navigation" aria-label=" ">
-          <h2 class="screen-reader-text"> </h2>
-          <div class="nav-links"><span aria-current="page" class="page-numbers current">1</span>
-            <a class="page-numbers" href="https://kyrgyzstan-tourism.com/tours/page/2/">2</a>
-            <a class="next page-numbers" href="https://kyrgyzstan-tourism.com/tours/page/2/">Next »</a></div>
-        </nav>
-      </div>
+  {{ AllTours.items|raw }}
     </div>
 
 
@@ -261,4 +234,4 @@ emails_date_format = "Y-m-d"
     </div>
   </div>
 </div>
-</div>";s:4:"code";N;s:5:"title";s:5:"Tours";s:3:"url";s:7:"/tours/";s:6:"layout";s:13:"static-layout";s:9:"is_hidden";s:1:"0";s:23:"toursbanner_ToursBanner";s:25:"/uploaded-files/deal3.jpg";s:16:"records AllTours";a:15:{s:10:"activeOnly";s:1:"0";s:13:"favouriteOnly";s:1:"0";s:8:"areaSlug";s:1:"0";s:12:"categorySlug";s:4:"tury";s:15:"useMainCategory";s:1:"0";s:18:"useMultiCategories";s:1:"1";s:7:"tagSlug";s:10:"{{ :tag }}";s:10:"recordPage";s:11:"tour-detail";s:14:"recordPageSlug";s:11:"{{ :slug }}";s:10:"allowLimit";s:1:"0";s:5:"limit";s:1:"1";s:8:"pageSlug";s:11:"{{ :page }}";s:7:"orderBy";s:4:"name";s:16:"orderByDirection";s:3:"ASC";s:17:"orderAsCollection";s:1:"0";}s:11:"genericForm";a:9:{s:16:"messages_success";s:65:"Ваша форма была успешно отправлена!";s:15:"messages_errors";s:61:"В вашей заявке содержатся ошибки.";s:13:"inline_errors";s:8:"disabled";s:13:"sanitize_data";s:8:"disabled";s:12:"anonymize_ip";s:8:"disabled";s:15:"recaptcha_theme";s:5:"light";s:14:"recaptcha_type";s:5:"image";s:14:"recaptcha_size";s:6:"normal";s:18:"emails_date_format";s:5:"Y-m-d";}s:17:"siteSearchInclude";a:0:{}}}
+</div>";s:4:"code";N;s:5:"title";s:5:"Tours";s:3:"url";s:6:"/tours";s:6:"layout";s:13:"static-layout";s:9:"is_hidden";s:1:"0";s:23:"toursbanner_ToursBanner";s:25:"/uploaded-files/deal3.jpg";s:16:"records AllTours";a:15:{s:10:"activeOnly";s:1:"0";s:13:"favouriteOnly";s:1:"0";s:8:"areaSlug";s:1:"0";s:12:"categorySlug";s:4:"tury";s:15:"useMainCategory";s:1:"0";s:18:"useMultiCategories";s:1:"1";s:7:"tagSlug";s:10:"{{ :tag }}";s:10:"recordPage";s:11:"tour-detail";s:14:"recordPageSlug";s:11:"{{ :slug }}";s:10:"allowLimit";s:1:"1";s:5:"limit";s:1:"6";s:8:"pageSlug";s:11:"{{ :page }}";s:7:"orderBy";s:4:"name";s:16:"orderByDirection";s:3:"ASC";s:17:"orderAsCollection";s:1:"0";}s:11:"genericForm";a:9:{s:16:"messages_success";s:65:"Ваша форма была успешно отправлена!";s:15:"messages_errors";s:61:"В вашей заявке содержатся ошибки.";s:13:"inline_errors";s:8:"disabled";s:13:"sanitize_data";s:8:"disabled";s:12:"anonymize_ip";s:8:"disabled";s:15:"recaptcha_theme";s:5:"light";s:14:"recaptcha_type";s:5:"image";s:14:"recaptcha_size";s:6:"normal";s:18:"emails_date_format";s:5:"Y-m-d";}s:17:"siteSearchInclude";a:0:{}}}

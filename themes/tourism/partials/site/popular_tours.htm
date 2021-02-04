@@ -5,7 +5,7 @@ activeOnly = 0
 areaSlug = 0
 categorySlug = "populyarnye-tury"
 useMainCategory = 1
-useMultiCategories = 1
+useMultiCategories = 0
 tagSlug = "{{ :tag }}"
 recordPage = "tour-detail"
 recordPageSlug = "{{ :slug }}"
@@ -16,7 +16,7 @@ orderByDirection = "ASC"
 ==
 {% for record in PopularTours.items %}
 
-<div class="item item_tour   ">
+<div class="item item_tour swiper-slide">
   <a
     href="{{PopularTours.property('recordPage') ? PopularTours.property('recordPage')|page({(PopularTours.paramName('recordPageSlug')):(record.slug)})}}">
     <span class="img_wrapper">

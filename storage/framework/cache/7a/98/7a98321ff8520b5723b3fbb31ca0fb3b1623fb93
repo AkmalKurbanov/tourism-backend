@@ -1,4 +1,4 @@
-1612281157a:1:{s:17:"sights-detail.htm";a:12:{s:8:"fileName";s:17:"sights-detail.htm";s:7:"content";s:2241:"title = "Sights-detail"
+1612450840a:1:{s:17:"sights-detail.htm";a:12:{s:8:"fileName";s:17:"sights-detail.htm";s:7:"content";s:2241:"title = "Sights-detail"
 url = "/sights-detail/:slug"
 layout = "static-layout"
 is_hidden = 0

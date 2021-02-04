@@ -88,14 +88,31 @@ orderByDirection = "ASC"
         <div class="hm-about">
 
           <p>
-            <img style="float: left; margin-right: 35px; margin-top: 30px;" src="{{this.theme.introduction_logo.path}}"
+            <img style="float: left; margin-right: 35px; margin-top: 30px; max-width: 300px; width: 100%;" src="{{this.theme.introduction_logo.path}}"
               alt="">
           </p>
 
           <p>{{this.theme.introduction_text | raw}}</p>
-<style>
-.hm-about{background:#fff;padding:50px;border-bottom:4px solid #005271;margin-bottom:30px}.main-h{font-size:50px!important}.sub-h{font-weight:bold;font-size:22px;margin-top:-6px;color:#fff;text-shadow:0 2px 2px rgba(0,0,0,.3)}
-</style>
+          <style>
+            .hm-about {
+              background: #fff;
+              padding: 50px;
+              border-bottom: 4px solid #005271;
+              margin-bottom: 30px
+            }
+
+            .main-h {
+              font-size: 50px !important
+            }
+
+            .sub-h {
+              font-weight: bold;
+              font-size: 22px;
+              margin-top: -6px;
+              color: #fff;
+              text-shadow: 0 2px 2px rgba(0, 0, 0, .3)
+            }
+          </style>
         </div>
         <p>&nbsp;</p>
       </div>
@@ -118,20 +135,19 @@ orderByDirection = "ASC"
 
 
 
-        <h2 class="with_line"><a href="https://kyrgyzstan-tourism.com/group-tours/">GROUP TOURS 2021</a>
-        </h2>
+        <h2 class="with_line">GROUP TOURS 2021</h2>
 
 
         <div class="tour_slider" id="discounts_slider_wrapper" data-count="3">
 
 
-          <button class='btn btn-default leftRs slider_arrow' data-slider="discounts_slider"><i
+          <button class='btn btn-default leftRs slider_arrow'><i
               class="fa fa-chevron-left"></i></button>
 
 
-          <div class="resCarousel" data-items="1,2,3,3" data-slide="1" id="discounts_slider">
+          <div class="resCarousel swiper-container groupTours-js">
 
-            <div class="resCarousel-inner">
+            <div class="swiper-wrapper">
 
 
 
@@ -157,7 +173,7 @@ orderByDirection = "ASC"
           </div>
 
 
-          <button class='btn btn-default rightRs slider_arrow' data-slider="discounts_slider"><i
+          <button class='btn btn-default rightRs slider_arrow'><i
               class="fa fa-chevron-right"></i></button>
 
 
@@ -191,37 +207,28 @@ orderByDirection = "ASC"
   </div>
 </div>
 
-<div class="lazy" id="most_popular_tours" style=""
-  data-bg="url(https://kyrgyzstan-tourism.com/wp-content/themes/native/img/about_bg.jpg)">
+<div class="lazy" id="most_popular_tours"
+  style="background-image: url({{ 'assets/images/popular_bg.jpg'|theme }});">
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
 
         <h2 class="with_line">MOST POPULAR KYRGYZSTAN TOURS</h2>
 
-        <div class="tour_slider" id="most_popular_slider_wrapper" data-count="21">
+        <div class="tour_slider" id="most_popular_slider_wrapper">
 
 
-          <button class='btn btn-default leftRs slider_arrow' data-slider="most_popular_slider"><i
+          <button class='btn btn-default leftRs slider_arrow sliderLeftArrow'><i
               class="fa fa-chevron-left"></i></button>
 
 
-          <div class="resCarousel" data-items="1,2,3,3" data-slide="1" id="most_popular_slider">
+          <div class="resCarousel swiper-container slider-js">
 
-            <div class="resCarousel-inner">
+            <div class="swiper-wrapper">
 
 
 
               {% partial 'site/popular_tours' %}
-
-
-
-
-
-
-
-
-
 
 
 
@@ -232,7 +239,7 @@ orderByDirection = "ASC"
           </div>
 
 
-          <button class='btn btn-default rightRs slider_arrow' data-slider="most_popular_slider"><i
+          <button class='btn btn-default rightRs slider_arrow sliderRightArrow' data-slider="most_popular_slider"><i
               class="fa fa-chevron-right"></i></button>
 
 
@@ -250,16 +257,16 @@ orderByDirection = "ASC"
 
         <h2 class="with_line">DEALS AND DISCOUNTS</h2>
 
-        <div class="tour_slider" id="discounts_slider_wrapper" data-count="5">
+        <div class="tour_slider">
 
 
-          <button class='btn btn-default leftRs slider_arrow' data-slider="discounts_slider"><i
+          <button class='btn btn-default leftRs slider_arrow discountsLeftArrow'><i
               class="fa fa-chevron-left"></i></button>
 
 
-          <div class="resCarousel" data-items="1,2,3,4" data-slide="1" id="discounts_slider">
+          <div class="resCarousel swiper-container discounts-js">
 
-            <div class="resCarousel-inner">
+            <div class="swiper-wrapper">
 
 
               {% partial 'site/discount_tours' %}
@@ -276,7 +283,7 @@ orderByDirection = "ASC"
           </div>
 
 
-          <button class='btn btn-default rightRs slider_arrow' data-slider="discounts_slider"><i
+          <button class='btn btn-default rightRs slider_arrow discountsRightArrow'><i
               class="fa fa-chevron-right"></i></button>
 
 
@@ -295,44 +302,40 @@ orderByDirection = "ASC"
       <div class="col-sm-6">
         <h2 class="with_line with_big_line text-center">LATEST POST</h2>
 
-  {% set posts = blogPosts.posts %}
-   {% for post in posts %}
+        {% set posts = blogPosts.posts %}
+        {% for post in posts %}
         <div class="latest_post">
-          <a href="{{ post.url }}"
-            class="img_link">
+          <a href="{{ post.url }}" class="img_link">
             {% for image in post.featured_images|slice(0,1) %}
             <span class="img lazy"
               style="background-image: url('{{image.path | resize(555, false, { mode: 'crop', quality: '80', extension: 'jpg' })}}');"></span>
-             {% endfor %}
+            {% endfor %}
           </a>
 
         </div>
         <div class="excerpt latest_post_excerpt">
-          <h4><a
-              href="{{ post.url }}">{{ post.title }}</a></h4>
+          <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
           <div class="text-center">
             <p>{{post.excerpt}}</p>
           </div>
           <div class="text-center">
-            <a href="{{ post.url }}"
-              class="cstm_button round lblue">Read more <i class="fas fa-arrow-right"></i></a>
+            <a href="{{ post.url }}" class="cstm_button round lblue">Read more <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
 
-{% endfor %}
+        {% endfor %}
 
       </div>
 
       <div class="col-sm-6">
         <h2 class="with_line with_big_line text-center">REVIEWS</h2>
 
- {% for record in Reviews.items %}
+        {% for record in Reviews.items %}
         <div class="s_review">
           <div class="row">
             <div class="col-sm-3">
               <img alt="review"
                 src="{{ record.preview_image.getPath | resize(104, false, { mode: 'crop', quality: '80', extension: 'jpg' })}}"
-               
                 class="img-responsive lazyload">
             </div>
             <div class="col-sm-9">
@@ -344,7 +347,9 @@ orderByDirection = "ASC"
                   <p><em>{{ str_words(record.review, 20) }}</em></p>
                 </p>
                 <div class="more">
-                  <a href="{{Reviews.property('recordPage') ? Reviews.property('recordPage')|page({(Reviews.paramName('recordPageSlug')):(record.slug)})}}">Read more
+                  <a
+                    href="{{Reviews.property('recordPage') ? Reviews.property('recordPage')|page({(Reviews.paramName('recordPageSlug')):(record.slug)})}}">Read
+                    more
                     ...</a>
                 </div>
               </div>
@@ -352,14 +357,15 @@ orderByDirection = "ASC"
             </div>
           </div>
         </div>
-{% endfor %}
+        {% endfor %}
 
       </div>
 
     </div>
   </div>
 </div>
-<div class="lazy" id="contact_block" style="background-image: url(https://kyrgyzstan-tourism.com/wp-content/themes/native/img/contact_bg.webp)">
+<div class="lazy" id="contact_block"
+  style="background-image: url({{ 'assets/images/contact_bg.webp'|theme }})">
   <div class="shadow"></div>
   <div class="container">
     <div class="row">
@@ -399,4 +405,4 @@ orderByDirection = "ASC"
     </div>
   </div>
 </div>
-</div>
+<!-- </div> -->

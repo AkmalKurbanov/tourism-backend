@@ -151,14 +151,14 @@ class __TwigTemplate_2551e8953e505151923f9f0ed06570f94524cceb36799f9e77346b80986
     <div class=\"form-group\">
 
       <select name=\"available_departure_select\" class=\"available_departure_select\">
-
-        <option value=\"";
+sdfsd
+        <!-- <option value=\"";
         // line 60
-        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["TourDetail"] ?? null), "recordDetail", [], "any", false, false, true, 60), "date", [], "any", false, false, true, 60), 60, $this->source), "html", null, true);
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["TourDetail"] ?? null), "recordDetail", [], "any", false, false, true, 60), "date1", [], "any", false, false, true, 60), 60, $this->source), "html", null, true);
         echo "\">
           ";
         // line 61
-        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["TourDetail"] ?? null), "recordDetail", [], "any", false, false, true, 61), "date", [], "any", false, false, true, 61), 61, $this->source), "html", null, true);
+        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["TourDetail"] ?? null), "recordDetail", [], "any", false, false, true, 61), "date1", [], "any", false, false, true, 61), 61, $this->source), "html", null, true);
         echo "
         </option>
         ";
@@ -178,8 +178,9 @@ class __TwigTemplate_2551e8953e505151923f9f0ed06570f94524cceb36799f9e77346b80986
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['schedule'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 67
-        echo "
+        // line 66
+        echo " -->
+
 
 
 
@@ -277,7 +278,7 @@ class __TwigTemplate_2551e8953e505151923f9f0ed06570f94524cceb36799f9e77346b80986
 
     public function getDebugInfo()
     {
-        return array (  263 => 123,  251 => 117,  245 => 114,  241 => 113,  234 => 109,  228 => 106,  223 => 103,  219 => 102,  182 => 67,  170 => 64,  166 => 63,  161 => 61,  157 => 60,  138 => 48,  131 => 44,  125 => 41,  120 => 39,  115 => 37,  88 => 12,  77 => 9,  74 => 8,  70 => 7,  62 => 1,);
+        return array (  264 => 123,  252 => 117,  246 => 114,  242 => 113,  235 => 109,  229 => 106,  224 => 103,  220 => 102,  182 => 66,  170 => 64,  166 => 63,  161 => 61,  157 => 60,  138 => 48,  131 => 44,  125 => 41,  120 => 39,  115 => 37,  88 => 12,  77 => 9,  74 => 8,  70 => 7,  62 => 1,);
     }
 
     public function getSourceContext()
@@ -340,14 +341,14 @@ class __TwigTemplate_2551e8953e505151923f9f0ed06570f94524cceb36799f9e77346b80986
     <div class=\"form-group\">
 
       <select name=\"available_departure_select\" class=\"available_departure_select\">
-
-        <option value=\"{{TourDetail.recordDetail.date}}\">
-          {{TourDetail.recordDetail.date}}
+sdfsd
+        <!-- <option value=\"{{TourDetail.recordDetail.date1}}\">
+          {{TourDetail.recordDetail.date1}}
         </option>
         {% for schedule in recordDetail.schedule_tours %}
         <option value=\"{{schedule.tour_dateDeparture}}\">{{schedule.tour_dateDeparture}}
         </option>
-        {% endfor %}
+        {% endfor %} -->
 
 
 

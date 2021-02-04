@@ -11,7 +11,8 @@ categorySlug = "{{ :category }}"
 tagSlug = "{{ :tag }}"
 recordPage = "gallery"
 recordPageSlug = "{{ :slug }}"
-limit = 10
+allowLimit = 1
+limit = 6
 pageSlug = "{{ :page }}"
 orderBy = "name"
 orderByDirection = "ASC"
@@ -97,7 +98,7 @@ emails_date_format = "Y-m-d"
           </div>
         </div>
 
-
+{{ records.items|raw }}
 
 
 
