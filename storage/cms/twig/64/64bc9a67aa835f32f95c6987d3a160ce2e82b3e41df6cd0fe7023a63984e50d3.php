@@ -30,13 +30,13 @@ class __TwigTemplate_839aa4bdbae8979376c6500425a8209d13fec05cdd642bbb169872d572d
         ];
         $this->sandbox = $this->env->getExtension('\Twig\Extension\SandboxExtension');
         $tags = array("styles" => 25, "partial" => 36, "for" => 63, "if" => 112, "page" => 154, "framework" => 224, "scripts" => 225);
-        $filters = array("escape" => 6, "theme" => 12);
+        $filters = array("escape" => 6, "theme" => 12, "resize" => 88);
         $functions = array();
 
         try {
             $this->sandbox->checkSecurity(
                 ['styles', 'partial', 'for', 'if', 'page', 'framework', 'scripts'],
-                ['escape', 'theme'],
+                ['escape', 'theme', 'resize'],
                 []
             );
         } catch (SecurityError $e) {
@@ -199,7 +199,7 @@ class __TwigTemplate_839aa4bdbae8979376c6500425a8209d13fec05cdd642bbb169872d572d
           <a href=\"/\" class=\"logo\">
             <img src=\"";
         // line 88
-        echo twig_escape_filter($this->env, $this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 88), "logo", [], "any", false, false, true, 88), "path", [], "any", false, false, true, 88), 88, $this->source), "html", null, true);
+        echo call_user_func_array($this->env->getFilter('resize')->getCallable(), [$this->sandbox->ensureToStringAllowed(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "theme", [], "any", false, false, true, 88), "logo", [], "any", false, false, true, 88), "path", [], "any", false, false, true, 88), 88, $this->source), 100, false, ["mode" => "crop", "quality" => "80", "extension" => "png"]]);
         echo "\" alt=\"\">
           </a>
         </div>
@@ -485,7 +485,7 @@ class __TwigTemplate_839aa4bdbae8979376c6500425a8209d13fec05cdd642bbb169872d572d
 
         <div class=\"col-sm-3\">
           <a href=\"/\" class=\"logo\">
-            <img src=\"{{this.theme.logo.path}}\" alt=\"\">
+            <img src=\"{{this.theme.logo.path | resize(100, false, { mode: 'crop', quality: '80', extension: 'png' })}}\" alt=\"\">
           </a>
         </div>
 

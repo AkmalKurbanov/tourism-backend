@@ -1,4 +1,4 @@
-1612450843a:1:{s:17:"static-layout.htm";a:8:{s:8:"fileName";s:17:"static-layout.htm";s:7:"content";s:6659:"[fontAwesomeCssLink]
+1612467583a:1:{s:17:"static-layout.htm";a:8:{s:8:"fileName";s:17:"static-layout.htm";s:7:"content";s:6729:"[fontAwesomeCssLink]
 
 [staticPage]
 useContent = 1
@@ -7,7 +7,6 @@ default = 0
 [staticMenu]
 code = "menu"
 ==
-
 <!DOCTYPE html>
 <html>
 
@@ -95,7 +94,7 @@ code = "menu"
 
         <div class="col-sm-3">
           <a href="/" class="logo">
-            <img src="{{this.theme.logo.path}}" alt="">
+            <img src="{{this.theme.logo.path | resize(100, false, { mode: 'crop', quality: '80', extension: 'png' })}}" alt="">
           </a>
         </div>
 
@@ -236,7 +235,7 @@ code = "menu"
 
 </body>
 
-</html>";s:5:"mtime";i:1612362175;s:6:"markup";s:6555:"<!DOCTYPE html>
+</html>";s:5:"mtime";i:1612465037;s:6:"markup";s:6627:"<!DOCTYPE html>
 <html>
 
 <head>
@@ -323,7 +322,7 @@ code = "menu"
 
         <div class="col-sm-3">
           <a href="/" class="logo">
-            <img src="{{this.theme.logo.path}}" alt="">
+            <img src="{{this.theme.logo.path | resize(100, false, { mode: 'crop', quality: '80', extension: 'png' })}}" alt="">
           </a>
         </div>
 

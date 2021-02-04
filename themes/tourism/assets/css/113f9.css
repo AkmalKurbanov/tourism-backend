@@ -13,7 +13,7 @@ button.blank {
 }
 
 .cstm_button {
-  background: #2cb1b6;
+  background: #a32330;
   color: #fff;
   text-transform: uppercase;
   font-size: 18px;
@@ -33,7 +33,7 @@ button.blank {
 }
 
 .cstm_button.submit {
-  background: #005271;
+  background: #a32330;
   padding-left: 30px;
   padding-right: 30px
 }
@@ -84,7 +84,7 @@ button {
   left: 0;
   right: 0;
   margin: 0 auto;
-  background: #005271
+  background: #c5354a
 }
 
 .with_big_line {
@@ -114,7 +114,7 @@ textarea {
 }
 
 #header {
-  background: #005271;
+  background: #a32330;
   color: #fff;
   padding-top: 10px;
   font-size: 14px
@@ -206,7 +206,7 @@ textarea {
   bottom: 0;
   right: 0;
   left: 0;
-  background: #2cb1b6
+  background: #e27b8b
 }
 
 #header .navbar-nav li a:hover,
@@ -241,7 +241,7 @@ textarea {
 }
 
 #header .dropdown-menu {
-  background: #005271;
+  background: #a32330;
   text-align: left;
   margin-top: 0;
   padding-top: 0;
@@ -407,7 +407,7 @@ textarea {
 }
 
 .form_wrapper {
-  background: #2cb1b6;
+  background: #a32330;
   padding: 20px;
   padding-bottom: 0;
   position: relative;
@@ -451,7 +451,7 @@ textarea {
   height: 180px;
   display: block;
   overflow: hidden;
-  border-bottom: 3px solid #005271;
+  border-bottom: 3px solid #a32330;
   background: none
 }
 
@@ -477,7 +477,7 @@ textarea {
   font-style: normal;
   overflow: hidden;
   border-bottom: none;
-  background: url("../../assets/images/price-bubble.png") no-repeat bottom right #2cb1b6;
+  background: url("../../assets/images/price-bubble.png") no-repeat bottom right #b14958;
   background-size: contain
 }
 
@@ -521,7 +521,7 @@ textarea {
 }
 
 .item_tour a .duration i {
-  color: #005271;
+  color: #a32330;
 }
 
 .item_tour a:after {
@@ -985,7 +985,7 @@ textarea {
 
 #contact_block form input {
   position: relative;
-  border: 10px solid #2cb1b6;
+  border: 5px solid #a32330;
   height: 60px;
   background: rgba(255, 255, 255, 0.7);
   font-weight: bold;
@@ -994,7 +994,7 @@ textarea {
 }
 
 #contact_block form textarea {
-  border: 10px solid #2cb1b6;
+  border: 5px solid #a32330;
   background: rgba(255, 255, 255, 0.7);
   font-weight: bold
 }
@@ -1016,10 +1016,18 @@ textarea {
 }
 
 #footer {
-  background: #334960;
+  background: #a32330;
   color: #959da7;
   padding-top: 30px;
   padding-bottom: 20px
+}
+
+#footer * {
+  color: #fff !important;
+}
+
+#footer i {
+  color: #ffffff;
 }
 
 #footer h2 {
@@ -1122,7 +1130,7 @@ textarea {
 
 .tours-tabs .nav-tabs {
   margin: 0;
-  border-bottom: 3px solid #2cb1b6
+  border-bottom: 3px solid #a32330
 }
 
 .tours-tabs .nav-tabs li {
@@ -1165,7 +1173,7 @@ textarea {
   line-height: 57px;
   margin-top: -3px;
   border: none;
-  background: #2cb1b6;
+  background: #a32330;
   color: #fff
 }
 
@@ -1369,7 +1377,7 @@ textarea {
 
 .dates_table thead,
 .dates_table_archive thead {
-  background: #2cb1b6;
+  background: #a32330;
   color: #fff
 }
 
@@ -1417,7 +1425,7 @@ textarea {
 #book_tour #content form select {
   margin-bottom: 20px;
   width: 100%;
-  border: 3px solid #2cb1b6;
+  border: 3px solid #a32330;
   border-radius: 3px;
   background: #fff;
   outline: none
@@ -1425,17 +1433,17 @@ textarea {
 
 #book_tour #content form input,
 #book_tour #content form textarea {
-  border: 3px solid #2cb1b6
+  border: 3px solid #a32330
 }
 
 #book_tour #content form input[type=submit] {
-  background: #2cb1b6;
+  background: #a32330;
   border: 0
 }
 
 #book_tour #content form input[type=submit]:hover {
   color: #fff;
-  background: #005271
+  background: #a32330
 }
 
 #book_tour h2 {
@@ -5995,4 +6003,13 @@ body .epyt-gallery-img-gdpr {
 .ytvi-story-container {
   display: block;
   max-width: 100%
+}
+
+.form_wrapper .btn.btn-default.cstm_button.submit {
+  background-color: #fff;
+  color: #555;
+}
+
+.form_wrapper .btn.btn-default.cstm_button.submit:hover {
+  background-color: #ccc;
 }

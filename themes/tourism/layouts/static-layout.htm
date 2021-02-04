@@ -7,7 +7,6 @@ default = 0
 [staticMenu]
 code = "menu"
 ==
-
 <!DOCTYPE html>
 <html>
 
@@ -95,7 +94,7 @@ code = "menu"
 
         <div class="col-sm-3">
           <a href="/" class="logo">
-            <img src="{{this.theme.logo.path}}" alt="">
+            <img src="{{this.theme.logo.path | resize(100, false, { mode: 'crop', quality: '80', extension: 'png' })}}" alt="">
           </a>
         </div>
 

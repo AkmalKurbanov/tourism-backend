@@ -107,7 +107,7 @@ emails_date_format = "Y-m-d"
 
         <div class="col-sm-3">
           <a href="/" class="logo">
-            <img src="{{this.theme.logo.path}}" alt="">
+            <img src="{{this.theme.logo.path | resize(100, false, { mode: 'crop', quality: '80', extension: 'png' })}}" alt="">
           </a>
         </div>
 

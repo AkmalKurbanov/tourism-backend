@@ -25,10 +25,7 @@ emails_date_format = "Y-m-d"
 
 [siteSearchInclude]
 ==
-
-
-
-  <div id="top" class="small_top lazy"
+<div id="top" class="small_top lazy"
     style="background-image: url({{ recordDetail.preview_image.getPath | resize(1920, false, { mode: 'crop', quality: '80', extension: 'jpg' })}});">
 
 
@@ -65,9 +62,9 @@ emails_date_format = "Y-m-d"
 
           <div class="custom_gallery justified-gallery" style="height: 1287px;" lg-uid="lg0">
             {% for image in recordDetail.images %}
-            <a data-fancybox="gallery" href="{{image.path}}" class="jg-entry"
-              style="width: 129px; height: 128.5px; top: 6px; left: 6px; opacity: 1;">
-              <img class="ls-is-cached lazyloaded" src="{{image.path}}" alt="">
+            <a data-fancybox="gallery" href="{{image.path }}" class="jg-entry"
+              style="ывы opacity: 1;">
+              <img class="ls-is-cached lazyloaded" src="{{image.path }}" alt="">
             </a>
             {%endfor%}
         

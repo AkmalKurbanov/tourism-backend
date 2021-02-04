@@ -1,0 +1,61 @@
+1612467590a:1:{s:20:"site/main_slider.htm";a:7:{s:8:"fileName";s:20:"site/main_slider.htm";s:7:"content";s:1166:"[viewBag]
+
+[categories]
+activeOnly = 0
+parentCategorySlug = "tury"
+areaSlug = 0
+categoriesPage = "type-tours"
+categoriesPageSlug = "{{ :category }}"
+categoryPage = "type-tours"
+categoryPageSlug = "{{ :category }}"
+limit = 10
+==
+{% for category in categories.items %}
+<div class="item lazy"
+  style="background-image: url(&quot;{{ category.preview_image.getPath | resize(1920, false, { mode: 'crop', quality: '80', extension: 'jpg' }) }}&quot;);">
+  <div class="carousel-caption">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <h2>{{ category.name }}</h2>
+          <h3>{{ category.description }}</h3>
+          <div class="button_wrapper">
+            <a href="{{categories.property('categoriesPage') ? categories.property('categoriesPage')|page({(categories.paramName('categoriesPageSlug')):(category.slug)})}}"
+              class="cstm_button"><i class="fa fa-eye"></i>
+              view tours</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+
+
+<script>
+  $('#front_slider .item.lazy').first().addClass('active');
+</script>";s:5:"mtime";i:1612275180;s:6:"markup";s:926:"{% for category in categories.items %}
+<div class="item lazy"
+  style="background-image: url(&quot;{{ category.preview_image.getPath | resize(1920, false, { mode: 'crop', quality: '80', extension: 'jpg' }) }}&quot;);">
+  <div class="carousel-caption">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <h2>{{ category.name }}</h2>
+          <h3>{{ category.description }}</h3>
+          <div class="button_wrapper">
+            <a href="{{categories.property('categoriesPage') ? categories.property('categoriesPage')|page({(categories.paramName('categoriesPageSlug')):(category.slug)})}}"
+              class="cstm_button"><i class="fa fa-eye"></i>
+              view tours</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+
+
+<script>
+  $('#front_slider .item.lazy').first().addClass('active');
+</script>";s:4:"code";N;s:7:"viewBag";a:0:{}s:10:"categories";a:8:{s:10:"activeOnly";s:1:"0";s:18:"parentCategorySlug";s:4:"tury";s:8:"areaSlug";s:1:"0";s:14:"categoriesPage";s:10:"type-tours";s:18:"categoriesPageSlug";s:15:"{{ :category }}";s:12:"categoryPage";s:10:"type-tours";s:16:"categoryPageSlug";s:15:"{{ :category }}";s:5:"limit";s:2:"10";}}}

@@ -1,4 +1,4 @@
-1612451212a:1:{s:22:"group-tours-detail.htm";a:15:{s:8:"fileName";s:22:"group-tours-detail.htm";s:7:"content";s:21644:"title = "Group-tours-detail"
+1612468055a:1:{s:22:"group-tours-detail.htm";a:15:{s:8:"fileName";s:22:"group-tours-detail.htm";s:7:"content";s:21663:"title = "Group-tours-detail"
 url = "/group-tours-detail/:slug"
 layout = "group-tours"
 is_hidden = 0
@@ -536,7 +536,8 @@ orderByDirection = "ASC"
                     placeholder="Your message" required></textarea>
                 </div>
 
-                <button id="simpleContactSubmitButton" type="submit" class="btn btn-default cstm_button submit" style="background: #2cb1b6;
+                <button id="simpleContactSubmitButton" type="submit" class="btn btn-default cstm_button submit"
+                  style="background: #a32330;
                   border: 0; ">send</button>
 
 
@@ -694,7 +695,7 @@ orderByDirection = "ASC"
       $(this).parents().eq(1).remove();
     }
   });
-</script>";s:5:"mtime";i:1612450607;s:6:"markup";s:19970:"<div id="top" class="lazy"
+</script>";s:5:"mtime";i:1612467450;s:6:"markup";s:19989:"<div id="top" class="lazy"
   style="background-image: url({{ TourDetail.recordDetail.preview_image.getPath | resize(1920, false, { mode: 'crop', quality: '80', extension: 'jpg' })}})">
 
   <div class="breadcrumb_wrapper">
@@ -1166,7 +1167,8 @@ orderByDirection = "ASC"
                     placeholder="Your message" required></textarea>
                 </div>
 
-                <button id="simpleContactSubmitButton" type="submit" class="btn btn-default cstm_button submit" style="background: #2cb1b6;
+                <button id="simpleContactSubmitButton" type="submit" class="btn btn-default cstm_button submit"
+                  style="background: #a32330;
                   border: 0; ">send</button>
 
 

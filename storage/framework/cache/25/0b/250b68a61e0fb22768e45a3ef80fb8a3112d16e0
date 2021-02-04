@@ -1,4 +1,4 @@
-1612450908a:1:{s:15:"group-tours.htm";a:8:{s:8:"fileName";s:15:"group-tours.htm";s:7:"content";s:5334:"[staticPage]
+1612467596a:1:{s:15:"group-tours.htm";a:8:{s:8:"fileName";s:15:"group-tours.htm";s:7:"content";s:5406:"[staticPage]
 useContent = 1
 default = 0
 
@@ -92,7 +92,7 @@ code = "menu"
 
         <div class="col-sm-3">
           <a href="/" class="logo">
-            <img src="{{this.theme.logo.path}}" alt="">
+            <img src="{{this.theme.logo.path | resize(200, false, { mode: 'crop', quality: '80', extension: 'png' })}}" alt="">
           </a>
         </div>
 
@@ -181,7 +181,7 @@ code = "menu"
 
 </body>
 
-</html>";s:5:"mtime";i:1612159528;s:6:"markup";s:5232:"<!DOCTYPE html>
+</html>";s:5:"mtime";i:1612464808;s:6:"markup";s:5304:"<!DOCTYPE html>
 <html>
 
 <head>
@@ -266,7 +266,7 @@ code = "menu"
 
         <div class="col-sm-3">
           <a href="/" class="logo">
-            <img src="{{this.theme.logo.path}}" alt="">
+            <img src="{{this.theme.logo.path | resize(200, false, { mode: 'crop', quality: '80', extension: 'png' })}}" alt="">
           </a>
         </div>
 

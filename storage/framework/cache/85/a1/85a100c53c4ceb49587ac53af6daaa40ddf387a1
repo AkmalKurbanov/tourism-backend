@@ -1,4 +1,4 @@
-1612450839a:1:{s:11:"gallery.htm";a:12:{s:8:"fileName";s:11:"gallery.htm";s:7:"content";s:2556:"title = "gallery"
+1612467513a:1:{s:11:"gallery.htm";a:12:{s:8:"fileName";s:11:"gallery.htm";s:7:"content";s:2505:"title = "gallery"
 url = "/gallery/:slug"
 layout = "static-layout"
 is_hidden = 0
@@ -25,10 +25,7 @@ emails_date_format = "Y-m-d"
 
 [siteSearchInclude]
 ==
-
-
-
-  <div id="top" class="small_top lazy"
+<div id="top" class="small_top lazy"
     style="background-image: url({{ recordDetail.preview_image.getPath | resize(1920, false, { mode: 'crop', quality: '80', extension: 'jpg' })}});">
 
 
@@ -65,9 +62,9 @@ emails_date_format = "Y-m-d"
 
           <div class="custom_gallery justified-gallery" style="height: 1287px;" lg-uid="lg0">
             {% for image in recordDetail.images %}
-            <a data-fancybox="gallery" href="{{image.path}}" class="jg-entry"
-              style="width: 129px; height: 128.5px; top: 6px; left: 6px; opacity: 1;">
-              <img class="ls-is-cached lazyloaded" src="{{image.path}}" alt="">
+            <a data-fancybox="gallery" href="{{image.path }}" class="jg-entry"
+              style="ывы opacity: 1;">
+              <img class="ls-is-cached lazyloaded" src="{{image.path }}" alt="">
             </a>
             {%endfor%}
         
@@ -96,7 +93,7 @@ emails_date_format = "Y-m-d"
       </div>
 
     </div>
-  </div>";s:5:"mtime";i:1612274167;s:6:"markup";s:1860:"<div id="top" class="small_top lazy"
+  </div>";s:5:"mtime";i:1612464070;s:6:"markup";s:1817:"<div id="top" class="small_top lazy"
     style="background-image: url({{ recordDetail.preview_image.getPath | resize(1920, false, { mode: 'crop', quality: '80', extension: 'jpg' })}});">
 
 
@@ -133,9 +130,9 @@ emails_date_format = "Y-m-d"
 
           <div class="custom_gallery justified-gallery" style="height: 1287px;" lg-uid="lg0">
             {% for image in recordDetail.images %}
-            <a data-fancybox="gallery" href="{{image.path}}" class="jg-entry"
-              style="width: 129px; height: 128.5px; top: 6px; left: 6px; opacity: 1;">
-              <img class="ls-is-cached lazyloaded" src="{{image.path}}" alt="">
+            <a data-fancybox="gallery" href="{{image.path }}" class="jg-entry"
+              style="ывы opacity: 1;">
+              <img class="ls-is-cached lazyloaded" src="{{image.path }}" alt="">
             </a>
             {%endfor%}
         

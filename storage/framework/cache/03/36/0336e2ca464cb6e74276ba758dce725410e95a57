@@ -1,0 +1,72 @@
+1612467590a:1:{s:23:"site/discount_tours.htm";a:7:{s:8:"fileName";s:23:"site/discount_tours.htm";s:7:"content";s:1261:"[records DealsAndDiscounts]
+activeOnly = 0
+areaSlug = "tury"
+categorySlug = "predlozheniya-i-skidki"
+useMainCategory = 1
+useMultiCategories = 1
+tagSlug = "{{ :tag }}"
+recordPage = "tour-detail"
+recordPageSlug = "{{ :slug }}"
+limit = 10
+pageSlug = "{{ :page }}"
+orderBy = "name"
+orderByDirection = "ASC"
+
+[viewBag]
+==
+{% for record in DealsAndDiscounts.items %}
+<div class="item item_tour with_border swiper-slide">
+  <a
+    href="{{DealsAndDiscounts.property('recordPage') ? DealsAndDiscounts.property('recordPage')|page({(DealsAndDiscounts.paramName('recordPageSlug')):(record.slug)})}}">
+    <span class="img_wrapper">
+      <span class="img lazy"
+        style="background-image: url({{ record.preview_image.getPath | resize(240, false, { mode: 'crop', quality: '80', extension: 'jpg' })}})"></span>
+
+      <span class="price-round">
+        <span class="inner">from <br />$ {{ record.tour_cost }} US
+        
+        </span>
+      </span>
+
+
+    </span>
+    <div class="desc">
+      <h3>{{ record.name }}</h3>
+      <p class="excerpt"> {{ record.description }}</p>
+    </div>
+    <p class="duration"><i class="fa fa-clock-o"></i>
+      {{ record.tour_duration }}
+       days
+    </p>
+  </a>
+</div>
+{% endfor %}
+
+
+";s:5:"mtime";i:1612355538;s:6:"markup";s:922:"{% for record in DealsAndDiscounts.items %}
+<div class="item item_tour with_border swiper-slide">
+  <a
+    href="{{DealsAndDiscounts.property('recordPage') ? DealsAndDiscounts.property('recordPage')|page({(DealsAndDiscounts.paramName('recordPageSlug')):(record.slug)})}}">
+    <span class="img_wrapper">
+      <span class="img lazy"
+        style="background-image: url({{ record.preview_image.getPath | resize(240, false, { mode: 'crop', quality: '80', extension: 'jpg' })}})"></span>
+
+      <span class="price-round">
+        <span class="inner">from <br />$ {{ record.tour_cost }} US
+        
+        </span>
+      </span>
+
+
+    </span>
+    <div class="desc">
+      <h3>{{ record.name }}</h3>
+      <p class="excerpt"> {{ record.description }}</p>
+    </div>
+    <p class="duration"><i class="fa fa-clock-o"></i>
+      {{ record.tour_duration }}
+       days
+    </p>
+  </a>
+</div>
+{% endfor %}";s:4:"code";N;s:25:"records DealsAndDiscounts";a:12:{s:10:"activeOnly";s:1:"0";s:8:"areaSlug";s:4:"tury";s:12:"categorySlug";s:22:"predlozheniya-i-skidki";s:15:"useMainCategory";s:1:"1";s:18:"useMultiCategories";s:1:"1";s:7:"tagSlug";s:10:"{{ :tag }}";s:10:"recordPage";s:11:"tour-detail";s:14:"recordPageSlug";s:11:"{{ :slug }}";s:5:"limit";s:2:"10";s:8:"pageSlug";s:11:"{{ :page }}";s:7:"orderBy";s:4:"name";s:16:"orderByDirection";s:3:"ASC";}s:7:"viewBag";a:0:{}}}
